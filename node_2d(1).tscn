@@ -42,7 +42,7 @@ position = Vector2(0, 26.1429)
 scale = Vector2(1, 1)
 sprite_frames = ExtResource("1_iqsv0")
 animation = &"move_up"
-frame_progress = 0.0218886
+frame_progress = 0.590907
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_ttrdr")
