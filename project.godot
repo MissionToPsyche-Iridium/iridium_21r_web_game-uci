@@ -22,8 +22,8 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Claire": "res://characters/Claire.dch",
-"player": "res://characters/player.dch"
+"characters/Claire": "res://assets/characters/Claire.dch",
+"characters/player": "res://assets/characters/player.dch"
 }
 directories/dtl_directory={
 "arrival_at_psyche": "res://timelines/chapter_1/arrival_at_psyche.dtl",
@@ -32,7 +32,7 @@ directories/dtl_directory={
 variables={
 "player_name": ""
 }
-layout/style_list=["res://assets/dialgoue_box_style/dialogic_premade.tres"]
+layout/style_list=["res://assets/dialgoue_box_style/dialogic_premade.tres", "res://assets/dialgoue_box_style/premade_style.tres"]
 layout/default_style=""
 extensions_folder="res://addons/dialogic_additions"
 text/letter_speed=0.01
