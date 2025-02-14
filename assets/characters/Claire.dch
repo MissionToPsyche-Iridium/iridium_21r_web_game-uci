@@ -8,14 +8,23 @@
 "sound_moods": {},
 "style": ""
 },
-"default_portrait": "New portrait",
+"default_portrait": "Unsatisfied",
 "description": "",
 "display_name": "Claire",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
-"New portrait": {
+"Sad": {
+"export_overrides": {
+"image": ""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Unsatisfied": {
 "export_overrides": {
 "image": "\"res://assets/characters/Claire_Unsatisfied.png\""
 },
