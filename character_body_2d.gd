@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
 
-@export var SPEED = 400.0
+@export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
 
+func _ready() -> void:
+	_animated_sprite.play('idle_down')
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
