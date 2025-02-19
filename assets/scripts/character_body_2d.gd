@@ -1,10 +1,13 @@
 extends CharacterBody2D
 
+enum States {IDLE, MOVING, MINING}
 
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 
 @onready var _animated_sprite = $AnimatedSprite2D
+
+var state = States.IDLE
 
 func _ready() -> void:
 	_animated_sprite.play('idle_down')
@@ -25,39 +28,62 @@ func _physics_process(delta: float) -> void:
 	var y_direction = 0.0 if factor == 0 else y_input / factor
 	var x_direction = 0.0 if factor == 0 else x_input / factor
 	
-	if y_direction:
-		velocity.y = y_direction * SPEED
-		if (abs(y_direction) > abs(x_direction)):
-			if (y_direction < 0):
-				_animated_sprite.play("move_up")
+	match state:
+		States.IDLE:
+			if (y_direction || x_direction):
+				set_state(States.MOVING)
+		States.MOVING:
+			if y_direction:
+				velocity.y = y_direction * SPEED
+				if (abs(y_direction) > abs(x_direction)):
+					if (y_direction < 0):
+						_animated_sprite.play("move_up")
+					else:
+						_animated_sprite.play("move_down")
 			else:
-				_animated_sprite.play("move_down")
-	else:
-		velocity.y = move_toward(velocity.y, 0, SPEED)
-	
-	print(x_direction, y_direction)
-	if x_direction:
-		velocity.x = x_direction * SPEED
-		if (abs(x_direction) >= abs(y_direction)):
-			if (x_direction < 0):
-				_animated_sprite.play("move_left")
+				velocity.y = move_toward(velocity.y, 0, SPEED)
+				
+			if x_direction:
+				velocity.x = x_direction * SPEED
+				if (abs(x_direction) >= abs(y_direction)):
+					if (x_direction < 0):
+						_animated_sprite.play("move_left")
+					else:
+						_animated_sprite.play("move_right")
 			else:
-				_animated_sprite.play("move_right")
-	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
-	
-	if (!y_direction && !x_direction):
-		match (_animated_sprite.animation):
-			"move_left":
-				_animated_sprite.play("idle_left")
-			"move_right":
-				_animated_sprite.play("idle_right")
-			"move_up":
-				_animated_sprite.play("idle_up")
-			"move_down":
-				_animated_sprite.play("idle_down")
+				velocity.x = move_toward(velocity.x, 0, SPEED)
+			if (!y_direction && !x_direction):
+				set_state(States.IDLE)
+		States.MINING:
+			pass
+	#
+	#if (!y_direction && !x_direction):
+		#match (_animated_sprite.animation):
+			#"move_left":
+				#_animated_sprite.play("idle_left")
+			#"move_right":
+				#_animated_sprite.play("idle_right")
+			#"move_up":
+				#_animated_sprite.play("idle_up")
+			#"move_down":
+				#_animated_sprite.play("idle_down")
 
 	move_and_slide()
 
-func _update_anims(x_direction: float, y_direction: float) -> void:
-	pass
+func set_state(new_state: int) -> void:
+	match new_state:
+		States.IDLE:
+			state = new_state
+			match (_animated_sprite.animation):
+				"move_left":
+					_animated_sprite.play("idle_left")
+				"move_right":
+					_animated_sprite.play("idle_right")
+				"move_up":
+					_animated_sprite.play("idle_up")
+				"move_down":
+					_animated_sprite.play("idle_down")
+		States.MOVING:
+			state = new_state
+		States.MINING:
+			state = new_state
