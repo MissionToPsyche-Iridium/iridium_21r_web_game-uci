@@ -5,12 +5,12 @@ enum States {IDLE, MOVING, MINING}
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 
-@onready var _animated_sprite = $AnimatedSprite2D
+@onready var _animation_player = $AnimationPlayer
 
 var state = States.IDLE
 
 func _ready() -> void:
-	_animated_sprite.play('idle_down')
+	_animation_player.play('idle_down')
 
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
@@ -37,9 +37,9 @@ func _physics_process(delta: float) -> void:
 				velocity.y = y_direction * SPEED
 				if (abs(y_direction) > abs(x_direction)):
 					if (y_direction < 0):
-						_animated_sprite.play("move_up")
+						_animation_player.play("move_up")
 					else:
-						_animated_sprite.play("move_down")
+						_animation_player.play("move_down")
 			else:
 				velocity.y = move_toward(velocity.y, 0, SPEED)
 				
@@ -47,9 +47,9 @@ func _physics_process(delta: float) -> void:
 				velocity.x = x_direction * SPEED
 				if (abs(x_direction) >= abs(y_direction)):
 					if (x_direction < 0):
-						_animated_sprite.play("move_left")
+						_animation_player.play("move_left")
 					else:
-						_animated_sprite.play("move_right")
+						_animation_player.play("move_right")
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 			if (!y_direction && !x_direction):
@@ -74,15 +74,17 @@ func set_state(new_state: int) -> void:
 	match new_state:
 		States.IDLE:
 			state = new_state
-			match (_animated_sprite.animation):
+			match (_animation_player.current_animation):
 				"move_left":
-					_animated_sprite.play("idle_left")
+					_animation_player.play("idle_left")
 				"move_right":
-					_animated_sprite.play("idle_right")
+					_animation_player.play("idle_right")
 				"move_up":
-					_animated_sprite.play("idle_up")
+					_animation_player.play("idle_up")
 				"move_down":
-					_animated_sprite.play("idle_down")
+					_animation_player.play("idle_down")
+				_:
+					_animation_player.play("idle_down")
 		States.MOVING:
 			state = new_state
 		States.MINING:
