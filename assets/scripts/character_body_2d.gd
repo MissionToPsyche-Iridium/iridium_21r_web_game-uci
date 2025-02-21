@@ -12,7 +12,7 @@ var state = States.IDLE
 func _ready() -> void:
 	_animation_player.play('idle_down')
 
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Add the gravity.
 	#if not is_on_floor():
 		#velocity += get_gravity() * delta
@@ -90,8 +90,8 @@ func mine() -> void:
 
 func set_state(new_state: int) -> void:
 	match new_state:
-		0:
-			state = new_state
+		States.IDLE:
+			state = new_state as States
 			match (_animation_player.current_animation):
 				"move_left", "mine_left":
 					_animation_player.play("idle_left")
@@ -103,9 +103,9 @@ func set_state(new_state: int) -> void:
 					_animation_player.play("idle_down")
 				_:
 					_animation_player.play("idle_down")
-		1:
-			state = new_state
-		2:
-			state = new_state
+		States.MOVING:
+			state = new_state as States
+		States.MINING:
+			state = new_state as States
 			velocity.y = 0
 			velocity.x = 0
