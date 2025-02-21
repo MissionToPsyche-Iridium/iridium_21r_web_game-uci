@@ -70,22 +70,42 @@ func _physics_process(delta: float) -> void:
 
 	move_and_slide()
 
+func _input(event) -> void:
+	if event.is_action_pressed("ui_accept"):
+		mine()
+
+func mine() -> void:
+	match state:
+		States.IDLE, States.MOVING:
+			set_state(States.MINING)
+			match _animation_player.current_animation:
+				"move_left", "idle_left":
+					_animation_player.play("mine_left")
+				"move_right", "idle_right":
+					_animation_player.play("mine_right")
+				"move_up", "idle_up":
+					_animation_player.play("mine_up")
+				"move_down", "idle_down":
+					_animation_player.play("mine_down")
+
 func set_state(new_state: int) -> void:
 	match new_state:
-		States.IDLE:
+		0:
 			state = new_state
 			match (_animation_player.current_animation):
-				"move_left":
+				"move_left", "mine_left":
 					_animation_player.play("idle_left")
-				"move_right":
+				"move_right", "mine_right":
 					_animation_player.play("idle_right")
-				"move_up":
+				"move_up", "mine_up":
 					_animation_player.play("idle_up")
-				"move_down":
+				"move_down", "mine_down":
 					_animation_player.play("idle_down")
 				_:
 					_animation_player.play("idle_down")
-		States.MOVING:
+		1:
 			state = new_state
-		States.MINING:
+		2:
 			state = new_state
+			velocity.y = 0
+			velocity.x = 0
