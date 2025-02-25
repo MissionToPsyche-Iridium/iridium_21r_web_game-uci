@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -400.0
 
 @onready var _animation_player = $AnimationPlayer
 
+#@onready var _text_label = $Container/RichTextLabel
+
 var state = States.IDLE
 
 func _ready() -> void:
@@ -87,11 +89,14 @@ func mine() -> void:
 					_animation_player.play("mine_up")
 				"move_down", "idle_down":
 					_animation_player.play("mine_down")
+				_:
+					_animation_player.play("mine_down")
 
 func set_state(new_state: int) -> void:
 	match new_state:
 		States.IDLE:
 			state = new_state as States
+			#_text_label.text = "IDLE"
 			match (_animation_player.current_animation):
 				"move_left", "mine_left":
 					_animation_player.play("idle_left")
@@ -105,7 +110,9 @@ func set_state(new_state: int) -> void:
 					_animation_player.play("idle_down")
 		States.MOVING:
 			state = new_state as States
+			#_text_label.text = "MOVING"
 		States.MINING:
 			state = new_state as States
+			#_text_label.text = "MINING"
 			velocity.y = 0
 			velocity.x = 0
