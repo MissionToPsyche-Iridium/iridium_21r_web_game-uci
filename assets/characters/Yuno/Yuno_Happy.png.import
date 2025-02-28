@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk64ocm8nrbcx"
-path="res://.godot/imported/Claire_Unsatisfied.png-39e74ff76c3a9477a8e5f9bbabe20f33.ctex"
+uid="uid://cpwxdl2swy8sy"
+path="res://.godot/imported/Yuno_Happy.png-959f9bc7fe2d38ce0063e6ede74e230d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/characters/Claire_Unsatisfied.png"
-dest_files=["res://.godot/imported/Claire_Unsatisfied.png-39e74ff76c3a9477a8e5f9bbabe20f33.ctex"]
+source_file="res://assets/characters/Yuno/Yuno_Happy.png"
+dest_files=["res://.godot/imported/Yuno_Happy.png-959f9bc7fe2d38ce0063e6ede74e230d.ctex"]
 
 [params]
 

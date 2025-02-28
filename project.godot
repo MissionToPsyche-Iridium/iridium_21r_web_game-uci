@@ -22,13 +22,16 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
+"Claire": "res://assets/characters/Claire/Claire.dch",
+"Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
 "characters/Claire": "res://assets/characters/Claire.dch",
-"characters/player": "res://assets/characters/player.dch"
+"player": "res://assets/characters/Player/player.dch"
 }
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
 "arrival_at_psyche": "res://timelines/chapter_1/arrival_at_psyche.dtl",
-"opening_cutscene": "res://timelines/opening_cutscene.dtl"
+"opening_cutscene": "res://timelines/opening_cutscene.dtl",
+"testscene": "res://timelines/chapter_1/testscene.dtl"
 }
 variables={
 "player_name": ""

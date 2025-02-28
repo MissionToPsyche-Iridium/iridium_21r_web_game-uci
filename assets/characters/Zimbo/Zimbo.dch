@@ -6,18 +6,27 @@
 "custom_info": {
 "sound_mood_default": "",
 "sound_moods": {},
-"style": ""
+"style": "premade_style"
 },
 "default_portrait": "Neutral",
 "description": "",
-"display_name": "Claire",
+"display_name": "Zimbo",
 "mirror": false,
 "nicknames": [""],
 "offset": Vector2(0, 0),
 "portraits": {
 "Angry": {
 "export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Angry.png\""
+"image": "\"res://assets/characters/Zimbo/Zimbo Angry.png\""
+},
+"mirror": false,
+"offset": Vector2(0, 0),
+"scale": 1,
+"scene": ""
+},
+"Bruh": {
+"export_overrides": {
+"image": "\"res://assets/characters/Zimbo/Zimbo Bruh.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -26,7 +35,7 @@
 },
 "Happy": {
 "export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Happy.png\""
+"image": "\"res://assets/characters/Zimbo/Zimbo Happy.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -35,7 +44,7 @@
 },
 "Neutral": {
 "export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Neutral.png\""
+"image": "\"res://assets/characters/Zimbo/Zimbo Neutral.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
@@ -44,25 +53,16 @@
 },
 "Sad": {
 "export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Sad.png\""
+"image": "\"res://assets/characters/Zimbo/Zimbo Sad.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
 "scale": 1,
 "scene": ""
 },
-"Surprised": {
+"Wink": {
 "export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Surprised.png\""
-},
-"mirror": false,
-"offset": Vector2(0, 0),
-"scale": 1,
-"scene": ""
-},
-"Unsatisfied": {
-"export_overrides": {
-"image": "\"res://assets/characters/Claire/Claire_Unsatisfied.png\""
+"image": "\"res://assets/characters/Zimbo/Zimbo Wink.png\""
 },
 "mirror": false,
 "offset": Vector2(0, 0),
