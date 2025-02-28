@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://beauoek1b4bep"]
+
+[ext_resource type="Texture2D" uid="uid://dkykfp4avpq3e" path="res://assets/placeholders/PLACEHOLDER_hitbox.png" id="1_rlcot"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_26eq0"]
+
+[node name="MineUp" type="Area2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+modulate = Color(1, 0, 1, 0.678431)
+z_index = 7
+position = Vector2(0, -20)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_rlcot")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, -20)
+shape = SubResource("RectangleShape2D_26eq0")
