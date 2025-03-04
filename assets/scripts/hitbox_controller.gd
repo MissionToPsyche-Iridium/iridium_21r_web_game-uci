@@ -39,6 +39,7 @@ func _on_hitbox_enter(body: Node2D) -> void:
 	if not hit and body is Ore:
 		hit = true
 		body.on_hit(dmg_to_do)
+		body.get_node("AnimationPlayer").play("hit")
 
 func clear_hitbox() -> void:
 	if active_frame:
