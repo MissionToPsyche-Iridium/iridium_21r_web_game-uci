@@ -9,7 +9,7 @@ enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	pass # Replace with function body.
+	sprite.frame = ore_type as int
 
 func on_hit(dmg: int) -> void:
 	print(dmg)
