@@ -76,10 +76,8 @@ func _physics_process(_delta: float) -> void:
 
 func _input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
-		print("begin")
 		begin_mine()
 	if event.is_action_released("ui_accept"):
-		print("end")
 		end_mine()
 
 func begin_mine() -> void:
