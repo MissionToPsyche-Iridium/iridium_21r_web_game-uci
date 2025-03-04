@@ -25,6 +25,7 @@ func _process(_delta: float) -> void:
 func set_damage(dmg: int) -> void:
 	dmg_to_do = dmg
 
+# called at the start of mining animation
 func draw_hitbox(id: int) -> void:
 	if active_frame:
 		active_frame.queue_free()
@@ -41,6 +42,7 @@ func _on_hitbox_enter(body: Node2D) -> void:
 		body.on_hit(dmg_to_do)
 		body.get_node("AnimationPlayer").play("hit")
 
+# called at the end of mining animation
 func clear_hitbox() -> void:
 	if active_frame:
 		active_frame.body_entered.disconnect(_on_hitbox_enter)
