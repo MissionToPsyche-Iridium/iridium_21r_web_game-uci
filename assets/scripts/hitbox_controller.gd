@@ -9,6 +9,7 @@ extends Node2D
 var frames: Array[Resource] = []
 var active_frame = null
 var dmg_to_do: int = 0
+var hit: bool = false
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -28,13 +29,15 @@ func draw_hitbox(id: int) -> void:
 	if active_frame:
 		active_frame.queue_free()
 		active_frame = null
+	hit = false
 	active_frame = frames[id].instantiate()
 	active_frame.set_name("hitbox")
 	active_frame.body_entered.connect(_on_hitbox_enter)
 	add_child(active_frame)
 
 func _on_hitbox_enter(body: Node2D) -> void:
-	if body is Ore:
+	if not hit and body is Ore:
+		hit = true
 		body.on_hit(dmg_to_do)
 
 func clear_hitbox() -> void:
