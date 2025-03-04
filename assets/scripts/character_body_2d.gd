@@ -7,6 +7,7 @@ const JUMP_VELOCITY = -400.0
 
 @onready var _animation_player = $AnimationPlayer
 @onready var _mining_qte_controller = $MiningQTEController
+@onready var _hitbox_controller = $HitboxController
 
 #@onready var _text_label = $Container/RichTextLabel
 
@@ -102,7 +103,8 @@ func end_mine() -> void:
 	if state == States.MINING_PREP:
 		set_state(States.MINING)
 		var score = _mining_qte_controller.swing_pickaxe()
-		print(score)
+		_hitbox_controller.dmg_to_do = _calculate_mining_damage(score)
+		#_hitbox_controller.set_damage(ceil(score * 10) as int)
 		match _animation_player.current_animation:
 			"mine_prep_left":
 				_animation_player.play("mine_left")
@@ -143,3 +145,6 @@ func set_state(new_state: int) -> void:
 			state = new_state as States
 			velocity.y = 0
 			velocity.x = 0
+
+func _calculate_mining_damage(score: float) -> int:
+	return ceil(score * 10) + 10

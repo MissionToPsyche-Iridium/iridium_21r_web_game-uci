@@ -1,3 +1,22 @@
-[gd_scene format=3 uid="uid://chs2rkexfkf6k"]
+[gd_scene load_steps=4 format=3 uid="uid://chs2rkexfkf6k"]
 
-[node name="Ore" type="Node2D"]
+[ext_resource type="Script" path="res://assets/scripts/ore.gd" id="1_m42bm"]
+[ext_resource type="Texture2D" uid="uid://cy3kxma3navac" path="res://assets/spritesheets/Roguelike-ores.png" id="2_v5bvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dse57"]
+
+[node name="Ore" type="StaticBody2D"]
+z_index = 4
+position = Vector2(0, 1)
+scale = Vector2(10, 10)
+script = ExtResource("1_m42bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_dse57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_v5bvy")
+hframes = 10
+frame = 6
