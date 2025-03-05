@@ -1,13 +1,13 @@
-[style name="dialogic_premade"]
-Claire: {player_name}, do you copy?[pause=1] How's the landing?
-player: I’m here. Landing was smooth enough. Psyche’s surface… it’s something else. Feels like I’m standing on raw metal
-Claire: That’s exactly why you’re there. Psyche’s minerals are crucial for building the LUX-7 space station.
-player: Building a whole station from scratch? No pressure.
-Claire: It’s not all on you. Your job is to gather the Aetherium and other rare metals we need to power the station and study its properties. I’ve uploaded the coordinates to your scanner.
-player: Got it. Collect minerals, rebuild the station, save the day. Easy enough, right?
-Claire: Not so fast. We’ve been picking up strange signals from beneath Psyche’s surface. Could be interference, or… something else. Keep your eyes open.
-player: Strange signals? You couldn’t have mentioned this earlier?
-Claire: I didn’t want you second-guessing yourself. Just stay alert. If things get risky, focus on getting back to the ship safely. Understood?
-player: Yeah, yeah. Safety first. But I’m not leaving without the goods.
-Claire: That’s why I trust you.[pause=1] Alright. Good luck out there, {Player name}. And remember—[pause=0.5]you’re not just gathering minerals. You’re securing humanity’s future.
-player: No pressure, huh? Alright, I’m on it.
+[style name="premade_style"]
+characters/Claire (Neutral): {player_name}, do you copy?[pause=1] How's the landing?
+I’m here. Landing was smooth enough. Psyche’s surface… it’s something else. Feels like I’m standing on raw metal
+characters/Claire: That’s exactly why you’re there. Psyche’s minerals are crucial for building the LUX-7 space station.
+Building a whole station from scratch? No pressure.
+characters/Claire: It’s not all on you. Your job is to gather the Aetherium and other rare metals we need to power the station and study its properties. I’ve uploaded the coordinates to your scanner.
+Got it. Collect minerals, rebuild the station, save the day. Easy enough, right?
+characters/Claire: Not so fast. We’ve been picking up strange signals from beneath Psyche’s surface. Could be interference, or…[pause=1] something else. Keep your eyes open.
+Strange signals? You couldn’t have mentioned this earlier?
+characters/Claire (Unsatisfied): I didn’t want you second-guessing yourself. Just stay alert. If things get risky, focus on getting back to the ship safely. Understood?
+Yeah, yeah. Safety first. But I’m not leaving without the goods.
+characters/Claire: That’s why I trust you.[pause=1] Alright. Good luck out there, {player_name}. And remember—[pause=0.5]you’re not just gathering minerals. You’re securing humanity’s future.
+No pressure, huh? Alright, I’m on it.

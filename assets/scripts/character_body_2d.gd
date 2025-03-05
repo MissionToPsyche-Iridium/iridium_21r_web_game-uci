@@ -1,11 +1,13 @@
 extends CharacterBody2D
 
-enum States {IDLE, MOVING, MINING}
+enum States {IDLE, MOVING, MINING, MINING_PREP}
 
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
 
 @onready var _animation_player = $AnimationPlayer
+@onready var _mining_qte_controller = $MiningQTEController
+@onready var _hitbox_controller = $HitboxController
 
 #@onready var _text_label = $Container/RichTextLabel
 
@@ -74,23 +76,44 @@ func _physics_process(_delta: float) -> void:
 
 func _input(event) -> void:
 	if event.is_action_pressed("ui_accept"):
-		mine()
+		begin_mine()
+	if event.is_action_released("ui_accept"):
+		end_mine()
 
-func mine() -> void:
+func begin_mine() -> void:
 	match state:
 		States.IDLE, States.MOVING:
-			set_state(States.MINING)
+			set_state(States.MINING_PREP)
+			_mining_qte_controller.start_qte()
 			match _animation_player.current_animation:
 				"move_left", "idle_left":
-					_animation_player.play("mine_left")
+					_animation_player.play("mine_prep_left")
 				"move_right", "idle_right":
-					_animation_player.play("mine_right")
+					_animation_player.play("mine_prep_right")
 				"move_up", "idle_up":
-					_animation_player.play("mine_up")
+					_animation_player.play("mine_prep_up")
 				"move_down", "idle_down":
-					_animation_player.play("mine_down")
+					_animation_player.play("mine_prep_down")
 				_:
-					_animation_player.play("mine_down")
+					_animation_player.play("mine_prep_down")
+
+func end_mine() -> void:
+	if state == States.MINING_PREP:
+		set_state(States.MINING)
+		var score = _mining_qte_controller.swing_pickaxe()
+		_hitbox_controller.dmg_to_do = _calculate_mining_damage(score)
+		#_hitbox_controller.set_damage(ceil(score * 10) as int)
+		match _animation_player.current_animation:
+			"mine_prep_left":
+				_animation_player.play("mine_left")
+			"mine_prep_right":
+				_animation_player.play("mine_right")
+			"mine_prep_up":
+				_animation_player.play("mine_up")
+			"mine_prep_down":
+				_animation_player.play("mine_down")
+			_:
+				_animation_player.play("mine_down")
 
 func set_state(new_state: int) -> void:
 	match new_state:
@@ -116,3 +139,10 @@ func set_state(new_state: int) -> void:
 			#_text_label.text = "MINING"
 			velocity.y = 0
 			velocity.x = 0
+		States.MINING_PREP:
+			state = new_state as States
+			velocity.y = 0
+			velocity.x = 0
+
+func _calculate_mining_damage(score: float) -> int:
+	return ceil(score * 10) + 10

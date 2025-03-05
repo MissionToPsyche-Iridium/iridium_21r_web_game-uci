@@ -1,0 +1,63 @@
+[gd_scene load_steps=7 format=3 uid="uid://chs2rkexfkf6k"]
+
+[ext_resource type="Script" path="res://assets/scripts/ore.gd" id="1_m42bm"]
+[ext_resource type="Texture2D" uid="uid://cy3kxma3navac" path="res://assets/spritesheets/Roguelike-ores.png" id="2_v5bvy"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dse57"]
+
+[sub_resource type="Animation" id="Animation_c51kq"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_qhsqg"]
+resource_name = "hit"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.0333333, 0.0666667, 0.133333),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-1, 0), Vector2(1, 0), Vector2(0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_log5r"]
+_data = {
+"RESET": SubResource("Animation_c51kq"),
+"hit": SubResource("Animation_qhsqg")
+}
+
+[node name="Ore" type="StaticBody2D"]
+z_index = 4
+position = Vector2(0, 1)
+script = ExtResource("1_m42bm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+scale = Vector2(0.7, 0.7)
+shape = SubResource("RectangleShape2D_dse57")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_v5bvy")
+hframes = 10
+frame = 6
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_log5r")
+}
