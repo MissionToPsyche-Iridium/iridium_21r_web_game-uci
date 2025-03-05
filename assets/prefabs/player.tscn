@@ -69,7 +69,7 @@ tracks/0/path = NodePath("Sprite2D:frame_coords")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-0.00611979, 0.2, 0.4, 0.6, 0.8, 0.99388, 1.19388),
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 0.99388, 1.19388),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 1), Vector2i(1, 1), Vector2i(2, 1), Vector2i(3, 1), Vector2i(4, 1), Vector2i(5, 1), Vector2i(0, 1)]
