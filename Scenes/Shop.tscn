@@ -1,0 +1,39 @@
+[gd_scene load_steps=2 format=3 uid="uid://cna8v25chvhjf"]
+
+[ext_resource type="Texture2D" uid="uid://fv217r6d5jl0" path="res://assets/Backgrounds/Zimbo_Workshop_.png" id="1_jjh41"]
+
+[node name="Shop" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 8.0
+offset_top = 2.0
+offset_right = 8.0
+offset_bottom = 2.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Background" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -7.0
+offset_right = 1143.0
+offset_bottom = 645.0
+texture = ExtResource("1_jjh41")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 407.0
+offset_top = 103.0
+offset_right = 830.0
+offset_bottom = 317.0
+
+[node name="Button" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Item 1"
+
+[node name="Button2" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+text = "Item 2"
