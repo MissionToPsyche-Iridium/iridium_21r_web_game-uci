@@ -22,11 +22,11 @@ Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 [dialogic]
 
 directories/dch_directory={
-"Claire": "res://assets/characters/Claire/Claire.dch",
+"Claire/Claire": "res://assets/characters/Claire/Claire.dch",
+"Player/player": "res://assets/characters/Player/player.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
-"characters/Claire": "res://assets/characters/Claire.dch",
-"player": "res://assets/characters/Player/player.dch"
+"characters/Claire": "res://assets/characters/Claire.dch"
 }
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",

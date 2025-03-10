@@ -1,10 +1,10 @@
 [gd_scene load_steps=4 format=4 uid="uid://d35ab7gcede11"]
 
-[ext_resource type="PackedScene" uid="uid://dajcoe2q7q32v" path="res://assets/prefabs/player.tscn" id="1_bsj70"]
+[ext_resource type="PackedScene" uid="uid://m0q8dbxhlk5k" path="res://assets/prefabs/player.tscn" id="1_bsj70"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="3_o5878"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="4_f3f72"]
 
-[node name="Node2D" type="Node2D"]
+[node name="Node2D2" type="Node2D"]
 texture_filter = 3
 
 [node name="Camera2D" type="Camera2D" parent="."]
