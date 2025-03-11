@@ -1,6 +1,16 @@
-[gd_scene load_steps=2 format=3 uid="uid://cna8v25chvhjf"]
+[gd_scene load_steps=10 format=3 uid="uid://cna8v25chvhjf"]
 
 [ext_resource type="Texture2D" uid="uid://fv217r6d5jl0" path="res://assets/Backgrounds/Zimbo_Workshop_.png" id="1_jjh41"]
+[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop Panel.png" id="2_i3qbt"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
+[ext_resource type="Texture2D" uid="uid://dvh5jupc2onmv" path="res://assets/ui assets/Ore Icons/Iridium.png" id="4_wghcr"]
+[ext_resource type="Texture2D" uid="uid://bjmualrtvn7yy" path="res://assets/ui assets/Ore Icons/Bronze.png" id="5_55bws"]
+[ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Ore Icons/Tungsten.png" id="6_sfbtu"]
+[ext_resource type="Texture2D" uid="uid://bi0ftq0bsy2cm" path="res://assets/ui assets/Ore Icons/Nickel.png" id="7_566b0"]
+[ext_resource type="Texture2D" uid="uid://dk7ytgvawsrig" path="res://assets/ui assets/Ore Icons/Peridot.png" id="8_sxt5l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiwan"]
+texture = ExtResource("2_i3qbt")
 
 [node name="Shop" type="Control"]
 layout_mode = 3
@@ -23,17 +33,75 @@ texture = ExtResource("1_jjh41")
 expand_mode = 2
 stretch_mode = 4
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
+[node name="PanelContainer" type="PanelContainer" parent="."]
 layout_mode = 0
 offset_left = 407.0
 offset_top = 103.0
-offset_right = 830.0
-offset_bottom = 317.0
+offset_right = 827.0
+offset_bottom = 440.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
 
-[node name="Button" type="Button" parent="VBoxContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
 layout_mode = 2
-text = "Item 1"
 
-[node name="Button2" type="Button" parent="VBoxContainer"]
+[node name="Iridium" type="Button" parent="PanelContainer/VBoxContainer"]
 layout_mode = 2
-text = "Item 2"
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 30
+text = "Iridium Alloy"
+icon = ExtResource("4_wghcr")
+alignment = 0
+expand_icon = true
+
+[node name="Bronze" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 30
+text = "Bronze Alloy"
+icon = ExtResource("5_55bws")
+alignment = 0
+expand_icon = true
+
+[node name="Tungsten" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 30
+text = "Tungsten Carbide"
+icon = ExtResource("6_sfbtu")
+alignment = 0
+expand_icon = true
+
+[node name="Button" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 30
+text = "Nickel Composite"
+icon = ExtResource("7_566b0")
+alignment = 0
+expand_icon = true
+
+[node name="Peridot" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 30
+text = "Peridot"
+icon = ExtResource("8_sxt5l")
+alignment = 0
+expand_icon = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+layout_mode = 0
+offset_left = 51.0
+offset_top = 462.0
+offset_right = 376.0
+offset_bottom = 625.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_qgbva")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]I can upgrade your ore
+into super ore
+ in order to build the 
+space station[/center]"
