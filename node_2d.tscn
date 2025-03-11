@@ -1,6 +1,5 @@
-[gd_scene load_steps=8 format=4 uid="uid://c13a58npysqvc"]
+[gd_scene load_steps=7 format=4 uid="uid://c13a58npysqvc"]
 
-[ext_resource type="Script" path="res://character_body_2d.gd" id="1_gho3q"]
 [ext_resource type="Texture2D" uid="uid://cuowvfty5ji3" path="res://assets/heidi resized.png" id="2_qo45n"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="3_26mre"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="4_m2obu"]
@@ -26,7 +25,6 @@ texture = SubResource("PlaceholderTexture2D_12hdx")
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
 position = Vector2(0, -183)
 scale = Vector2(10, 10)
-script = ExtResource("1_gho3q")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 shape = SubResource("RectangleShape2D_ttrdr")
