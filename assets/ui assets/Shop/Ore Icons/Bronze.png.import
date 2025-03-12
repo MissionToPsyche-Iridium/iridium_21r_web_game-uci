@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dk7ytgvawsrig"
-path="res://.godot/imported/Peridot.png-0da5b73b88574b8093f34c8d68cf16c4.ctex"
+uid="uid://bjmualrtvn7yy"
+path="res://.godot/imported/Bronze.png-02d8d79218d713d71cb5ff40f78fd9cb.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui assets/Ore Icons/Peridot.png"
-dest_files=["res://.godot/imported/Peridot.png-0da5b73b88574b8093f34c8d68cf16c4.ctex"]
+source_file="res://assets/ui assets/Shop/Ore Icons/Bronze.png"
+dest_files=["res://.godot/imported/Bronze.png-02d8d79218d713d71cb5ff40f78fd9cb.ctex"]
 
 [params]
 

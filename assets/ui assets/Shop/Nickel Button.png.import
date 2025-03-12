@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dvh5jupc2onmv"
-path="res://.godot/imported/Iridium.png-b965bc80ceab0648f3ff0e2a9d2721a3.ctex"
+uid="uid://4bbh1vogi7l3"
+path="res://.godot/imported/Nickel Button.png-95e9279e36948f75949869390c640199.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui assets/Ore Icons/Iridium.png"
-dest_files=["res://.godot/imported/Iridium.png-b965bc80ceab0648f3ff0e2a9d2721a3.ctex"]
+source_file="res://assets/ui assets/Shop/Nickel Button.png"
+dest_files=["res://.godot/imported/Nickel Button.png-95e9279e36948f75949869390c640199.ctex"]
 
 [params]
 

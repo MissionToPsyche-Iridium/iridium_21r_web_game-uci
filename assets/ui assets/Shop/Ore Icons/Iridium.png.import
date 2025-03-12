@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bkbr6xsj0hypl"
-path="res://.godot/imported/Tungsten.png-90c9670dca22ab98c9ef047220aef905.ctex"
+uid="uid://dvh5jupc2onmv"
+path="res://.godot/imported/Iridium.png-8145a1c95fffbb2fd4769ece7cc7a965.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui assets/Ore Icons/Tungsten.png"
-dest_files=["res://.godot/imported/Tungsten.png-90c9670dca22ab98c9ef047220aef905.ctex"]
+source_file="res://assets/ui assets/Shop/Ore Icons/Iridium.png"
+dest_files=["res://.godot/imported/Iridium.png-8145a1c95fffbb2fd4769ece7cc7a965.ctex"]
 
 [params]
 

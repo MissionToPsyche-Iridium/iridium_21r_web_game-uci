@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bi0ftq0bsy2cm"
-path="res://.godot/imported/Nickel.png-3a37e7d861ab25efcdd3f911f2728ee5.ctex"
+uid="uid://dk7ytgvawsrig"
+path="res://.godot/imported/Peridot.png-75e64e914083fa0dc40e7516dbaee7f1.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ui assets/Ore Icons/Nickel.png"
-dest_files=["res://.godot/imported/Nickel.png-3a37e7d861ab25efcdd3f911f2728ee5.ctex"]
+source_file="res://assets/ui assets/Shop/Ore Icons/Peridot.png"
+dest_files=["res://.godot/imported/Peridot.png-75e64e914083fa0dc40e7516dbaee7f1.ctex"]
 
 [params]
 
