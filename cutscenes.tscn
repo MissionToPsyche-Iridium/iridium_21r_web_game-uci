@@ -4,3 +4,10 @@
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_a2an1")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -2418.0
+offset_top = -1712.0
+offset_right = 2549.0
+offset_bottom = 1297.0
+color = Color(0, 0, 0, 1)

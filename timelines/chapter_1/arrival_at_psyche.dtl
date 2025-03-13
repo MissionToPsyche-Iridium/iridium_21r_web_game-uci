@@ -1,5 +1,5 @@
 [style name="premade_style"]
-[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":false}"]
+[wait time="0.5"]
 characters/Claire (Neutral): {player_name}, do you copy?[pause=1] How's the landing?
 I’m here. Landing was smooth enough. Psyche’s surface… it’s something else. Feels like I’m standing on raw metal
 characters/Claire: That’s exactly why you’re there. Psyche’s minerals are crucial for building the LUX-7 space station.

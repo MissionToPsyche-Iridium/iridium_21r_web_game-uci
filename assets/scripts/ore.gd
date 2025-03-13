@@ -16,7 +16,6 @@ func update_sprite() -> void:
 	sprite.frame = ore_type as int
 
 func on_hit(dmg: int) -> void:
-	print(dmg)
 	hp -= dmg
 	if hp <= 0:
 		perish()

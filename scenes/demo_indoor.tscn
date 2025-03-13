@@ -1,15 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://de37wsvwvh0rq"]
+[gd_scene load_steps=9 format=3 uid="uid://de37wsvwvh0rq"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_0dlbh"]
 [ext_resource type="Texture2D" uid="uid://dcc4eekcq2w8x" path="res://PokC3A9mon_Center_inside_RSE.png" id="2_3lqap"]
+[ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="5_d6bt6"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="6_lh087"]
+[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="6_udfyy"]
 [ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_ui1fg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pai5w"]
 size = Vector2(145, 138)
 
-[node name="screen2" type="Node2D" node_paths=PackedStringArray("transitions")]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s8jnb"]
+size = Vector2(1925, 1081)
+
+[node name="screen2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
 script = ExtResource("1_0dlbh")
+camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
 
 [node name="ColorRect" type="ColorRect" parent="."]
@@ -19,19 +25,21 @@ offset_bottom = 40.0
 
 [node name="PokC3a9MonCenterInsideRse" type="Sprite2D" parent="."]
 position = Vector2(581, 325.5)
-scale = Vector2(5.17857, 4.53472)
+scale = Vector2(8.6, 7.531)
 texture = ExtResource("2_3lqap")
 
-[node name="Collisions" type="StaticBody2D" parent="."]
+[node name="Collisions" type="StaticBody2D" parent="PokC3a9MonCenterInsideRse"]
+position = Vector2(-112.193, -71.7795)
+scale = Vector2(0.193103, 0.220521)
 
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Collisions"]
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="PokC3a9MonCenterInsideRse/Collisions"]
 polygon = PackedVector2Array(-5, -2, -1, 347, -145, 346, -163, 494, 0, 492, -2, 654, 496, 649, 503, 774, 654, 764, 656, 653, 1072, 649, 1152, 581, 1164, 200, 1080, 99, 928, 106, 909, 150, 819, 150, 813, 250, 780, 252, 348, 244, 334, 134, 139, 134, 87, 127, 10, 170, 20, -2, 78, -83, -20, -79, 147, -132, 1033, -115, 1269, -113, 1276, 208, 1274, 636, 1150, 736, 507, 862, 32, 849, -347, 686, -398, 211, -112, -35)
 
 [node name="scene_transition" type="Area2D" parent="."]
-position = Vector2(-74, 419)
+position = Vector2(-458, 483)
 collision_mask = 6
 script = ExtResource("6_lh087")
-spawn_position = Vector2(2155, 250)
+spawn_position = Vector2(1044, -236.04)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
 shape = SubResource("RectangleShape2D_pai5w")
@@ -40,3 +48,21 @@ shape = SubResource("RectangleShape2D_pai5w")
 visibility_layer = 15
 z_index = 12
 position = Vector2(-6, 0)
+
+[node name="shop_area" type="Area2D" parent="."]
+position = Vector2(584, 224)
+collision_mask = 6
+script = ExtResource("5_d6bt6")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
+shape = SubResource("RectangleShape2D_pai5w")
+
+[node name="Shop" parent="shop_area" instance=ExtResource("6_udfyy")]
+visible = false
+
+[node name="CameraBounds" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
+position = Vector2(580.5, 327.5)
+shape = SubResource("RectangleShape2D_s8jnb")
+disabled = true

@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ub56m1wksmq" path="res://assets/placeholders/char_a_p1/humn.png" id="3_1vvu5"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="4_h72u8"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="5_tvyar"]
-[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="8_p5djc"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="8_p5djc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
 

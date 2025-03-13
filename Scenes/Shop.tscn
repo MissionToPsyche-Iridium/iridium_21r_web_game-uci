@@ -1,0 +1,169 @@
+[gd_scene load_steps=16 format=3 uid="uid://c2340nj07nmny"]
+
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_xynpu"]
+[ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
+[ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
+[ext_resource type="Texture2D" uid="uid://dvh5jupc2onmv" path="res://assets/ui assets/Shop/Ore Icons/Iridium.png" id="4_dqlco"]
+[ext_resource type="Texture2D" uid="uid://bjmualrtvn7yy" path="res://assets/ui assets/Shop/Ore Icons/Bronze.png" id="5_6hhy7"]
+[ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Shop/Ore Icons/Tungsten.png" id="6_6u8y4"]
+[ext_resource type="Texture2D" uid="uid://dk7ytgvawsrig" path="res://assets/ui assets/Shop/Ore Icons/Peridot.png" id="7_ejoro"]
+[ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="9_m4ofs"]
+[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="10_nnql5"]
+[ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="11_ndv4l"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiwan"]
+texture = ExtResource("9_m4ofs")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqcwm"]
+texture = ExtResource("9_m4ofs")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqml8"]
+texture = ExtResource("9_m4ofs")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyhfl"]
+texture = ExtResource("10_nnql5")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_xynpu")
+exit_spawnPos = Vector2(588, 370)
+
+[node name="Background" type="TextureRect" parent="."]
+offset_left = -7.0
+offset_right = 1170.0
+offset_bottom = 648.0
+texture = ExtResource("1_yqrn8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = 32.0
+offset_top = 105.0
+offset_right = 602.0
+offset_bottom = 675.0
+scale = Vector2(0.753023, 0.753023)
+texture = ExtResource("3_b2ucw")
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+offset_left = 577.0
+offset_top = 85.0
+offset_right = 997.0
+offset_bottom = 405.0
+scale = Vector2(1.2024, 1.2024)
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="Iridium" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 40
+text = "Iridium Alloy"
+icon = ExtResource("4_dqlco")
+alignment = 0
+expand_icon = true
+
+[node name="Bronze" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 40
+text = "Bronze Alloy"
+icon = ExtResource("5_6hhy7")
+alignment = 0
+expand_icon = true
+
+[node name="Tungsten" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 40
+text = "Tungsten Carbide"
+icon = ExtResource("6_6u8y4")
+alignment = 0
+expand_icon = true
+
+[node name="Nickel" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 40
+text = "Nickel Composite"
+icon = ExtResource("6_6u8y4")
+alignment = 0
+expand_icon = true
+
+[node name="Peridot" type="Button" parent="PanelContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_qgbva")
+theme_override_font_sizes/font_size = 40
+text = "Peridot"
+icon = ExtResource("7_ejoro")
+alignment = 0
+expand_icon = true
+
+[node name="PanelContainer2" type="PanelContainer" parent="."]
+offset_left = 93.0
+offset_top = 459.0
+offset_right = 418.0
+offset_bottom = 622.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jqcwm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_qgbva")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]I can upgrade your ore
+into super ore
+ in order to build the 
+space station.[/center]"
+
+[node name="Name Label" type="PanelContainer" parent="."]
+offset_left = 178.0
+offset_top = 410.0
+offset_right = 321.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oqml8")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Name Label"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("3_qgbva")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center] Zimbo [center]"
+
+[node name="Buttons v2" type="PanelContainer" parent="."]
+visible = false
+offset_left = 594.0
+offset_top = 106.0
+offset_right = 1045.0
+offset_bottom = 446.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lyhfl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Buttons v2"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="Buttons v2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("11_ndv4l")
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="."]
+offset_left = 962.0
+offset_top = 481.0
+offset_right = 1081.0
+offset_bottom = 507.0
+text = "Exit"

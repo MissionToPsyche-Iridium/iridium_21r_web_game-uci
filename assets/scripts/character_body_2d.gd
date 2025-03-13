@@ -154,4 +154,4 @@ func set_state(new_state: int) -> void:
 			velocity.x = 0
 
 func _calculate_mining_damage(score: float) -> int:
-	return ceil(score * 10) + 10
+	return ceil(pow(score, 2) * 10) + 10
