@@ -1,6 +1,8 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 enum States {IDLE, MOVING, MINING, MINING_PREP}
+
+#class_name Player 
 
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
@@ -146,3 +148,7 @@ func set_state(new_state: int) -> void:
 
 func _calculate_mining_damage(score: float) -> int:
 	return ceil(score * 10) + 10
+
+
+func player():
+	pass
