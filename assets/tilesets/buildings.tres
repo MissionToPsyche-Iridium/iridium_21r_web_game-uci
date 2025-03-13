@@ -1,7 +1,7 @@
 [gd_resource type="TileSet" load_steps=5 format=3 uid="uid://c7vnxkbk216og"]
 
 [ext_resource type="Texture2D" uid="uid://xnyvsyc1gk76" path="res://assets/spritesheets/The Roguelike 1-14-4 Alpha.png" id="1_1sshv"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/ore.tscn" id="2_hk8th"]
+[ext_resource type="PackedScene" uid="uid://ci2ryw8attpye" path="res://assets/prefabs/ore_spawner.tscn" id="3_yogv5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jwru6"]
 texture = ExtResource("1_1sshv")
@@ -1736,7 +1736,7 @@ texture = ExtResource("1_1sshv")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_y2uqy"]
 resource_name = "ores"
-scenes/1/scene = ExtResource("2_hk8th")
+scenes/1/scene = ExtResource("3_yogv5")
 
 [resource]
 physics_layer_0/collision_layer = 1

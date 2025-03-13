@@ -12,6 +12,9 @@ enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
 func _ready() -> void:
 	sprite.frame = ore_type as int
 
+func update_sprite() -> void:
+	sprite.frame = ore_type as int
+
 func on_hit(dmg: int) -> void:
 	print(dmg)
 	hp -= dmg
