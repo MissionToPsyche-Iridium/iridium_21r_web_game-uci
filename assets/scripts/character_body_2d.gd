@@ -1,6 +1,8 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 enum States {IDLE, MOVING, MINING}
+
+#class_name Player 
 
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
@@ -116,3 +118,7 @@ func set_state(new_state: int) -> void:
 			#_text_label.text = "MINING"
 			velocity.y = 0
 			velocity.x = 0
+
+
+func player():
+	pass

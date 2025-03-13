@@ -17,6 +17,7 @@ config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://assets/scripts/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 
 [dialogic]
@@ -54,6 +55,10 @@ choices/reveal_by_input=false
 save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Rachel/school/senior year/winter/inf 191a/iridium_21r_web_game-uci/transition.avi"
 
 [editor_plugins]
 

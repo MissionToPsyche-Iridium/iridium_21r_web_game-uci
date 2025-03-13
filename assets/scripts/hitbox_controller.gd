@@ -33,3 +33,7 @@ func clear_hitbox() -> void:
 	if active_frame:
 		active_frame.queue_free()
 		active_frame = null
+
+
+func player():
+	pass
