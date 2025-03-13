@@ -1,0 +1,58 @@
+[gd_scene load_steps=9 format=3 uid="uid://bkm1s54o7jxqj"]
+
+[ext_resource type="Script" path="res://game_manager.gd" id="1_840n8"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="2_7npvc"]
+[ext_resource type="Script" path="res://assets/scripts/resource_manager.gd" id="3_bmquj"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="4_bygsr"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="5_b7cdw"]
+[ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="6_u0sk2"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mvrku"]
+size = Vector2(309.875, 209.5)
+
+[sub_resource type="Resource" id="Resource_tymo8"]
+script = ExtResource("6_u0sk2")
+duration = 1.0
+transition = 0
+ease = 2
+
+[node name="Main" type="Node2D"]
+script = ExtResource("1_840n8")
+
+[node name="scene_transition1" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 6
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition1"]
+light_mask = 0
+visibility_layer = 0
+position = Vector2(-152.938, 756.25)
+shape = SubResource("RectangleShape2D_mvrku")
+
+[node name="transition_animation" parent="scene_transition1" instance=ExtResource("2_7npvc")]
+visibility_layer = 15
+z_index = 12
+
+[node name="ResourceManager" type="Node2D" parent="."]
+script = ExtResource("3_bmquj")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(0, -183)
+zoom = Vector2(0.6, 0.6)
+
+[node name="PhantomCameraHost" type="Node" parent="Camera2D"]
+process_priority = 300
+process_physics_priority = 300
+script = ExtResource("4_bygsr")
+
+[node name="PhantomCamera2D" type="Node2D" parent="."]
+top_level = true
+position = Vector2(0, -183)
+script = ExtResource("5_b7cdw")
+follow_mode = 5
+zoom = Vector2(0.6, 0.6)
+snap_to_pixel = true
+tween_resource = SubResource("Resource_tymo8")
+dead_zone_width = 0.045
+dead_zone_height = 0.045
+limit_target = NodePath("../CameraBounds/CollisionShape2D")

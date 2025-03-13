@@ -4,4 +4,5 @@ Take-off preparations are now ready. Requesting authorization from user...[pause
 Authorization complete.[pause=1] Initiating launch sequence...[pause=2]
 We will begin take off in 5…[pause=1]4…[pause=1]3…[pause=1]2…[pause=1]1[pause=1]
 Blasting off!
+[signal arg_type="dict" arg="{"scene":"res://scenes/demo.tscn","type":"transition","xPos":0,"yPos":0}"]
 jump arrival_at_psyche/

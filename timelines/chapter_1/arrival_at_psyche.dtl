@@ -1,4 +1,5 @@
 [style name="premade_style"]
+[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":false}"]
 characters/Claire (Neutral): {player_name}, do you copy?[pause=1] How's the landing?
 I’m here. Landing was smooth enough. Psyche’s surface… it’s something else. Feels like I’m standing on raw metal
 characters/Claire: That’s exactly why you’re there. Psyche’s minerals are crucial for building the LUX-7 space station.
@@ -11,3 +12,4 @@ characters/Claire (Unsatisfied): I didn’t want you second-guessing yourself. J
 Yeah, yeah. Safety first. But I’m not leaving without the goods.
 characters/Claire: That’s why I trust you.[pause=1] Alright. Good luck out there, {player_name}. And remember—[pause=0.5]you’re not just gathering minerals. You’re securing humanity’s future.
 No pressure, huh? Alright, I’m on it.
+[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":true}"]

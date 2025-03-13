@@ -403,7 +403,6 @@ vframes = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
 position = Vector2(1.43051e-06, 0.285714)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jdysr")
 script = ExtResource("3_2v7s8")
 

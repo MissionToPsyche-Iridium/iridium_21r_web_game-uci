@@ -1,4 +1,4 @@
-[gd_scene load_steps=31 format=3 uid="uid://nfgd7lbiea3d"]
+[gd_scene load_steps=31 format=3 uid="uid://b3s3mv0yoksjk"]
 
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_dse8y"]
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="2_faxfw"]
