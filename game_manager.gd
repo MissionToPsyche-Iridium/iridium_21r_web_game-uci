@@ -16,7 +16,7 @@ var player_instance: Player = null
 func _ready() -> void:
 	instance = self
 	randomize()
-	camera.follow_target = self
+	camera.set_follow_target(self)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
 	change_scene(startScene)
 
