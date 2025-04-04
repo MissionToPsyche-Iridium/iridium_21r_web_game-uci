@@ -1,4 +1,7 @@
 class_name GameManager extends Node2D
+# The GameManager is a singleton class that manages the game state.
+#	It's responsible for spawning the player, instantiating world scenes, transitioning between scenes,
+#	and linking up all of the appropriate references when instantiating game objects.
 
 @onready var Scene_transition_animation = $transition_animation/AnimationPlayer
 @onready var resource_manager: ResourceManager = $ResourceManager
