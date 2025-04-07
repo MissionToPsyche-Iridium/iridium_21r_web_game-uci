@@ -1,6 +1,8 @@
-extends CharacterBody2D
+class_name Player extends CharacterBody2D
 
 enum States {IDLE, MOVING, MINING, MINING_PREP}
+
+#class_name Player 
 
 @export var SPEED = 600.0
 const JUMP_VELOCITY = -400.0
@@ -12,6 +14,7 @@ const JUMP_VELOCITY = -400.0
 #@onready var _text_label = $Container/RichTextLabel
 
 var state = States.IDLE
+var actionable = true
 
 func _ready() -> void:
 	_animation_player.play('idle_down')
@@ -26,6 +29,11 @@ func _physics_process(_delta: float) -> void:
 		#velocity.y = JUMP_VELOCITY
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
+	if (actionable):
+		move_player()
+
+
+func move_player() -> void:
 	var y_input := Input.get_axis("ui_up", "ui_down")
 	var x_input := Input.get_axis("ui_left", "ui_right")
 	var factor = sqrt(y_input**2 + x_input**2) # Normalize diagonal movement
@@ -75,10 +83,11 @@ func _physics_process(_delta: float) -> void:
 	move_and_slide()
 
 func _input(event) -> void:
-	if event.is_action_pressed("ui_accept"):
-		begin_mine()
-	if event.is_action_released("ui_accept"):
-		end_mine()
+	if (actionable):
+		if event.is_action_pressed("ui_accept"):
+			begin_mine()
+		if event.is_action_released("ui_accept"):
+			end_mine()
 
 func begin_mine() -> void:
 	match state:
@@ -145,4 +154,4 @@ func set_state(new_state: int) -> void:
 			velocity.x = 0
 
 func _calculate_mining_damage(score: float) -> int:
-	return ceil(score * 10) + 10
+	return ceil(pow(score, 2) * 10) + 10

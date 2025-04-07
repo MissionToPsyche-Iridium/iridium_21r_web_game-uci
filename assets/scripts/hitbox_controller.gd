@@ -48,3 +48,7 @@ func clear_hitbox() -> void:
 		active_frame.body_entered.disconnect(_on_hitbox_enter)
 		active_frame.queue_free()
 		active_frame = null
+
+
+func player():
+	pass
