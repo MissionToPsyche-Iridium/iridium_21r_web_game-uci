@@ -1,6 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://cna8v25chvhjf"]
+[gd_scene load_steps=16 format=3 uid="uid://c2340nj07nmny"]
 
-[ext_resource type="Script" path="res://Scenes/shop.gd" id="1_skgpi"]
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_xynpu"]
 [ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
 [ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
@@ -36,21 +36,11 @@ expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 
-[node name="Shop" type="Control"]
-layout_mode = 3
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = 8.0
-offset_top = 2.0
-offset_right = 8.0
-offset_bottom = 2.0
-grow_horizontal = 2
-grow_vertical = 2
-script = ExtResource("1_skgpi")
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_xynpu")
+exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = -7.0
 offset_right = 1170.0
 offset_bottom = 648.0
@@ -59,7 +49,6 @@ expand_mode = 2
 stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="."]
-layout_mode = 0
 offset_left = 32.0
 offset_top = 105.0
 offset_right = 602.0
@@ -68,7 +57,6 @@ scale = Vector2(0.753023, 0.753023)
 texture = ExtResource("3_b2ucw")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-layout_mode = 0
 offset_left = 577.0
 offset_top = 85.0
 offset_right = 997.0
@@ -126,7 +114,6 @@ alignment = 0
 expand_icon = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
-layout_mode = 0
 offset_left = 93.0
 offset_top = 459.0
 offset_right = 418.0
@@ -144,7 +131,6 @@ into super ore
 space station.[/center]"
 
 [node name="Name Label" type="PanelContainer" parent="."]
-layout_mode = 0
 offset_left = 178.0
 offset_top = 410.0
 offset_right = 321.0
@@ -160,7 +146,6 @@ text = "[center] Zimbo [center]"
 
 [node name="Buttons v2" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 0
 offset_left = 594.0
 offset_top = 106.0
 offset_right = 1045.0
@@ -177,7 +162,6 @@ texture_normal = ExtResource("11_ndv4l")
 stretch_mode = 0
 
 [node name="Button" type="Button" parent="."]
-layout_mode = 0
 offset_left = 962.0
 offset_top = 481.0
 offset_right = 1081.0

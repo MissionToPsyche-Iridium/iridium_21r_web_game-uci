@@ -1,4 +1,4 @@
-extends Control
+class_name Shop extends CanvasLayer
 
 #@onready var Scene_transition_animation = $scene_transition1/transition_animation/AnimationPlayer
 
@@ -12,6 +12,9 @@ extends Control
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
+@export var exit_scene: String = "res://scenes/demo_indoor.tscn"
+@export var exit_spawnPos: Vector2 = Vector2(588, 350)
+
 var purchase_delay: float = 1.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
@@ -21,6 +24,8 @@ var default_text: String = "[center]I can upgrade your ore into super ore in ord
 var exit_delay: float = 1.5
 var _exit_timer: float = 0.0
 var exit: bool = false
+
+signal exited
 
 
 # Called when the node enters the scene tree for the first time.
@@ -66,6 +71,7 @@ func on_purchase():
 func on_exit():
 	exit = true
 	_exit_timer = 0	
+	exited.emit()
 # func on_leaving():
 #	Scene_transition_animation.play("fade_in")
 #	await get_tree().create_timer(.5).timeout

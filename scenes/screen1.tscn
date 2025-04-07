@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://dn63w1w6rsvmc"]
+[gd_scene load_steps=24 format=4 uid="uid://c8q0apo0f5pof"]
 
 [ext_resource type="Script" path="res://assets/scripts/screen_1.gd" id="1_5p84s"]
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_6np67"]
@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://c1ub56m1wksmq" path="res://assets/placeholders/char_a_p1/humn.png" id="3_1vvu5"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="4_h72u8"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="5_tvyar"]
-[ext_resource type="PackedScene" uid="uid://b77y7dvyw6bw5" path="res://Scenes/transition_animation.tscn" id="8_p5djc"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="8_p5djc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://chs2rkexfkf6k"]
+[gd_scene load_steps=7 format=3 uid="uid://ds00arcdwu22l"]
 
 [ext_resource type="Script" path="res://assets/scripts/ore.gd" id="1_m42bm"]
 [ext_resource type="Texture2D" uid="uid://cy3kxma3navac" path="res://assets/spritesheets/Roguelike-ores.png" id="2_v5bvy"]
@@ -43,7 +43,7 @@ _data = {
 }
 
 [node name="Ore" type="StaticBody2D"]
-z_index = 4
+z_index = 2
 position = Vector2(0, 1)
 script = ExtResource("1_m42bm")
 
