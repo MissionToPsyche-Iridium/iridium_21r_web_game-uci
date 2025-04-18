@@ -1,12 +1,23 @@
-[gd_scene load_steps=10 format=4 uid="uid://svxdlfnl0uc3"]
+[gd_scene load_steps=21 format=4 uid="uid://cnvj6djoi7wel"]
 
 [ext_resource type="Script" path="res://assets/scripts/resource_manager.gd" id="1_3yj38"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_iwko2"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_7q85u"]
-[ext_resource type="PackedScene" uid="uid://b3s3mv0yoksjk" path="res://assets/prefabs/player.tscn" id="4_4sqgq"]
+[ext_resource type="PackedScene" uid="uid://nfgd7lbiea3d" path="res://assets/prefabs/player.tscn" id="4_4sqgq"]
+[ext_resource type="Script" path="res://HUD.gd" id="5_od7n1"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_tck27"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_80udq"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_u2utf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_3x2as"]
+[ext_resource type="Texture2D" uid="uid://c2kp3c6ukdu6h" path="res://assets/HUD/Left Click.png" id="7_sioeh"]
+[ext_resource type="Texture2D" uid="uid://btic8a45gblmx" path="res://assets/HUD/computer.png" id="8_6xrx8"]
+[ext_resource type="Texture2D" uid="uid://3mln5aiv0rkh" path="res://assets/HUD/E.png" id="8_x8mw6"]
+[ext_resource type="Texture2D" uid="uid://bfoncg5vit6rp" path="res://assets/HUD/Irridium.png" id="9_whcsh"]
+[ext_resource type="Texture2D" uid="uid://ppc65vjq1nva" path="res://assets/HUD/Copper.png" id="11_xu2si"]
+[ext_resource type="Texture2D" uid="uid://bcgd8sd5gjhtb" path="res://assets/HUD/Tungsten.png" id="12_u470j"]
+[ext_resource type="Texture2D" uid="uid://ck4nfko8utgga" path="res://assets/HUD/Silver.png" id="13_aamtg"]
+[ext_resource type="Texture2D" uid="uid://x0vqc1amddvo" path="res://assets/HUD/Peridot.png" id="14_ugx6c"]
+[ext_resource type="Texture2D" uid="uid://bbef6cyaydees" path="res://assets/HUD/Inventory/Rectangle.png" id="15_tk4jd"]
 
 [sub_resource type="Resource" id="Resource_sw8sv"]
 script = ExtResource("7_3x2as")
@@ -47,13 +58,274 @@ tile_set = ExtResource("3_7q85u")
 
 [node name="CharacterBody2D" parent="." instance=ExtResource("4_4sqgq")]
 
+[node name="CanvasLayer" type="CanvasLayer" parent="CharacterBody2D"]
+script = ExtResource("5_od7n1")
+
+[node name="Control" type="Control" parent="CharacterBody2D/CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 77.0
+texture = ExtResource("8_6xrx8")
+
+[node name="LeftClick" type="TextureButton" parent="CharacterBody2D/CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 520.0
+offset_right = 1139.0
+offset_bottom = 636.0
+texture_normal = ExtResource("7_sioeh")
+
+[node name="Inventory" type="TextureButton" parent="CharacterBody2D/CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 520.0
+offset_right = 1030.0
+offset_bottom = 637.0
+texture_normal = ExtResource("8_x8mw6")
+
+[node name="GridContainer" type="GridContainer" parent="CharacterBody2D/CanvasLayer/Control"]
+layout_mode = 2
+offset_left = 1036.0
+offset_top = 151.0
+offset_right = 1136.0
+offset_bottom = 450.0
+columns = 2
+
+[node name="Irridium" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+texture = ExtResource("9_whcsh")
+
+[node name="LabelIrridium" type="Label" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Copper" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+texture = ExtResource("11_xu2si")
+
+[node name="LabelCopper" type="Label" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Tungsten" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+texture = ExtResource("12_u470j")
+
+[node name="LabelTungsten" type="Label" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Silver" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+texture = ExtResource("13_aamtg")
+
+[node name="LabelSilver" type="Label" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Peridot" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+texture = ExtResource("14_ugx6c")
+
+[node name="LabelPeridot" type="Label" parent="CharacterBody2D/CanvasLayer/Control/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="TextureButton" type="TextureButton" parent="CharacterBody2D/CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="InventoryExpanded" type="TextureRect" parent="CharacterBody2D/CanvasLayer"]
+offset_left = 730.0
+offset_top = 12.0
+offset_right = 1030.0
+offset_bottom = 637.0
+texture = ExtResource("15_tk4jd")
+
+[node name="InventoryTxt" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded"]
+layout_mode = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 285.0
+offset_bottom = 58.0
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Irridium7" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded"]
+z_index = 1
+layout_mode = 2
+offset_left = 17.0
+offset_top = 332.0
+offset_right = 284.0
+offset_bottom = 366.0
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "------------------"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="GridContainer" type="GridContainer" parent="CharacterBody2D/CanvasLayer/InventoryExpanded"]
+layout_mode = 0
+offset_left = 26.0
+offset_top = 53.0
+offset_right = 284.0
+offset_bottom = 336.0
+columns = 3
+
+[node name="Irridium" type="TextureRect" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("9_whcsh")
+stretch_mode = 2
+
+[node name="LabelIrridium" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Irridium2" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+z_index = 1
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Irridium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Copper" type="TextureRect" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("11_xu2si")
+
+[node name="LabelCopper" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Irridium3" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Copper"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tungsten" type="TextureRect" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("12_u470j")
+
+[node name="LabelTungsten" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Irridium4" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Tungsten"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Silver" type="TextureRect" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("13_aamtg")
+
+[node name="LabelSilver" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Irridium5" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Silver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Peridot" type="TextureRect" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("14_ugx6c")
+
+[node name="LabelPeridot" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="Irridium6" type="Label" parent="CharacterBody2D/CanvasLayer/InventoryExpanded/GridContainer"]
+z_index = 1
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_u2utf")
+theme_override_font_sizes/font_size = 30
+text = "Periodot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
+position = Vector2(0, -183)
 zoom = Vector2(0.6, 0.6)
 limit_left = -2902
-limit_top = -1951
+limit_top = -1970
 limit_right = 4674
-limit_bottom = 1714
+limit_bottom = 1696
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -62,6 +334,7 @@ script = ExtResource("5_tck27")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
+position = Vector2(0, -183)
 script = ExtResource("6_80udq")
 follow_mode = 5
 follow_target = NodePath("../CharacterBody2D")
@@ -75,6 +348,6 @@ limit_target = NodePath("../CameraBounds/CollisionShape2D")
 [node name="CameraBounds" type="Area2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
-position = Vector2(886, -118.5)
+position = Vector2(886, -137)
 shape = SubResource("RectangleShape2D_g04t6")
 disabled = true
