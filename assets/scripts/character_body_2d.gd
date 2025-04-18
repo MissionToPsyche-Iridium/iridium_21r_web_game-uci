@@ -31,6 +31,9 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if (actionable):
 		move_player()
+	else:
+		velocity = Vector2.ZERO
+	move_and_slide()
 
 
 func move_player() -> void:
@@ -80,7 +83,7 @@ func move_player() -> void:
 			#"move_down":
 				#_animated_sprite.play("idle_down")
 
-	move_and_slide()
+	
 
 func _input(event) -> void:
 	if (actionable):
