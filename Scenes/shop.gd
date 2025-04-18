@@ -3,13 +3,10 @@ class_name Shop extends CanvasLayer
 #@onready var Scene_transition_animation = $scene_transition1/transition_animation/AnimationPlayer
 
 #Create button
-@onready var iridium_button = $PanelContainer/VBoxContainer/Iridium
-@onready var bronze_button = $PanelContainer/VBoxContainer/Bronze
-@onready var tungsten_button = $PanelContainer/VBoxContainer/Tungsten
-@onready var peridot_button = $PanelContainer/VBoxContainer/Peridot
-@onready var nickel_button = $PanelContainer/VBoxContainer/Nickel
+@onready var buttonContainer: VBoxContainer = $PanelContainer/VBoxContainer
 @onready var exit_button = $Button
 @export var buttons: Array[ShopButton]
+const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.tscn")
 
 # Transaction data: all of these must be the same length as buttons
 @export var transactionTypes: Array[ResourceManager.ItemTypes]
@@ -37,8 +34,7 @@ signal exited
 func _validate_transactions() -> void:
 	assert (len(transactionTypes) == len(transactionQuantities) &&
 			len(transactionQuantities) == len(transactionCostTypes) &&
-			len(transactionCostTypes) == len(transactionCostQuantities) &&
-			len(buttons) == len(transactionCostQuantities))
+			len(transactionCostTypes) == len(transactionCostQuantities))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -71,8 +67,10 @@ func leaving_popup():
 	exit = true
 
 func _setup_buttons() -> void:
-	for i in range(0, len(buttons)):
-		var button: ShopButton = buttons[i]
+	for i in range(0, len(transactionTypes)):
+		var button: ShopButton = buttonPrefab.instantiate()
+		buttonContainer.add_child(button)
+		buttons.append(button)
 		var itemType = transactionTypes[i]
 		var itemQuantity = transactionQuantities[i]
 		var costType = transactionCostTypes[i]
@@ -85,6 +83,7 @@ func _setup_buttons() -> void:
 		button.text = ResourceManager.itemStrings[itemType]
 		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
 		button.costQuantity.text = "[right]x%s" % costQuantity
+	print(len(buttons))
 	
 
 func attempt_purchase(index: int) -> void:
