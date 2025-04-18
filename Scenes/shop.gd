@@ -3,6 +3,7 @@ class_name Shop extends CanvasLayer
 #@onready var Scene_transition_animation = $scene_transition1/transition_animation/AnimationPlayer
 
 #Create button
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var buttonContainer: VBoxContainer = $PanelContainer/VBoxContainer
 @onready var exit_button = $Button
 @export var buttons: Array[ShopButton]
@@ -44,6 +45,7 @@ func _ready() -> void:
 	_purchase_timer = 0
 	purchased = false
 	exit = false
+	exit_button.button_down.connect(on_exit_press)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -52,12 +54,18 @@ func _process(delta: float) -> void:
 		_purchase_timer += delta
 		if _purchase_timer > purchase_delay:
 			anything_else_popup()
-	if(exit):
-		_exit_timer += delta
-		if _exit_timer > exit_delay:
-			leaving_popup()
-			
-		
+	#if(exit):
+		#_exit_timer += delta
+		#if _exit_timer > exit_delay:
+			#leaving_popup()
+
+func enter_animation() -> void:
+	animationPlayer.play("Enter")
+	dialogue_box.text=default_text
+
+func exit_animation() -> void:
+	animationPlayer.play("Exit")
+
 func anything_else_popup():
 	dialogue_box.text="[center]Anything else I can get for you?[/center]"
 	purchased = false
@@ -107,9 +115,10 @@ func on_purchase():
 	_purchase_timer = 0
 	
 func on_exit():
-	exit = true
+	leaving_popup()
 	_exit_timer = 0	
 	exited.emit()
+	exit_animation()
 # func on_leaving():
 #	Scene_transition_animation.play("fade_in")
 #	await get_tree().create_timer(.5).timeout

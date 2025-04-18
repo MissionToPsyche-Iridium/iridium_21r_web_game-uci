@@ -11,10 +11,10 @@ func _ready() -> void:
 
 func _on_enter(_body: Node2D) -> void:
 	shop.visible = true
+	shop.enter_animation()
 	GameManager.instance.set_player_actionable(false)
 
 func _on_exit() -> void:
-	shop.visible = false
 	GameManager.instance.set_player_actionable(true)
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
