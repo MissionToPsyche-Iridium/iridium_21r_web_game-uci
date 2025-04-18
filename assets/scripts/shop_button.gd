@@ -1,5 +1,6 @@
 class_name ShopButton extends Button
 
+@onready var itemQuantity: RichTextLabel = $ItemQuantity
 @onready var costIcon: TextureRect = $Cost/CostIcon
 @onready var costQuantity: RichTextLabel = $Cost/CostQuantity
 

@@ -60,3 +60,15 @@ theme_override_fonts/normal_font = ExtResource("1_eg314")
 bbcode_enabled = true
 text = "[right]x2"
 text_direction = 1
+
+[node name="ItemQuantity" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 38.0
+offset_top = -18.0
+offset_right = 78.0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_eg314")
+text = "x1"
