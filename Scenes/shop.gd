@@ -22,7 +22,7 @@ class_name Shop extends CanvasLayer
 @export var exit_scene: String = "res://scenes/demo_indoor.tscn"
 @export var exit_spawnPos: Vector2 = Vector2(588, 350)
 
-var purchase_delay: float = 1.0
+var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
@@ -74,20 +74,34 @@ func _setup_buttons() -> void:
 	for i in range(0, len(buttons)):
 		var button: ShopButton = buttons[i]
 		var itemType = transactionTypes[i]
+		var itemQuantity = transactionQuantities[i]
 		var costType = transactionCostTypes[i]
 		var costQuantity = transactionCostQuantities[i]
 		var lambda = func() -> void:
 			attempt_purchase(i)
 		button.button_down.connect(lambda)
 		button.icon = load(ResourceManager.itemIcons[itemType])
+		button.itemQuantity.text = "x%s" % itemQuantity
 		button.text = ResourceManager.itemStrings[itemType]
 		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
 		button.costQuantity.text = "[right]x%s" % costQuantity
 	
 
 func attempt_purchase(index: int) -> void:
+	var playerInventory = ResourceManager.instance
 	print("purchasing: %s" % index)
+	var itemType = transactionTypes[index]
+	var itemQuantity = transactionQuantities[index]
+	var costType = transactionCostTypes[index]
+	var costQuantity = transactionCostQuantities[index]
 	
+	if playerInventory != null and playerInventory.has_amount(costType, costQuantity):
+		playerInventory.remove_from_inventory(costType, costQuantity)
+		playerInventory.add_to_inventory(itemType, itemQuantity)
+		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[costType]
+	else:
+		dialogue_box.text="[center]Sorry Link, I don't give credit! Come back when you're a little--mmm...--richer![/center]"
+	on_purchase()
 
 func on_purchase():
 	purchased = true
