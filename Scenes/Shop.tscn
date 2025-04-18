@@ -1,13 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2340nj07nmny"]
+[gd_scene load_steps=13 format=3 uid="uid://c2340nj07nmny"]
 
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_xynpu"]
 [ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
 [ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
-[ext_resource type="Texture2D" uid="uid://dvh5jupc2onmv" path="res://assets/ui assets/Shop/Ore Icons/Iridium.png" id="4_dqlco"]
-[ext_resource type="Texture2D" uid="uid://bjmualrtvn7yy" path="res://assets/ui assets/Shop/Ore Icons/Bronze.png" id="5_6hhy7"]
-[ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Shop/Ore Icons/Tungsten.png" id="6_6u8y4"]
-[ext_resource type="Texture2D" uid="uid://dk7ytgvawsrig" path="res://assets/ui assets/Shop/Ore Icons/Peridot.png" id="7_ejoro"]
+[ext_resource type="PackedScene" uid="uid://d037jrhrcsiie" path="res://assets/prefabs/shop/shop_button.tscn" id="5_i3o08"]
 [ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="9_m4ofs"]
 [ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="10_nnql5"]
 [ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="11_ndv4l"]
@@ -36,8 +33,13 @@ expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 
-[node name="Shop" type="CanvasLayer"]
+[node name="Shop" type="CanvasLayer" node_paths=PackedStringArray("buttons")]
 script = ExtResource("1_xynpu")
+buttons = [NodePath("PanelContainer/VBoxContainer/Button0"), NodePath("PanelContainer/VBoxContainer/Button1"), NodePath("PanelContainer/VBoxContainer/Button2"), NodePath("PanelContainer/VBoxContainer/Button3"), NodePath("PanelContainer/VBoxContainer/Button4")]
+transactionTypes = Array[int]([4, 3, 2, 1, 0])
+transactionQuantities = Array[int]([1, 1, 3, 5, 5])
+transactionCostTypes = Array[int]([3, 2, 1, 0, 0])
+transactionCostQuantities = Array[int]([5, 3, 5, 6, 1])
 exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
@@ -68,50 +70,20 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
 layout_mode = 2
 theme_override_constants/separation = 5
 
-[node name="Iridium" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button0" parent="PanelContainer/VBoxContainer" instance=ExtResource("5_i3o08")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_qgbva")
-theme_override_font_sizes/font_size = 40
-text = "Iridium Alloy"
-icon = ExtResource("4_dqlco")
-alignment = 0
-expand_icon = true
 
-[node name="Bronze" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button1" parent="PanelContainer/VBoxContainer" instance=ExtResource("5_i3o08")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_qgbva")
-theme_override_font_sizes/font_size = 40
-text = "Bronze Alloy"
-icon = ExtResource("5_6hhy7")
-alignment = 0
-expand_icon = true
 
-[node name="Tungsten" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button2" parent="PanelContainer/VBoxContainer" instance=ExtResource("5_i3o08")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_qgbva")
-theme_override_font_sizes/font_size = 40
-text = "Tungsten Carbide"
-icon = ExtResource("6_6u8y4")
-alignment = 0
-expand_icon = true
 
-[node name="Nickel" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button3" parent="PanelContainer/VBoxContainer" instance=ExtResource("5_i3o08")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_qgbva")
-theme_override_font_sizes/font_size = 40
-text = "Nickel Composite"
-icon = ExtResource("6_6u8y4")
-alignment = 0
-expand_icon = true
 
-[node name="Peridot" type="Button" parent="PanelContainer/VBoxContainer"]
+[node name="Button4" parent="PanelContainer/VBoxContainer" instance=ExtResource("5_i3o08")]
 layout_mode = 2
-theme_override_fonts/font = ExtResource("3_qgbva")
-theme_override_font_sizes/font_size = 40
-text = "Peridot"
-icon = ExtResource("7_ejoro")
-alignment = 0
-expand_icon = true
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
 offset_left = 93.0

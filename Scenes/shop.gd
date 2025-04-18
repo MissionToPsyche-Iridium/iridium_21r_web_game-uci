@@ -9,6 +9,13 @@ class_name Shop extends CanvasLayer
 @onready var peridot_button = $PanelContainer/VBoxContainer/Peridot
 @onready var nickel_button = $PanelContainer/VBoxContainer/Nickel
 @onready var exit_button = $Button
+@export var buttons: Array[ShopButton]
+
+# Transaction data: all of these must be the same length as buttons
+@export var transactionTypes: Array[ResourceManager.ItemTypes]
+@export var transactionQuantities: Array[int]
+@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
+@export var transactionCostQuantities: Array[int]
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
@@ -27,20 +34,20 @@ var exit: bool = false
 
 signal exited
 
+func _validate_transactions() -> void:
+	assert (len(transactionTypes) == len(transactionQuantities) &&
+			len(transactionQuantities) == len(transactionCostTypes) &&
+			len(transactionCostTypes) == len(transactionCostQuantities) &&
+			len(buttons) == len(transactionCostQuantities))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create button's listeners
+	_validate_transactions()
+	_setup_buttons()
 	_purchase_timer = 0
 	purchased = false
 	exit = false
-	iridium_button.button_down.connect(on_iri_press)
-	bronze_button.button_down.connect(on_bron_press)
-	tungsten_button.button_down.connect(on_tung_press)
-	peridot_button.button_down.connect(on_peri_press)
-	nickel_button.button_down.connect(on_ni_press)
-	exit_button.button_down.connect(on_exit_press)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -62,6 +69,24 @@ func anything_else_popup():
 func leaving_popup():
 	dialogue_box.text=("[center]See you later![/center]")
 	exit = true
+
+func _setup_buttons() -> void:
+	for i in range(0, len(buttons)):
+		var button: ShopButton = buttons[i]
+		var itemType = transactionTypes[i]
+		var costType = transactionCostTypes[i]
+		var costQuantity = transactionCostQuantities[i]
+		var lambda = func() -> void:
+			attempt_purchase(i)
+		button.button_down.connect(lambda)
+		button.icon = load(ResourceManager.itemIcons[itemType])
+		button.text = ResourceManager.itemStrings[itemType]
+		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+		button.costQuantity.text = "[right]x%s" % costQuantity
+	
+
+func attempt_purchase(index: int) -> void:
+	print("purchasing: %s" % index)
 	
 
 func on_purchase():

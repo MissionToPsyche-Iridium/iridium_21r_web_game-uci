@@ -1,0 +1,62 @@
+[gd_scene load_steps=5 format=3 uid="uid://d037jrhrcsiie"]
+
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="1_eg314"]
+[ext_resource type="Texture2D" uid="uid://dvh5jupc2onmv" path="res://assets/ui assets/Shop/Ore Icons/Iridium.png" id="2_rvk13"]
+[ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Shop/Ore Icons/Tungsten.png" id="3_hbq5x"]
+[ext_resource type="Script" path="res://assets/scripts/shop_button.gd" id="3_oqfgw"]
+
+[node name="ShopButton" type="Button"]
+offset_right = 299.0
+offset_bottom = 52.0
+theme_override_fonts/font = ExtResource("1_eg314")
+theme_override_font_sizes/font_size = 40
+text = "Iridium Alloy"
+icon = ExtResource("2_rvk13")
+alignment = 0
+expand_icon = true
+script = ExtResource("3_oqfgw")
+
+[node name="Cost" type="Control" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="CostIcon" type="TextureRect" parent="Cost"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.5165
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("3_hbq5x")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CostQuantity" type="RichTextLabel" parent="Cost"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -19.0
+offset_right = -22.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("1_eg314")
+bbcode_enabled = true
+text = "[right]x2"
+text_direction = 1
