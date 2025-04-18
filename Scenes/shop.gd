@@ -116,6 +116,7 @@ func on_purchase():
 	
 func on_exit():
 	leaving_popup()
+	purchased = false
 	_exit_timer = 0	
 	exited.emit()
 	exit_animation()
