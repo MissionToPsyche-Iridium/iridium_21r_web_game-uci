@@ -14,6 +14,13 @@ const itemStrings:Array = [
 	"Tungsten Ore",
 	"Iridium Ore"
 ]
+const itemIcons:Array = [
+	"res://assets/ui assets/Shop/Ore Icons/Bronze.png",
+	"res://assets/ui assets/Shop/Ore Icons/Nickel.png",
+	"res://assets/ui assets/Shop/Ore Icons/Peridot.png", #change this later
+	"res://assets/ui assets/Shop/Ore Icons/Tungsten.png",
+	"res://assets/ui assets/Shop/Ore Icons/Iridium.png"
+]
 
 static var instance:ResourceManager = null
 var inventory:Array = []

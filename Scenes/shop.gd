@@ -3,19 +3,24 @@ class_name Shop extends CanvasLayer
 #@onready var Scene_transition_animation = $scene_transition1/transition_animation/AnimationPlayer
 
 #Create button
-@onready var iridium_button = $PanelContainer/VBoxContainer/Iridium
-@onready var bronze_button = $PanelContainer/VBoxContainer/Bronze
-@onready var tungsten_button = $PanelContainer/VBoxContainer/Tungsten
-@onready var peridot_button = $PanelContainer/VBoxContainer/Peridot
-@onready var nickel_button = $PanelContainer/VBoxContainer/Nickel
+@onready var animationPlayer: AnimationPlayer = $AnimationPlayer
+@onready var buttonContainer: VBoxContainer = $PanelContainer/VBoxContainer
 @onready var exit_button = $Button
+@export var buttons: Array[ShopButton]
+const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.tscn")
+
+# Transaction data: all of these must be the same length as buttons
+@export var transactionTypes: Array[ResourceManager.ItemTypes]
+@export var transactionQuantities: Array[int]
+@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
+@export var transactionCostQuantities: Array[int]
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
 @export var exit_scene: String = "res://scenes/demo_indoor.tscn"
 @export var exit_spawnPos: Vector2 = Vector2(588, 350)
 
-var purchase_delay: float = 1.0
+var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
@@ -27,20 +32,20 @@ var exit: bool = false
 
 signal exited
 
+func _validate_transactions() -> void:
+	assert (len(transactionTypes) == len(transactionQuantities) &&
+			len(transactionQuantities) == len(transactionCostTypes) &&
+			len(transactionCostTypes) == len(transactionCostQuantities))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create button's listeners
+	_validate_transactions()
+	_setup_buttons()
 	_purchase_timer = 0
 	purchased = false
 	exit = false
-	iridium_button.button_down.connect(on_iri_press)
-	bronze_button.button_down.connect(on_bron_press)
-	tungsten_button.button_down.connect(on_tung_press)
-	peridot_button.button_down.connect(on_peri_press)
-	nickel_button.button_down.connect(on_ni_press)
 	exit_button.button_down.connect(on_exit_press)
-	
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -49,12 +54,18 @@ func _process(delta: float) -> void:
 		_purchase_timer += delta
 		if _purchase_timer > purchase_delay:
 			anything_else_popup()
-	if(exit):
-		_exit_timer += delta
-		if _exit_timer > exit_delay:
-			leaving_popup()
-			
-		
+	#if(exit):
+		#_exit_timer += delta
+		#if _exit_timer > exit_delay:
+			#leaving_popup()
+
+func enter_animation() -> void:
+	animationPlayer.play("Enter")
+	dialogue_box.text=default_text
+
+func exit_animation() -> void:
+	animationPlayer.play("Exit")
+
 func anything_else_popup():
 	dialogue_box.text="[center]Anything else I can get for you?[/center]"
 	purchased = false
@@ -62,16 +73,53 @@ func anything_else_popup():
 func leaving_popup():
 	dialogue_box.text=("[center]See you later![/center]")
 	exit = true
+
+func _setup_buttons() -> void:
+	for i in range(0, len(transactionTypes)):
+		var button: ShopButton = buttonPrefab.instantiate()
+		buttonContainer.add_child(button)
+		buttons.append(button)
+		var itemType = transactionTypes[i]
+		var itemQuantity = transactionQuantities[i]
+		var costType = transactionCostTypes[i]
+		var costQuantity = transactionCostQuantities[i]
+		var lambda = func() -> void:
+			attempt_purchase(i)
+		button.button_down.connect(lambda)
+		button.icon = load(ResourceManager.itemIcons[itemType])
+		button.itemQuantity.text = "x%s" % itemQuantity
+		button.text = ResourceManager.itemStrings[itemType]
+		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+		button.costQuantity.text = "[right]x%s" % costQuantity
+	print(len(buttons))
 	
+
+func attempt_purchase(index: int) -> void:
+	var playerInventory = ResourceManager.instance
+	print("purchasing: %s" % index)
+	var itemType = transactionTypes[index]
+	var itemQuantity = transactionQuantities[index]
+	var costType = transactionCostTypes[index]
+	var costQuantity = transactionCostQuantities[index]
+	
+	if playerInventory != null and playerInventory.has_amount(costType, costQuantity):
+		playerInventory.remove_from_inventory(costType, costQuantity)
+		playerInventory.add_to_inventory(itemType, itemQuantity)
+		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[costType]
+	else:
+		dialogue_box.text="[center]Sorry Link, I don't give credit! Come back when you're a little--mmm...--richer![/center]"
+	on_purchase()
 
 func on_purchase():
 	purchased = true
 	_purchase_timer = 0
 	
 func on_exit():
-	exit = true
+	leaving_popup()
+	purchased = false
 	_exit_timer = 0	
 	exited.emit()
+	exit_animation()
 # func on_leaving():
 #	Scene_transition_animation.play("fade_in")
 #	await get_tree().create_timer(.5).timeout
