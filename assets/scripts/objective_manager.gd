@@ -12,10 +12,10 @@ static var instance: ObjectiveManager
 #}
 
 @export var questList: Array[Quest]
-@onready var titleText: RichTextLabel = $QuestUI/Title
-@onready var descriptionText: RichTextLabel = $QuestUI/Description
-@onready var progressText: RichTextLabel = $QuestUI/Progress
-@onready var progressBar: ProgressBar = $QuestUI/ProgressBar
+@onready var titleText: RichTextLabel = $CanvasLayer/QuestUI/Title
+@onready var descriptionText: RichTextLabel = $CanvasLayer/QuestUI/Description
+@onready var progressText: RichTextLabel = $CanvasLayer/QuestUI/Progress
+@onready var progressBar: ProgressBar = $CanvasLayer/QuestUI/ProgressBar
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
 var currentQuestId: int = 0
@@ -38,7 +38,7 @@ var areaId: int = -1
 var interactionId: int = -1
 
 # shop objective
-var shopId: int = -1
+var shopId: Shop.ShopId = Shop.ShopId.NONE
 var purchaseId: int = -1
 
 """
@@ -113,7 +113,8 @@ func set_quest(id: int) -> void:
 
 func next_objective() -> void:
 	clear_objective()
-	set_quest(currentQuestId + 1)
+	if (currentQuestId < len(questList) - 1):
+		set_quest(currentQuestId + 1)
 	
 
 func complete_objective() -> void:
@@ -132,7 +133,7 @@ func clear_objective() -> void:
 		Quest.QuestType.INTERACTION:
 			interactionId = -1
 		Quest.QuestType.PURCHASE:
-			shopId = -1
+			shopId = Shop.ShopId.NONE
 			purchaseId = -1
 	currentType = Quest.QuestType.NONE
 

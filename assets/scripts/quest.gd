@@ -27,7 +27,7 @@ enum QuestType {
 @export var interactionId: int = -1
 
 # shop objective
-@export var shopId: int = -1
+@export var shopId: Shop.ShopId = Shop.ShopId.NONE
 @export var purchaseId: int = -1
 
 
