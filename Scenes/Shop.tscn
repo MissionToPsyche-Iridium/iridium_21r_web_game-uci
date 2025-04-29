@@ -446,6 +446,7 @@ _data = {
 
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_xynpu")
+shopId = 2
 transactionTypes = Array[int]([4, 3, 2, 1, 0])
 transactionQuantities = Array[int]([1, 1, 3, 5, 5])
 transactionCostTypes = Array[int]([3, 2, 1, 0, 0])
