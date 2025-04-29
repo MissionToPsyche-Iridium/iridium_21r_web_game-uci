@@ -14,3 +14,5 @@ func _process(_delta: float) -> void:
 	irridium.text = "x " + str(player.irridiumAmt)
 	silver.text = "x " + str(player.silverAmt)
 	peridot.text = "x " + str(player.peridotAmt)
+	
+	# testing for commit 
