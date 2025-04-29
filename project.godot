@@ -20,6 +20,7 @@ config/icon="res://icon.svg"
 Global="*res://assets/scripts/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
 PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
+WindowManager="*res://assets/scripts/WindowManager.gd"
 
 [dialogic]
 
