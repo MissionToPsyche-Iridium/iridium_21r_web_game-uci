@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://cnmfk7qk4da7a"]
+[gd_scene load_steps=16 format=3 uid="uid://cnmfk7qk4da7a"]
 
 [ext_resource type="Script" path="res://assets/scripts/game_manager.gd" id="1_2ahh0"]
 [ext_resource type="Script" path="res://assets/scripts/resource_manager.gd" id="2_xbdv4"]
@@ -7,8 +7,40 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_ayvvt"]
 [ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_pdnoq"]
 [ext_resource type="Script" path="res://assets/scripts/objective_manager.gd" id="7_wpr55"]
+[ext_resource type="Texture2D" uid="uid://cvdg8f3v50x2a" path="res://assets/ui assets/Prompt.png" id="8_bp53k"]
 [ext_resource type="Script" path="res://assets/scripts/quest.gd" id="8_j37eh"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="8_jwqlp"]
+
+[sub_resource type="Resource" id="Resource_tymo8"]
+script = ExtResource("5_ayvvt")
+duration = 1.0
+transition = 0
+ease = 2
+
+[sub_resource type="Animation" id="Animation_82enu"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CanvasLayer/QuestUI:position:y")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-534, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("CanvasLayer/QuestUI:position:x")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-1400, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
 
 [sub_resource type="Animation" id="Animation_7cdm2"]
 resource_name = "completeQuest"
@@ -16,23 +48,23 @@ length = 1.5
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QuestUI:position:x")
+tracks/0/path = NodePath("CanvasLayer/QuestUI:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-954, -0.25, 0, 0.25, 0, -954, -0.25, 0, 0.25, 0, -1400, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1.5)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QuestUI:position:y")
+tracks/1/path = NodePath("CanvasLayer/QuestUI:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0, 0),
-"points": PackedFloat32Array(-534, -0.25, 0, 0.25, 0, -534, -0.25, 0, 0.25, 0, -534, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -450, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 0.5, 1.5)
 }
 tracks/2/type = "method"
@@ -50,53 +82,28 @@ tracks/2/keys = {
 }]
 }
 
-[sub_resource type="Animation" id="Animation_82enu"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("QuestUI:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-1400, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("QuestUI:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-534, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-
 [sub_resource type="Animation" id="Animation_jch21"]
 resource_name = "startQuest"
 tracks/0/type = "bezier"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("QuestUI:position:x")
+tracks/0/path = NodePath("CanvasLayer/QuestUI:position:y")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-1400, -0.25, 0, 0.25, 0, -954, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(5, -0.25, 0, 0.25, 0, 5, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 tracks/1/type = "bezier"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("QuestUI:position:y")
+tracks/1/path = NodePath("CanvasLayer/QuestUI:position:x")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-534, -0.25, 0, 0.25, 0, -534, -0.25, 0, 0.25, 0),
+"points": PackedFloat32Array(-450, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
 "times": PackedFloat32Array(0, 1)
 }
 
@@ -106,12 +113,6 @@ _data = {
 "completeQuest": SubResource("Animation_7cdm2"),
 "startQuest": SubResource("Animation_jch21")
 }
-
-[sub_resource type="Resource" id="Resource_tymo8"]
-script = ExtResource("5_ayvvt")
-duration = 1.0
-transition = 0
-ease = 2
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2ahh0")
@@ -127,91 +128,6 @@ process_priority = 300
 process_physics_priority = 300
 script = ExtResource("3_dc3cd")
 
-[node name="ObjectiveManager" type="Node2D" parent="Camera2D" node_paths=PackedStringArray("questList")]
-script = ExtResource("7_wpr55")
-questList = [NodePath("0"), NodePath("1"), NodePath("2")]
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera2D/ObjectiveManager"]
-libraries = {
-"": SubResource("AnimationLibrary_b38ps")
-}
-
-[node name="QuestUI" type="Control" parent="Camera2D/ObjectiveManager"]
-z_index = 10
-layout_mode = 3
-anchors_preset = 0
-offset_left = -1400.0
-offset_top = -534.0
-offset_right = -1360.0
-offset_bottom = -494.0
-
-[node name="ColorRect" type="ColorRect" parent="Camera2D/ObjectiveManager/QuestUI"]
-layout_mode = 0
-offset_right = 381.0
-offset_bottom = 109.0
-color = Color(0, 0, 0, 1)
-
-[node name="Title" type="RichTextLabel" parent="Camera2D/ObjectiveManager/QuestUI"]
-layout_mode = 0
-offset_left = 4.0
-offset_top = 3.0
-offset_right = 379.0
-offset_bottom = 40.0
-theme_override_fonts/normal_font = ExtResource("8_jwqlp")
-theme_override_font_sizes/normal_font_size = 26
-text = "Quest Title"
-
-[node name="Description" type="RichTextLabel" parent="Camera2D/ObjectiveManager/QuestUI"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 34.0
-offset_right = 409.0
-offset_bottom = 71.0
-theme_override_fonts/normal_font = ExtResource("8_jwqlp")
-theme_override_font_sizes/normal_font_size = 26
-text = "Quest Description"
-
-[node name="Progress" type="RichTextLabel" parent="Camera2D/ObjectiveManager/QuestUI"]
-layout_mode = 0
-offset_left = 34.0
-offset_top = 53.0
-offset_right = 409.0
-offset_bottom = 90.0
-theme_override_fonts/normal_font = ExtResource("8_jwqlp")
-theme_override_font_sizes/normal_font_size = 26
-text = "0/6"
-
-[node name="ProgressBar" type="ProgressBar" parent="Camera2D/ObjectiveManager/QuestUI"]
-layout_mode = 0
-offset_left = 16.0
-offset_top = 74.0
-offset_right = 366.0
-offset_bottom = 101.0
-value = 50.0
-
-[node name="0" type="Node" parent="Camera2D/ObjectiveManager"]
-script = ExtResource("8_j37eh")
-questType = 3
-questName = "\"Securing Humanity's Future\""
-questDescription = "Mine 5 copper ores."
-miningNeeded = 5
-
-[node name="1" type="Node" parent="Camera2D/ObjectiveManager"]
-script = ExtResource("8_j37eh")
-questType = 1
-questName = "Visiting a Friend"
-questDescription = "Go to Zimbo's Shop"
-sceneId = 4
-
-[node name="2" type="Node" parent="Camera2D/ObjectiveManager"]
-script = ExtResource("8_j37eh")
-questType = 5
-questName = "3"
-questDescription = "Purchase something from Zimbo."
-miningNeeded = 5
-shopId = 0
-purchaseId = 4
-
 [node name="PhantomCamera2D" type="Node2D" parent="."]
 top_level = true
 script = ExtResource("4_xsmdl")
@@ -226,3 +142,102 @@ limit_target = NodePath("../CameraBounds/CollisionShape2D")
 [node name="transition_animation" parent="." instance=ExtResource("6_pdnoq")]
 visibility_layer = 15
 z_index = 12
+
+[node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
+script = ExtResource("7_wpr55")
+questList = [NodePath("0"), NodePath("1"), NodePath("2")]
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
+layer = 2
+
+[node name="QuestUI" type="Control" parent="ObjectiveManager/CanvasLayer"]
+z_index = 10
+layout_mode = 3
+anchors_preset = 0
+offset_left = -1400.0
+offset_top = -534.0
+offset_right = -1360.0
+offset_bottom = -494.0
+
+[node name="ColorRect" type="TextureRect" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+layout_mode = 0
+offset_right = 381.0
+offset_bottom = 109.0
+scale = Vector2(0.7, 0.7)
+texture = ExtResource("8_bp53k")
+
+[node name="Title" type="RichTextLabel" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+visible = false
+layout_mode = 0
+offset_left = 7.0
+offset_top = 17.0
+offset_right = 382.0
+offset_bottom = 54.0
+theme_override_fonts/normal_font = ExtResource("8_jwqlp")
+theme_override_font_sizes/normal_font_size = 26
+text = "Quest Title"
+
+[node name="Title2" type="RichTextLabel" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 18.0
+offset_right = 423.0
+offset_bottom = 55.0
+theme_override_fonts/normal_font = ExtResource("8_jwqlp")
+theme_override_font_sizes/normal_font_size = 26
+text = "New!"
+
+[node name="Description" type="RichTextLabel" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+layout_mode = 0
+offset_left = 14.0
+offset_top = 67.0
+offset_right = 282.0
+offset_bottom = 151.0
+theme_override_fonts/normal_font = ExtResource("8_jwqlp")
+theme_override_font_sizes/normal_font_size = 26
+text = "Quest Description"
+
+[node name="Progress" type="RichTextLabel" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 99.0
+offset_right = 388.0
+offset_bottom = 136.0
+theme_override_fonts/normal_font = ExtResource("8_jwqlp")
+theme_override_font_sizes/normal_font_size = 26
+text = "0/6"
+
+[node name="ProgressBar" type="ProgressBar" parent="ObjectiveManager/CanvasLayer/QuestUI"]
+layout_mode = 0
+offset_left = 10.0
+offset_top = 126.0
+offset_right = 290.0
+offset_bottom = 153.0
+value = 50.0
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="ObjectiveManager"]
+libraries = {
+"": SubResource("AnimationLibrary_b38ps")
+}
+
+[node name="0" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 3
+questName = "\"Securing Humanity's Future\""
+questDescription = "Mine 5 copper ores."
+miningNeeded = 5
+
+[node name="1" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 1
+questName = "Visiting a Friend"
+questDescription = "Go to Zimbo's Shop"
+sceneId = 4
+
+[node name="2" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 5
+questName = "The Art of Commerce"
+questDescription = "Purchase something from Zimbo."
+shopId = 2
+purchaseId = 3

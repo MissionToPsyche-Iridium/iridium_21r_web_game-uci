@@ -40,6 +40,7 @@ polygon = PackedVector2Array(-5, -2, -1, 347, -145, 346, -163, 494, 0, 492, -2, 
 position = Vector2(-458, 483)
 collision_mask = 6
 script = ExtResource("3_cbcd1")
+scene = "res://scenes/demo-copy.tscn"
 spawn_position = Vector2(1044, -236.04)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
