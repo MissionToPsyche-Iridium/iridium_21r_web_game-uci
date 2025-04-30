@@ -16,6 +16,7 @@ texture_filter = 3
 script = ExtResource("1_owgq6")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
+scene_id = 1
 
 [node name="TileMaps" type="Node2D" parent="."]
 
