@@ -7,6 +7,7 @@
 [node name="MineRight" type="Area2D"]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 modulate = Color(1, 0, 1, 0.678431)
 z_index = 7
 position = Vector2(20, 0)
@@ -14,5 +15,6 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_0mcxu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(20, 0)
+position = Vector2(10, 0)
+scale = Vector2(1, 0.5)
 shape = SubResource("RectangleShape2D_26eq0")

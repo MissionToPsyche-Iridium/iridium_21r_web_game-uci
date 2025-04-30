@@ -11,22 +11,24 @@ config_version=5
 [application]
 
 config/name="iridium_21r_web_game-uci"
-run/main_scene="res://node_2d.tscn"
+run/main_scene="res://scenes/main.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
 [autoload]
 
+Global="*res://assets/scripts/global.gd"
 Dialogic="*res://addons/dialogic/Core/DialogicGameHandler.gd"
+PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_camera_manager.gd"
 
 [dialogic]
 
 directories/dch_directory={
-"Claire": "res://assets/characters/Claire/Claire.dch",
+"Claire/Claire": "res://assets/characters/Claire/Claire.dch",
+"Player/player": "res://assets/characters/Player/player.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
-"characters/Claire": "res://assets/characters/Claire.dch",
-"player": "res://assets/characters/Player/player.dch"
+"characters/Claire": "res://assets/characters/Claire.dch"
 }
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
@@ -61,9 +63,17 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 
+[display]
+
+window/stretch/mode="canvas_items"
+
+[editor]
+
+movie_writer/movie_file="C:/Users/Rachel/school/senior year/winter/inf 191a/iridium_21r_web_game-uci/transition.avi"
+
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
 
 [input]
 
@@ -79,5 +89,6 @@ dialogic_default_action={
 
 [rendering]
 
+textures/canvas_textures/default_texture_filter=0
 renderer/rendering_method="gl_compatibility"
 renderer/rendering_method.mobile="gl_compatibility"
