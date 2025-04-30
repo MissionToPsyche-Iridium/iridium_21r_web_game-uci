@@ -121,7 +121,7 @@ script = ExtResource("1_2ahh0")
 script = ExtResource("2_xbdv4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -132,7 +132,7 @@ script = ExtResource("3_dc3cd")
 top_level = true
 script = ExtResource("4_xsmdl")
 follow_mode = 5
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_tymo8")
 dead_zone_width = 0.045
