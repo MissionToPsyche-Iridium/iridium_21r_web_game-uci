@@ -38,6 +38,8 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 	if scene_instance is GameScene:
 		spawn_player(spawnPosition, playerActionable)
 		scene_instance.transition_scene.connect(_on_scene_transition)
+		if scene_instance.background != null:
+			scene_instance.background.camera = camera
 	if scene_instance is Control:
 		pass
 
