@@ -1,6 +1,15 @@
 [style name="dialogic_premade"]
 Take-off preparations are now ready. Requesting authorization from user...[pause=1]
-[text_input text="Please enter your name:" var="player_name"]
+- Astrid
+	set {player_name} = "Astrid"
+- Orion
+	set {player_name} = "Orion"
+- Light
+	set {player_name} = "Light"
+- Ursa
+	set {player_name} = "Ursa"
+- Nebula
+	set {player_name} = "Nebula"
 Authorization complete.[pause=1] Initiating launch sequence...[pause=2]
 We will begin take off in 5…[pause=1]4…[pause=1]3…[pause=1]2…[pause=1]1[pause=1]
 Blasting off!

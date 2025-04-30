@@ -25,7 +25,9 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 
 directories/dch_directory={
 "Claire/Claire": "res://assets/characters/Claire/Claire.dch",
+"Dee": "res://assets/characters/Dee/Dee.dch",
 "Player/player": "res://assets/characters/Player/player.dch",
+"Skibby": "res://assets/characters/Skibby/Skibby.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
 "characters/Claire": "res://assets/characters/Claire.dch"
