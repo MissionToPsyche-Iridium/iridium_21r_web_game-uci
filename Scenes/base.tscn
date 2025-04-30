@@ -1,9 +1,10 @@
-[gd_scene load_steps=7 format=4 uid="uid://beqjwr55o7qhj"]
+[gd_scene load_steps=8 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_t8rhl"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="4_n2qub"]
+[ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_tdn2e"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
 size = Vector2(7576, 5329)
@@ -11,10 +12,11 @@ size = Vector2(7576, 5329)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d261"]
 size = Vector2(145, 138)
 
-[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
+[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "background", "transitions")]
 texture_filter = 3
 script = ExtResource("1_077qq")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
+background = NodePath("Background")
 transitions = [NodePath("scene_transition")]
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -108,3 +110,8 @@ spawn_position = Vector2(-300, 483)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
 shape = SubResource("RectangleShape2D_2d261")
+
+[node name="Background" parent="." instance=ExtResource("5_tdn2e")]
+position = Vector2(0, -2293)
+offsetMultiplierX = 0.5
+offsetMultiplierY = 0.5
