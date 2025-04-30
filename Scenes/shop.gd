@@ -1,7 +1,14 @@
 class_name Shop extends CanvasLayer
 
 #@onready var Scene_transition_animation = $scene_transition1/transition_animation/AnimationPlayer
+enum ShopId {
+	NONE,
+	STATION,
+	ZIMBO,
+	SKIBBY_DEE
+}
 
+@export var shopId: ShopId
 #Create button
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 @onready var buttonContainer: VBoxContainer = $PanelContainer/VBoxContainer
@@ -106,6 +113,8 @@ func attempt_purchase(index: int) -> void:
 		playerInventory.remove_from_inventory(costType, costQuantity)
 		playerInventory.add_to_inventory(itemType, itemQuantity)
 		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[costType]
+		ObjectiveManager.instance.on_shop_purchase(shopId, index)
+		
 	else:
 		dialogue_box.text="[center]Sorry Link, I don't give credit! Come back when you're a little--mmm...--richer![/center]"
 	on_purchase()

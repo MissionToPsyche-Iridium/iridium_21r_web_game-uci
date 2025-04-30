@@ -22,6 +22,7 @@ func on_hit(dmg: int) -> void:
 
 func perish() -> void:
 	ResourceManager.instance.add_to_inventory(toItemType(), ore_amount)
+	ObjectiveManager.instance.on_ore_mined(ore_type)
 	queue_free()
 
 func toItemType() -> ResourceManager.ItemTypes:
