@@ -1,10 +1,12 @@
-[gd_resource type="TileSet" load_steps=13 format=3 uid="uid://c7vnxkbk216og"]
+[gd_resource type="TileSet" load_steps=18 format=3 uid="uid://c7vnxkbk216og"]
 
 [ext_resource type="Texture2D" uid="uid://xnyvsyc1gk76" path="res://assets/spritesheets/The Roguelike 1-14-4 Alpha.png" id="1_1sshv"]
 [ext_resource type="Texture2D" uid="uid://b0t47mmgiq4vi" path="res://assets/spritesheets/gentle forest.png" id="3_xr5fj"]
 [ext_resource type="PackedScene" uid="uid://ci2ryw8attpye" path="res://assets/prefabs/ore_spawner.tscn" id="3_yogv5"]
 [ext_resource type="Texture2D" uid="uid://brvrhbfixuamf" path="res://assets/spritesheets/Ground_rocks.png" id="4_825bm"]
 [ext_resource type="Texture2D" uid="uid://kto4qgmlorym" path="res://assets/buildings/House_Variant.png" id="5_o1d2s"]
+[ext_resource type="Texture2D" uid="uid://bgafx8jvhcadj" path="res://assets/buildings/zimbo-revised.png" id="6_7xg4m"]
+[ext_resource type="Texture2D" uid="uid://b5u5x3548qc23" path="res://assets/buildings/Rocket.png" id="7_3jul7"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_t5k83"]
 tile_data = PackedInt32Array(65536, 1245187, 7, 131072, 1310723, 15, 196608, 1703939, 16, 262144, 1310723, 17, 1, 1048579, 14, 65537, 1310723, 15, 131073, 1310723, 16, 196609, 1310723, 17, 2, 1310723, 15, 65538, 1310723, 16, 131074, 1310723, 17)
@@ -3220,6 +3222,31 @@ texture = ExtResource("5_o1d2s")
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uo33d"]
+texture = ExtResource("6_7xg4m")
+0:0/0 = 0
+1:0/0 = 0
+2:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+2:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+2:2/0 = 0
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jxy38"]
+texture = ExtResource("7_3jul7")
+0:0/0 = 0
+1:0/0 = 0
+0:1/0 = 0
+1:1/0 = 0
+0:2/0 = 0
+1:2/0 = 0
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_lu4k3"]
+resource_name = "ore-spawner"
+scenes/1/scene = ExtResource("3_yogv5")
+
 [resource]
 physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_jwru6")
@@ -3227,5 +3254,8 @@ sources/1 = SubResource("TileSetScenesCollectionSource_y2uqy")
 sources/2 = SubResource("TileSetAtlasSource_3nf0k")
 sources/3 = SubResource("TileSetAtlasSource_e1wjq")
 sources/4 = SubResource("TileSetAtlasSource_vn7ck")
+sources/5 = SubResource("TileSetAtlasSource_uo33d")
+sources/6 = SubResource("TileSetAtlasSource_jxy38")
+sources/7 = SubResource("TileSetScenesCollectionSource_lu4k3")
 pattern_0 = SubResource("TileMapPattern_t5k83")
 pattern_1 = SubResource("TileMapPattern_ri0bg")
