@@ -1,6 +1,6 @@
 [gd_scene load_steps=9 format=4 uid="uid://bejrabtnumpqq"]
 
-[ext_resource type="PackedScene" uid="uid://nfgd7lbiea3d" path="res://assets/prefabs/player.tscn" id="1_bsj70"]
+[ext_resource type="PackedScene" uid="uid://b3s3mv0yoksjk" path="res://assets/prefabs/player.tscn" id="1_bsj70"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="3_o5878"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="4_f3f72"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="6_db3n3"]
@@ -45,8 +45,11 @@ tile_set = ExtResource("4_f3f72")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 physics_interpolation_mode = 1
-position = Vector2(0, -183)
 zoom = Vector2(0.6, 0.6)
+limit_left = -2902
+limit_top = -1951
+limit_right = 4674
+limit_bottom = 1714
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -55,7 +58,6 @@ script = ExtResource("6_db3n3")
 
 [node name="PhantomCamera2D" type="Node2D" parent="." node_paths=PackedStringArray("follow_target")]
 top_level = true
-position = Vector2(0, -183)
 script = ExtResource("7_hito4")
 follow_mode = 5
 follow_target = NodePath("../CharacterBody2D")
