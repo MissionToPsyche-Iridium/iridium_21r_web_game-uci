@@ -7,6 +7,7 @@ enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
 @export var hp: int = 50
 
 @onready var sprite = $Sprite2D
+@onready var animationPlayer = $AnimationPlayer
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -16,6 +17,7 @@ func update_sprite() -> void:
 	sprite.frame = ore_type as int
 
 func on_hit(dmg: int) -> void:
+	animationPlayer.play("hit")
 	hp -= dmg
 	if hp <= 0:
 		perish()
