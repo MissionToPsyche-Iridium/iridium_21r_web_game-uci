@@ -26,7 +26,9 @@ WindowManager="*res://assets/scripts/WindowManager.gd"
 
 directories/dch_directory={
 "Claire/Claire": "res://assets/characters/Claire/Claire.dch",
+"Dee": "res://assets/characters/Dee/Dee.dch",
 "Player/player": "res://assets/characters/Player/player.dch",
+"Skibby": "res://assets/characters/Skibby/Skibby.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
 "characters/Claire": "res://assets/characters/Claire.dch"
@@ -34,6 +36,9 @@ directories/dch_directory={
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
 "arrival_at_psyche": "res://timelines/chapter_1/arrival_at_psyche.dtl",
+"call_from_claire": "res://timelines/chapter_1/call_from_claire.dtl",
+"first_time_mining": "res://timelines/chapter_1/first_time_mining.dtl",
+"meeting_skibby_and_dee": "res://timelines/meeting_skibby_and_dee.dtl",
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
 "testscene": "res://timelines/chapter_1/testscene.dtl"
 }
