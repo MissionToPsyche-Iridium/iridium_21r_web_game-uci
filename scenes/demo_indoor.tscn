@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://de37wsvwvh0rq"]
+[gd_scene load_steps=9 format=3 uid="uid://clp10w4kw64v3"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_0dlbh"]
 [ext_resource type="Texture2D" uid="uid://dcc4eekcq2w8x" path="res://PokC3A9mon_Center_inside_RSE.png" id="2_3lqap"]
@@ -17,6 +17,7 @@ size = Vector2(1925, 1081)
 script = ExtResource("1_0dlbh")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
+scene_id = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(2048, 1600)

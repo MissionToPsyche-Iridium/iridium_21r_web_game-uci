@@ -83,12 +83,18 @@ func _on_dialogic_signal(args: Dictionary):
 					Dialogic.start(args["cutsceneToPlay"])
 			"setPlayerActionable":
 				set_player_actionable(args["value"])
+			"startQuest":
+				start_quest(args["questId"])
 			_:
 				printerr("Unknown signal %s" % args["type"])
+
+func start_quest(questId: int) -> void:
+	ObjectiveManager.instance.set_quest(questId)
 
 func set_player_actionable(value: bool) -> void:
 	if player_instance != null:
 		player_instance.actionable = value
+		player_instance.set_state(Player.States.IDLE)
 
 func _on_scene_transition_1_body_entered(body: Node2D) -> void:
 	#if body.has_method("player"):
