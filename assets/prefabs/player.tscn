@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://cdfi5x31owxnm" path="res://assets/sprites/mining bar - moves.png" id="6_0c3j8"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
+size = Vector2(12.7, 5.2)
 
 [sub_resource type="Animation" id="Animation_gkj61"]
 length = 0.001
@@ -571,6 +572,7 @@ hframes = 6
 vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 6.7)
 shape = SubResource("RectangleShape2D_ttrdr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
