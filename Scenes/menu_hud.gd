@@ -33,18 +33,6 @@ func _ready():
 func _toggle_menu():
 	menu_panel.visible = !menu_panel.visible
 
-	# Optional: If you need to restore focus to something in the HUD
-	# $menuhud/some_control.grab_focus()
-#func _on_menu_button_pressed(popup_type):
-	#pass
-	# Get corresponding popup
-	#var popup_name = popup_type + "Popup"
-	#var popup = $Control/Popups.get_node_or_null(popup_name)
-	
-	#if popup:
-	#    popup.popup_centered()
-	#    # Optionally hide the menu when a popup is opened
-	#    menu_panel.visible = false
 
 func _on_pause_button_pressed():
-	WindowManager.open_window("res://assets/menu/windows/PauseWindow.tscn")
+	WindowManager.open_window("res://assets/menu/windows/Pause/PauseWindow.tscn")

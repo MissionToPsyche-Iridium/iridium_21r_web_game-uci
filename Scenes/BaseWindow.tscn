@@ -26,6 +26,7 @@ grow_vertical = 2
 theme_override_styles/panel = SubResource("StyleBoxFlat_qhv7q")
 
 [node name="BackButton" type="TextureButton" parent="."]
+visible = false
 layout_direction = 1
 layout_mode = 1
 anchors_preset = 2
@@ -40,6 +41,7 @@ texture_pressed = ExtResource("2_2x6m5")
 texture_hover = ExtResource("2_2x6m5")
 
 [node name="CloseButton" type="TextureButton" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 1
 anchor_left = 1.0

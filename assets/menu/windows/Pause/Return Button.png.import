@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bf2xeo7gbw05v"
-path="res://.godot/imported/Back.png-d058d882aea2e99e34a4d9badca4fab8.ctex"
+uid="uid://d2fj24cjrj7br"
+path="res://.godot/imported/Return Button.png-4b800cfbd44b67d01aa06e17a10753ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/scripts/Back.png"
-dest_files=["res://.godot/imported/Back.png-d058d882aea2e99e34a4d9badca4fab8.ctex"]
+source_file="res://assets/menu/windows/Pause/Return Button.png"
+dest_files=["res://.godot/imported/Return Button.png-4b800cfbd44b67d01aa06e17a10753ab.ctex"]
 
 [params]
 
