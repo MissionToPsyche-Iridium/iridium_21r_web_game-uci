@@ -3,10 +3,11 @@ class_name GameManager extends Node2D
 #	It's responsible for spawning the player, instantiating world scenes, transitioning between scenes,
 #	and linking up all of the appropriate references when instantiating game objects.
 
-@onready var Scene_transition_animation = $transition_animation/AnimationPlayer
+@onready var Scene_transition_animation = $CanvasLayer/transition_animation/AnimationPlayer
 @onready var resource_manager: ResourceManager = $ResourceManager
 @onready var camera: PhantomCamera2D = $PhantomCamera2D
-@export var startScene: String = "res://cutscenes.tscn"
+@export var startScenePath: String = "res://cutscenes.tscn"
+var startScene: StartScene = null
 
 const player = preload("res://assets/prefabs/player.tscn")
 
@@ -21,7 +22,7 @@ func _ready() -> void:
 	randomize()
 	camera.set_follow_target(self)
 	Dialogic.signal_event.connect(_on_dialogic_signal)
-	change_scene(startScene)
+	change_scene(startScenePath)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -42,6 +43,8 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 			scene_instance.background.camera = camera
 	if scene_instance is Control:
 		pass
+	if scene_instance is StartScene:
+		startScene = scene_instance
 
 func set_camera_bounds(bounds: CollisionShape2D) -> void:
 	camera.set_limit_target(bounds.get_path())
@@ -87,6 +90,9 @@ func _on_dialogic_signal(args: Dictionary):
 				set_player_actionable(args["value"])
 			"startQuest":
 				start_quest(args["questId"])
+			"playIntro":
+				if startScene != null:
+					startScene.start_intro()
 			_:
 				printerr("Unknown signal %s" % args["type"])
 

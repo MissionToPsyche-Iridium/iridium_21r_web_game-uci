@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://bj4hxgr475po6"]
+[gd_scene load_steps=7 format=3 uid="uid://bg5kpu270xvna"]
 
-[ext_resource type="Script" path="res://Scenes/start_menu.gd" id="1_3vem6"]
 [ext_resource type="Texture2D" uid="uid://dq8n5715wn2bx" path="res://assets/buttons/Start Unpushed.png" id="1_7v1vf"]
+[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_eoiok"]
 [ext_resource type="Texture2D" uid="uid://di7ko8ndh7k55" path="res://assets/buttons/Start pushed.png" id="2_k2kvc"]
 [ext_resource type="Texture2D" uid="uid://bce0rqjsue7d3" path="res://assets/buttons/Start Unpushed - Hover.png" id="3_u4fqv"]
 [ext_resource type="Texture2D" uid="uid://s7fp0dqty5kn" path="res://psyche logo - pixel.png" id="5_fbof1"]
@@ -16,22 +16,15 @@ offset_left = 3.0
 offset_right = 3.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_3vem6")
+script = ExtResource("1_eoiok")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 z_index = 4
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -133.0
-offset_top = -38.0
-offset_right = 133.0
-offset_bottom = 93.0
-grow_horizontal = 2
-grow_vertical = 2
+layout_mode = 0
+offset_left = 439.0
+offset_top = 291.0
+offset_right = 705.0
+offset_bottom = 422.0
 
 [node name="StartButton" type="TextureButton" parent="VBoxContainer"]
 z_index = 4

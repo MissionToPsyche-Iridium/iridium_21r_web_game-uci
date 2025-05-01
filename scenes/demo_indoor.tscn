@@ -48,7 +48,8 @@ shape = SubResource("RectangleShape2D_pai5w")
 [node name="transition_animation" parent="scene_transition" instance=ExtResource("6_ui1fg")]
 visibility_layer = 15
 z_index = 12
-position = Vector2(-6, 0)
+offset_left = -6.0
+offset_right = -6.0
 
 [node name="shop_area" type="Area2D" parent="."]
 position = Vector2(584, 224)
