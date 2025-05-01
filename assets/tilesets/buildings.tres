@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://xnyvsyc1gk76" path="res://assets/spritesheets/The Roguelike 1-14-4 Alpha.png" id="1_1sshv"]
 [ext_resource type="Texture2D" uid="uid://b0t47mmgiq4vi" path="res://assets/spritesheets/gentle forest.png" id="3_xr5fj"]
-[ext_resource type="PackedScene" path="res://assets/prefabs/ore_spawner.tscn" id="3_yogv5"]
+[ext_resource type="PackedScene" uid="uid://bjte6crur0wg6" path="res://assets/prefabs/ore_spawner.tscn" id="3_yogv5"]
 [ext_resource type="Texture2D" uid="uid://brvrhbfixuamf" path="res://assets/spritesheets/Ground_rocks.png" id="4_825bm"]
 [ext_resource type="Texture2D" uid="uid://kto4qgmlorym" path="res://assets/buildings/House_Variant.png" id="5_o1d2s"]
 [ext_resource type="Texture2D" uid="uid://bgafx8jvhcadj" path="res://assets/buildings/zimbo-revised.png" id="6_7xg4m"]
