@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://clp10w4kw64v3"]
+[gd_scene load_steps=13 format=3 uid="uid://clp10w4kw64v3"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_0dlbh"]
 [ext_resource type="Texture2D" uid="uid://b1od1532rwnqc" path="res://assets/sprites/Zimbo_Shop_Interior.png" id="2_j4161"]
@@ -6,6 +6,7 @@
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="6_lh087"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="6_udfyy"]
 [ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_ui1fg"]
+[ext_resource type="Texture2D" uid="uid://da21oa1k3ghnu" path="res://assets/sprites/Zimbo Sprite.png" id="7_7wdrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjs1h"]
 size = Vector2(101.7, 10.3)
@@ -92,6 +93,7 @@ shape = SubResource("RectangleShape2D_pai5w")
 
 [node name="Shop" parent="shop_area" instance=ExtResource("6_udfyy")]
 visible = false
+transactionQuantities = Array[int]([1, 1, 1, 1, 1])
 
 [node name="CameraBounds" type="Area2D" parent="."]
 position = Vector2(-557, -362)
@@ -100,3 +102,10 @@ position = Vector2(-557, -362)
 position = Vector2(567, 448)
 shape = SubResource("RectangleShape2D_s8jnb")
 disabled = true
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(0, -87)
+scale = Vector2(10, 10)
+texture = ExtResource("7_7wdrd")
+hframes = 6
+vframes = 12
