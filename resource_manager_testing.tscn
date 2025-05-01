@@ -1,4 +1,4 @@
-[gd_scene load_steps=26 format=4 uid="uid://cnvj6djoi7wel"]
+[gd_scene load_steps=25 format=4 uid="uid://cnvj6djoi7wel"]
 
 [ext_resource type="Script" path="res://assets/scripts/resource_manager.gd" id="1_3yj38"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_iwko2"]
@@ -7,7 +7,6 @@
 [ext_resource type="Script" path="res://HUD.gd" id="5_dwvii"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="5_tck27"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="6_80udq"]
-[ext_resource type="Script" path="res://control.gd" id="6_no05x"]
 [ext_resource type="Texture2D" uid="uid://cdlnkwtfaoa3b" path="res://assets/HUD/Left Click.png" id="6_tuvhq"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_u2utf"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="7_3x2as"]
@@ -73,7 +72,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("6_no05x")
 
 [node name="PC" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control"]
 layout_mode = 0
@@ -212,13 +210,13 @@ theme_override_constants/margin_bottom = 5
 [node name="HBoxContainer5" type="HBoxContainer" parent="CharacterBody2D/CanvasLayer/Control/QuickInventory/MarginContainer5"]
 layout_mode = 2
 
-[node name="Peridot" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+[node name="Nickel" type="TextureRect" parent="CharacterBody2D/CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
 layout_mode = 2
 texture = ExtResource("13_05s41")
 expand_mode = 3
 stretch_mode = 4
 
-[node name="LabelPeridot" type="Label" parent="CharacterBody2D/CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+[node name="LabelNickel" type="Label" parent="CharacterBody2D/CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_u2utf")
 theme_override_font_sizes/font_size = 30
