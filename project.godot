@@ -35,6 +35,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
 "arrival_at_psyche": "res://timelines/chapter_1/arrival_at_psyche.dtl",
+"meeting_skibby_and_dee": "res://timelines/meeting_skibby_and_dee.dtl",
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
 "testscene": "res://timelines/chapter_1/testscene.dtl"
 }
