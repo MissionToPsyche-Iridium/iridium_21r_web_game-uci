@@ -162,6 +162,7 @@ offset_left = -450.0
 offset_top = 5.0
 offset_right = -410.0
 offset_bottom = 45.0
+scale = Vector2(0.8, 0.8)
 
 [node name="ColorRect" type="TextureRect" parent="ObjectiveManager/CanvasLayer/QuestUI"]
 layout_mode = 0
