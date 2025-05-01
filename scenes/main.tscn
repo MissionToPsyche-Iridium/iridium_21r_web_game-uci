@@ -152,7 +152,7 @@ script = ExtResource("7_wpr55")
 questList = [NodePath("0"), NodePath("1"), NodePath("2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
-layer = 2
+layer = 0
 
 [node name="QuestUI" type="Control" parent="ObjectiveManager/CanvasLayer"]
 z_index = 10

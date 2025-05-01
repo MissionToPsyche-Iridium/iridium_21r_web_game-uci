@@ -4,6 +4,7 @@ class_name GameManager extends Node2D
 #	and linking up all of the appropriate references when instantiating game objects.
 
 @onready var Scene_transition_animation = $CanvasLayer/transition_animation/AnimationPlayer
+@onready var canvasLayer: CanvasLayer = $CanvasLayer
 @onready var resource_manager: ResourceManager = $ResourceManager
 @onready var camera: PhantomCamera2D = $PhantomCamera2D
 @export var startScenePath: String = "res://cutscenes.tscn"

@@ -1,7 +1,8 @@
-[gd_scene load_steps=31 format=3 uid="uid://b3s3mv0yoksjk"]
+[gd_scene load_steps=32 format=3 uid="uid://b3s3mv0yoksjk"]
 
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_dse8y"]
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="2_faxfw"]
+[ext_resource type="PackedScene" uid="uid://wo8s4esei43m" path="res://scenes/menu_hud.tscn" id="2_yfre2"]
 [ext_resource type="Texture2D" uid="uid://bk3xsk4igdc6y" path="res://assets/spritesheets/Player_Sprite.png" id="3_ccxhm"]
 [ext_resource type="Script" path="res://assets/scripts/mining_qte_controller.gd" id="4_rgdai"]
 [ext_resource type="Texture2D" uid="uid://dqncnv6yc5axk" path="res://assets/sprites/image 8.png" id="5_imkcy"]
@@ -561,6 +562,9 @@ _data = {
 scale = Vector2(10, 10)
 collision_layer = 6
 script = ExtResource("1_dse8y")
+
+[node name="MenuHud" parent="." instance=ExtResource("2_yfre2")]
+layer = 0
 
 [node name="HitboxController" type="Node2D" parent="."]
 script = ExtResource("2_faxfw")
