@@ -68,7 +68,7 @@ position = Vector2(-1358, 1240)
 collision_mask = 6
 script = ExtResource("4_n2qub")
 scene = "res://scenes/demo_indoor.tscn"
-spawn_position = Vector2(-300, 483)
+spawn_position = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
 shape = SubResource("RectangleShape2D_2d261")
