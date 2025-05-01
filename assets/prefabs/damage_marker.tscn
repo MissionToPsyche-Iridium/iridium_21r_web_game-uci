@@ -1,0 +1,81 @@
+[gd_scene load_steps=5 format=3 uid="uid://dqfhygn4nax5o"]
+
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="1_f24ck"]
+
+[sub_resource type="Animation" id="Animation_o3o8a"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DamageMarker:theme_override_colors/font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/DamageMarker:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(4, -6)]
+}
+
+[sub_resource type="Animation" id="Animation_4rp35"]
+resource_name = "dmg"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AnimationPlayer/DamageMarker:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2, 0.4, 0.6, 0.8, 1),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(4, -6), Vector2(-4, -11), Vector2(1, -15), Vector2(-3, -24), Vector2(2, -37)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("AnimationPlayer/DamageMarker:theme_override_colors/font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_06qnt"]
+_data = {
+"RESET": SubResource("Animation_o3o8a"),
+"dmg": SubResource("Animation_4rp35")
+}
+
+[node name="AnimationPlayer" type="AnimationPlayer"]
+libraries = {
+"": SubResource("AnimationLibrary_06qnt")
+}
+
+[node name="DamageMarker" type="Label" parent="."]
+z_index = 15
+offset_right = 30.0
+offset_bottom = 30.0
+scale = Vector2(0.5, 0.5)
+pivot_offset = Vector2(-15, -15)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_f24ck")
+theme_override_font_sizes/font_size = 24
+text = "15"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -9,6 +9,7 @@ const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 1, 2]
 
 @onready var sprite = $Sprite2D
 @onready var animationPlayer = $AnimationPlayer
+@onready var damageText = $DamageNumber
 var requiredPickaxeTier: int = 0
 
 # Called when the node enters the scene tree for the first time.
@@ -21,13 +22,17 @@ func update_sprite() -> void:
 	requiredPickaxeTier = REQUIRED_PICKAXE_TIERS[ore_type]
 
 func on_hit(dmg: int) -> void:
+	animationPlayer.stop()
 	if ResourceManager.instance.pickaxeTier >= requiredPickaxeTier:
+		damageText.text = "%s" % dmg
 		animationPlayer.play("hit")
 		hp -= dmg
 		if hp <= 0:
 			perish()
 	else:
+		damageText.text = "0"
 		animationPlayer.play("hit_no")
+	#dmgInstance.animation_finished.connect(dmgInstance.queue_free)
 		
 
 func perish() -> void:
