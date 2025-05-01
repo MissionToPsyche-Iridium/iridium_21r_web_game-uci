@@ -26,7 +26,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerActionable: bool = true):

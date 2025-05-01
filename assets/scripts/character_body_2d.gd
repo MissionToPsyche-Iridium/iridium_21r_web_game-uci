@@ -16,6 +16,12 @@ const JUMP_VELOCITY = -400.0
 var state = States.IDLE
 var actionable = true
 
+var copperAmt = 0
+var tungstenAmt = 10
+var irridiumAmt = 20
+var silverAmt = 10
+var nickelAmt = 20
+
 func _ready() -> void:
 	_animation_player.play('idle_down')
 

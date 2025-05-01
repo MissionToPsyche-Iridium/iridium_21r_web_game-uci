@@ -36,5 +36,5 @@ func _on_transition_enter(scene: String, spawn_position: Vector2):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass

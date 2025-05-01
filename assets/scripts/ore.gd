@@ -32,7 +32,10 @@ func on_hit(dmg: int) -> void:
 
 func perish() -> void:
 	ResourceManager.instance.add_to_inventory(toItemType(), ore_amount)
-	ObjectiveManager.instance.on_ore_mined(ore_type)
+
+	if GameManager.instance != null:
+		ObjectiveManager.instance.on_ore_mined(ore_type)
+		
 	queue_free()
 
 func toItemType() -> ResourceManager.ItemTypes:
@@ -51,5 +54,5 @@ func toItemType() -> ResourceManager.ItemTypes:
 			return ResourceManager.ItemTypes.COPPER_ORE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
