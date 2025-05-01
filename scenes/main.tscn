@@ -140,12 +140,12 @@ dead_zone_height = 0.045
 limit_target = NodePath("../CameraBounds/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-layer = 2
+layer = 3
 
 [node name="transition_animation" parent="CanvasLayer" instance=ExtResource("6_pdnoq")]
 visibility_layer = 15
 z_index = 12
-mouse_filter = 2
+mouse_filter = 1
 
 [node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
 script = ExtResource("7_wpr55")
