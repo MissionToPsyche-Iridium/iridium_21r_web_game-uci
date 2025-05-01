@@ -6,6 +6,10 @@ extends CanvasLayer
 @onready var silver: Label = $Control/QuickInventory/MarginContainer4/HBoxContainer4/LabelSilver
 @onready var nickel: Label = $Control/QuickInventory/MarginContainer5/HBoxContainer5/LabelNickel
 
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Inventory"):
+		$BigInventory.visible = !$BigInventory.visible
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta: float) -> void:
 	copper.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.COPPER_ORE))

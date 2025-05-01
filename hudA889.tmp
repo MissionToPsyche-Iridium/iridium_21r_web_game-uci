@@ -17,6 +17,7 @@
 [ext_resource type="Texture2D" uid="uid://cqcvrcegpsh0g" path="res://assets/HUD/battery.png" id="15_i6dew"]
 
 [node name="Hud" type="Node2D"]
+script = ExtResource("1_pyf1v")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
 script = ExtResource("1_pyf1v")
