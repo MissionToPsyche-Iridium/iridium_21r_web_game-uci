@@ -46,27 +46,22 @@ texture = ExtResource("2_j4161")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(0.1, 12.8)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_qjs1h")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(28.95, 60.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2k6br")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(-28.95, 60.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_2k6br")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(53.9, 27.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jokta")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Sprite2D/StaticBody2D"]
 position = Vector2(-53.9, 27.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jokta")
 
 [node name="scene_transition" type="Area2D" parent="."]
