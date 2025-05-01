@@ -9,6 +9,8 @@ func _ready():
 	get_tree().paused = true
 
 func _on_return_button_pressed():
+	await get_tree().create_timer(0.25).timeout
+	
 	get_tree().paused = false
 	WindowManager.close_window()
 	
