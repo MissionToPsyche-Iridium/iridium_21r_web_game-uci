@@ -64,6 +64,10 @@ save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
 
+[display]
+
+window/stretch/mode="viewport"
+
 [editor]
 
 movie_writer/movie_file="C:/Users/Rachel/school/senior year/winter/inf 191a/iridium_21r_web_game-uci/transition.avi"
