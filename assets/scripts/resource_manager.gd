@@ -5,21 +5,30 @@ enum ItemTypes {
 	NICKEL_ORE,
 	SILVER_ORE,
 	TUNGSTEN_ORE,
-	IRIDIUM_ORE
+	IRIDIUM_ORE,
+	PICKAXE_UPGRADE_1,
+	PICKAXE_UPGRADE_2,
+	PICKAXE_UPGRADE_3
 }
 const itemStrings:Array = [
 	"Copper Ore",
 	"Nickel Ore",
 	"Silver Ore",
 	"Tungsten Ore",
-	"Iridium Ore"
+	"Iridium Ore",
+	"Silver Pickaxe",
+	"Tungsten Pickaxe",
+	"Iridium Pickaxe",
 ]
 const itemIcons:Array = [
 	"res://assets/ui assets/Shop/Ore Icons/Bronze.png",
 	"res://assets/ui assets/Shop/Ore Icons/Nickel.png",
 	"res://assets/ui assets/Shop/Ore Icons/Peridot.png", #change this later
 	"res://assets/ui assets/Shop/Ore Icons/Tungsten.png",
-	"res://assets/ui assets/Shop/Ore Icons/Iridium.png"
+	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
+	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe1.png",
+	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe2.png",
+	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe3.png",
 ]
 
 static var instance:ResourceManager = null

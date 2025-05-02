@@ -24,7 +24,7 @@ var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
-var default_text: String = "[center]I can upgrade your ore into super ore in order to build the space station.[/center]"
+var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better!.[/center]"
 
 var exit_delay: float = 1.5
 var _exit_timer: float = 0.0
@@ -107,7 +107,7 @@ func attempt_purchase(index: int) -> void:
 		playerInventory.add_to_inventory(itemType, itemQuantity)
 		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[costType]
 	else:
-		dialogue_box.text="[center]Sorry Link, I don't give credit! Come back when you're a little--mmm...--richer![/center]"
+		dialogue_box.text="[center]Sorry, it looks like you don't have enough.[/center]"
 	on_purchase()
 
 func on_purchase():
