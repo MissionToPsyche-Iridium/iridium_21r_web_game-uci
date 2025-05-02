@@ -447,7 +447,7 @@ _data = {
 [node name="Shop" type="CanvasLayer"]
 script = ExtResource("1_xynpu")
 transactionTypes = Array[int]([5, 6, 7])
-transactionQuantities = Array[int]([1, 1, 5])
+transactionQuantities = Array[int]([1, 1, 1])
 transactionCostTypes = Array[int]([3, 2, 1])
 transactionCostQuantities = Array[int]([5, 3, 5])
 exit_spawnPos = Vector2(588, 370)
