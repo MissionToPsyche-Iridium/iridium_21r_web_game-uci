@@ -36,10 +36,11 @@ var exit: bool = false
 signal exited
 
 func _validate_transactions() -> void:
-	for transaction in transactions:
-		assert ((transaction.transactionType == transaction.transactionCostQuantity) && 
-				(transaction.transactionQuantity == transaction.transactionCostType) &&
-				(transaction.transactionCostType == transaction.transactionCostQuantity))
+	pass
+	#for transaction in transactions:
+		#assert ((transaction.transactionType == transaction.transactionCostQuantity) && 
+				#(transaction.transactionQuantity == transaction.transactionCostType) &&
+				#(transaction.transactionCostType == transaction.transactionCostQuantity))
 	
 	#assert (len(transactionTypes) == len(transactionQuantities) &&
 			#len(transactionQuantities) == len(transactionCostTypes) &&
@@ -95,7 +96,8 @@ func _setup_buttons() -> void:
 		var lambda = func()->void:
 			attempt_purchase(i)
 		button.button_down.connect(lambda)
-		button.icon = load(ResourceManager.itemIcons[i])
+		var iconFile = transactions[i].transactionType
+		button.icon = load(ResourceManager.itemIcons[iconFile])
 		button.itemQuantity.text = "x%s" % itemQuantity
 		button.text = ResourceManager.itemStrings[itemType]
 		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
