@@ -1,4 +1,13 @@
-extends Node2D
+class_name Transaction extends Node2D
+
+@export var transactionType: ResourceManager.ItemTypes
+@export var transactionQuantity: int
+@export var transactionCostType: ResourceManager.ItemTypes
+@export var transactionCostQuantity: int
+
+# functions
+
+
 
 
 

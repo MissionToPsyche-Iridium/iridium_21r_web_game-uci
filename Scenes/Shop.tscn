@@ -1,9 +1,10 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2340nj07nmny"]
+[gd_scene load_steps=17 format=3 uid="uid://c2340nj07nmny"]
 
 [ext_resource type="Script" path="res://scenes/shop.gd" id="1_xynpu"]
 [ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
 [ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
+[ext_resource type="PackedScene" uid="uid://c0rntktsadkg4" path="res://assets/prefabs/shop/transaction.tscn" id="8_ikbkj"]
 [ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="9_m4ofs"]
 [ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="10_nnql5"]
 [ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="11_ndv4l"]
@@ -539,3 +540,12 @@ text = "Exit"
 libraries = {
 "": SubResource("AnimationLibrary_iepkf")
 }
+
+[node name="Transactions" type="Node" parent="."]
+
+[node name="Transaction" parent="Transactions" instance=ExtResource("8_ikbkj")]
+transactionType = 5
+
+[node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
+
+[node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]

@@ -14,6 +14,9 @@ const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.ts
 @export var transactionQuantities: Array[int]
 @export var transactionCostTypes: Array[ResourceManager.ItemTypes]
 @export var transactionCostQuantities: Array[int]
+
+@export var transactions: Array[Transaction]
+
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
