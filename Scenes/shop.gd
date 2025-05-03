@@ -35,21 +35,12 @@ var exit: bool = false
 
 signal exited
 
-func _validate_transactions() -> void:
-	pass
-	#for transaction in transactions:
-		#assert ((transaction.transactionType == transaction.transactionCostQuantity) && 
-				#(transaction.transactionQuantity == transaction.transactionCostType) &&
-				#(transaction.transactionCostType == transaction.transactionCostQuantity))
-	
-	#assert (len(transactionTypes) == len(transactionQuantities) &&
-			#len(transactionQuantities) == len(transactionCostTypes) &&
-			#len(transactionCostTypes) == len(transactionCostQuantities))
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create button's listeners
-	_validate_transactions()
+	
 	_setup_buttons()
 	_purchase_timer = 0
 	purchased = false

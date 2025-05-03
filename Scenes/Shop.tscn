@@ -447,8 +447,8 @@ _data = {
 
 [node name="Shop" type="CanvasLayer" node_paths=PackedStringArray("buttons", "transactions")]
 script = ExtResource("1_xynpu")
-buttons = [null, null, null]
-transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
+buttons = [null, null, null, null, null]
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3"), NodePath("Transactions/Transaction4"), NodePath("Transactions/Transaction5")]
 exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
@@ -546,11 +546,23 @@ transactionCostQuantity = 5
 
 [node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 6
-transactionQuantity = 3
+transactionQuantity = 1
 transactionCostType = 2
 transactionCostQuantity = 10
 
 [node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]
+transactionType = 7
+transactionQuantity = 1
+transactionCostType = 3
+transactionCostQuantity = 5
+
+[node name="Transaction4" parent="Transactions" instance=ExtResource("8_ikbkj")]
+transactionType = 7
+transactionQuantity = 1
+transactionCostType = 3
+transactionCostQuantity = 5
+
+[node name="Transaction5" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7
 transactionQuantity = 1
 transactionCostType = 3
