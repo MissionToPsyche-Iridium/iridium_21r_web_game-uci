@@ -27,7 +27,7 @@ var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
-var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better!.[/center]"
+var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better![/center]"
 
 var exit_delay: float = 1.5
 var _exit_timer: float = 0.0
@@ -83,7 +83,7 @@ func leaving_popup():
 	exit = true
 
 func _setup_buttons() -> void:
-	for i in transactions:
+	for i in range(0, len(transactions)):
 		var button: ShopButton = buttonPrefab.instantiate()
 		buttonContainer.add_child(button)
 		buttons.append(button)
@@ -92,7 +92,15 @@ func _setup_buttons() -> void:
 		var costType = transactions[i].transactionCostType
 		var costQuantity = transactions[i].transactionCostQuantity
 		
-		pass
+		var lambda = func()->void:
+			attempt_purchase(i)
+		button.button_down.connect(lambda)
+		button.icon = load(ResourceManager.itemIcons[i])
+		button.itemQuantity.text = "x%s" % itemQuantity
+		button.text = ResourceManager.itemStrings[itemType]
+		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+		button.costQuantity.text = "[right]x%s" % costQuantity
+		print(len(buttons))
 	
 	
 	#for i in range(0, len(transactionTypes)):
@@ -117,10 +125,10 @@ func _setup_buttons() -> void:
 func attempt_purchase(index: int) -> void:
 	var playerInventory = ResourceManager.instance
 	print("purchasing: %s" % index)
-	var itemType = transactionTypes[index]
-	var itemQuantity = transactionQuantities[index]
-	var costType = transactionCostTypes[index]
-	var costQuantity = transactionCostQuantities[index]
+	var itemType = transactions[index]
+	var itemQuantity = transactions[index].transactionQuantity
+	var costType = transactions[index].transactionCostType
+	var costQuantity = transactions[index].transactionCostQuantity
 	
 	if playerInventory != null and playerInventory.has_amount(costType, costQuantity):
 		playerInventory.remove_from_inventory(costType, costQuantity)

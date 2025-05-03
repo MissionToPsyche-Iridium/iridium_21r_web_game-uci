@@ -445,13 +445,10 @@ _data = {
 "RESET": SubResource("Animation_mfckb")
 }
 
-[node name="Shop" type="CanvasLayer"]
+[node name="Shop" type="CanvasLayer" node_paths=PackedStringArray("buttons", "transactions")]
 script = ExtResource("1_xynpu")
-transactionTypes = Array[int]([5, 6, 7])
-transactionQuantities = Array[int]([1, 1, 1])
-transactionCostTypes = Array[int]([3, 2, 1])
-transactionCostQuantities = Array[int]([5, 3, 5])
-exit_scene = null
+buttons = [null, null, null]
+transactions = [null, null, null]
 exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
@@ -494,10 +491,7 @@ layout_mode = 2
 theme_override_fonts/normal_font = ExtResource("3_qgbva")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "[center]I can upgrade your ore
-into super ore
- in order to build the 
-space station.[/center]"
+text = "[center]I can upgrade your pickaxe to get help mine ores better![/center]"
 
 [node name="Name Label" type="PanelContainer" parent="."]
 offset_left = 178.0
@@ -550,5 +544,13 @@ transactionQuantity = 1
 transactionCostQuantity = 5
 
 [node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
+transactionType = 6
+transactionQuantity = 3
+transactionCostType = 1
+transactionCostQuantity = 5
 
 [node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]
+transactionType = 7
+transactionQuantity = 1
+transactionCostType = 3
+transactionCostQuantity = 5
