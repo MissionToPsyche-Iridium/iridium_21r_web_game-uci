@@ -10,10 +10,10 @@ class_name Shop extends CanvasLayer
 const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.tscn")
 
 # Transaction data: all of these must be the same length as buttons
-@export var transactionTypes: Array[ResourceManager.ItemTypes]
-@export var transactionQuantities: Array[int]
-@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
-@export var transactionCostQuantities: Array[int]
+#@export var transactionTypes: Array[ResourceManager.ItemTypes]
+#@export var transactionQuantities: Array[int]
+#@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
+#@export var transactionCostQuantities: Array[int]
 
 @export var transactions: Array[Transaction]
 
@@ -36,9 +36,14 @@ var exit: bool = false
 signal exited
 
 func _validate_transactions() -> void:
-	assert (len(transactionTypes) == len(transactionQuantities) &&
-			len(transactionQuantities) == len(transactionCostTypes) &&
-			len(transactionCostTypes) == len(transactionCostQuantities))
+	for transaction in transactions:
+		assert ((transaction.transactionType == transaction.transactionCostQuantity) && 
+				(transaction.transactionQuantity == transaction.transactionCostType) &&
+				(transaction.transactionCostType == transaction.transactionCostQuantity))
+	
+	#assert (len(transactionTypes) == len(transactionQuantities) &&
+			#len(transactionQuantities) == len(transactionCostTypes) &&
+			#len(transactionCostTypes) == len(transactionCostQuantities))
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -78,23 +83,35 @@ func leaving_popup():
 	exit = true
 
 func _setup_buttons() -> void:
-	for i in range(0, len(transactionTypes)):
+	for i in transactions:
 		var button: ShopButton = buttonPrefab.instantiate()
 		buttonContainer.add_child(button)
 		buttons.append(button)
-		var itemType = transactionTypes[i]
-		var itemQuantity = transactionQuantities[i]
-		var costType = transactionCostTypes[i]
-		var costQuantity = transactionCostQuantities[i]
-		var lambda = func() -> void:
-			attempt_purchase(i)
-		button.button_down.connect(lambda)
-		button.icon = load(ResourceManager.itemIcons[itemType])
-		button.itemQuantity.text = "x%s" % itemQuantity
-		button.text = ResourceManager.itemStrings[itemType]
-		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
-		button.costQuantity.text = "[right]x%s" % costQuantity
-	print(len(buttons))
+		var itemType = transactions[i].transactionType
+		var itemQuantity = transactions[i].transactionQuantity
+		var costType = transactions[i].transactionCostType
+		var costQuantity = transactions[i].transactionCostQuantity
+		
+		pass
+	
+	
+	#for i in range(0, len(transactionTypes)):
+		#var button: ShopButton = buttonPrefab.instantiate()
+		#buttonContainer.add_child(button)
+		#buttons.append(button)
+		#var itemType = transactionTypes[i]
+		#var itemQuantity = transactionQuantities[i]
+		#var costType = transactionCostTypes[i]
+		#var costQuantity = transactionCostQuantities[i]
+		#var lambda = func() -> void:
+			#attempt_purchase(i)
+		#button.button_down.connect(lambda)
+		#button.icon = load(ResourceManager.itemIcons[itemType])
+		#button.itemQuantity.text = "x%s" % itemQuantity
+		#button.text = ResourceManager.itemStrings[itemType]
+		#button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+		#button.costQuantity.text = "[right]x%s" % costQuantity
+	#print(len(buttons))
 	
 
 func attempt_purchase(index: int) -> void:
