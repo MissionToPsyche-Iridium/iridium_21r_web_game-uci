@@ -116,6 +116,7 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2ahh0")
+startScenePath = "res://start_scene.tscn"
 
 [node name="ResourceManager" type="Node2D" parent="."]
 script = ExtResource("2_xbdv4")
