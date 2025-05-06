@@ -1,4 +1,4 @@
-[gd_scene load_steps=24 format=4 uid="uid://c8q0apo0f5pof"]
+[gd_scene load_steps=25 format=4 uid="uid://c8q0apo0f5pof"]
 
 [ext_resource type="Script" path="res://assets/scripts/screen_1.gd" id="1_5p84s"]
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_6np67"]
@@ -6,7 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://c1ub56m1wksmq" path="res://assets/placeholders/char_a_p1/humn.png" id="3_1vvu5"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="4_h72u8"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="5_tvyar"]
-[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="8_p5djc"]
+[ext_resource type="PackedScene" uid="uid://bmbhaij11ismy" path="res://scenes/facts/test_fact.tscn" id="8_la3n6"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="8_p5djc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
 
@@ -441,6 +442,10 @@ shape = SubResource("RectangleShape2D_hfnct")
 [node name="transition_animation" parent="scene_transition1" instance=ExtResource("8_p5djc")]
 visibility_layer = 15
 z_index = 12
+
+[node name="test_fact" parent="." instance=ExtResource("8_la3n6")]
+visibility_layer = 15
+position = Vector2(-235, 73)
 
 [connection signal="body_entered" from="scene_transition1" to="." method="_on_scene_transition_1_body_entered"]
 [connection signal="body_exited" from="scene_transition1" to="." method="_on_scene_transition_1_body_exited"]

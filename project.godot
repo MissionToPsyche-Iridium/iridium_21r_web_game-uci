@@ -24,11 +24,11 @@ PhantomCameraManager="*res://addons/phantom_camera/scripts/managers/phantom_came
 [dialogic]
 
 directories/dch_directory={
-"Claire/Claire": "res://assets/characters/Claire/Claire.dch",
-"Player/player": "res://assets/characters/Player/player.dch",
+"Claire": "res://assets/characters/Claire/Claire.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
-"characters/Claire": "res://assets/characters/Claire.dch"
+"characters/Claire": "res://assets/characters/Claire.dch",
+"player": "res://assets/characters/Player/player.dch"
 }
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
@@ -73,7 +73,7 @@ movie_writer/movie_file="C:/Users/Rachel/school/senior year/winter/inf 191a/irid
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 

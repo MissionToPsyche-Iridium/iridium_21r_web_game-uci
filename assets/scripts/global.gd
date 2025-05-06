@@ -1,6 +1,9 @@
 extends Node
 
 
+# facts
+var has_test_fact = false
+
 # Called when the node enters the scene tree for the first time.
 var current_scene = "screen1"
 

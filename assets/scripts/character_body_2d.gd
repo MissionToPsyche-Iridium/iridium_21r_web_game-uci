@@ -16,6 +16,7 @@ const JUMP_VELOCITY = -400.0
 var state = States.IDLE
 var actionable = true
 
+
 func _ready() -> void:
 	_animation_player.play('idle_down')
 
@@ -158,3 +159,4 @@ func set_state(new_state: int) -> void:
 
 func _calculate_mining_damage(score: float) -> int:
 	return ceil(pow(score, 2) * 10) + 10
+	
