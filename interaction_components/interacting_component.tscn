@@ -1,0 +1,42 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwn3ttr5d7ej8"]
+
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="1_24ud3"]
+[ext_resource type="Script" path="res://interaction_components/interacting_component.gd" id="1_c210y"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_i53xv"]
+radius = 23.0217
+
+[sub_resource type="LabelSettings" id="LabelSettings_hova7"]
+font = ExtResource("1_24ud3")
+font_size = 14
+
+[node name="InteractingComponent" type="Node2D"]
+script = ExtResource("1_c210y")
+
+[node name="InteractRange" type="Area2D" parent="."]
+collision_layer = 0
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
+shape = SubResource("CircleShape2D_i53xv")
+
+[node name="InteractLabel" type="Label" parent="."]
+z_index = 12
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -34.0
+offset_top = -46.0
+offset_right = 32.0
+offset_bottom = -28.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "X to Collect"
+label_settings = SubResource("LabelSettings_hova7")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[connection signal="area_entered" from="InteractRange" to="." method="_on_interact_range_area_entered"]
+[connection signal="area_exited" from="InteractRange" to="." method="_on_interact_range_area_exited"]
