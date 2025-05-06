@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="2_qelxt"]
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="3_2v7s8"]
 [ext_resource type="Texture2D" uid="uid://c1ub56m1wksmq" path="res://assets/placeholders/char_a_p1/humn.png" id="4_3gyds"]
-[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="6_4a6co"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_4a6co"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_jdysr"]
 size = Vector2(8.85714, 15.2857)

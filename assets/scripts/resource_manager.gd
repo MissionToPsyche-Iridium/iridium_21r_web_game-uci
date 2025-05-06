@@ -24,6 +24,7 @@ const itemIcons:Array = [
 
 static var instance:ResourceManager = null
 var inventory:Array = []
+var pickaxeTier:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -33,11 +34,14 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func has_amount(item_type: ItemTypes, amount: int) -> bool:
 	return inventory[item_type] >= amount
+	
+func get_amount(item_type: ItemTypes) -> int:
+	return inventory[item_type];
 
 func add_to_inventory(item_type: ItemTypes, amount: int) -> void:
 	inventory[item_type] += amount

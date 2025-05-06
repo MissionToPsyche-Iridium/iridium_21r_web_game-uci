@@ -121,7 +121,7 @@ script = ExtResource("1_2ahh0")
 script = ExtResource("2_xbdv4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -132,23 +132,27 @@ script = ExtResource("3_dc3cd")
 top_level = true
 script = ExtResource("4_xsmdl")
 follow_mode = 5
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_tymo8")
 dead_zone_width = 0.045
 dead_zone_height = 0.045
 limit_target = NodePath("../CameraBounds/CollisionShape2D")
 
-[node name="transition_animation" parent="." instance=ExtResource("6_pdnoq")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="transition_animation" parent="CanvasLayer" instance=ExtResource("6_pdnoq")]
 visibility_layer = 15
 z_index = 12
+mouse_filter = 1
 
 [node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
 script = ExtResource("7_wpr55")
 questList = [NodePath("0"), NodePath("1"), NodePath("2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
-layer = 2
+layer = 0
 
 [node name="QuestUI" type="Control" parent="ObjectiveManager/CanvasLayer"]
 z_index = 10
@@ -158,6 +162,8 @@ offset_left = -450.0
 offset_top = 5.0
 offset_right = -410.0
 offset_bottom = 45.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
 
 [node name="ColorRect" type="TextureRect" parent="ObjectiveManager/CanvasLayer/QuestUI"]
 layout_mode = 0

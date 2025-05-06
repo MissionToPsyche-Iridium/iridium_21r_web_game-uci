@@ -2,6 +2,7 @@ class_name GameScene extends Node2D
 
 @export var defaultSpawnPoint: Vector2 = Vector2(0, 0)
 @export var camera_bounds: CollisionShape2D = null
+@export var background: Background = null
 
 signal transition_scene(scene: String, spawnPosition: Vector2)
 
@@ -35,5 +36,5 @@ func _on_transition_enter(scene: String, spawn_position: Vector2):
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
