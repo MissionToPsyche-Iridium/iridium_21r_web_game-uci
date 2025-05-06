@@ -41,6 +41,9 @@ var interactionId: int = -1
 var shopId: Shop.ShopId = Shop.ShopId.NONE
 var purchaseId: int = -1
 
+# Game variables for triggering events
+var has_mined: bool = false
+
 """
 types of objectives:
 	mining objective - track on ore's onDestroy

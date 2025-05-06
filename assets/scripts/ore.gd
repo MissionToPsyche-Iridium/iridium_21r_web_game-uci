@@ -32,6 +32,9 @@ func on_hit(dmg: int) -> void:
 	else:
 		damageText.text = "0"
 		animationPlayer.play("hit_no")
+	if !ObjectiveManager.instance.has_mined:
+		GameManager.instance.start_cutscene("first_time_mining")
+		ObjectiveManager.instance.has_mined = true
 	#dmgInstance.animation_finished.connect(dmgInstance.queue_free)
 		
 
