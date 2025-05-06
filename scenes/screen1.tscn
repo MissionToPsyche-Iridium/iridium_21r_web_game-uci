@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://c8q0apo0f5pof"]
+[gd_scene load_steps=26 format=4 uid="uid://c8q0apo0f5pof"]
 
 [ext_resource type="Script" path="res://assets/scripts/screen_1.gd" id="1_5p84s"]
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_6np67"]
@@ -9,7 +9,6 @@
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="5_tvyar"]
 [ext_resource type="PackedScene" uid="uid://bmbhaij11ismy" path="res://scenes/facts/test_fact.tscn" id="8_la3n6"]
 [ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="8_p5djc"]
-[ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="10_2kghs"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
 
@@ -372,9 +371,6 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hfnct"]
 size = Vector2(309.875, 209.5)
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_smllk"]
-radius = 105.233
-
 [node name="Node2D" type="Node2D"]
 texture_filter = 3
 position = Vector2(0, -1)
@@ -453,12 +449,6 @@ z_index = 12
 [node name="test_fact" parent="." instance=ExtResource("8_la3n6")]
 visibility_layer = 15
 position = Vector2(-235, 73)
-
-[node name="Interactable" parent="test_fact" instance=ExtResource("10_2kghs")]
-interact_name = "X to Collect"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="test_fact/Interactable"]
-shape = SubResource("CircleShape2D_smllk")
 
 [connection signal="body_entered" from="scene_transition1" to="." method="_on_scene_transition_1_body_entered"]
 [connection signal="body_exited" from="scene_transition1" to="." method="_on_scene_transition_1_body_exited"]

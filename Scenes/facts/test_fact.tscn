@@ -1,10 +1,14 @@
-[gd_scene load_steps=4 format=3 uid="uid://bmbhaij11ismy"]
+[gd_scene load_steps=6 format=3 uid="uid://bmbhaij11ismy"]
 
 [ext_resource type="Script" path="res://scenes/facts/test_fact.gd" id="1_dib22"]
 [ext_resource type="Texture2D" uid="uid://cb63xpm80wfqd" path="res://test_metal.png" id="1_h30hc"]
+[ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_q8jxb"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_5fv6i"]
 radius = 38.0132
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_utj5g"]
+radius = 40.05
 
 [node name="test_fact" type="Area2D"]
 collision_layer = 3
@@ -18,5 +22,11 @@ shape = SubResource("CircleShape2D_5fv6i")
 position = Vector2(-9.53674e-07, 9.53674e-07)
 scale = Vector2(0.278125, 0.275)
 texture = ExtResource("1_h30hc")
+
+[node name="Interactable" parent="." instance=ExtResource("3_q8jxb")]
+interact_name = "X to Collect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+shape = SubResource("CircleShape2D_utj5g")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
