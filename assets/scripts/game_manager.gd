@@ -33,15 +33,18 @@ func _process(_delta: float) -> void:
 func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerActionable: bool = true):
 	if (scene_instance != null):
 		scene_instance.queue_free()
+	if camera.get_limit_target() as String != "":
+		remove_camera_bounds()
 	despawn_player()
 	scene = load(path)
 	scene_instance = scene.instantiate()
-	await call_deferred("add_child", scene_instance)
+	add_child(scene_instance)
 	if scene_instance is GameScene:
 		spawn_player(spawnPosition, playerActionable)
 		scene_instance.transition_scene.connect(_on_scene_transition)
 		if scene_instance.background != null:
 			scene_instance.background.camera = camera
+		set_camera_bounds((scene_instance as GameScene).camera_bounds)
 	if scene_instance is Control:
 		pass
 	if scene_instance is StartScene:
@@ -51,6 +54,9 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 
 func set_camera_bounds(bounds: CollisionShape2D) -> void:
 	camera.set_limit_target(bounds.get_path())
+
+func remove_camera_bounds() -> void:
+	camera.set_limit_target("")
 
 func spawn_player(spawn_position: Vector2, actionable: bool = true) -> void:
 	player_instance = player.instantiate()
@@ -68,8 +74,17 @@ func despawn_player() -> void:
 func begin_transition(scene_path: String, spawnPosition: Vector2 = Vector2(0, 0), playerActionable: bool = true) -> void:
 	Scene_transition_animation.play("fade_in")
 	await get_tree().create_timer(.5).timeout
-	change_scene(scene_path, spawnPosition, playerActionable)
-	Scene_transition_animation.play("fade_out")
+	var cutscene_name: String = CutsceneManager.instance.check_if_scene_change_triggers_cutscene(scene_path)
+	print("going to %s" % scene_path)
+	if cutscene_name != "":
+		print("triggering cutscene: %s" % cutscene_name)
+		change_scene("res://scenes/cutscene.tscn", Vector2.ZERO, false)
+		CutsceneManager.instance.remove_scene_change_trigger(scene_path, cutscene_name)
+		CutsceneManager.instance.start_cinematic_cutscene(cutscene_name)
+		GameManager.instance.Scene_transition_animation.play("fade_out")
+	else:
+		change_scene(scene_path, spawnPosition, playerActionable)
+		Scene_transition_animation.play("fade_out")
 
 func _on_scene_transition(scene_path: String, spawnPosition: Vector2) -> void:
 	begin_transition(scene_path, spawnPosition)

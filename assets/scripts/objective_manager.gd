@@ -90,6 +90,8 @@ func update_ui() -> void:
 			
 
 func set_quest(id: int) -> void:
+	if id == 1:
+		CutsceneManager.instance.add_scene_change_trigger("res://scenes/demo_indoor.tscn", "An_alien_greeting")
 	var quest = questList[id]
 	currentQuestId = id
 	currentType = quest.questType
