@@ -47,6 +47,10 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 	if scene_instance is StartScene:
 		startScene = scene_instance
 
+func start_cutscene(cutscene_name: String) -> void:
+	set_player_actionable(false)
+	Dialogic.start(cutscene_name)
+
 func set_camera_bounds(bounds: CollisionShape2D) -> void:
 	camera.set_limit_target(bounds.get_path())
 
