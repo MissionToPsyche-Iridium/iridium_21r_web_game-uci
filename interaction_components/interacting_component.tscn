@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cwn3ttr5d7ej8"]
+[gd_scene load_steps=6 format=3 uid="uid://cwn3ttr5d7ej8"]
 
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="1_24ud3"]
 [ext_resource type="Script" path="res://interaction_components/interacting_component.gd" id="1_c210y"]
+[ext_resource type="Texture2D" uid="uid://ce315tqhoi48l" path="res://interact_icon.png" id="3_wlpai"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_i53xv"]
 radius = 23.0217
@@ -19,6 +20,15 @@ collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractRange"]
 shape = SubResource("CircleShape2D_i53xv")
+
+[node name="InteractImage" type="TextureRect" parent="."]
+z_index = 12
+offset_left = -24.0
+offset_top = -78.0
+offset_right = 232.0
+offset_bottom = 178.0
+scale = Vector2(0.16, 0.16)
+texture = ExtResource("3_wlpai")
 
 [node name="InteractLabel" type="Label" parent="."]
 z_index = 12

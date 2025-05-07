@@ -1,6 +1,9 @@
 extends Node2D
 
 @onready var interact_label: Label = $InteractLabel
+#@onready var interact_image: Sprite2D = $InteractImage
+@onready var interact_image: TextureRect = $InteractImage
+
 var current_interactions := []
 var can_interact = true
 
@@ -9,6 +12,7 @@ func _input(event: InputEvent) -> void:
 		if current_interactions:
 			can_interact = false
 			interact_label.hide()
+			interact_image.hide()
 			
 			await current_interactions[0].interact.call()
 			can_interact = true
@@ -18,9 +22,12 @@ func _process(_delta: float) -> void:
 		current_interactions.sort_custom(_sort_by_nearest)
 		if current_interactions[0].is_interactable:
 			interact_label.text = current_interactions[0].interact_name
-			interact_label.show()
+			#interact_label.show()
+			#interact_image.show()
+			interact_image.visible = true
 	else:
 		interact_label.hide()
+		interact_image.hide()
 		
 
 func _sort_by_nearest(area1, area2):
