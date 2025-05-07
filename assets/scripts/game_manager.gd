@@ -49,6 +49,9 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 		pass
 	if scene_instance is StartScene:
 		startScene = scene_instance
+	if scene_instance is Cutscene:
+		camera.set_follow_target(scene_instance.camera_target)
+		CutsceneManager.instance.cutscene = scene_instance as Cutscene
 
 
 
@@ -78,7 +81,10 @@ func begin_transition(scene_path: String, spawnPosition: Vector2 = Vector2(0, 0)
 	print("going to %s" % scene_path)
 	if cutscene_name != "":
 		print("triggering cutscene: %s" % cutscene_name)
-		change_scene("res://scenes/cutscene.tscn", Vector2.ZERO, false)
+		var cutscene_scene: String = "res://scenes/cutscene.tscn"
+		if cutscene_name in CutsceneManager.CUTSCENE_SCENES:
+			cutscene_scene = CutsceneManager.CUTSCENE_SCENES[cutscene_name]
+		change_scene(cutscene_scene, Vector2.ZERO, false)
 		CutsceneManager.instance.remove_scene_change_trigger(scene_path, cutscene_name)
 		CutsceneManager.instance.start_cinematic_cutscene(cutscene_name)
 		GameManager.instance.Scene_transition_animation.play("fade_out")
@@ -111,6 +117,9 @@ func _on_dialogic_signal(args: Dictionary):
 			"playIntro":
 				if startScene != null:
 					startScene.start_intro()
+			"playCutsceneAnimation":
+				if CutsceneManager.instance.cutscene != null:
+					CutsceneManager.instance.play_animation(args["animationName"])
 			_:
 				printerr("Unknown signal %s" % args["type"])
 

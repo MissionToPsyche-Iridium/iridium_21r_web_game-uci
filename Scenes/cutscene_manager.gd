@@ -2,7 +2,12 @@ class_name CutsceneManager extends Node
 
 static var instance: CutsceneManager = null
 
+const CUTSCENE_SCENES: Dictionary = {
+	"An_alien_greeting": "res://scenes/cutscene-An_alien_greeting.tscn"
+}
+
 var has_mined: bool = false
+var cutscene: Cutscene = null
 
 # scene change triggers; keys are scene paths, values are cutscenes to play if the scene should trigger a cutscene
 var scene_change_triggers: Dictionary = {}
@@ -28,6 +33,10 @@ func start_cinematic_cutscene(cutscene_name: String) -> void:
 	GameManager.instance.set_player_actionable(false)
 	
 	Dialogic.start(cutscene_name)
+
+func play_animation(animation_name: String) -> void:
+	if cutscene != null:
+		cutscene.play_animation(animation_name)
 
 func check_if_scene_change_triggers_cutscene(scene_path: String) -> String:
 	if scene_path in scene_change_triggers:

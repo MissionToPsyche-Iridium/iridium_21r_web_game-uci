@@ -1,9 +1,17 @@
 [style name="premade_style"]
+[signal arg_type="dict" arg="{"animationName":"intro","type":"playCutsceneAnimation"}"]
+[wait time="4.0" skippable="true"]
 Zimbo: Oh hey, it looks like a human! Hey! Hey! Over here!
 Yuno: Hellooooo humann!
+[signal arg_type="dict" arg="{"animationName":"sequence1","type":"playCutsceneAnimation"}"]
+[wait time="3.0" hide_text="false"]
 Zimbo (Happy): Sorry if we scared you! I’m Zimbo and that’s my friend Yuno. We’re not from your galaxy, in fact, we are from Andromeda, your neighboring galaxy! Nice to meet you!
 Yuno (Happy): Yeah, nice to meet you too, fellow human! I heard so much about you and your people. You guys seem very smart and very silly at the same time. You guys seem very fun!
 Zimbo (Happy): Anyways, your pickaxe looks like it's having trouble getting those boulders over there. Don’t worry, you can have this. It’s a tool I made that helps us mine rocks in our galaxy. Take it! I promise it will make your mining so much easier.
+[signal arg_type="dict" arg="{"animationName":"sequence2","type":"playCutsceneAnimation"}"]
+[wait time="1.5"]
 You obtained Zimbo's Gift! You can now mine bouulders with ease!
 Zimbo (Wink): Feel free to reach out to me if you want better tools! Just bring me the materials and I can make it right on the spot for you! See you around!
-[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/demo_indoor.tscn","type":"transition","xPos":0,"yPos":100}"]
+[signal arg_type="dict" arg="{"animationName":"sequence3","type":"playCutsceneAnimation"}"]
+[wait time="1.0"]
+[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/demo_indoor.tscn","type":"transition","xPos":0,"yPos":300}"]
