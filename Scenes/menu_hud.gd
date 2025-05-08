@@ -21,6 +21,7 @@ func _ready():
 	back_button.pressed.connect(_toggle_menu)
 	
 	$Main/MenuPanel/RightCol/Pause.pressed.connect(_on_pause_button_pressed)
+	$Main/MenuPanel/LeftCol/Characters.pressed.connect(_on_characters_button_pressed)
 	# Connect all buttons in both columns
 	#for button in $Control/MenuPanel/LeftCol.get_children():
 		#if button is TextureButton:
@@ -36,3 +37,6 @@ func _toggle_menu():
 
 func _on_pause_button_pressed():
 	WindowManager.open_window("res://assets/menu/windows/Pause/PauseWindow.tscn")
+
+func _on_characters_button_pressed():
+	WindowManager.open_window("res://assets/menu/windows/Characters/CharactersWindow.tscn")
