@@ -17,10 +17,13 @@ enum ShopId {
 const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.tscn")
 
 # Transaction data: all of these must be the same length as buttons
-@export var transactionTypes: Array[ResourceManager.ItemTypes]
-@export var transactionQuantities: Array[int]
-@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
-@export var transactionCostQuantities: Array[int]
+#@export var transactionTypes: Array[ResourceManager.ItemTypes]
+#@export var transactionQuantities: Array[int]
+#@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
+#@export var transactionCostQuantities: Array[int]
+
+@export var transactions: Array[Transaction]
+
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
@@ -31,7 +34,7 @@ var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
-var default_text: String = "[center]I can upgrade your ore into super ore in order to build the space station.[/center]"
+var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better![/center]"
 
 var exit_delay: float = 1.5
 var _exit_timer: float = 0.0
@@ -39,15 +42,12 @@ var exit: bool = false
 
 signal exited
 
-func _validate_transactions() -> void:
-	assert (len(transactionTypes) == len(transactionQuantities) &&
-			len(transactionQuantities) == len(transactionCostTypes) &&
-			len(transactionCostTypes) == len(transactionCostQuantities))
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	# Create button's listeners
-	_validate_transactions()
+	
 	_setup_buttons()
 	_purchase_timer = 0
 	purchased = false
@@ -82,32 +82,53 @@ func leaving_popup():
 	exit = true
 
 func _setup_buttons() -> void:
-	for i in range(0, len(transactionTypes)):
+	for i in range(0, len(transactions)):
 		var button: ShopButton = buttonPrefab.instantiate()
 		buttonContainer.add_child(button)
 		buttons.append(button)
-		var itemType = transactionTypes[i]
-		var itemQuantity = transactionQuantities[i]
-		var costType = transactionCostTypes[i]
-		var costQuantity = transactionCostQuantities[i]
-		var lambda = func() -> void:
+		var itemType = transactions[i].transactionType
+		var itemQuantity = transactions[i].transactionQuantity
+		var costType = transactions[i].transactionCostType
+		var costQuantity = transactions[i].transactionCostQuantity
+		
+		var lambda = func()->void:
 			attempt_purchase(i)
 		button.button_down.connect(lambda)
-		button.icon = load(ResourceManager.itemIcons[itemType])
+		var iconFile = transactions[i].transactionType
+		button.icon = load(ResourceManager.itemIcons[iconFile])
 		button.itemQuantity.text = "x%s" % itemQuantity
 		button.text = ResourceManager.itemStrings[itemType]
 		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
 		button.costQuantity.text = "[right]x%s" % costQuantity
-	print(len(buttons))
+		print(len(buttons))
+	
+	
+	#for i in range(0, len(transactionTypes)):
+		#var button: ShopButton = buttonPrefab.instantiate()
+		#buttonContainer.add_child(button)
+		#buttons.append(button)
+		#var itemType = transactionTypes[i]
+		#var itemQuantity = transactionQuantities[i]
+		#var costType = transactionCostTypes[i]
+		#var costQuantity = transactionCostQuantities[i]
+		#var lambda = func() -> void:
+			#attempt_purchase(i)
+		#button.button_down.connect(lambda)
+		#button.icon = load(ResourceManager.itemIcons[itemType])
+		#button.itemQuantity.text = "x%s" % itemQuantity
+		#button.text = ResourceManager.itemStrings[itemType]
+		#button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+		#button.costQuantity.text = "[right]x%s" % costQuantity
+	#print(len(buttons))
 	
 
 func attempt_purchase(index: int) -> void:
 	var playerInventory = ResourceManager.instance
 	print("purchasing: %s" % index)
-	var itemType = transactionTypes[index]
-	var itemQuantity = transactionQuantities[index]
-	var costType = transactionCostTypes[index]
-	var costQuantity = transactionCostQuantities[index]
+	var itemType = transactions[index]
+	var itemQuantity = transactions[index].transactionQuantity
+	var costType = transactions[index].transactionCostType
+	var costQuantity = transactions[index].transactionCostQuantity
 	
 	if playerInventory != null and playerInventory.has_amount(costType, costQuantity):
 		playerInventory.remove_from_inventory(costType, costQuantity)
@@ -116,7 +137,7 @@ func attempt_purchase(index: int) -> void:
 		ObjectiveManager.instance.on_shop_purchase(shopId, index)
 		
 	else:
-		dialogue_box.text="[center]Sorry Link, I don't give credit! Come back when you're a little--mmm...--richer![/center]"
+		dialogue_box.text="[center]Sorry, it looks like you don't have enough.[/center]"
 	on_purchase()
 
 func on_purchase():

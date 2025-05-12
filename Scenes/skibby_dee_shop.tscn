@@ -1,33 +1,32 @@
-[gd_scene load_steps=17 format=3 uid="uid://c2340nj07nmny"]
+[gd_scene load_steps=16 format=3 uid="uid://dj4xer448yjqg"]
 
-[ext_resource type="Script" path="res://scenes/shop.gd" id="1_xynpu"]
-[ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
-[ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
-[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
-[ext_resource type="PackedScene" uid="uid://c0rntktsadkg4" path="res://assets/prefabs/shop/transaction.tscn" id="8_ikbkj"]
-[ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="9_m4ofs"]
-[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="10_nnql5"]
-[ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="11_ndv4l"]
+[ext_resource type="Script" path="res://scenes/shop.gd" id="1_sbmjs"]
+[ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="2_qpqrp"]
+[ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_bl80g"]
+[ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="4_n28xu"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="5_rpmd5"]
+[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="6_1co5j"]
+[ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="7_06blr"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiwan"]
-texture = ExtResource("9_m4ofs")
+texture = ExtResource("4_n28xu")
 texture_margin_left = 20.0
 texture_margin_top = 20.0
 texture_margin_right = 20.0
 texture_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqcwm"]
-texture = ExtResource("9_m4ofs")
+texture = ExtResource("4_n28xu")
 expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
 expand_margin_bottom = 20.0
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqml8"]
-texture = ExtResource("9_m4ofs")
+texture = ExtResource("4_n28xu")
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyhfl"]
-texture = ExtResource("10_nnql5")
+texture = ExtResource("6_1co5j")
 expand_margin_left = 20.0
 expand_margin_top = 20.0
 expand_margin_right = 20.0
@@ -445,19 +444,15 @@ _data = {
 "RESET": SubResource("Animation_mfckb")
 }
 
-[node name="Shop" type="CanvasLayer" node_paths=PackedStringArray("buttons", "transactions")]
-layer = 5
-script = ExtResource("1_xynpu")
-shopId = 2
-buttons = [null, null, null, null, null]
-transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3"), NodePath("Transactions/Transaction4"), NodePath("Transactions/Transaction5")]
+[node name="Shop" type="CanvasLayer"]
+script = ExtResource("1_sbmjs")
 exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -7.0
 offset_right = 1170.0
 offset_bottom = 648.0
-texture = ExtResource("1_yqrn8")
+texture = ExtResource("2_qpqrp")
 expand_mode = 2
 stretch_mode = 4
 
@@ -467,7 +462,7 @@ offset_top = 105.0
 offset_right = 602.0
 offset_bottom = 675.0
 scale = Vector2(0.753023, 0.753023)
-texture = ExtResource("3_b2ucw")
+texture = ExtResource("3_bl80g")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
 offset_left = 577.0
@@ -490,10 +485,13 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_jqcwm")
 
 [node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_qgbva")
+theme_override_fonts/normal_font = ExtResource("5_rpmd5")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
-text = "[center]I can upgrade your pickaxe to get help mine ores better![/center]"
+text = "[center]I can upgrade your ore
+into super ore
+ in order to build the 
+space station.[/center]"
 
 [node name="Name Label" type="PanelContainer" parent="."]
 offset_left = 178.0
@@ -504,7 +502,7 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_oqml8")
 
 [node name="RichTextLabel2" type="RichTextLabel" parent="Name Label"]
 layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("3_qgbva")
+theme_override_fonts/normal_font = ExtResource("5_rpmd5")
 theme_override_font_sizes/normal_font_size = 36
 bbcode_enabled = true
 text = "[center] Zimbo [center]"
@@ -523,7 +521,7 @@ layout_mode = 2
 [node name="TextureButton" type="TextureButton" parent="Buttons v2/VBoxContainer"]
 layout_mode = 2
 size_flags_vertical = 0
-texture_normal = ExtResource("11_ndv4l")
+texture_normal = ExtResource("7_06blr")
 stretch_mode = 0
 
 [node name="Button" type="Button" parent="."]
@@ -537,35 +535,3 @@ text = "Exit"
 libraries = {
 "": SubResource("AnimationLibrary_iepkf")
 }
-
-[node name="Transactions" type="Node" parent="."]
-
-[node name="Transaction" parent="Transactions" instance=ExtResource("8_ikbkj")]
-transactionType = 5
-transactionQuantity = 1
-transactionCostType = 1
-transactionCostQuantity = 5
-
-[node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
-transactionType = 6
-transactionQuantity = 1
-transactionCostType = 2
-transactionCostQuantity = 10
-
-[node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]
-transactionType = 7
-transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
-
-[node name="Transaction4" parent="Transactions" instance=ExtResource("8_ikbkj")]
-transactionType = 7
-transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
-
-[node name="Transaction5" parent="Transactions" instance=ExtResource("8_ikbkj")]
-transactionType = 7
-transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
