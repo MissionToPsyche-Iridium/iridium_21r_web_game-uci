@@ -35,7 +35,11 @@ var purchase_delay: float = 3.0
 var _purchase_timer: float = 0.0
 var purchased: bool = false
 
-var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better![/center]"
+@export var default_text: String = "[center]I can upgrade your pickaxe in order to mine ores better![/center]"
+@export var successful_purchase_text: String = "[center]Thanks! Here's your %s.[/center]"
+@export var failed_purchase_text: String = "[center]Sorry, it looks like you don't have enough.[/center]"
+@export var anything_else_text: String = "[center]Anything else I can get for you?[/center]"
+@export var leave_text: String = "[center]See you later![/center]"
 
 var exit_delay: float = 1.5
 var _exit_timer: float = 0.0
@@ -75,11 +79,11 @@ func exit_animation() -> void:
 	animationPlayer.play("Exit")
 
 func anything_else_popup():
-	dialogue_box.text="[center]Anything else I can get for you?[/center]"
+	dialogue_box.text=anything_else_text
 	purchased = false
 	
 func leaving_popup():
-	dialogue_box.text=("[center]See you later![/center]")
+	dialogue_box.text=leave_text
 	exit = true
 
 func _setup_buttons() -> void:
@@ -141,11 +145,11 @@ func attempt_purchase(index: int) -> void:
 		for i in range(0, len(costTypes)):
 			playerInventory.remove_from_inventory(costTypes[i], costQuantities[i])
 		playerInventory.add_to_inventory(itemType, itemQuantity)
-		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[itemType]
+		dialogue_box.text=successful_purchase_text % ResourceManager.itemStrings[itemType]
 		ObjectiveManager.instance.on_shop_purchase(shopId, index)
 		
 	else:
-		dialogue_box.text="[center]Sorry, it looks like you don't have enough.[/center]"
+		dialogue_box.text=failed_purchase_text
 	on_purchase()
 
 func on_purchase():
