@@ -426,7 +426,8 @@ shape = SubResource("RectangleShape2D_vraob")
 [node name="transition_animation" parent="scene_transition2" instance=ExtResource("6_4a6co")]
 visibility_layer = 15
 z_index = 12
-position = Vector2(-6, 0)
+offset_left = -6.0
+offset_right = -6.0
 
 [connection signal="body_entered" from="scene_transition2" to="." method="_on_scene_transition_2_body_entered"]
 [connection signal="body_exited" from="scene_transition2" to="." method="_on_scene_transition_2_body_exited"]

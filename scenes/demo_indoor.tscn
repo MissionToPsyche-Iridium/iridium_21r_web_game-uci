@@ -93,7 +93,6 @@ shape = SubResource("RectangleShape2D_pai5w")
 
 [node name="Shop" parent="shop_area" instance=ExtResource("6_udfyy")]
 visible = false
-transactionQuantities = Array[int]([1, 1, 1, 1, 1])
 
 [node name="CameraBounds" type="Area2D" parent="."]
 position = Vector2(-557, -362)

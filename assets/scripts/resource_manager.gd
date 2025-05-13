@@ -8,7 +8,10 @@ enum ItemTypes {
 	IRIDIUM_ORE,
 	PICKAXE_UPGRADE_1,
 	PICKAXE_UPGRADE_2,
-	PICKAXE_UPGRADE_3
+	PICKAXE_UPGRADE_3,
+	STATION_UPGRADE_1,
+	STATION_UPGRADE_2,
+	STATION_UPGRADE_3
 }
 const itemStrings:Array = [
 	"Copper Ore",
@@ -48,7 +51,13 @@ func _process(_delta: float) -> void:
 
 func has_amount(item_type: ItemTypes, amount: int) -> bool:
 	return inventory[item_type] >= amount
-	
+
+func has_amounts(item_types: Array[ItemTypes], amounts: Array[int]) -> bool:
+	for i in range(0, len(item_types)):
+		if inventory[item_types[i]] < amounts[i]:
+			return false
+	return true
+
 func get_amount(item_type: ItemTypes) -> int:
 	return inventory[item_type];
 

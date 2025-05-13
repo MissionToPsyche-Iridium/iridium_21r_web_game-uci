@@ -15,6 +15,7 @@ enum ShopId {
 @onready var exit_button = $Button
 @export var buttons: Array[ShopButton]
 const buttonPrefab: Resource = preload("res://assets/prefabs/shop/shop_button.tscn")
+const costPrefab: Resource = preload("res://assets/prefabs/shop/cost.tscn")
 
 # Transaction data: all of these must be the same length as buttons
 #@export var transactionTypes: Array[ResourceManager.ItemTypes]
@@ -88,8 +89,8 @@ func _setup_buttons() -> void:
 		buttons.append(button)
 		var itemType = transactions[i].transactionType
 		var itemQuantity = transactions[i].transactionQuantity
-		var costType = transactions[i].transactionCostType
-		var costQuantity = transactions[i].transactionCostQuantity
+		var costTypes = transactions[i].transactionCostTypes
+		var costQuantities = transactions[i].transactionCostQuantities
 		
 		var lambda = func()->void:
 			attempt_purchase(i)
@@ -98,8 +99,14 @@ func _setup_buttons() -> void:
 		button.icon = load(ResourceManager.itemIcons[iconFile])
 		button.itemQuantity.text = "x%s" % itemQuantity
 		button.text = ResourceManager.itemStrings[itemType]
-		button.costIcon.texture = load(ResourceManager.itemIcons[costType])
-		button.costQuantity.text = "[right]x%s" % costQuantity
+		for j in range(0, len(costTypes)):
+			var cost: Cost = costPrefab.instantiate()
+			button.add_child(cost)
+			cost.position = Vector2(259 - (j * 40), 32)
+			cost.costIcon.texture = load(ResourceManager.itemIcons[costTypes[j]])
+			cost.costQuantity.text = "[right]x%s" % costQuantities[j]
+			#button.costIcon.texture = load(ResourceManager.itemIcons[costType])
+			#button.costQuantity.text = "[right]x%s" % costQuantity
 		print(len(buttons))
 	
 	
@@ -125,15 +132,16 @@ func _setup_buttons() -> void:
 func attempt_purchase(index: int) -> void:
 	var playerInventory = ResourceManager.instance
 	print("purchasing: %s" % index)
-	var itemType = transactions[index]
+	var itemType = transactions[index].transactionType
 	var itemQuantity = transactions[index].transactionQuantity
-	var costType = transactions[index].transactionCostType
-	var costQuantity = transactions[index].transactionCostQuantity
+	var costTypes = transactions[index].transactionCostTypes
+	var costQuantities = transactions[index].transactionCostQuantities
 	
-	if playerInventory != null and playerInventory.has_amount(costType, costQuantity):
-		playerInventory.remove_from_inventory(costType, costQuantity)
+	if playerInventory != null and playerInventory.has_amounts(costTypes, costQuantities):
+		for i in range(0, len(costTypes)):
+			playerInventory.remove_from_inventory(costTypes[i], costQuantities[i])
 		playerInventory.add_to_inventory(itemType, itemQuantity)
-		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[costType]
+		dialogue_box.text="[center]Thanks! Here's your %s[/center]" % ResourceManager.itemStrings[itemType]
 		ObjectiveManager.instance.on_shop_purchase(shopId, index)
 		
 	else:

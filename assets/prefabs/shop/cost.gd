@@ -1,9 +1,7 @@
-class_name Transaction extends Node2D
+class_name Cost extends Control
 
-@export var transactionType: ResourceManager.ItemTypes
-@export var transactionQuantity: int
-@export var transactionCostTypes: Array[ResourceManager.ItemTypes]
-@export var transactionCostQuantities: Array[int]
+@onready var costIcon: TextureRect = $CostIcon
+@onready var costQuantity: RichTextLabel = $CostQuantity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

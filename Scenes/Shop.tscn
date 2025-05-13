@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="1_yqrn8"]
 [ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_b2ucw"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="3_qgbva"]
-[ext_resource type="PackedScene" uid="uid://c0rntktsadkg4" path="res://assets/prefabs/shop/transaction.tscn" id="8_ikbkj"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/shop/transaction.tscn" id="8_ikbkj"]
 [ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="9_m4ofs"]
 [ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="10_nnql5"]
 [ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="11_ndv4l"]
@@ -543,29 +543,29 @@ libraries = {
 [node name="Transaction" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 5
 transactionQuantity = 1
-transactionCostType = 1
-transactionCostQuantity = 5
+transactionCostTypes = Array[int]([0])
+transactionCostQuantities = Array[int]([5])
 
 [node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 6
 transactionQuantity = 1
-transactionCostType = 2
-transactionCostQuantity = 10
+transactionCostTypes = Array[int]([1])
+transactionCostQuantities = Array[int]([10])
 
 [node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7
 transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
+transactionCostTypes = Array[int]([2])
+transactionCostQuantities = Array[int]([5])
 
 [node name="Transaction4" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7
 transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
+transactionCostTypes = Array[int]([2, 0])
+transactionCostQuantities = Array[int]([5, 0])
 
 [node name="Transaction5" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7
 transactionQuantity = 1
-transactionCostType = 3
-transactionCostQuantity = 5
+transactionCostTypes = Array[int]([0, 1])
+transactionCostQuantities = Array[int]([1, 1])
