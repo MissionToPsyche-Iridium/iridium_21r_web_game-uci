@@ -1,8 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://bl63hk54yv5k0"]
+[gd_scene load_steps=15 format=3 uid="uid://bl63hk54yv5k0"]
 
 [ext_resource type="Script" path="res://HUD.gd" id="1_pyf1v"]
-[ext_resource type="Texture2D" uid="uid://c3hxcn8ehgchd" path="res://assets/HUD/computer.png" id="2_fdqul"]
-[ext_resource type="Texture2D" uid="uid://cdlnkwtfaoa3b" path="res://assets/HUD/Left Click.png" id="3_b6wlp"]
+[ext_resource type="Texture2D" uid="uid://b5qjskuq1qpi7" path="res://assets/HUD/Mine.png" id="2_fa8cn"]
 [ext_resource type="Texture2D" uid="uid://b6x5m5v7u8d4v" path="res://assets/HUD/E.png" id="4_mqgqq"]
 [ext_resource type="Texture2D" uid="uid://b0kbpuokk41g3" path="res://assets/HUD/Irridium.png" id="5_8rr7r"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_uxygb"]
@@ -29,21 +28,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="PC" type="TextureRect" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_left = 1075.0
-offset_top = 8.0
-offset_right = 1144.0
-offset_bottom = 77.0
-texture = ExtResource("2_fdqul")
-
-[node name="LeftClick" type="TextureButton" parent="CanvasLayer/Control"]
+[node name="Mine" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 1042.0
 offset_top = 520.0
 offset_right = 1139.0
 offset_bottom = 636.0
-texture_normal = ExtResource("3_b6wlp")
+texture_normal = ExtResource("2_fa8cn")
 
 [node name="Inventory" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -62,8 +53,8 @@ offset_bottom = 450.0
 
 [node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
@@ -71,23 +62,24 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Irridium" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("5_8rr7r")
-expand_mode = 3
-stretch_mode = 4
+expand_mode = 1
+stretch_mode = 3
 
 [node name="LabelIrridium" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
@@ -95,23 +87,24 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Copper" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("7_2rb7e")
-expand_mode = 3
-stretch_mode = 4
+expand_mode = 1
+stretch_mode = 3
 
 [node name="LabelCopper" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
@@ -119,23 +112,24 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Tungsten" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-texture = ExtResource("8_6hpf4")
-expand_mode = 3
-stretch_mode = 4
+texture = ExtResource("9_u5jjs")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="LabelTungsten" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
@@ -143,23 +137,24 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Silver" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
-texture = ExtResource("9_u5jjs")
-expand_mode = 3
-stretch_mode = 4
+texture = ExtResource("8_6hpf4")
+expand_mode = 1
+stretch_mode = 3
 
 [node name="LabelSilver" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
 layout_mode = 2
-theme_override_constants/margin_left = 10
-theme_override_constants/margin_top = 5
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_top = 8
 theme_override_constants/margin_right = 10
 theme_override_constants/margin_bottom = 5
 
@@ -167,17 +162,18 @@ theme_override_constants/margin_bottom = 5
 layout_mode = 2
 
 [node name="Nickel" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 texture = ExtResource("10_dxjwx")
-expand_mode = 3
-stretch_mode = 4
+expand_mode = 1
+stretch_mode = 3
 
 [node name="LabelNickel" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 30
 text = "x 0"
-horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="BigInventory" type="TextureRect" parent="CanvasLayer"]
@@ -228,7 +224,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Irridium2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
@@ -264,10 +259,9 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Irridium3" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
+[node name="Copper2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
 z_index = 1
 custom_minimum_size = Vector2(138, 0)
 layout_mode = 2
@@ -290,7 +284,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("8_6hpf4")
+texture = ExtResource("9_u5jjs")
 stretch_mode = 5
 
 [node name="LabelTungsten" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
@@ -299,7 +293,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Tungsten2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
@@ -325,7 +318,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("9_u5jjs")
+texture = ExtResource("8_6hpf4")
 stretch_mode = 5
 
 [node name="LabelSilver" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
@@ -334,7 +327,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="Silver2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
@@ -354,29 +346,28 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5"]
 layout_mode = 2
 
-[node name="Peridot" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="Nickel" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
 texture = ExtResource("10_dxjwx")
 stretch_mode = 5
 
-[node name="LabelPeridot" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="LabelNickel" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
 text = "x 0"
-horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Peridot2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="Nickel2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 z_index = 1
 custom_minimum_size = Vector2(138, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
-text = "Periodot"
+text = "Nickel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
