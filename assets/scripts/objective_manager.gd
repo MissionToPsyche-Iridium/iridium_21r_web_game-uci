@@ -41,6 +41,9 @@ var interactionId: int = -1
 var shopId: Shop.ShopId = Shop.ShopId.NONE
 var purchaseId: int = -1
 
+# Game variables for triggering events
+var has_mined: bool = false
+
 """
 types of objectives:
 	mining objective - track on ore's onDestroy
@@ -69,7 +72,7 @@ func _ready() -> void:
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
 
 func update_ui() -> void:
@@ -87,6 +90,8 @@ func update_ui() -> void:
 			
 
 func set_quest(id: int) -> void:
+	if id == 1:
+		CutsceneManager.instance.add_scene_change_trigger("res://scenes/demo_indoor.tscn", "An_alien_greeting")
 	var quest = questList[id]
 	currentQuestId = id
 	currentType = quest.questType

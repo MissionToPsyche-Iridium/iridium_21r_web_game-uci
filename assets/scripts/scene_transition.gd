@@ -15,6 +15,6 @@ func _ready() -> void:
 func _process(_delta: float) -> void:
 	pass
 
-func _on_enter(body: Node2D):
+func _on_enter(_body: Node2D):
 	print("body entered")
 	transition_enter.emit(scene, spawn_position)

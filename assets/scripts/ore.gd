@@ -1,28 +1,49 @@
 class_name Ore extends Node2D
 
 enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
+const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 1, 2]
 
 @export var ore_type: OreType = OreType.COPPER
 @export var ore_amount: int = 1
 @export var hp: int = 50
 
 @onready var sprite = $Sprite2D
+@onready var animationPlayer = $AnimationPlayer
+@onready var damageText = $DamageNumber
+var requiredPickaxeTier: int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sprite.frame = ore_type as int
+	requiredPickaxeTier = REQUIRED_PICKAXE_TIERS[ore_type]
 
 func update_sprite() -> void:
 	sprite.frame = ore_type as int
+	requiredPickaxeTier = REQUIRED_PICKAXE_TIERS[ore_type]
 
 func on_hit(dmg: int) -> void:
-	hp -= dmg
-	if hp <= 0:
-		perish()
+	animationPlayer.stop()
+	if ResourceManager.instance.pickaxeTier >= requiredPickaxeTier:
+		damageText.text = "%s" % dmg
+		animationPlayer.play("hit")
+		hp -= dmg
+		if hp <= 0:
+			perish()
+	else:
+		damageText.text = "0"
+		animationPlayer.play("hit_no")
+	if !CutsceneManager.instance.has_mined:
+		CutsceneManager.instance.start_cutscene("first_time_mining")
+		CutsceneManager.instance.has_mined = true
+	#dmgInstance.animation_finished.connect(dmgInstance.queue_free)
+		
 
 func perish() -> void:
 	ResourceManager.instance.add_to_inventory(toItemType(), ore_amount)
-	ObjectiveManager.instance.on_ore_mined(ore_type)
+
+	if GameManager.instance != null:
+		ObjectiveManager.instance.on_ore_mined(ore_type)
+		
 	queue_free()
 
 func toItemType() -> ResourceManager.ItemTypes:
@@ -41,5 +62,5 @@ func toItemType() -> ResourceManager.ItemTypes:
 			return ResourceManager.ItemTypes.COPPER_ORE
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta: float) -> void:
+func _process(_delta: float) -> void:
 	pass
