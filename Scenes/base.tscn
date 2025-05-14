@@ -1,10 +1,21 @@
-[gd_scene load_steps=8 format=4 uid="uid://dttnbh321vnju"]
+[gd_scene load_steps=28 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_t8rhl"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="4_n2qub"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_tdn2e"]
+[ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="6_fl1x1"]
+[ext_resource type="Script" path="res://scenes/shop.gd" id="7_gxq73"]
+[ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="8_vfvy8"]
+[ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="9_qlpy0"]
+[ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="10_qfdvl"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="11_300na"]
+[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="12_fim52"]
+[ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="13_br3g2"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/shop/transaction.tscn" id="14_4fg6b"]
+[ext_resource type="Texture2D" uid="uid://s7fp0dqty5kn" path="res://psyche logo - pixel.png" id="15_teho1"]
+[ext_resource type="PackedScene" uid="uid://nxsnb2cehquk" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
 size = Vector2(7523, 5329)
@@ -12,12 +23,451 @@ size = Vector2(7523, 5329)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d261"]
 size = Vector2(145, 138)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qvx0i"]
+size = Vector2(145, 138)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiwan"]
+texture = ExtResource("10_qfdvl")
+texture_margin_left = 20.0
+texture_margin_top = 20.0
+texture_margin_right = 20.0
+texture_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqcwm"]
+texture = ExtResource("10_qfdvl")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqml8"]
+texture = ExtResource("10_qfdvl")
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyhfl"]
+texture = ExtResource("12_fim52")
+expand_margin_left = 20.0
+expand_margin_top = 20.0
+expand_margin_right = 20.0
+expand_margin_bottom = 20.0
+
+[sub_resource type="Animation" id="Animation_6iixv"]
+resource_name = "Enter"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-468, -0.25, 0, 0.25, 0, 32, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333334, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name Label:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0, 178, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Name Label:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(-407, -0.25, 0, 0.25, 0, 93, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 0.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PanelContainer:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1377, -0.25, 0, 0.25, 0, 577, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 0.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PanelContainer:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1762, -0.25, 0, 0.25, 0, 962, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 0.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Background:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Background:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(800, -0.25, 0, 0.25, 0, 0, -0.5, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+
+[sub_resource type="Animation" id="Animation_pwv40"]
+resource_name = "Exit"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(32, -0.25, 0, 0.25, 0, -468, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333, 0.6)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(-0.0333333)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name Label:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(178, -0.25, 0, 0.25, 0, -322, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Name Label:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0, -407, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PanelContainer:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(577, -0.25, 0, 0.25, 0, 1377, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PanelContainer:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(962, -0.25, 0, 0.25, 0, 1762, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Background:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Background:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 800, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.6)
+}
+
+[sub_resource type="Animation" id="Animation_mfckb"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(32, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/2/type = "bezier"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Name Label:position:x")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(178, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/3/type = "bezier"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Name Label:position:y")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/4/type = "bezier"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("PanelContainer2:position:x")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/5/type = "bezier"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("PanelContainer2:position:y")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/6/type = "bezier"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PanelContainer:position:x")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(577, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/7/type = "bezier"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PanelContainer:position:y")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/8/type = "bezier"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("Button:position:x")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(962, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/9/type = "bezier"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Button:position:y")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/10/type = "bezier"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("Background:position:x")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/11/type = "bezier"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("Background:position:y")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_iepkf"]
+_data = {
+"Enter": SubResource("Animation_6iixv"),
+"Exit": SubResource("Animation_pwv40"),
+"RESET": SubResource("Animation_mfckb")
+}
+
 [node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "background", "transitions")]
 texture_filter = 3
 script = ExtResource("1_077qq")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
-transitions = [NodePath("scene_transition")]
+transitions = [NodePath("ZimboTransition"), NodePath("StationBuilding/StationTransition")]
 
 [node name="TileMaps" type="Node2D" parent="."]
 
@@ -62,17 +512,164 @@ position = Vector2(883.5, -950.5)
 shape = SubResource("RectangleShape2D_g04t6")
 disabled = true
 
-[node name="scene_transition" type="Area2D" parent="."]
+[node name="ZimboTransition" type="Area2D" parent="."]
 position = Vector2(-1358, 1240)
 collision_mask = 6
 script = ExtResource("4_n2qub")
 scene = "res://scenes/demo_indoor.tscn"
 spawn_position = Vector2(0, 300)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZimboTransition"]
+shape = SubResource("RectangleShape2D_2d261")
+
+[node name="StationBuilding" parent="." instance=ExtResource("16_neh08")]
+position = Vector2(1110, -2073)
+scale = Vector2(10, 10)
+
+[node name="StationTransition" type="Area2D" parent="StationBuilding"]
+position = Vector2(6.29999, -7)
+scale = Vector2(0.1, 0.1)
+collision_mask = 6
+script = ExtResource("4_n2qub")
+scene = "res://scenes/station.tscn"
+spawn_position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationBuilding/StationTransition"]
 shape = SubResource("RectangleShape2D_2d261")
 
 [node name="Background" parent="." instance=ExtResource("5_tdn2e")]
 position = Vector2(0, -2293)
 offsetMultiplierX = 0.5
 offsetMultiplierY = 0.5
+
+[node name="shop_area" type="Area2D" parent="."]
+position = Vector2(239, -170)
+collision_mask = 6
+script = ExtResource("6_fl1x1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
+shape = SubResource("RectangleShape2D_qvx0i")
+
+[node name="Shop" type="CanvasLayer" parent="shop_area" node_paths=PackedStringArray("buttons", "transactions")]
+layer = 5
+visible = false
+script = ExtResource("7_gxq73")
+shopId = 2
+buttons = [null, null, null]
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
+exit_spawnPos = Vector2(588, 370)
+default_text = "[center]Initializing station renovation system...[/center]"
+successful_purchase_text = "[center]Upgrading station![/center]"
+failed_purchase_text = "[center]Error: Not enough materials.[/center]"
+anything_else_text = "[center]Awaiting command...[/center]"
+leave_text = "[center]Exiting...[/center]"
+
+[node name="Background" type="TextureRect" parent="shop_area/Shop"]
+visible = false
+offset_left = -7.0
+offset_right = 1170.0
+offset_bottom = 648.0
+texture = ExtResource("8_vfvy8")
+expand_mode = 2
+stretch_mode = 4
+
+[node name="TextureRect" type="TextureRect" parent="shop_area/Shop"]
+visible = false
+offset_left = 32.0
+offset_top = 105.0
+offset_right = 602.0
+offset_bottom = 675.0
+scale = Vector2(0.753023, 0.753023)
+texture = ExtResource("9_qlpy0")
+
+[node name="PanelContainer" type="PanelContainer" parent="shop_area/Shop"]
+offset_left = 577.0
+offset_top = 85.0
+offset_right = 997.0
+offset_bottom = 405.0
+scale = Vector2(1.2024, 1.2024)
+theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="shop_area/Shop/PanelContainer"]
+layout_mode = 2
+theme_override_constants/separation = 5
+
+[node name="PanelContainer2" type="PanelContainer" parent="shop_area/Shop"]
+offset_left = 93.0
+offset_top = 459.0
+offset_right = 418.0
+offset_bottom = 622.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_jqcwm")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="shop_area/Shop/PanelContainer2"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("11_300na")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center]I can upgrade your pickaxe to get help mine ores better![/center]"
+
+[node name="Name Label" type="PanelContainer" parent="shop_area/Shop"]
+offset_left = 178.0
+offset_top = 410.0
+offset_right = 321.0
+offset_bottom = 450.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_oqml8")
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="shop_area/Shop/Name Label"]
+layout_mode = 2
+theme_override_fonts/normal_font = ExtResource("11_300na")
+theme_override_font_sizes/normal_font_size = 36
+bbcode_enabled = true
+text = "[center] Zimbo [center]"
+
+[node name="Buttons v2" type="PanelContainer" parent="shop_area/Shop"]
+visible = false
+offset_left = 594.0
+offset_top = 106.0
+offset_right = 1045.0
+offset_bottom = 446.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_lyhfl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="shop_area/Shop/Buttons v2"]
+layout_mode = 2
+
+[node name="TextureButton" type="TextureButton" parent="shop_area/Shop/Buttons v2/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 0
+texture_normal = ExtResource("13_br3g2")
+stretch_mode = 0
+
+[node name="Button" type="Button" parent="shop_area/Shop"]
+offset_left = 962.0
+offset_top = 481.0
+offset_right = 1081.0
+offset_bottom = 512.0
+text = "Exit"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="shop_area/Shop"]
+libraries = {
+"": SubResource("AnimationLibrary_iepkf")
+}
+
+[node name="Transactions" type="Node" parent="shop_area/Shop"]
+
+[node name="Transaction" parent="shop_area/Shop/Transactions" instance=ExtResource("14_4fg6b")]
+transactionType = 8
+transactionQuantity = 1
+transactionCostTypes = Array[int]([0])
+transactionCostQuantities = Array[int]([1])
+
+[node name="Transaction2" parent="shop_area/Shop/Transactions" instance=ExtResource("14_4fg6b")]
+transactionType = 9
+transactionQuantity = 1
+transactionCostTypes = Array[int]([0])
+transactionCostQuantities = Array[int]([1])
+
+[node name="Transaction3" parent="shop_area/Shop/Transactions" instance=ExtResource("14_4fg6b")]
+transactionType = 10
+transactionQuantity = 1
+transactionCostTypes = Array[int]([0])
+transactionCostQuantities = Array[int]([1])
+
+[node name="Sprite2D" type="Sprite2D" parent="shop_area"]
+texture = ExtResource("15_teho1")

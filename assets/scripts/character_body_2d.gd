@@ -93,9 +93,9 @@ func move_player() -> void:
 
 func _input(event) -> void:
 	if (actionable):
-		if event.is_action_pressed("ui_accept"):
+		if event.is_action_pressed("mine"):
 			begin_mine()
-		if event.is_action_released("ui_accept"):
+		if event.is_action_released("mine"):
 			end_mine()
 
 func begin_mine() -> void:

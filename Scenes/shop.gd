@@ -145,7 +145,10 @@ func attempt_purchase(index: int) -> void:
 		for i in range(0, len(costTypes)):
 			playerInventory.remove_from_inventory(costTypes[i], costQuantities[i])
 		playerInventory.add_to_inventory(itemType, itemQuantity)
-		dialogue_box.text=successful_purchase_text % ResourceManager.itemStrings[itemType]
+		if "%s" in successful_purchase_text:
+			dialogue_box.text=successful_purchase_text % ResourceManager.itemStrings[itemType]
+		else:
+			dialogue_box.text=successful_purchase_text
 		ObjectiveManager.instance.on_shop_purchase(shopId, index)
 		
 	else:

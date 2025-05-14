@@ -237,9 +237,8 @@ miningNeeded = 5
 [node name="1" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 1
-questName = "Visiting a Friend"
-questDescription = "Go to Zimbo's Shop"
-sceneId = 4
+questDescription = "Go to the Space Station"
+sceneId = 5
 
 [node name="2" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")

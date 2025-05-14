@@ -22,6 +22,9 @@ const itemStrings:Array = [
 	"Silver Pickaxe",
 	"Tungsten Pickaxe",
 	"Iridium Pickaxe",
+	"Space Station Upgrade 1",
+	"Space Station Upgrade 2",
+	"Space Station Upgrade 3",
 ]
 const itemIcons:Array = [
 	"res://assets/ui assets/Shop/Ore Icons/Bronze.png",
@@ -32,11 +35,17 @@ const itemIcons:Array = [
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe1.png",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe2.png",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe3.png",
+	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
+	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
+	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
 ]
+
+signal onInventoryUpdate(item_type: ItemTypes, amount: int)
 
 static var instance:ResourceManager = null
 var inventory:Array = []
 var pickaxeTier:int = 0
+var stationTier:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -63,11 +72,28 @@ func get_amount(item_type: ItemTypes) -> int:
 
 func add_to_inventory(item_type: ItemTypes, amount: int) -> void:
 	inventory[item_type] += amount
+	match item_type:
+		ItemTypes.PICKAXE_UPGRADE_1:
+			pickaxeTier = 1
+		ItemTypes.PICKAXE_UPGRADE_2:
+			pickaxeTier = 2
+		ItemTypes.PICKAXE_UPGRADE_3:
+			pickaxeTier = 3
+		ItemTypes.STATION_UPGRADE_1:
+			stationTier = 1
+		ItemTypes.STATION_UPGRADE_2:
+			stationTier = 2
+		ItemTypes.STATION_UPGRADE_3:
+			stationTier = 3
+	print("pickaxe tier: %s" % pickaxeTier)
+	print("stationTier: %s" % stationTier)
 	print("%s x%s" % [ItemTypeToString(item_type), amount])
+	onInventoryUpdate.emit(item_type, amount)
 
 # Make sure to check that the inventory has_amount before removing
 func remove_from_inventory(item_type: ItemTypes, amount: int) -> void:
 	inventory[item_type] -= amount
+	onInventoryUpdate.emit(item_type, -amount)
 
 static func ItemTypeToString(item_type: ItemTypes) -> String:
 	return itemStrings[item_type]
