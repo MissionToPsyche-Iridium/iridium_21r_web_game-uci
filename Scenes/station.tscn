@@ -1,10 +1,33 @@
-[gd_scene load_steps=9 format=3 uid="uid://b2ld6lp2np5qn"]
+[gd_scene load_steps=17 format=3 uid="uid://b2ld6lp2np5qn"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_rro7p"]
-[ext_resource type="Texture2D" uid="uid://dcc4eekcq2w8x" path="res://PokC3A9mon_Center_inside_RSE.png" id="2_4n1u3"]
+[ext_resource type="Texture2D" uid="uid://b6j8t1f2e8qy" path="res://assets/sprites/Space station interior.png" id="2_qy6d8"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_m20uc"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_fjuvx"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_83koo"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi7y"]
+size = Vector2(8, 56.1)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jw1dd"]
+size = Vector2(78, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_nfgkm"]
+size = Vector2(31, 21)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1qasf"]
+size = Vector2(2.4, 82.6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fyupw"]
+size = Vector2(83.05, 6.90001)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kh2mb"]
+size = Vector2(28.7, 13.3)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o1641"]
+size = Vector2(3.40001, 95.7)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_meqh1"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87mga"]
 size = Vector2(145, 138)
@@ -21,12 +44,60 @@ camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
 scene_id = 5
 
-[node name="PokC3a9MonCenterInsideRse" type="Sprite2D" parent="."]
+[node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
-texture = ExtResource("2_4n1u3")
+texture = ExtResource("2_qy6d8")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-59, 35.45)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_yfi7y")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-21, -12.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_jw1dd")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+polygon = PackedVector2Array(3, 63.5, 3, 16.5, 12, 7.5, 17, 7.5, 17, 28.5, 11, 28.5, 11, 63.5)
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(47.5, 18)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_nfgkm")
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
+polygon = PackedVector2Array(18, -13.5, 24, -13.5, 24, -10.5, 28, -10.5, 28, -8.5, 34, -3.5, 50, -3.5, 56, -9.5, 56, -13.5, 63, -13.5, 63, -20.2, 18, -20.2)
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(64.2, 22.3)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_1qasf")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(21.875, 66.85)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_fyupw")
+
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-48.55, 70.15)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_kh2mb")
+
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-64.7, 27.45)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_o1641")
+
+[node name="CollisionShape2D8" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-69.8, -23.5)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_meqh1")
 
 [node name="scene_transition" type="Area2D" parent="."]
-position = Vector2(-1187, 232)
+position = Vector2(-269, 634)
 collision_mask = 6
 script = ExtResource("3_m20uc")
 scene = "res://scenes/base.tscn"
@@ -44,7 +115,7 @@ shape = SubResource("RectangleShape2D_8utdo")
 disabled = true
 
 [node name="shop_area" type="Area2D" parent="CameraBounds"]
-position = Vector2(562, 332)
+position = Vector2(445, 316)
 collision_mask = 6
 script = ExtResource("4_fjuvx")
 
@@ -52,6 +123,7 @@ script = ExtResource("4_fjuvx")
 shape = SubResource("RectangleShape2D_2yg76")
 
 [node name="Shop" parent="CameraBounds/shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
+visible = false
 shopId = 1
 transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
 default_text = "[center]Initializing station renovation system...[/center]"
