@@ -2,6 +2,7 @@ class_name Ore extends Node2D
 
 enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
 const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 1, 2]
+const ORE_NAMES = ["Cu", "Ni", "Ag", "W", "Ir"]
 
 @export var ore_type: OreType = OreType.COPPER
 @export var ore_amount: int = 1
@@ -46,8 +47,8 @@ func perish() -> void:
 
 	if GameManager.instance != null:
 		ObjectiveManager.instance.on_ore_mined(ore_type)
-		
-	queue_free()
+	damageText.text = "x%s %s" % [ore_amount, ORE_NAMES[ore_type]]
+	animationPlayer.play("perish")
 
 func toItemType() -> ResourceManager.ItemTypes:
 	match ore_type:
