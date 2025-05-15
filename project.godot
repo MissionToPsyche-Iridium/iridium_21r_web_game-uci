@@ -44,9 +44,12 @@ directories/dtl_directory={
 "first_time_mining": "res://timelines/chapter_1/first_time_mining.dtl",
 "meeting_skibby_and_dee": "res://timelines/meeting_skibby_and_dee.dtl",
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
-"testscene": "res://timelines/chapter_1/testscene.dtl"
+"successful_mining": "res://timelines/chapter_1/successful_mining.dtl",
+"testscene": "res://timelines/chapter_1/testscene.dtl",
+"try_to_mine_harder_ore": "res://timelines/chapter_1/try_to_mine_harder_ore.dtl"
 }
 variables={
+"has_met_zimbo": false,
 "player_name": ""
 }
 layout/style_list=["res://assets/dialgoue_box_style/dialogic_premade.tres", "res://assets/dialgoue_box_style/premade_style.tres"]

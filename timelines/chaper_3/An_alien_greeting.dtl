@@ -12,6 +12,7 @@ Zimbo (Happy): Anyways, your pickaxe looks like it's having trouble getting thos
 [wait time="1.5"]
 You obtained Zimbo's Gift! You can now mine bouulders with ease!
 Zimbo (Wink): Feel free to reach out to me if you want better tools! Just bring me the materials and I can make it right on the spot for you! See you around!
+set {has_met_zimbo} = true
 [signal arg_type="dict" arg="{"animationName":"sequence3","type":"playCutsceneAnimation"}"]
 [wait time="1.0"]
 [signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/demo_indoor.tscn","type":"transition","xPos":0,"yPos":300}"]

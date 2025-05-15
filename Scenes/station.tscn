@@ -52,7 +52,13 @@ script = ExtResource("4_fjuvx")
 shape = SubResource("RectangleShape2D_2yg76")
 
 [node name="Shop" parent="CameraBounds/shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
+shopId = 1
 transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
+default_text = "[center]Initializing station renovation system...[/center]"
+successful_purchase_text = "[center]Upgrading station![/center]"
+failed_purchase_text = "[center]Error: Not enough materials.[/center]"
+anything_else_text = "[center]Awaiting command...[/center]"
+leave_text = "[center]Exiting...[/center]"
 
 [node name="Background" parent="CameraBounds/shop_area/Shop" index="0"]
 visible = false

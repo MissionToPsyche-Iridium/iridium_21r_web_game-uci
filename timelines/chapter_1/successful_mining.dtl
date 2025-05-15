@@ -1,0 +1,9 @@
+[style name="premade_style"]
+*beep* *beep*
+characters/Claire (Neutral): Hey {player_name}. How's the mining going?
+I've got a couple samples of copper.
+characters/Claire (Happy): Great! Should be just enough to power up the station now. Head over there and we can get things set up.
+Where is it?
+characters/Claire (Neutral): Straight up from where you landed, up on top of the hill.
+[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":true}"]
+[signal arg_type="dict" arg="{"questId":2,"type":"startQuest"}"]

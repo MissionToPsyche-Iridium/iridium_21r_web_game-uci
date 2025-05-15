@@ -6,7 +6,8 @@ const CUTSCENE_SCENES: Dictionary = {
 	"An_alien_greeting": "res://scenes/cutscene-An_alien_greeting.tscn"
 }
 
-var has_mined: bool = false
+var has_mined: bool = true
+var tried_to_mine_a_harder_ore: bool = false
 var cutscene: Cutscene = null
 
 # scene change triggers; keys are scene paths, values are cutscenes to play if the scene should trigger a cutscene

@@ -150,7 +150,7 @@ mouse_filter = 1
 
 [node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
 script = ExtResource("7_wpr55")
-questList = [NodePath("0"), NodePath("1"), NodePath("2")]
+questList = [NodePath("0"), NodePath("0_1"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
 layer = 0
@@ -234,6 +234,11 @@ questName = "\"Securing Humanity's Future\""
 questDescription = "Mine 5 copper ores."
 miningNeeded = 5
 
+[node name="0_1" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questDescription = "transition"
+isVisible = false
+
 [node name="1" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 1
@@ -243,10 +248,30 @@ sceneId = 5
 [node name="2" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 5
-questName = "The Art of Commerce"
-questDescription = "Purchase something from Zimbo."
+questDescription = "Upgrade the space station."
+shopId = 1
+purchaseId = 0
+
+[node name="3" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 1
+questDescription = "exit to base"
+sceneId = 1
+isVisible = false
+
+[node name="4" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 1
+questDescription = "Go to Zimbo's Shop."
+sceneId = 4
+
+[node name="5" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 5
+questDescription = "Purchase a Silver Pickaxe from Zimbo."
+sceneId = 4
 shopId = 2
-purchaseId = 3
+purchaseId = 0
 
 [node name="CutsceneManager" type="Node" parent="."]
 script = ExtResource("11_ecjy8")

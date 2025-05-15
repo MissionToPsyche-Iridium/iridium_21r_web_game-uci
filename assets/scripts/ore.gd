@@ -32,6 +32,8 @@ func on_hit(dmg: int) -> void:
 	else:
 		damageText.text = "0"
 		animationPlayer.play("hit_no")
+		if !CutsceneManager.instance.tried_to_mine_a_harder_ore:
+			CutsceneManager.instance.start_cutscene("try_to_mine_harder_ore")
 	if !CutsceneManager.instance.has_mined:
 		CutsceneManager.instance.start_cutscene("first_time_mining")
 		CutsceneManager.instance.has_mined = true
