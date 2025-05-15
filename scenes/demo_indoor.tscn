@@ -21,7 +21,7 @@ size = Vector2(7.59998, 57)
 size = Vector2(145, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8jnb"]
-size = Vector2(2540, 1636)
+size = Vector2(2560, 1440)
 
 [node name="screen2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
 script = ExtResource("1_0dlbh")

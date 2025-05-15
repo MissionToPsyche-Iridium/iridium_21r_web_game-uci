@@ -32,17 +32,31 @@ size = Vector2(3.40001, 95.7)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_87mga"]
 size = Vector2(145, 138)
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_8utdo"]
-size = Vector2(2540, 1636)
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2yg76"]
 size = Vector2(145, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejscf"]
+size = Vector2(2560, 1440)
 
 [node name="Station" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
 script = ExtResource("1_rro7p")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
 scene_id = 5
+
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(4096, 3200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2048.0
+offset_top = -1600.0
+offset_right = 2048.0
+offset_bottom = 1600.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2048, 1600)
+color = Color(0, 0, 0, 1)
 
 [node name="Background" type="Sprite2D" parent="."]
 scale = Vector2(10, 10)
@@ -101,28 +115,20 @@ position = Vector2(-269, 634)
 collision_mask = 6
 script = ExtResource("3_m20uc")
 scene = "res://scenes/base.tscn"
-spawn_position = Vector2(1173, -1993)
+spawn_position = Vector2(1075, -1963)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
 shape = SubResource("RectangleShape2D_87mga")
 
-[node name="CameraBounds" type="Area2D" parent="."]
-position = Vector2(-557, -362)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
-position = Vector2(567, 448)
-shape = SubResource("RectangleShape2D_8utdo")
-disabled = true
-
-[node name="shop_area" type="Area2D" parent="CameraBounds"]
-position = Vector2(445, 316)
+[node name="shop_area" type="Area2D" parent="."]
+position = Vector2(-112, -46)
 collision_mask = 6
 script = ExtResource("4_fjuvx")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds/shop_area"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
 shape = SubResource("RectangleShape2D_2yg76")
 
-[node name="Shop" parent="CameraBounds/shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
+[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
 visible = false
 shopId = 1
 transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
@@ -132,22 +138,30 @@ failed_purchase_text = "[center]Error: Not enough materials.[/center]"
 anything_else_text = "[center]Awaiting command...[/center]"
 leave_text = "[center]Exiting...[/center]"
 
-[node name="Background" parent="CameraBounds/shop_area/Shop" index="0"]
+[node name="Background" parent="shop_area/Shop" index="0"]
 visible = false
 
-[node name="TextureRect" parent="CameraBounds/shop_area/Shop" index="1"]
+[node name="TextureRect" parent="shop_area/Shop" index="1"]
 visible = false
 
-[node name="RichTextLabel2" parent="CameraBounds/shop_area/Shop/Name Label" index="0"]
+[node name="RichTextLabel2" parent="shop_area/Shop/Name Label" index="0"]
 text = "[center] Claire [center]"
 
-[node name="Transaction" parent="CameraBounds/shop_area/Shop/Transactions" index="0"]
+[node name="Transaction" parent="shop_area/Shop/Transactions" index="0"]
 transactionType = 8
 
-[node name="Transaction2" parent="CameraBounds/shop_area/Shop/Transactions" index="1"]
+[node name="Transaction2" parent="shop_area/Shop/Transactions" index="1"]
 transactionType = 9
 
-[node name="Transaction3" parent="CameraBounds/shop_area/Shop/Transactions" index="2"]
+[node name="Transaction3" parent="shop_area/Shop/Transactions" index="2"]
 transactionType = 10
 
-[editable path="CameraBounds/shop_area/Shop"]
+[node name="CameraBounds" type="Area2D" parent="."]
+position = Vector2(-557, -362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
+position = Vector2(567, 400)
+shape = SubResource("RectangleShape2D_ejscf")
+disabled = true
+
+[editable path="shop_area/Shop"]

@@ -14,19 +14,19 @@ func _ready() -> void:
 
 func updateSprite() -> void:
 	if ResourceManager.instance == null: return
-	stage0Sprite.visible = false
-	stage1Sprite.visible = false
-	stage2Sprite.visible = false
-	stage3Sprite.visible = false
-	match ResourceManager.instance.stationTier:
-		1:
-			stage1Sprite.visible = true
-		2:
-			stage2Sprite.visible = true
-		3:
-			stage3Sprite.visible = true
-		_:
-			stage0Sprite.visible = true
+	stage0Sprite.visible = true
+	#stage1Sprite.visible = false
+	#stage2Sprite.visible = false
+	#stage3Sprite.visible = false
+	#match ResourceManager.instance.stationTier:
+		#1:
+			#stage1Sprite.visible = true
+		#2:
+			#stage2Sprite.visible = true
+		#3:
+			#stage3Sprite.visible = true
+		#_:
+			#stage0Sprite.visible = true
 
 func onInventoryUpdate(itemType: ResourceManager.ItemTypes, amount: int):
 	updateSprite()

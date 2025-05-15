@@ -467,7 +467,7 @@ texture_filter = 3
 script = ExtResource("1_077qq")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
-transitions = [NodePath("ZimboTransition"), NodePath("StationBuilding/StationTransition")]
+transitions = [NodePath("ZimboTransition"), NodePath("StationTransition")]
 scene_id = 1
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -530,19 +530,19 @@ spawn_position = Vector2(0, 300)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZimboTransition"]
 shape = SubResource("RectangleShape2D_2d261")
 
-[node name="StationBuilding" parent="." instance=ExtResource("16_neh08")]
+[node name="StationBuilding" parent="." node_paths=PackedStringArray("transition_trigger") instance=ExtResource("16_neh08")]
 position = Vector2(1110, -2073)
 scale = Vector2(10, 10)
+transition_trigger = NodePath("../StationTransition")
 
-[node name="StationTransition" type="Area2D" parent="StationBuilding"]
-position = Vector2(6.29999, -7)
-scale = Vector2(0.1, 0.1)
+[node name="StationTransition" type="Area2D" parent="."]
+position = Vector2(1075, -2113)
 collision_mask = 6
 script = ExtResource("4_n2qub")
 scene = "res://scenes/station.tscn"
 spawn_position = Vector2(0, 300)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StationBuilding/StationTransition"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StationTransition"]
 shape = SubResource("RectangleShape2D_2d261")
 
 [node name="Background" parent="." instance=ExtResource("5_tdn2e")]
