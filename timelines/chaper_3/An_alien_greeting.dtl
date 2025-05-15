@@ -10,7 +10,9 @@ Yuno (Happy): Yeah, nice to meet you too, fellow human! I heard so much about yo
 Zimbo (Happy): Anyways, your pickaxe looks like it's having trouble getting those boulders over there. Don’t worry, you can have this. It’s a tool I made that helps us mine rocks in our galaxy. Take it! I promise it will make your mining so much easier.
 [signal arg_type="dict" arg="{"animationName":"sequence2","type":"playCutsceneAnimation"}"]
 [wait time="1.5"]
-You obtained Zimbo's Gift! You can now mine bouulders with ease!
+# give PICKAXE_UPGRADE_1
+[signal arg_type="dict" arg="{"amount":1,"itemType":5,"type":"addItemToInventory"}"]
+You obtained Zimbo's Gift! You can now mine harder materials with ease!
 Zimbo (Wink): Feel free to reach out to me if you want better tools! Just bring me the materials and I can make it right on the spot for you! See you around!
 set {has_met_zimbo} = true
 [signal arg_type="dict" arg="{"animationName":"sequence3","type":"playCutsceneAnimation"}"]
