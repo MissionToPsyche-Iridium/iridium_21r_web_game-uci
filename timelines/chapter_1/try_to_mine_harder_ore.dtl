@@ -6,3 +6,4 @@ if {has_met_zimbo} == true:
 else:
 	Why wasn't I equipped with something that COULD chip at it?
 	characters/Claire (Angry): Hey! Do you know how much it cost us to send you up there? These missions aren't cheap, you know!
+[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":true}"]
