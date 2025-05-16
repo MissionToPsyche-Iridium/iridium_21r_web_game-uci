@@ -148,9 +148,8 @@ visibility_layer = 15
 z_index = 12
 mouse_filter = 1
 
-[node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
+[node name="ObjectiveManager" type="Node2D" parent="."]
 script = ExtResource("7_wpr55")
-questList = [NodePath("0"), NodePath("1"), NodePath("2")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
 layer = 0

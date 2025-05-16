@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="2_faxfw"]
 [ext_resource type="PackedScene" uid="uid://wo8s4esei43m" path="res://scenes/menu_hud.tscn" id="2_yfre2"]
 [ext_resource type="Texture2D" uid="uid://bk3xsk4igdc6y" path="res://assets/spritesheets/Player_Sprite.png" id="3_ccxhm"]
-[ext_resource type="PackedScene" uid="uid://bl63hk54yv5k0" path="res://hud.tscn" id="3_eltcr"]
+[ext_resource type="PackedScene" path="res://hud.tscn" id="3_eltcr"]
 [ext_resource type="Script" path="res://assets/scripts/mining_qte_controller.gd" id="4_rgdai"]
 [ext_resource type="Texture2D" uid="uid://dqncnv6yc5axk" path="res://assets/sprites/image 8.png" id="5_imkcy"]
 [ext_resource type="Texture2D" uid="uid://cdfi5x31owxnm" path="res://assets/sprites/mining bar - moves.png" id="6_0c3j8"]

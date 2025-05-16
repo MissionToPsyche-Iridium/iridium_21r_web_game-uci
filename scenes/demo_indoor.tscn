@@ -25,8 +25,8 @@ size = Vector2(2540, 1636)
 
 [node name="screen2" type="Node2D" node_paths=PackedStringArray("camera_bounds")]
 script = ExtResource("1_0dlbh")
-scene_id = 4
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
+scene_id = 4
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(4096, 3200)

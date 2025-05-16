@@ -1,4 +1,4 @@
-[gd_scene load_steps=33 format=4 uid="uid://iyct5vecdabj"]
+[gd_scene load_steps=33 format=4 uid="uid://cmcrcekcwflgm"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_jhs8n"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_w3eoi"]

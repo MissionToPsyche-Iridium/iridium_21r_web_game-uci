@@ -11,10 +11,9 @@ size = Vector2(7576, 3665)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d261"]
 size = Vector2(145, 138)
 
-[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds")]
+[node name="Node2D3" type="Node2D" node_paths=PackedStringArray("camera_bounds")]
 texture_filter = 3
 script = ExtResource("1_x2nw6")
-scene_id = 1
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 scene_id = 1
 
