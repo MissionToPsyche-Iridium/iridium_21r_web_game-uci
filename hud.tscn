@@ -4,12 +4,12 @@
 [ext_resource type="Texture2D" uid="uid://c3hxcn8ehgchd" path="res://assets/HUD/computer.png" id="2_fdqul"]
 [ext_resource type="Texture2D" uid="uid://cdlnkwtfaoa3b" path="res://assets/HUD/Left Click.png" id="3_b6wlp"]
 [ext_resource type="Texture2D" uid="uid://b6x5m5v7u8d4v" path="res://assets/HUD/E.png" id="4_mqgqq"]
-[ext_resource type="Texture2D" uid="uid://b0kbpuokk41g3" path="res://assets/HUD/Irridium.png" id="5_8rr7r"]
+[ext_resource type="Texture2D" uid="uid://fpscv5cun57x" path="res://assets/HUD/ore_sprites/iridium.tres" id="5_u12sm"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_uxygb"]
-[ext_resource type="Texture2D" uid="uid://eiedtyh5r4kc" path="res://assets/HUD/Copper.png" id="7_2rb7e"]
-[ext_resource type="Texture2D" uid="uid://88vtexdbhr5a" path="res://assets/HUD/Tungsten.png" id="8_6hpf4"]
-[ext_resource type="Texture2D" uid="uid://b42mfyq3p5n81" path="res://assets/HUD/Silver.png" id="9_u5jjs"]
-[ext_resource type="Texture2D" uid="uid://cdw4llpxkmjf3" path="res://assets/HUD/Peridot.png" id="10_dxjwx"]
+[ext_resource type="Texture2D" uid="uid://xv6pth6s1vmc" path="res://assets/HUD/ore_sprites/copper.tres" id="7_wmh1l"]
+[ext_resource type="Texture2D" uid="uid://sul3suma223x" path="res://assets/HUD/ore_sprites/tungsten.tres" id="8_r1bik"]
+[ext_resource type="Texture2D" uid="uid://c0okde327gqic" path="res://assets/HUD/ore_sprites/silver.tres" id="9_n8ovf"]
+[ext_resource type="Texture2D" uid="uid://bj5v2eqfiejwi" path="res://assets/HUD/ore_sprites/nickel.tres" id="10_vvotb"]
 [ext_resource type="Texture2D" uid="uid://cokxjop8nuoap" path="res://assets/HUD/Rectangle.png" id="11_swugw"]
 [ext_resource type="Texture2D" uid="uid://cnxk0q5gw43xy" path="res://assets/HUD/scope.png" id="12_mpvqp"]
 [ext_resource type="Texture2D" uid="uid://cceam2n25dqok" path="res://assets/HUD/radar.png" id="13_ks6na"]
@@ -73,7 +73,7 @@ layout_mode = 2
 
 [node name="Irridium" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
 layout_mode = 2
-texture = ExtResource("5_8rr7r")
+texture = ExtResource("5_u12sm")
 expand_mode = 3
 stretch_mode = 4
 
@@ -97,7 +97,7 @@ layout_mode = 2
 
 [node name="Copper" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
 layout_mode = 2
-texture = ExtResource("7_2rb7e")
+texture = ExtResource("7_wmh1l")
 expand_mode = 3
 stretch_mode = 4
 
@@ -121,7 +121,7 @@ layout_mode = 2
 
 [node name="Tungsten" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
 layout_mode = 2
-texture = ExtResource("8_6hpf4")
+texture = ExtResource("8_r1bik")
 expand_mode = 3
 stretch_mode = 4
 
@@ -145,7 +145,7 @@ layout_mode = 2
 
 [node name="Silver" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
 layout_mode = 2
-texture = ExtResource("9_u5jjs")
+texture = ExtResource("9_n8ovf")
 expand_mode = 3
 stretch_mode = 4
 
@@ -169,7 +169,7 @@ layout_mode = 2
 
 [node name="Nickel" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
 layout_mode = 2
-texture = ExtResource("10_dxjwx")
+texture = ExtResource("10_vvotb")
 expand_mode = 3
 stretch_mode = 4
 
@@ -182,7 +182,6 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="BigInventory" type="TextureRect" parent="CanvasLayer"]
-visible = false
 offset_left = 730.0
 offset_top = 12.0
 offset_right = 1030.0
@@ -221,7 +220,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("5_8rr7r")
+texture = ExtResource("5_u12sm")
 stretch_mode = 5
 
 [node name="LabelIrridium" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
@@ -257,7 +256,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("7_2rb7e")
+texture = ExtResource("7_wmh1l")
 stretch_mode = 5
 
 [node name="LabelCopper" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
@@ -292,7 +291,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("8_6hpf4")
+texture = ExtResource("8_r1bik")
 stretch_mode = 5
 
 [node name="LabelTungsten" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
@@ -327,7 +326,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("9_u5jjs")
+texture = ExtResource("9_n8ovf")
 stretch_mode = 5
 
 [node name="LabelSilver" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
@@ -356,14 +355,14 @@ layout_mode = 2
 [node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5"]
 layout_mode = 2
 
-[node name="Peridot" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="Nickel" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("10_dxjwx")
+texture = ExtResource("10_vvotb")
 stretch_mode = 5
 
-[node name="LabelPeridot" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="LabelNickel" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
@@ -372,13 +371,13 @@ text = "x 0"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Peridot2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+[node name="Nickel2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
 z_index = 1
 custom_minimum_size = Vector2(138, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("6_uxygb")
 theme_override_font_sizes/font_size = 25
-text = "Periodot"
+text = "Nickel"
 horizontal_alignment = 1
 vertical_alignment = 1
 
