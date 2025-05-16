@@ -162,5 +162,9 @@ func set_state(new_state: int) -> void:
 			velocity.y = 0
 			velocity.x = 0
 
+func footstep() -> void:
+	if SFXManager.instance:
+		SFXManager.instance.play_sfx("footstep", 0.5)
+
 func _calculate_mining_damage(score: float) -> int:
 	return ceil(pow(score, 2) * 10) + 10

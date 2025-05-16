@@ -8,7 +8,8 @@ const audioStreams: Dictionary = {
 	"swing": [preload("res://assets/audio/sfx/swing1.wav"),preload("res://assets/audio/sfx/swing2.wav")],
 	"hit_ore": [preload("res://assets/audio/sfx/smash1.mp3"),preload("res://assets/audio/sfx/smash2.wav"),preload("res://assets/audio/sfx/smash3.wav")],
 	"break_ore": [preload("res://assets/audio/sfx/sm4sh.mp3")],
-	"click": [preload("res://assets/audio/sfx/spaceyclick.mp3")]
+	"click": [preload("res://assets/audio/sfx/spaceyclick.mp3")],
+	"footstep": [preload("res://assets/audio/sfx/footstep1.wav"),preload("res://assets/audio/sfx/footstep2.wav"),preload("res://assets/audio/sfx/footstep3.wav")]
 }
 
 @export var audioPlayers: Array[AudioStreamPlayer]
