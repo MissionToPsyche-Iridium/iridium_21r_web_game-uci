@@ -1,4 +1,5 @@
 [style name="premade_style"]
+[wait time="1.0"]
 *beep* *beep*
 characters/Claire (Neutral): Hey {player_name}. How's the mining going?
 I've got a couple samples of copper.
