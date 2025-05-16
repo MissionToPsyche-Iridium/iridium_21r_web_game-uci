@@ -1,0 +1,50 @@
+[gd_scene load_steps=6 format=3 uid="uid://bielynbrqj0y6"]
+
+[ext_resource type="Script" path="res://assets/menu/windows/Characters/CharactersScenes/char_scene.gd" id="1_3v7pg"]
+[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_5tkqe"]
+[ext_resource type="Texture2D" uid="uid://dtu7xtmujj76t" path="res://assets/menu/windows/Characters/CharactersScenes/DeeWindow.png" id="3_l3fa1"]
+[ext_resource type="Texture2D" uid="uid://dqfs0iuge4mh4" path="res://assets/menu/windows/Characters/CloseButton.png" id="4_70nmx"]
+[ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_is2o8"]
+
+[node name="DeeWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3v7pg")
+
+[node name="BaseWindow" parent="." instance=ExtResource("2_5tkqe")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -360.0
+offset_top = -235.0
+offset_right = 400.0
+offset_bottom = 275.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_l3fa1")
+
+[node name="CloseButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -55.0
+offset_top = 15.0
+offset_right = -17.0
+offset_bottom = 53.0
+grow_horizontal = 0
+action_mode = 0
+texture_normal = ExtResource("4_70nmx")
+texture_pressed = ExtResource("4_70nmx")
+texture_hover = ExtResource("4_70nmx")
+script = ExtResource("5_is2o8")
