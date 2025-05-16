@@ -139,13 +139,13 @@ func set_state(new_state: int) -> void:
 			state = new_state as States
 			#_text_label.text = "IDLE"
 			match (_animation_player.current_animation):
-				"move_left", "mine_left":
+				"move_left", "mine_left", "idle_left":
 					_animation_player.play("idle_left")
-				"move_right", "mine_right":
+				"move_right", "mine_right", "idle_right":
 					_animation_player.play("idle_right")
-				"move_up", "mine_up":
+				"move_up", "mine_up", "idle_up":
 					_animation_player.play("idle_up")
-				"move_down", "mine_down":
+				"move_down", "mine_down", "idle_down":
 					_animation_player.play("idle_down")
 				_:
 					_animation_player.play("idle_down")
