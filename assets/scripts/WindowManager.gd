@@ -18,7 +18,7 @@ func open_window(window_scene_path, params = null):
 	#window_instance.close_all_pressed.connect(_on_window_close_all_pressed)
 	
 	# Add window to viewport and stack
-	get_tree().current_scene.add_child(window_instance)
+	GameManager.instance.canvasLayer.add_child(window_instance)
 	window_stack.push_back(window_instance)
 	
 	# Debug info

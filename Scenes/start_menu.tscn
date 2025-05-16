@@ -1,0 +1,61 @@
+[gd_scene load_steps=7 format=3 uid="uid://bg5kpu270xvna"]
+
+[ext_resource type="Texture2D" uid="uid://dq8n5715wn2bx" path="res://assets/buttons/Start Unpushed.png" id="1_7v1vf"]
+[ext_resource type="Script" path="res://scenes/start_menu.gd" id="1_eoiok"]
+[ext_resource type="Texture2D" uid="uid://di7ko8ndh7k55" path="res://assets/buttons/Start pushed.png" id="2_k2kvc"]
+[ext_resource type="Texture2D" uid="uid://bce0rqjsue7d3" path="res://assets/buttons/Start Unpushed - Hover.png" id="3_u4fqv"]
+[ext_resource type="Texture2D" uid="uid://s7fp0dqty5kn" path="res://psyche logo - pixel.png" id="5_fbof1"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="5_hkhah"]
+
+[node name="StartMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 3.0
+offset_right = 3.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_eoiok")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 439.0
+offset_top = 291.0
+offset_right = 705.0
+offset_bottom = 422.0
+
+[node name="StartButton" type="TextureButton" parent="VBoxContainer"]
+z_index = 4
+layout_mode = 2
+texture_normal = ExtResource("1_7v1vf")
+texture_pressed = ExtResource("2_k2kvc")
+texture_hover = ExtResource("3_u4fqv")
+
+[node name="TitleLable" type="Label" parent="."]
+layout_mode = 0
+offset_left = 352.0
+offset_top = 158.0
+offset_right = 1067.0
+offset_bottom = 311.0
+theme_override_fonts/font = ExtResource("5_hkhah")
+theme_override_font_sizes/font_size = 120
+text = "Psyched-Out!"
+
+[node name="Credits" type="Label" parent="."]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 595.0
+offset_right = 937.0
+offset_bottom = 634.0
+theme_override_fonts/font = ExtResource("5_hkhah")
+theme_override_font_sizes/font_size = 36
+text = "By: Ashley Ly, Aaron Phung, Jenny Ly, Jin-Kim Niu, Noban Tahir, Rachel Kline"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(250.125, 220.125)
+scale = Vector2(0.768367, 0.717347)
+texture = ExtResource("5_fbof1")
+
+[connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

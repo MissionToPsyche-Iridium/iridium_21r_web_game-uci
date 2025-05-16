@@ -13,3 +13,4 @@ Yeah, yeah. Safety first. But I’m not leaving without the goods.
 characters/Claire: That’s why I trust you.[pause=1] Alright. Good luck out there, {player_name}. And remember—[pause=0.5]you’re not just gathering minerals. You’re securing humanity’s future.
 No pressure, huh? Alright, I’m on it.
 [signal arg_type="dict" arg="{"type":"setPlayerActionable","value":true}"]
+[signal arg_type="dict" arg="{"questId":0,"type":"startQuest"}"]
