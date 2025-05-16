@@ -27,17 +27,17 @@ const itemStrings:Array = [
 	"Space Station Upgrade 3",
 ]
 const itemIcons:Array = [
-	"res://assets/ui assets/Shop/Ore Icons/Bronze.png",
-	"res://assets/ui assets/Shop/Ore Icons/Nickel.png",
-	"res://assets/ui assets/Shop/Ore Icons/Peridot.png", #change this later
-	"res://assets/ui assets/Shop/Ore Icons/Tungsten.png",
-	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
+	"res://assets/HUD/ore_sprites/copper.tres",
+	"res://assets/HUD/ore_sprites/nickel.tres",
+	"res://assets/HUD/ore_sprites/silver.tres", #change this later
+	"res://assets/HUD/ore_sprites/tungsten.tres",
+	"res://assets/HUD/ore_sprites/iridium.tres",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe1.png",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe2.png",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe3.png",
-	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
-	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
-	"res://assets/ui assets/Shop/Ore Icons/Iridium.png",
+	"res://assets/buildings/space_station.png",
+	"res://assets/buildings/space_station.png",
+	"res://assets/buildings/space_station.png",
 ]
 
 signal onInventoryUpdate(item_type: ItemTypes, amount: int)
