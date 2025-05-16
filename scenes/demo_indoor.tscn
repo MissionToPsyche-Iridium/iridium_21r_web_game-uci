@@ -91,8 +91,9 @@ script = ExtResource("5_d6bt6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
 shape = SubResource("RectangleShape2D_pai5w")
 
-[node name="Shop" parent="shop_area" instance=ExtResource("6_udfyy")]
+[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("6_udfyy")]
 visible = false
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
 
 [node name="CameraBounds" type="Area2D" parent="."]
 position = Vector2(-557, -362)
