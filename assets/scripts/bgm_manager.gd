@@ -59,6 +59,9 @@ func play_track(track: AudioStream, intro: AudioStream = null, introLength: floa
 	
 
 func queue_track(track: AudioStream, intro: AudioStream = null, introLength: float = 0) -> void:
+	if track == audioPlayer.stream:
+		print("same track")
+		return
 	if audioPlayer.playing:
 		if !animationPlayer.is_playing():
 			fade_out()

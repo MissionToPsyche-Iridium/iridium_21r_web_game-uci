@@ -1,6 +1,7 @@
-[gd_scene load_steps=29 format=4 uid="uid://dttnbh321vnju"]
+[gd_scene load_steps=30 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
+[ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_syk6k"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_t8rhl"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="4_n2qub"]
@@ -472,6 +473,7 @@ camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
 transitions = [NodePath("ZimboTransition"), NodePath("StationTransition"), NodePath("MineTransition")]
 scene_id = 1
+bgm = ExtResource("2_syk6k")
 
 [node name="TileMaps" type="Node2D" parent="."]
 

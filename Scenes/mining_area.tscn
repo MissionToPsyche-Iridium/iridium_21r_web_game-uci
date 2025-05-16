@@ -1,8 +1,9 @@
-[gd_scene load_steps=8 format=4 uid="uid://d2tf67nbyp5qe"]
+[gd_scene load_steps=9 format=4 uid="uid://d2tf67nbyp5qe"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_dphfd"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="1_f0835"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="2_uk3pn"]
+[ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_xy2xx"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_lw3m8"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_qjn8p"]
 
@@ -18,6 +19,7 @@ camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
 transitions = [NodePath("scene_transition")]
 scene_id = 2
+bgm = ExtResource("2_xy2xx")
 
 [node name="TileMaps" type="Node2D" parent="."]
 
