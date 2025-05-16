@@ -14,8 +14,8 @@ func open_window(window_scene_path, params = null):
 		window_instance.set_params(params)
 	
 	# Connect signals from the window
-	window_instance.back_pressed.connect(_on_window_back_pressed.bind(window_instance))
-	window_instance.close_all_pressed.connect(_on_window_close_all_pressed)
+	#window_instance.back_pressed.connect(_on_window_back_pressed.bind(window_instance))
+	#window_instance.close_all_pressed.connect(_on_window_close_all_pressed)
 	
 	# Add window to viewport and stack
 	GameManager.instance.canvasLayer.add_child(window_instance)
