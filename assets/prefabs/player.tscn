@@ -635,7 +635,6 @@ script = ExtResource("1_dse8y")
 
 [node name="MenuHud" parent="." instance=ExtResource("2_yfre2")]
 layer = 2
-visible = false
 
 [node name="InventoryHud" parent="." instance=ExtResource("3_eltcr")]
 
