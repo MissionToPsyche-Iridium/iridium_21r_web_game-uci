@@ -581,7 +581,6 @@ vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 5.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_ttrdr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

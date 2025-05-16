@@ -5,6 +5,7 @@ class_name StartScene extends Node2D
 @onready var musicPlayer: AudioStreamPlayer = $AudioStreamPlayer
 @export var introMusicIntro: AudioStreamMP3
 @export var introMusicLoop: AudioStreamMP3
+@export var introMusicLength: float = 19.2
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -27,7 +28,8 @@ func on_start() -> void:
 
 func start_intro() -> void:
 	animationPlayer.play("intro")
-	play_music_intro()
+	if BGMManager.instance:
+		BGMManager.instance.play_track(introMusicLoop, introMusicIntro, introMusicLength)
 
 func play_music_intro() -> void:
 	musicPlayer.stream = introMusicIntro
