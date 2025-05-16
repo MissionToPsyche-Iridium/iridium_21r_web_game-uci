@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_7e4no"]
 [ext_resource type="Texture2D" uid="uid://e8miw2ph6j2v" path="res://assets/spritesheets/Zimbo.png" id="5_e3dug"]
 [ext_resource type="Texture2D" uid="uid://bk3xsk4igdc6y" path="res://assets/spritesheets/Player_Sprite.png" id="5_wjymh"]
-[ext_resource type="Texture2D" uid="uid://e3dtcyxa7xh5" path="res://assets/placeholders/Player-edited.png" id="6_g6syo"]
+[ext_resource type="Texture2D" uid="uid://d3w4jotfy1k8x" path="res://assets/spritesheets/Yuno_Sprite.png" id="7_s74ug"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
 size = Vector2(7523, 5329)
@@ -1100,7 +1100,7 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="Char3"]
 z_index = 4
 scale = Vector2(10, 10)
-texture = ExtResource("6_g6syo")
+texture = ExtResource("7_s74ug")
 hframes = 6
 vframes = 12
 
