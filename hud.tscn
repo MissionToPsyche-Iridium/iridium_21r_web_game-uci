@@ -42,8 +42,9 @@ texture = ExtResource("2_fdqul")
 layout_mode = 0
 offset_left = 1042.0
 offset_top = 520.0
-offset_right = 1139.0
-offset_bottom = 636.0
+offset_right = 1206.0
+offset_bottom = 717.0
+scale = Vector2(0.59, 0.59)
 texture_normal = ExtResource("3_b6wlp")
 
 [node name="Inventory" type="TextureButton" parent="CanvasLayer/Control"]
@@ -182,6 +183,7 @@ horizontal_alignment = 2
 vertical_alignment = 1
 
 [node name="BigInventory" type="TextureRect" parent="CanvasLayer"]
+visible = false
 offset_left = 730.0
 offset_top = 12.0
 offset_right = 1030.0
