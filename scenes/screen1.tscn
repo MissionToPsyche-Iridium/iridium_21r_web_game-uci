@@ -1,12 +1,24 @@
-[gd_scene load_steps=24 format=4 uid="uid://c8q0apo0f5pof"]
+[gd_scene load_steps=36 format=4 uid="uid://c8q0apo0f5pof"]
 
 [ext_resource type="Script" path="res://assets/scripts/screen_1.gd" id="1_5p84s"]
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_6np67"]
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="2_5pc2i"]
 [ext_resource type="Texture2D" uid="uid://c1ub56m1wksmq" path="res://assets/placeholders/char_a_p1/humn.png" id="3_1vvu5"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="4_h72u8"]
+[ext_resource type="PackedScene" uid="uid://cwn3ttr5d7ej8" path="res://interaction_components/interacting_component.tscn" id="5_t7el3"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="5_tvyar"]
 [ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="8_p5djc"]
+[ext_resource type="PackedScene" uid="uid://iom5yk78ocvs" path="res://scenes/facts/paper.tscn" id="9_1ipn5"]
+[ext_resource type="PackedScene" uid="uid://bgyvylj8jpqa1" path="res://scenes/facts/atom.tscn" id="9_mihag"]
+[ext_resource type="PackedScene" uid="uid://lshi27mymaaf" path="res://scenes/facts/radio.tscn" id="10_mav5i"]
+[ext_resource type="PackedScene" uid="uid://daed6sj1ptc4f" path="res://scenes/facts/e.tscn" id="10_vmpgw"]
+[ext_resource type="PackedScene" uid="uid://dk2rayt6wq2w7" path="res://scenes/facts/explosion.tscn" id="11_gm22h"]
+[ext_resource type="PackedScene" uid="uid://byvxfm2j32lcf" path="res://scenes/facts/rocket.tscn" id="11_wmjr1"]
+[ext_resource type="PackedScene" uid="uid://jrhshi2qah2k" path="res://scenes/facts/laser.tscn" id="12_qnn55"]
+[ext_resource type="PackedScene" uid="uid://dpjbjwmavqa7a" path="res://scenes/facts/ruler.tscn" id="12_vushj"]
+[ext_resource type="PackedScene" uid="uid://d0hbcfu5c7uy2" path="res://scenes/facts/sun.tscn" id="13_555ia"]
+[ext_resource type="PackedScene" uid="uid://b7m1rol5hnxhi" path="res://scenes/facts/tennis.tscn" id="14_4qw3b"]
+[ext_resource type="PackedScene" uid="uid://bbqngmr64wifa" path="res://scenes/facts/monocle.tscn" id="19_1tmgv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
 
@@ -403,6 +415,8 @@ libraries = {
 "": SubResource("AnimationLibrary_q77i1")
 }
 
+[node name="InteractingComponent" parent="CharacterBody2D" instance=ExtResource("5_t7el3")]
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 position = Vector2(0, -183)
 scale = Vector2(10, 10)
@@ -441,6 +455,40 @@ shape = SubResource("RectangleShape2D_hfnct")
 [node name="transition_animation" parent="scene_transition1" instance=ExtResource("8_p5djc")]
 visibility_layer = 15
 z_index = 12
+
+[node name="paper_fact" parent="." instance=ExtResource("9_1ipn5")]
+position = Vector2(196, 118)
+
+[node name="rocket_fact" parent="." instance=ExtResource("11_wmjr1")]
+position = Vector2(-965, 493)
+
+[node name="radio_fact" parent="." instance=ExtResource("10_mav5i")]
+position = Vector2(792, 105)
+
+[node name="ruler_fact" parent="." instance=ExtResource("12_vushj")]
+position = Vector2(-464, 489)
+
+[node name="sun_fact" parent="." instance=ExtResource("13_555ia")]
+position = Vector2(192, 514)
+
+[node name="tennis_fact" parent="." instance=ExtResource("14_4qw3b")]
+position = Vector2(824, 495)
+
+[node name="atom_fact" parent="." instance=ExtResource("9_mihag")]
+position = Vector2(-937, -365)
+
+[node name="e_fact" parent="." instance=ExtResource("10_vmpgw")]
+position = Vector2(-276, -358)
+
+[node name="explosion_fact" parent="." instance=ExtResource("11_gm22h")]
+position = Vector2(604, -269)
+
+[node name="atom_fact2" parent="." instance=ExtResource("12_qnn55")]
+position = Vector2(-949, 73)
+
+[node name="monocle_fact" parent="." instance=ExtResource("19_1tmgv")]
+z_index = 8
+position = Vector2(-441, 159)
 
 [connection signal="body_entered" from="scene_transition1" to="." method="_on_scene_transition_1_body_entered"]
 [connection signal="body_exited" from="scene_transition1" to="." method="_on_scene_transition_1_body_exited"]

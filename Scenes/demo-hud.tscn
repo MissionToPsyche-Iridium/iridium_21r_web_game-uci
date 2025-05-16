@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=4 uid="uid://bcs8nbyrxtcwv"]
+[gd_scene load_steps=8 format=4 uid="uid://crlja0vbba7ic"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_gy753"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_3y4d4"]

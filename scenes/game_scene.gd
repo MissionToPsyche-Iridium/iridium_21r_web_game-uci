@@ -32,7 +32,8 @@ func _ready() -> void:
 	for transition in transitions:
 		transition.transition_enter.connect(_on_transition_enter)
 	#GameManager.instance.set_camera_bounds(camera_bounds)
-	ObjectiveManager.instance.on_scene_load(scene_id)
+	if ObjectiveManager.instance != null:
+		ObjectiveManager.instance.on_scene_load(scene_id)
 	if BGMManager.instance and bgm != null:
 		BGMManager.instance.queue_track(bgm, bgmIntro, bgmIntroLength)
 

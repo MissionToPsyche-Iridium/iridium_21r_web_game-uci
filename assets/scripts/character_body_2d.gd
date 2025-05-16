@@ -168,3 +168,4 @@ func footstep() -> void:
 
 func _calculate_mining_damage(score: float) -> int:
 	return ceil(pow(score, 2) * 10) + 10
+	
