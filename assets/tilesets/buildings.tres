@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://bgafx8jvhcadj" path="res://assets/buildings/zimbo-revised.png" id="6_7xg4m"]
 [ext_resource type="Texture2D" uid="uid://b5u5x3548qc23" path="res://assets/buildings/Rocket.png" id="7_3jul7"]
 [ext_resource type="Texture2D" uid="uid://bsub8nr7dew23" path="res://assets/buildings/space_station.png" id="8_hh0dg"]
+[ext_resource type="Texture2D" uid="uid://burn47phulm5p" path="res://assets/buildings/lab_exterior.png" id="8_1drhf"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_t5k83"]
 tile_data = PackedInt32Array(65536, 1245187, 7, 131072, 1310723, 15, 196608, 1703939, 16, 262144, 1310723, 17, 1, 1048579, 14, 65537, 1310723, 15, 131073, 1310723, 16, 196609, 1310723, 17, 2, 1310723, 15, 65538, 1310723, 16, 131074, 1310723, 17)
