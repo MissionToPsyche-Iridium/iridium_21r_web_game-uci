@@ -402,3 +402,4 @@ offset_bottom = 1734.0
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
