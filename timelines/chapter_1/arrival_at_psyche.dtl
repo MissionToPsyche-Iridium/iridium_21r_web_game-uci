@@ -4,7 +4,7 @@ characters/Claire (Neutral): {player_name}, do you copy?[pause=1] How's the land
 I’m here. Landing was smooth enough. Psyche’s surface… it’s something else. Feels like I’m standing on raw metal
 characters/Claire: That’s exactly why you’re there. Psyche’s minerals are crucial for building the LUX-7 space station.
 Building a whole station from scratch? No pressure.
-characters/Claire: It’s not all on you. Your job is to gather some Copper and other metals we need to power the station and study its properties. I’ve uploaded the coordinates to your scanner.
+characters/Claire: It’s not all on you. Your job is to gather some [img]res\://assets/HUD/ore_sprites/copper.tres[/img] Copper and other metals we need to power the station and study its properties. I’ve uploaded the coordinates to your scanner.
 Got it. Collect minerals, rebuild the station, save the day. Easy enough, right?
 characters/Claire: Not so fast. We’ve been picking up strange signals from beneath Psyche’s surface. Could be interference, or…[pause=1] something else. Keep your eyes open.
 Strange signals? You couldn’t have mentioned this earlier?
