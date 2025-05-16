@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=4 uid="uid://dttnbh321vnju"]
+[gd_scene load_steps=29 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_t8rhl"]
@@ -22,6 +22,9 @@ size = Vector2(7523, 5329)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d261"]
 size = Vector2(145, 138)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_sxjsi"]
+size = Vector2(79, 1022)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qvx0i"]
 size = Vector2(145, 138)
@@ -467,7 +470,7 @@ texture_filter = 3
 script = ExtResource("1_077qq")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
-transitions = [NodePath("ZimboTransition"), NodePath("StationTransition")]
+transitions = [NodePath("ZimboTransition"), NodePath("StationTransition"), NodePath("MineTransition")]
 scene_id = 1
 
 [node name="TileMaps" type="Node2D" parent="."]
@@ -544,6 +547,16 @@ spawn_position = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationTransition"]
 shape = SubResource("RectangleShape2D_2d261")
+
+[node name="MineTransition" type="Area2D" parent="."]
+position = Vector2(4604, 131)
+collision_mask = 6
+script = ExtResource("4_n2qub")
+scene = "res://scenes/mining_area.tscn"
+spawn_position = Vector2(-3656, 82)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MineTransition"]
+shape = SubResource("RectangleShape2D_sxjsi")
 
 [node name="Background" parent="." instance=ExtResource("5_tdn2e")]
 position = Vector2(0, -2293)

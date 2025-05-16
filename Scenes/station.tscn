@@ -66,12 +66,10 @@ texture = ExtResource("2_qy6d8")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-59, 35.45)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_yfi7y")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-21, -12.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_jw1dd")
 
 [node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
@@ -79,7 +77,6 @@ polygon = PackedVector2Array(3, 63.5, 3, 16.5, 12, 7.5, 17, 7.5, 17, 28.5, 11, 2
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(47.5, 18)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_nfgkm")
 
 [node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="Background/StaticBody2D"]
@@ -87,27 +84,22 @@ polygon = PackedVector2Array(18, -13.5, 24, -13.5, 24, -10.5, 28, -10.5, 28, -8.
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(64.2, 22.3)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_1qasf")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(21.875, 66.85)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_fyupw")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-48.55, 70.15)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_kh2mb")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-64.7, 27.45)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_o1641")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-69.8, -23.5)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_meqh1")
 
 [node name="scene_transition" type="Area2D" parent="."]

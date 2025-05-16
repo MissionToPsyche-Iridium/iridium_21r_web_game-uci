@@ -1,6 +1,7 @@
 [style name="premade_style"]
+[wait time="1.0"]
 This rock won't budge...
-characters/Claire (Sad): It looks like that rock's made of some pretty hard material. I don't think you'll be able to chip at it with that pickaxe.
+characters/Claire (Surprised): It looks like that rock's made of some pretty hard material. I don't think you'll be able to chip at it with that pickaxe.
 if {has_met_zimbo} == true:
 	characters/Claire (Neutral): Zimbo might be able to make your pickaxe strong enough to mine it. You should go talk to him!
 else:
