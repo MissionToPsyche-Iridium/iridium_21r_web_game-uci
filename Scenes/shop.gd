@@ -150,9 +150,13 @@ func attempt_purchase(index: int) -> void:
 		else:
 			dialogue_box.text=successful_purchase_text
 		ObjectiveManager.instance.on_shop_purchase(shopId, index)
+		if SFXManager.instance:
+			SFXManager.instance.play_sfx("buy")
 		
 	else:
 		dialogue_box.text=failed_purchase_text
+		if SFXManager.instance:
+			SFXManager.instance.play_sfx("buy_fail")
 	on_purchase()
 
 func on_purchase():
