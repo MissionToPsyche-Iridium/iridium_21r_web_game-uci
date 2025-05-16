@@ -314,9 +314,10 @@ isVisible = false
 
 [node name="4" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
-questType = 1
-questDescription = "Go to Zimbo's Shop."
-sceneId = 4
+questType = 5
+questDescription = "Purchase the next station upgrade."
+shopId = 1
+purchaseId = 1
 
 [node name="5" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
