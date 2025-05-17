@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://d037jrhrcsiie"]
+[gd_scene load_steps=6 format=3 uid="uid://d037jrhrcsiie"]
 
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="1_eg314"]
 [ext_resource type="Texture2D" uid="uid://dvh5jupc2onmv" path="res://assets/ui assets/Shop/Ore Icons/Iridium.png" id="2_rvk13"]
 [ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Shop/Ore Icons/Tungsten.png" id="3_hbq5x"]
 [ext_resource type="Script" path="res://assets/scripts/shop_button.gd" id="3_oqfgw"]
+[ext_resource type="PackedScene" uid="uid://rv0prwjy4j33" path="res://assets/prefabs/shop/cost.tscn" id="4_n6lrw"]
 
 [node name="ShopButton" type="Button"]
 offset_right = 299.0
@@ -16,19 +17,29 @@ alignment = 0
 expand_icon = true
 script = ExtResource("3_oqfgw")
 
-[node name="Cost" type="Control" parent="."]
+[node name="Cost" parent="." instance=ExtResource("4_n6lrw")]
+visible = false
+layout_mode = 1
+offset_left = -40.0
+offset_top = -20.0
+offset_right = 0.0
+offset_bottom = 0.0
+
+[node name="Cost2" type="Control" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = -40.0
+offset_left = -80.0
 offset_top = -20.0
+offset_right = -40.0
 grow_horizontal = 0
 grow_vertical = 0
 
-[node name="CostIcon" type="TextureRect" parent="Cost"]
+[node name="CostIcon" type="TextureRect" parent="Cost2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
@@ -43,7 +54,7 @@ texture = ExtResource("3_hbq5x")
 expand_mode = 3
 stretch_mode = 5
 
-[node name="CostQuantity" type="RichTextLabel" parent="Cost"]
+[node name="CostQuantity" type="RichTextLabel" parent="Cost2"]
 layout_mode = 1
 anchors_preset = 3
 anchor_left = 1.0

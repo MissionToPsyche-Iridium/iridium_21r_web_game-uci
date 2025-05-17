@@ -1,6 +1,7 @@
-[gd_scene load_steps=13 format=3 uid="uid://clp10w4kw64v3"]
+[gd_scene load_steps=14 format=3 uid="uid://clp10w4kw64v3"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_0dlbh"]
+[ext_resource type="AudioStream" uid="uid://b8olb5gkeawcw" path="res://assets/audio/soundtrack/skibby shop.mp3" id="2_el166"]
 [ext_resource type="Texture2D" uid="uid://b1od1532rwnqc" path="res://assets/sprites/Zimbo_Shop_Interior.png" id="2_j4161"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="5_d6bt6"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="6_lh087"]
@@ -21,13 +22,14 @@ size = Vector2(7.59998, 57)
 size = Vector2(145, 138)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_s8jnb"]
-size = Vector2(2540, 1636)
+size = Vector2(2560, 1440)
 
 [node name="screen2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
 script = ExtResource("1_0dlbh")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
 scene_id = 4
+bgm = ExtResource("2_el166")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(4096, 3200)
@@ -91,9 +93,9 @@ script = ExtResource("5_d6bt6")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
 shape = SubResource("RectangleShape2D_pai5w")
 
-[node name="Shop" parent="shop_area" instance=ExtResource("6_udfyy")]
+[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("6_udfyy")]
 visible = false
-transactionQuantities = Array[int]([1, 1, 1, 1, 1])
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
 
 [node name="CameraBounds" type="Area2D" parent="."]
 position = Vector2(-557, -362)

@@ -29,7 +29,6 @@ WindowManager="*res://assets/scripts/WindowManager.gd"
 [dialogic]
 
 directories/dch_directory={
-
 "Claire/Claire": "res://assets/characters/Claire/Claire.dch",
 "Dee": "res://assets/characters/Dee/Dee.dch",
 "Player/player": "res://assets/characters/Player/player.dch",
@@ -46,9 +45,12 @@ directories/dtl_directory={
 "first_time_mining": "res://timelines/chapter_1/first_time_mining.dtl",
 "meeting_skibby_and_dee": "res://timelines/meeting_skibby_and_dee.dtl",
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
-"testscene": "res://timelines/chapter_1/testscene.dtl"
+"successful_mining": "res://timelines/chapter_1/successful_mining.dtl",
+"testscene": "res://timelines/chapter_1/testscene.dtl",
+"try_to_mine_harder_ore": "res://timelines/chapter_1/try_to_mine_harder_ore.dtl"
 }
 variables={
+"has_met_zimbo": false,
 "player_name": ""
 }
 layout/style_list=["res://assets/dialgoue_box_style/dialogic_premade.tres", "res://assets/dialgoue_box_style/premade_style.tres"]
@@ -85,10 +87,15 @@ movie_writer/movie_file="C:/Users/Rachel/school/senior year/winter/inf 191a/irid
 
 [editor_plugins]
 
-enabled=PackedStringArray("res://addons/dialogic/plugin.cfg", "res://addons/phantom_camera/plugin.cfg")
+enabled=PackedStringArray("res://addons/dialogic/plugin.cfg")
 
 [input]
 
+ui_accept={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194310,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
+]
+}
 dialogic_default_action={
 "deadzone": 0.5,
 "events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":4194309,"physical_keycode":0,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
@@ -110,11 +117,19 @@ Inventory={
 }
 mine={
 "deadzone": 0.5,
-"events": [Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"button_mask":1,"position":Vector2(125, 15),"global_position":Vector2(134, 61),"factor":1.0,"button_index":1,"canceled":false,"pressed":true,"double_click":false,"script":null)
-, Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"location":0,"echo":false,"script":null)
 , Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":4194309,"key_label":0,"unicode":0,"location":0,"echo":false,"script":null)
 ]
 }
+interact={
+"deadzone": 0.5,
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":88,"key_label":0,"unicode":120,"location":0,"echo":false,"script":null)
+]
+}
+
+[layer_names]
+
+2d_physics/layer_2="interactions"
 
 [rendering]
 

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8olb5gkeawcw"
+path="res://.godot/imported/skibby shop.mp3-88f5b6d15b097a435044bfb7aec67f69.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/soundtrack/skibby shop.mp3"
+dest_files=["res://.godot/imported/skibby shop.mp3-88f5b6d15b097a435044bfb7aec67f69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

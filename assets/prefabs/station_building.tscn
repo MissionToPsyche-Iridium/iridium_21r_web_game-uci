@@ -1,0 +1,36 @@
+[gd_scene load_steps=3 format=4 uid="uid://nxsnb2cehquk"]
+
+[ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="1_7phg1"]
+[ext_resource type="Script" path="res://assets/prefabs/station_building.gd" id="1_yvqow"]
+
+[node name="StationBuilding" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_yvqow")
+
+[node name="Stage0" type="TileMapLayer" parent="."]
+z_index = 3
+tile_map_data = PackedByteArray("AAD///3/CAABAAAAAAD///7/CAABAAEAAAD/////CAABAAIAAAAAAP3/CAACAAAAAAAAAP//CAACAAIAAAABAP3/CAADAAAAAAABAP7/CAADAAEAAAABAP//CAADAAIAAAD+//3/CAAAAAAAAAD+//7/CAAAAAEAAAD+////CAAAAAIAAAACAP3/CAAEAAAAAAACAP7/CAAEAAEAAAACAP//CAAEAAIAAAAAAP7/CAACAAEAAAA=")
+tile_set = ExtResource("1_7phg1")
+
+[node name="Stage0-Top" type="TileMapLayer" parent="."]
+z_index = 9
+tile_map_data = PackedByteArray("AAD///3/CAABAAAAAAAAAP3/CAACAAAAAAABAP3/CAADAAAAAAD+//3/CAAAAAAAAAACAP3/CAAEAAAAAAA=")
+tile_set = ExtResource("1_7phg1")
+
+[node name="Stage1" type="TileMapLayer" parent="."]
+visible = false
+z_index = 3
+tile_map_data = PackedByteArray("AAD///3/BAAAAAAAAAD///7/BAAAAAEAAAD/////BAAAAAIAAAAAAP3/BAABAAAAAAAAAP7/AAAeABYAAAAAAP//BAABAAIAAAABAP3/BAACAAAAAAABAP7/BAACAAEAAAABAP//BAACAAIAAAA=")
+tile_set = ExtResource("1_7phg1")
+
+[node name="Stage2" type="TileMapLayer" parent="."]
+visible = false
+z_index = 3
+tile_map_data = PackedByteArray("AAD///3/BQAAAAAAAAD///7/BQAAAAEAAAD/////BQAAAAIAAAAAAP3/BQABAAAAAAAAAP7/BQABAAEAAAAAAP//BQABAAIAAAABAP3/BQACAAAAAAABAP7/BQACAAEAAAABAP//BQACAAIAAAA=")
+tile_set = ExtResource("1_7phg1")
+
+[node name="Stage3" type="TileMapLayer" parent="."]
+visible = false
+z_index = 3
+tile_map_data = PackedByteArray("AAD///3/BQAAAAAAAAD///7/BQAAAAEAAAD/////BQAAAAIAAAAAAP3/BQABAAAAAAAAAP7/AAAeABYAAAAAAP//BQABAAIAAAABAP3/BQACAAAAAAABAP7/BQACAAEAAAABAP//BQACAAIAAAA=")
+tile_set = ExtResource("1_7phg1")

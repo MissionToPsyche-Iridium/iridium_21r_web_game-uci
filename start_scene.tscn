@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://start_scene.gd" id="1_5qx2l"]
 [ext_resource type="AudioStream" uid="uid://bgyw4gyxr4uhy" path="res://assets/audio/soundtrack/Phyched.main.game intro.mp3" id="2_ruw4x"]
 [ext_resource type="AudioStream" uid="uid://1qv4jjqj41d1" path="res://assets/audio/soundtrack/Phyched.main.game body.mp3" id="3_yfv35"]
-[ext_resource type="PackedScene" uid="uid://bg5kpu270xvna" path="res://scenes/start_menu.tscn" id="4_kxdc5"]
+[ext_resource type="PackedScene" uid="uid://b2dmhnoprfljw" path="res://scenes/start_menu.tscn" id="4_kxdc5"]
 [ext_resource type="Texture2D" uid="uid://dhb5qm4cii3lc" path="res://assets/sprites/space_bg.png" id="5_eqnlg"]
 [ext_resource type="Texture2D" uid="uid://bmauu1j203erk" path="res://assets/sprites/Planet.png" id="6_d1ogw"]
 [ext_resource type="Texture2D" uid="uid://twsgtq5ekr73" path="res://assets/sprites/star.png" id="7_14m34"]
@@ -402,3 +402,4 @@ offset_bottom = 1734.0
 color = Color(0, 0, 0, 1)
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+bus = &"BGM"
