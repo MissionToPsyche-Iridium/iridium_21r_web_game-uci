@@ -1,23 +1,26 @@
 [gd_scene load_steps=6 format=3 uid="uid://dnjkx7xlnc28c"]
 
 [ext_resource type="Script" path="res://assets/scripts/pause_window.gd" id="1_1dvj3"]
-[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_bjuk8"]
+[ext_resource type="PackedScene" uid="uid://c51risk3wy8js" path="res://scenes/BaseWindow.tscn" id="2_bjuk8"]
 [ext_resource type="Texture2D" uid="uid://muddul53rqxi" path="res://assets/menu/windows/Pause/Pause Window.png" id="3_r01xm"]
 [ext_resource type="Texture2D" uid="uid://d2fj24cjrj7br" path="res://assets/menu/windows/Pause/Return Button.png" id="4_c1atf"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="4_k4xjr"]
 
 [node name="PauseWindow" type="Control"]
 process_mode = 2
+z_index = 2
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 script = ExtResource("1_1dvj3")
 
 [node name="BaseWindow" parent="." instance=ExtResource("2_bjuk8")]
 layout_mode = 1
+mouse_filter = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1

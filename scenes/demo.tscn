@@ -11,11 +11,11 @@ size = Vector2(7576, 3665)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2d261"]
 size = Vector2(145, 138)
 
-[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
+[node name="Node2D2" type="Node2D" node_paths=PackedStringArray("camera_bounds")]
 texture_filter = 3
 script = ExtResource("1_owgq6")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
-transitions = [NodePath("scene_transition")]
+scene_id = 1
 
 [node name="TileMaps" type="Node2D" parent="."]
 

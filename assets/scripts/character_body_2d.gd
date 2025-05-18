@@ -16,6 +16,12 @@ const JUMP_VELOCITY = -400.0
 var state = States.IDLE
 var actionable = true
 
+var copperAmt = 0
+var tungstenAmt = 10
+var irridiumAmt = 20
+var silverAmt = 10
+var nickelAmt = 20
+
 func _ready() -> void:
 	_animation_player.play('idle_down')
 
@@ -31,6 +37,9 @@ func _physics_process(_delta: float) -> void:
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	if (actionable):
 		move_player()
+	else:
+		velocity = Vector2.ZERO
+	move_and_slide()
 
 
 func move_player() -> void:
@@ -80,7 +89,7 @@ func move_player() -> void:
 			#"move_down":
 				#_animated_sprite.play("idle_down")
 
-	move_and_slide()
+	
 
 func _input(event) -> void:
 	if (actionable):

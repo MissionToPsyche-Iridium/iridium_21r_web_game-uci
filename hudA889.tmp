@@ -1,0 +1,547 @@
+[gd_scene load_steps=16 format=3 uid="uid://bl63hk54yv5k0"]
+
+[ext_resource type="Script" path="res://HUD.gd" id="1_pyf1v"]
+[ext_resource type="Texture2D" uid="uid://c3hxcn8ehgchd" path="res://assets/HUD/computer.png" id="2_fdqul"]
+[ext_resource type="Texture2D" uid="uid://cdlnkwtfaoa3b" path="res://assets/HUD/Left Click.png" id="3_b6wlp"]
+[ext_resource type="Texture2D" uid="uid://b6x5m5v7u8d4v" path="res://assets/HUD/E.png" id="4_mqgqq"]
+[ext_resource type="Texture2D" uid="uid://b0kbpuokk41g3" path="res://assets/HUD/Irridium.png" id="5_8rr7r"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_uxygb"]
+[ext_resource type="Texture2D" uid="uid://eiedtyh5r4kc" path="res://assets/HUD/Copper.png" id="7_2rb7e"]
+[ext_resource type="Texture2D" uid="uid://88vtexdbhr5a" path="res://assets/HUD/Tungsten.png" id="8_6hpf4"]
+[ext_resource type="Texture2D" uid="uid://b42mfyq3p5n81" path="res://assets/HUD/Silver.png" id="9_u5jjs"]
+[ext_resource type="Texture2D" uid="uid://cdw4llpxkmjf3" path="res://assets/HUD/Peridot.png" id="10_dxjwx"]
+[ext_resource type="Texture2D" uid="uid://cokxjop8nuoap" path="res://assets/HUD/Rectangle.png" id="11_swugw"]
+[ext_resource type="Texture2D" uid="uid://cnxk0q5gw43xy" path="res://assets/HUD/scope.png" id="12_mpvqp"]
+[ext_resource type="Texture2D" uid="uid://cceam2n25dqok" path="res://assets/HUD/radar.png" id="13_ks6na"]
+[ext_resource type="Texture2D" uid="uid://bwfy4sg1y24r3" path="res://assets/HUD/book.png" id="14_534u7"]
+[ext_resource type="Texture2D" uid="uid://cqcvrcegpsh0g" path="res://assets/HUD/battery.png" id="15_i6dew"]
+
+[node name="Hud" type="Node2D"]
+script = ExtResource("1_pyf1v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("1_pyf1v")
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="PC" type="TextureRect" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1075.0
+offset_top = 8.0
+offset_right = 1144.0
+offset_bottom = 77.0
+texture = ExtResource("2_fdqul")
+
+[node name="LeftClick" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 1042.0
+offset_top = 520.0
+offset_right = 1139.0
+offset_bottom = 636.0
+texture_normal = ExtResource("3_b6wlp")
+
+[node name="Inventory" type="TextureButton" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_left = 932.0
+offset_top = 520.0
+offset_right = 1030.0
+offset_bottom = 637.0
+texture_normal = ExtResource("4_mqgqq")
+
+[node name="QuickInventory" type="GridContainer" parent="CanvasLayer/Control"]
+layout_mode = 2
+offset_left = 1036.0
+offset_top = 151.0
+offset_right = 1136.0
+offset_bottom = 450.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/Control/QuickInventory/MarginContainer"]
+layout_mode = 2
+
+[node name="Irridium" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("5_8rr7r")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelIrridium" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="CanvasLayer/Control/QuickInventory/MarginContainer3"]
+layout_mode = 2
+
+[node name="Copper" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
+layout_mode = 2
+texture = ExtResource("7_2rb7e")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelCopper" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="CanvasLayer/Control/QuickInventory/MarginContainer2"]
+layout_mode = 2
+
+[node name="Tungsten" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
+layout_mode = 2
+texture = ExtResource("8_6hpf4")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelTungsten" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="CanvasLayer/Control/QuickInventory/MarginContainer4"]
+layout_mode = 2
+
+[node name="Silver" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
+layout_mode = 2
+texture = ExtResource("9_u5jjs")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelSilver" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/Control/QuickInventory"]
+layout_mode = 2
+theme_override_constants/margin_left = 10
+theme_override_constants/margin_top = 5
+theme_override_constants/margin_right = 10
+theme_override_constants/margin_bottom = 5
+
+[node name="HBoxContainer5" type="HBoxContainer" parent="CanvasLayer/Control/QuickInventory/MarginContainer5"]
+layout_mode = 2
+
+[node name="Nickel" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+layout_mode = 2
+texture = ExtResource("10_dxjwx")
+expand_mode = 3
+stretch_mode = 4
+
+[node name="LabelNickel" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "x 0"
+horizontal_alignment = 2
+vertical_alignment = 1
+
+[node name="BigInventory" type="TextureRect" parent="CanvasLayer"]
+offset_left = 730.0
+offset_top = 12.0
+offset_right = 1030.0
+offset_bottom = 637.0
+texture = ExtResource("11_swugw")
+
+[node name="InventoryTxt" type="Label" parent="CanvasLayer/BigInventory"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 17.0
+offset_right = 286.0
+offset_bottom = 60.0
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "Inventory"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Inventory" type="GridContainer" parent="CanvasLayer/BigInventory"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 53.0
+offset_right = 284.0
+offset_bottom = 336.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BigInventory/Inventory"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer"]
+layout_mode = 2
+
+[node name="Irridium" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("5_8rr7r")
+stretch_mode = 5
+
+[node name="LabelIrridium" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Irridium2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Irridium"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/BigInventory/Inventory"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2"]
+layout_mode = 2
+
+[node name="Copper" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("7_2rb7e")
+stretch_mode = 5
+
+[node name="LabelCopper" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Irridium3" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Copper"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/BigInventory/Inventory"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3"]
+layout_mode = 2
+
+[node name="Tungsten" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("8_6hpf4")
+stretch_mode = 5
+
+[node name="LabelTungsten" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Tungsten2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Tungsten"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/BigInventory/Inventory"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme_override_constants/margin_left = 0
+theme_override_constants/margin_right = 0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4"]
+layout_mode = 2
+
+[node name="Silver" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("9_u5jjs")
+stretch_mode = 5
+
+[node name="LabelSilver" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Silver2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Silver"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer5" type="MarginContainer" parent="CanvasLayer/BigInventory/Inventory"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5"]
+layout_mode = 2
+
+[node name="Peridot" type="TextureRect" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("10_dxjwx")
+stretch_mode = 5
+
+[node name="LabelPeridot" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Peridot2" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Periodot"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="CollectablesTxt" type="Label" parent="CanvasLayer/BigInventory"]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 356.0
+offset_right = 286.0
+offset_bottom = 399.0
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "Collectibles"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Collectables" type="GridContainer" parent="CanvasLayer/BigInventory"]
+layout_mode = 0
+offset_left = 17.0
+offset_top = 393.0
+offset_right = 283.0
+offset_bottom = 608.0
+
+[node name="MarginContainer" type="MarginContainer" parent="CanvasLayer/BigInventory/Collectables"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Collectables/MarginContainer"]
+layout_mode = 2
+
+[node name="ScopeImg" type="TextureRect" parent="CanvasLayer/BigInventory/Collectables/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+texture = ExtResource("12_mpvqp")
+stretch_mode = 5
+
+[node name="ScopeAmt" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Scope" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Scope"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer2" type="MarginContainer" parent="CanvasLayer/BigInventory/Collectables"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Collectables/MarginContainer2"]
+layout_mode = 2
+
+[node name="RadarImg" type="TextureRect" parent="CanvasLayer/BigInventory/Collectables/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("13_ks6na")
+stretch_mode = 5
+
+[node name="RadarAmt" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer2/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Radar" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer2/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Radar"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer3" type="MarginContainer" parent="CanvasLayer/BigInventory/Collectables"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Collectables/MarginContainer3"]
+layout_mode = 2
+
+[node name="DictionaryImg" type="TextureRect" parent="CanvasLayer/BigInventory/Collectables/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("14_534u7")
+stretch_mode = 5
+
+[node name="AntennaAmt" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer3/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Antenna" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer3/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Antenna
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="MarginContainer4" type="MarginContainer" parent="CanvasLayer/BigInventory/Collectables"]
+layout_mode = 2
+theme_override_constants/margin_top = 8
+
+[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/BigInventory/Collectables/MarginContainer4"]
+layout_mode = 2
+
+[node name="BatteriesImg" type="TextureRect" parent="CanvasLayer/BigInventory/Collectables/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(70, 0)
+layout_mode = 2
+size_flags_horizontal = 0
+texture = ExtResource("15_i6dew")
+stretch_mode = 5
+
+[node name="BatteryAmt" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer4/HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "x 0"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Battery" type="Label" parent="CanvasLayer/BigInventory/Collectables/MarginContainer4/HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 25
+text = "Battery"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="line" type="Label" parent="CanvasLayer/BigInventory"]
+z_index = 1
+layout_mode = 2
+offset_left = 18.0
+offset_top = 329.0
+offset_right = 285.0
+offset_bottom = 363.0
+theme_override_fonts/font = ExtResource("6_uxygb")
+theme_override_font_sizes/font_size = 30
+text = "------------------"
+horizontal_alignment = 1
+vertical_alignment = 1

@@ -1,0 +1,9 @@
+[style name="premade_style"]
+Player/player: 10 years of being in that rocket did NOT prepare for mining!
+characters/Claire (Angry): You don't have to put your back into it!
+characters/Claire (Neutral): Just time it right on the green bar. That should give you an extra suprise just this one time.
+Player/player: Soo you're saying this would be faster if I just have some patience.
+characters/Claire (Happy): Yup. But if you hit it wrong, you won't get as much materials. Try to time it. You got this.
+Player/player: So how many do I need?
+characters/Claire (Neutral): However much it takes to build the station. We'll send you the objectives. I have to take a call now. Keep me updated. See you!
+[signal arg_type="dict" arg="{"type":"setPlayerActionable","value":true}"]
