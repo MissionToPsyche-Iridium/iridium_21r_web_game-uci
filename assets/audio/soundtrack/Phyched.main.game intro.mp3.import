@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgyw4gyxr4uhy"
+path="res://.godot/imported/Phyched.main.game intro.mp3-8b8f904b0cac1c2eed40ca6048ca13c0.mp3str"
+
+[deps]
+
+source_file="res://assets/audio/soundtrack/Phyched.main.game intro.mp3"
+dest_files=["res://.godot/imported/Phyched.main.game intro.mp3-8b8f904b0cac1c2eed40ca6048ca13c0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

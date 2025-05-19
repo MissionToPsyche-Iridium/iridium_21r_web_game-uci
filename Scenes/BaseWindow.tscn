@@ -1,0 +1,58 @@
+[gd_scene load_steps=5 format=3 uid="uid://c51risk3wy8js"]
+
+[ext_resource type="Script" path="res://assets/scripts/base_window.gd" id="1_yvt2y"]
+[ext_resource type="Texture2D" uid="uid://cc0hsx0nyyp03" path="res://assets/menu/Back.png" id="2_2x6m5"]
+[ext_resource type="Texture2D" uid="uid://bopqlhfmlqmq1" path="res://assets/menu/CloseAll.png" id="4_xle1a"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qhv7q"]
+bg_color = Color(0.31, 0.239, 0.424, 0.49)
+
+[node name="BaseWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_yvt2y")
+
+[node name="Background" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxFlat_qhv7q")
+
+[node name="BackButton" type="TextureButton" parent="."]
+visible = false
+layout_direction = 1
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -81.0
+offset_right = 132.0
+grow_vertical = 0
+action_mode = 0
+texture_normal = ExtResource("2_2x6m5")
+texture_pressed = ExtResource("2_2x6m5")
+texture_hover = ExtResource("2_2x6m5")
+
+[node name="CloseButton" type="TextureButton" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -160.0
+offset_bottom = 160.0
+grow_horizontal = 0
+action_mode = 0
+texture_normal = ExtResource("4_xle1a")
+texture_pressed = ExtResource("4_xle1a")
+texture_hover = ExtResource("4_xle1a")
+
+[connection signal="pressed" from="BackButton" to="." method="_on_back_button_pressed"]
+[connection signal="pressed" from="CloseButton" to="." method="_on_close_button_pressed"]

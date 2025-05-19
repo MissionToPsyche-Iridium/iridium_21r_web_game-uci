@@ -2,6 +2,7 @@ class_name GameScene extends Node2D
 
 @export var defaultSpawnPoint: Vector2 = Vector2(0, 0)
 @export var camera_bounds: CollisionShape2D = null
+@export var background: Background = null
 
 signal transition_scene(scene: String, spawnPosition: Vector2)
 
@@ -27,7 +28,7 @@ enum SceneId {
 func _ready() -> void:
 	for transition in transitions:
 		transition.transition_enter.connect(_on_transition_enter)
-	GameManager.instance.set_camera_bounds(camera_bounds)
+	#GameManager.instance.set_camera_bounds(camera_bounds)
 	ObjectiveManager.instance.on_scene_load(scene_id)
 
 func _on_transition_enter(scene: String, spawn_position: Vector2):

@@ -24,6 +24,7 @@ const itemIcons:Array = [
 
 static var instance:ResourceManager = null
 var inventory:Array = []
+var pickaxeTier:int = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
