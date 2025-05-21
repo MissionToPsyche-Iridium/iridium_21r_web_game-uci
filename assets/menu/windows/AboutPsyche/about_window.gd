@@ -1,8 +1,8 @@
-# lab_window.gd
+# about_window.gd
 extends "res://assets/scripts/base_window.gd"  # Update this path if needed
 
 @onready var characters_button = $Characters
-@onready var about_button = $About
+@onready var lab_button = $Lab
 @onready var close_button = $TextureRect/CloseButton
 
 func _ready():
@@ -10,16 +10,16 @@ func _ready():
 	super._ready()
 	
 	characters_button.pressed.connect(_on_characters_button_pressed)
-	about_button.pressed.connect(_on_about_button_pressed)
+	lab_button.pressed.connect(_on_lab_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
 
 func _on_characters_button_pressed():
 	WindowManager.close_window()
 	WindowManager.open_window("res://assets/menu/windows/Characters/CharactersWindow.tscn")
 
-func _on_about_button_pressed():
+func _on_lab_button_pressed():
 	WindowManager.close_window()
-	WindowManager.open_window("res://assets/menu/windows/AboutPsyche/AboutPsycheWindow.tscn")
+	WindowManager.open_window("res://assets/menu/windows/Lab/LabWindow.tscn")
 
 func _on_close_button_pressed():
 	WindowManager.close_window()
