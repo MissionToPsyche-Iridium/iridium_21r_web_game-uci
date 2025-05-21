@@ -29,7 +29,6 @@ WindowManager="*res://assets/scripts/WindowManager.gd"
 [dialogic]
 
 directories/dch_directory={
-
 "Claire/Claire": "res://assets/characters/Claire/Claire.dch",
 "Dee": "res://assets/characters/Dee/Dee.dch",
 "Player/player": "res://assets/characters/Player/player.dch",

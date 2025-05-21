@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://bielynbrqj0y6"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/Characters/CharactersScenes/char_scene.gd" id="1_3v7pg"]
-[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_5tkqe"]
+[ext_resource type="PackedScene" uid="uid://c51risk3wy8js" path="res://Scenes/BaseWindow.tscn" id="2_5tkqe"]
 [ext_resource type="Texture2D" uid="uid://dtu7xtmujj76t" path="res://assets/menu/windows/Characters/CharactersScenes/DeeWindow.png" id="3_l3fa1"]
 [ext_resource type="Texture2D" uid="uid://dqfs0iuge4mh4" path="res://assets/menu/windows/Characters/CloseButton.png" id="4_70nmx"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_is2o8"]

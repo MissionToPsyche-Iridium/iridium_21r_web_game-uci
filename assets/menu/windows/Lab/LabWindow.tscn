@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://t8tx2840myc1"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/Lab/lab_window.gd" id="1_cseoi"]
-[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_vsbmk"]
+[ext_resource type="PackedScene" uid="uid://c51risk3wy8js" path="res://Scenes/BaseWindow.tscn" id="2_vsbmk"]
 [ext_resource type="Texture2D" uid="uid://bkdecq87y10a6" path="res://assets/menu/windows/Lab/LabTab.png" id="3_sy0ey"]
 [ext_resource type="Texture2D" uid="uid://dhsymsuxcq630" path="res://assets/menu/windows/Lab/CloseButton.png" id="4_rr8gv"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_6if1o"]
