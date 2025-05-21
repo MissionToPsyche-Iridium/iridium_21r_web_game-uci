@@ -3,12 +3,12 @@
 [ext_resource type="Script" path="res://HUD.gd" id="1_pyf1v"]
 [ext_resource type="Texture2D" uid="uid://b5qjskuq1qpi7" path="res://assets/HUD/Mine.png" id="2_fa8cn"]
 [ext_resource type="Texture2D" uid="uid://b6x5m5v7u8d4v" path="res://assets/HUD/E.png" id="4_mqgqq"]
-[ext_resource type="Texture2D" uid="uid://b0kbpuokk41g3" path="res://assets/HUD/Irridium.png" id="5_8rr7r"]
+[ext_resource type="Texture2D" uid="uid://fpscv5cun57x" path="res://assets/HUD/ore_sprites/iridium.tres" id="5_u12sm"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="6_uxygb"]
-[ext_resource type="Texture2D" uid="uid://eiedtyh5r4kc" path="res://assets/HUD/Copper.png" id="7_2rb7e"]
-[ext_resource type="Texture2D" uid="uid://88vtexdbhr5a" path="res://assets/HUD/Tungsten.png" id="8_6hpf4"]
-[ext_resource type="Texture2D" uid="uid://b42mfyq3p5n81" path="res://assets/HUD/Silver.png" id="9_u5jjs"]
-[ext_resource type="Texture2D" uid="uid://cdw4llpxkmjf3" path="res://assets/HUD/Peridot.png" id="10_dxjwx"]
+[ext_resource type="Texture2D" uid="uid://xv6pth6s1vmc" path="res://assets/HUD/ore_sprites/copper.tres" id="7_wmh1l"]
+[ext_resource type="Texture2D" uid="uid://sul3suma223x" path="res://assets/HUD/ore_sprites/tungsten.tres" id="8_r1bik"]
+[ext_resource type="Texture2D" uid="uid://c0okde327gqic" path="res://assets/HUD/ore_sprites/silver.tres" id="9_n8ovf"]
+[ext_resource type="Texture2D" uid="uid://bj5v2eqfiejwi" path="res://assets/HUD/ore_sprites/nickel.tres" id="10_vvotb"]
 [ext_resource type="Texture2D" uid="uid://cokxjop8nuoap" path="res://assets/HUD/Rectangle.png" id="11_swugw"]
 [ext_resource type="Texture2D" uid="uid://cnxk0q5gw43xy" path="res://assets/HUD/scope.png" id="12_mpvqp"]
 [ext_resource type="Texture2D" uid="uid://cceam2n25dqok" path="res://assets/HUD/radar.png" id="13_ks6na"]
@@ -27,14 +27,22 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 1
 
 [node name="Mine" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
 offset_left = 1042.0
 offset_top = 520.0
+<<<<<<< HEAD
+offset_right = 1206.0
+offset_bottom = 717.0
+scale = Vector2(0.59, 0.59)
+texture_normal = ExtResource("3_b6wlp")
+=======
 offset_right = 1139.0
 offset_bottom = 636.0
 texture_normal = ExtResource("2_fa8cn")
+>>>>>>> reverted-HUD
 
 [node name="Inventory" type="TextureButton" parent="CanvasLayer/Control"]
 layout_mode = 0
@@ -64,9 +72,15 @@ layout_mode = 2
 [node name="Irridium" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+<<<<<<< HEAD
+texture = ExtResource("5_u12sm")
+expand_mode = 3
+stretch_mode = 4
+=======
 texture = ExtResource("5_8rr7r")
 expand_mode = 1
 stretch_mode = 3
+>>>>>>> reverted-HUD
 
 [node name="LabelIrridium" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer/HBoxContainer"]
 custom_minimum_size = Vector2(50, 0)
@@ -89,9 +103,15 @@ layout_mode = 2
 [node name="Copper" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+<<<<<<< HEAD
+texture = ExtResource("7_wmh1l")
+expand_mode = 3
+stretch_mode = 4
+=======
 texture = ExtResource("7_2rb7e")
 expand_mode = 1
 stretch_mode = 3
+>>>>>>> reverted-HUD
 
 [node name="LabelCopper" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer3/HBoxContainer2"]
 custom_minimum_size = Vector2(50, 0)
@@ -114,9 +134,15 @@ layout_mode = 2
 [node name="Tungsten" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+<<<<<<< HEAD
+texture = ExtResource("8_r1bik")
+expand_mode = 3
+stretch_mode = 4
+=======
 texture = ExtResource("9_u5jjs")
 expand_mode = 1
 stretch_mode = 3
+>>>>>>> reverted-HUD
 
 [node name="LabelTungsten" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(50, 0)
@@ -139,9 +165,15 @@ layout_mode = 2
 [node name="Silver" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+<<<<<<< HEAD
+texture = ExtResource("9_n8ovf")
+expand_mode = 3
+stretch_mode = 4
+=======
 texture = ExtResource("8_6hpf4")
 expand_mode = 1
 stretch_mode = 3
+>>>>>>> reverted-HUD
 
 [node name="LabelSilver" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer4/HBoxContainer4"]
 custom_minimum_size = Vector2(50, 0)
@@ -164,9 +196,15 @@ layout_mode = 2
 [node name="Nickel" type="TextureRect" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
 custom_minimum_size = Vector2(50, 0)
 layout_mode = 2
+<<<<<<< HEAD
+texture = ExtResource("10_vvotb")
+expand_mode = 3
+stretch_mode = 4
+=======
 texture = ExtResource("10_dxjwx")
 expand_mode = 1
 stretch_mode = 3
+>>>>>>> reverted-HUD
 
 [node name="LabelNickel" type="Label" parent="CanvasLayer/Control/QuickInventory/MarginContainer5/HBoxContainer5"]
 custom_minimum_size = Vector2(50, 0)
@@ -177,6 +215,7 @@ text = "x 0"
 vertical_alignment = 1
 
 [node name="BigInventory" type="TextureRect" parent="CanvasLayer"]
+visible = false
 offset_left = 730.0
 offset_top = 12.0
 offset_right = 1030.0
@@ -215,7 +254,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("5_8rr7r")
+texture = ExtResource("5_u12sm")
 stretch_mode = 5
 
 [node name="LabelIrridium" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer/HBoxContainer"]
@@ -250,7 +289,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("7_2rb7e")
+texture = ExtResource("7_wmh1l")
 stretch_mode = 5
 
 [node name="LabelCopper" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer2/HBoxContainer"]
@@ -284,7 +323,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+<<<<<<< HEAD
+texture = ExtResource("8_r1bik")
+=======
 texture = ExtResource("9_u5jjs")
+>>>>>>> reverted-HUD
 stretch_mode = 5
 
 [node name="LabelTungsten" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer3/HBoxContainer"]
@@ -318,7 +361,11 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
+<<<<<<< HEAD
+texture = ExtResource("9_n8ovf")
+=======
 texture = ExtResource("8_6hpf4")
+>>>>>>> reverted-HUD
 stretch_mode = 5
 
 [node name="LabelSilver" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer4/HBoxContainer"]
@@ -350,7 +397,7 @@ layout_mode = 2
 custom_minimum_size = Vector2(70, 0)
 layout_mode = 2
 size_flags_horizontal = 0
-texture = ExtResource("10_dxjwx")
+texture = ExtResource("10_vvotb")
 stretch_mode = 5
 
 [node name="LabelNickel" type="Label" parent="CanvasLayer/BigInventory/Inventory/MarginContainer5/HBoxContainer"]

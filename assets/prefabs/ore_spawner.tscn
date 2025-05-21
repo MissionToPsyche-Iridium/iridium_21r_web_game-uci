@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://ci2ryw8attpye"]
+[gd_scene load_steps=3 format=3 uid="uid://bjte6crur0wg6"]
 
 [ext_resource type="Script" path="res://assets/scripts/ore_spawner.gd" id="1_xxyby"]
 [ext_resource type="PackedScene" uid="uid://ds00arcdwu22l" path="res://assets/prefabs/ore.tscn" id="2_dehq5"]

@@ -1,0 +1,10 @@
+[gd_scene load_steps=3 format=3 uid="uid://cc4xxl761conm"]
+
+[ext_resource type="Texture2D" uid="uid://dhb5qm4cii3lc" path="res://assets/sprites/space_bg.png" id="1_y3ivi"]
+[ext_resource type="Script" path="res://assets/scripts/background.gd" id="2_bivr3"]
+
+[node name="Background" type="Sprite2D"]
+z_index = -1
+scale = Vector2(5, 5)
+texture = ExtResource("1_y3ivi")
+script = ExtResource("2_bivr3")

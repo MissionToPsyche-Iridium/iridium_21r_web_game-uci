@@ -93,9 +93,9 @@ func move_player() -> void:
 
 func _input(event) -> void:
 	if (actionable):
-		if event.is_action_pressed("ui_accept"):
+		if event.is_action_pressed("mine"):
 			begin_mine()
-		if event.is_action_released("ui_accept"):
+		if event.is_action_released("mine"):
 			end_mine()
 
 func begin_mine() -> void:
@@ -139,13 +139,13 @@ func set_state(new_state: int) -> void:
 			state = new_state as States
 			#_text_label.text = "IDLE"
 			match (_animation_player.current_animation):
-				"move_left", "mine_left":
+				"move_left", "mine_left", "idle_left":
 					_animation_player.play("idle_left")
-				"move_right", "mine_right":
+				"move_right", "mine_right", "idle_right":
 					_animation_player.play("idle_right")
-				"move_up", "mine_up":
+				"move_up", "mine_up", "idle_up":
 					_animation_player.play("idle_up")
-				"move_down", "mine_down":
+				"move_down", "mine_down", "idle_down":
 					_animation_player.play("idle_down")
 				_:
 					_animation_player.play("idle_down")
@@ -162,5 +162,10 @@ func set_state(new_state: int) -> void:
 			velocity.y = 0
 			velocity.x = 0
 
+func footstep() -> void:
+	if SFXManager.instance:
+		SFXManager.instance.play_sfx("footstep", 0.5)
+
 func _calculate_mining_damage(score: float) -> int:
 	return ceil(pow(score, 2) * 10) + 10
+	

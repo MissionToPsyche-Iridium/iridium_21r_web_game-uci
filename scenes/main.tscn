@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://cnmfk7qk4da7a"]
+[gd_scene load_steps=22 format=3 uid="uid://cnmfk7qk4da7a"]
 
 [ext_resource type="Script" path="res://assets/scripts/game_manager.gd" id="1_2ahh0"]
 [ext_resource type="Script" path="res://assets/scripts/resource_manager.gd" id="2_xbdv4"]
@@ -10,6 +10,9 @@
 [ext_resource type="Texture2D" uid="uid://cvdg8f3v50x2a" path="res://assets/ui assets/Prompt.png" id="8_bp53k"]
 [ext_resource type="Script" path="res://assets/scripts/quest.gd" id="8_j37eh"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="8_jwqlp"]
+[ext_resource type="Script" path="res://scenes/cutscene_manager.gd" id="11_ecjy8"]
+[ext_resource type="Script" path="res://assets/scripts/bgm_manager.gd" id="12_y6bpn"]
+[ext_resource type="Script" path="res://assets/scripts/sfx_manager.gd" id="13_25uty"]
 
 [sub_resource type="Resource" id="Resource_tymo8"]
 script = ExtResource("5_ayvvt")
@@ -114,14 +117,66 @@ _data = {
 "startQuest": SubResource("Animation_jch21")
 }
 
+[sub_resource type="Animation" id="Animation_8e3nh"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_e4qs8"]
+resource_name = "fade_out"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("AudioStreamPlayer:volume_db")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, -80.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [],
+"method": &"on_finish_fade_out"
+}]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_1eyj2"]
+_data = {
+"RESET": SubResource("Animation_8e3nh"),
+"fade_out": SubResource("Animation_e4qs8")
+}
+
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2ahh0")
+startScenePath = "res://scenes/disclaimer.tscn"
 
 [node name="ResourceManager" type="Node2D" parent="."]
 script = ExtResource("2_xbdv4")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 
 [node name="PhantomCameraHost" type="Node" parent="Camera2D"]
 process_priority = 300
@@ -132,23 +187,27 @@ script = ExtResource("3_dc3cd")
 top_level = true
 script = ExtResource("4_xsmdl")
 follow_mode = 5
-zoom = Vector2(0.6, 0.6)
+zoom = Vector2(0.45, 0.45)
 snap_to_pixel = true
 tween_resource = SubResource("Resource_tymo8")
 dead_zone_width = 0.045
 dead_zone_height = 0.045
 limit_target = NodePath("../CameraBounds/CollisionShape2D")
 
-[node name="transition_animation" parent="." instance=ExtResource("6_pdnoq")]
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+layer = 3
+
+[node name="transition_animation" parent="CanvasLayer" instance=ExtResource("6_pdnoq")]
 visibility_layer = 15
 z_index = 12
+mouse_filter = 1
 
 [node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
 script = ExtResource("7_wpr55")
-questList = [NodePath("0"), NodePath("1"), NodePath("2")]
+questList = [NodePath("0"), NodePath("0_1"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
-layer = 2
+layer = 0
 
 [node name="QuestUI" type="Control" parent="ObjectiveManager/CanvasLayer"]
 z_index = 10
@@ -158,6 +217,8 @@ offset_left = -450.0
 offset_top = 5.0
 offset_right = -410.0
 offset_bottom = 45.0
+scale = Vector2(0.8, 0.8)
+mouse_filter = 2
 
 [node name="ColorRect" type="TextureRect" parent="ObjectiveManager/CanvasLayer/QuestUI"]
 layout_mode = 0
@@ -227,17 +288,84 @@ questName = "\"Securing Humanity's Future\""
 questDescription = "Mine 5 copper ores."
 miningNeeded = 5
 
+[node name="0_1" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questDescription = "transition"
+isVisible = false
+
 [node name="1" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 1
-questName = "Visiting a Friend"
-questDescription = "Go to Zimbo's Shop"
-sceneId = 4
+questDescription = "Go to the Space Station"
+sceneId = 5
 
 [node name="2" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 5
-questName = "The Art of Commerce"
-questDescription = "Purchase something from Zimbo."
+questDescription = "Upgrade the space station."
+shopId = 1
+purchaseId = 0
+
+[node name="3" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 1
+questDescription = "exit to base"
+sceneId = 1
+isVisible = false
+
+[node name="4" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 5
+questDescription = "Purchase the next station upgrade."
+shopId = 1
+purchaseId = 1
+
+[node name="5" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 5
+questDescription = "Purchase a Silver Pickaxe from Zimbo."
+sceneId = 4
 shopId = 2
-purchaseId = 3
+purchaseId = 0
+
+[node name="CutsceneManager" type="Node" parent="."]
+script = ExtResource("11_ecjy8")
+
+[node name="BGMManager" type="Node" parent="."]
+script = ExtResource("12_y6bpn")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BGMManager"]
+bus = &"BGM"
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="BGMManager"]
+libraries = {
+"": SubResource("AnimationLibrary_1eyj2")
+}
+
+[node name="SFXManager" type="Node" parent="." node_paths=PackedStringArray("audioPlayers")]
+script = ExtResource("13_25uty")
+audioPlayers = [NodePath("AudioStreamPlayer"), NodePath("AudioStreamPlayer2"), NodePath("AudioStreamPlayer3"), NodePath("AudioStreamPlayer4"), NodePath("AudioStreamPlayer5"), NodePath("AudioStreamPlayer6"), NodePath("AudioStreamPlayer7"), NodePath("AudioStreamPlayer8")]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="SFXManager"]
+bus = &"SFX"

@@ -54,14 +54,19 @@ _data = {
 "fade_out": SubResource("Animation_f4vnk")
 }
 
-[node name="transition_animation" type="Node2D"]
+[node name="transition_animation" type="Control"]
+z_index = 20
+layout_mode = 3
+anchors_preset = 0
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_left = -100000.0
 offset_top = -100000.0
 offset_right = -99980.0
 offset_bottom = -99980.0
 scale = Vector2(9.99445e+07, 2.77705e+11)
+mouse_filter = 2
 color = Color(0, 0, 0, 0)
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]

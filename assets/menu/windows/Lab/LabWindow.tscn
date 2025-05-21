@@ -1,0 +1,68 @@
+[gd_scene load_steps=6 format=3 uid="uid://t8tx2840myc1"]
+
+[ext_resource type="Script" path="res://assets/menu/windows/Lab/lab_window.gd" id="1_cseoi"]
+[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_vsbmk"]
+[ext_resource type="Texture2D" uid="uid://bkdecq87y10a6" path="res://assets/menu/windows/Lab/LabTab.png" id="3_sy0ey"]
+[ext_resource type="Texture2D" uid="uid://dhsymsuxcq630" path="res://assets/menu/windows/Lab/CloseButton.png" id="4_rr8gv"]
+[ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_6if1o"]
+
+[node name="LabWindow" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_cseoi")
+
+[node name="BaseWindow" parent="." instance=ExtResource("2_vsbmk")]
+layout_mode = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_sy0ey")
+
+[node name="CloseButton" type="TextureButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 325.0
+offset_top = -240.0
+offset_right = 363.0
+offset_bottom = -202.0
+grow_horizontal = 2
+grow_vertical = 2
+action_mode = 0
+texture_normal = ExtResource("4_rr8gv")
+texture_pressed = ExtResource("4_rr8gv")
+texture_hover = ExtResource("4_rr8gv")
+script = ExtResource("5_6if1o")
+
+[node name="Characters" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(0.212, 0.239, 0.29, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.179
+anchor_top = 0.228
+anchor_right = 0.31
+anchor_bottom = 0.259
+offset_left = -0.208008
+offset_top = -20.744
+offset_right = -0.119995
+offset_bottom = 0.167999
+action_mode = 0
