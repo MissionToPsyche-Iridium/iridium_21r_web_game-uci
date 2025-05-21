@@ -103,6 +103,17 @@ offset_right = 200.0
 offset_bottom = 602.0
 alignment = 1
 
+[node name="About" type="TextureButton" parent="Main/MenuPanel/LeftCol"]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Learn more about the Psyche misson here."
+action_mode = 0
+texture_normal = ExtResource("5_3gxt0")
+texture_pressed = ExtResource("5_3gxt0")
+texture_hover = ExtResource("5_3gxt0")
+stretch_mode = 5
+script = ExtResource("5_25ytc")
+
 [node name="Characters" type="TextureButton" parent="Main/MenuPanel/LeftCol"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -134,17 +145,6 @@ action_mode = 0
 texture_normal = ExtResource("4_ws3i7")
 texture_pressed = ExtResource("4_ws3i7")
 texture_hover = ExtResource("4_ws3i7")
-stretch_mode = 5
-script = ExtResource("5_25ytc")
-
-[node name="About" type="TextureButton" parent="Main/MenuPanel/LeftCol"]
-layout_mode = 2
-size_flags_horizontal = 4
-tooltip_text = "Learn more about the Psyche misson here."
-action_mode = 0
-texture_normal = ExtResource("5_3gxt0")
-texture_pressed = ExtResource("5_3gxt0")
-texture_hover = ExtResource("5_3gxt0")
 stretch_mode = 5
 script = ExtResource("5_25ytc")
 
