@@ -158,17 +158,6 @@ offset_bottom = 602.0
 grow_horizontal = 0
 alignment = 1
 
-[node name="Credits" type="TextureButton" parent="Main/MenuPanel/RightCol"]
-layout_mode = 2
-size_flags_horizontal = 4
-tooltip_text = "Read the game credits here."
-action_mode = 0
-texture_normal = ExtResource("8_75qhy")
-texture_pressed = ExtResource("8_75qhy")
-texture_hover = ExtResource("8_75qhy")
-stretch_mode = 5
-script = ExtResource("5_25ytc")
-
 [node name="Pause" type="TextureButton" parent="Main/MenuPanel/RightCol"]
 layout_mode = 2
 size_flags_horizontal = 4
@@ -177,6 +166,17 @@ action_mode = 0
 texture_normal = ExtResource("6_4v4v7")
 texture_pressed = ExtResource("6_4v4v7")
 texture_hover = ExtResource("6_4v4v7")
+stretch_mode = 5
+script = ExtResource("5_25ytc")
+
+[node name="Credits" type="TextureButton" parent="Main/MenuPanel/RightCol"]
+layout_mode = 2
+size_flags_horizontal = 4
+tooltip_text = "Read the game credits here."
+action_mode = 0
+texture_normal = ExtResource("8_75qhy")
+texture_pressed = ExtResource("8_75qhy")
+texture_hover = ExtResource("8_75qhy")
 stretch_mode = 5
 script = ExtResource("5_25ytc")
 
