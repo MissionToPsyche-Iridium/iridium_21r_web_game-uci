@@ -44,6 +44,7 @@ directories/dtl_directory={
 "call_from_claire": "res://timelines/chapter_1/call_from_claire.dtl",
 "collectors_craze": "res://timelines/collectors_craze.dtl",
 "first_time_mining": "res://timelines/chapter_1/first_time_mining.dtl",
+"here_comes_yuno": "res://timelines/here_comes_yuno.dtl",
 "meeting_skibby_and_dee": "res://timelines/meeting_skibby_and_dee.dtl",
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
 "successful_mining": "res://timelines/chapter_1/successful_mining.dtl",
@@ -77,9 +78,11 @@ save/autosave_delay=60.0
 save/encryption_on_exports_only=true
 text/autopauses={}
 glossary/default_case_sensitive=true
+portraits/default_portrait=""
 
 [display]
 
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [editor]
