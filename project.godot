@@ -41,6 +41,7 @@ directories/dch_directory={
 directories/dtl_directory={
 "An_alien_greeting": "res://timelines/chaper_3/An_alien_greeting.dtl",
 "arrival_at_psyche": "res://timelines/chapter_1/arrival_at_psyche.dtl",
+"breakthrough": "res://timelines/breakthrough.dtl",
 "call_from_claire": "res://timelines/chapter_1/call_from_claire.dtl",
 "collectors_craze": "res://timelines/collectors_craze.dtl",
 "first_time_mining": "res://timelines/chapter_1/first_time_mining.dtl",
@@ -49,7 +50,9 @@ directories/dtl_directory={
 "opening_cutscene": "res://timelines/opening_cutscene.dtl",
 "successful_mining": "res://timelines/chapter_1/successful_mining.dtl",
 "testscene": "res://timelines/chapter_1/testscene.dtl",
-"try_to_mine_harder_ore": "res://timelines/chapter_1/try_to_mine_harder_ore.dtl"
+"try_to_mine_harder_ore": "res://timelines/chapter_1/try_to_mine_harder_ore.dtl",
+"yuno_farewell": "res://timelines/yuno_farewell.dtl",
+"zimbo_farewell": "res://timelines/zimbo_farewell.dtl"
 }
 variables={
 "has_met_zimbo": false,
