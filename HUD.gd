@@ -7,13 +7,6 @@ extends CanvasLayer
 @onready var silver: Label = $Control/QuickInventory/MarginContainer4/HBoxContainer4/LabelSilver
 @onready var nickel: Label = $Control/QuickInventory/MarginContainer5/HBoxContainer5/LabelNickel
 
-<<<<<<< HEAD
-@onready var bcopper: Label = $BigInventory/Inventory/MarginContainer2/HBoxContainer/LabelCopper
-@onready var btungsten: Label = $BigInventory/Inventory/MarginContainer3/HBoxContainer/LabelTungsten
-@onready var birridium: Label = $BigInventory/Inventory/MarginContainer/HBoxContainer/LabelIrridium
-@onready var bsilver: Label = $BigInventory/Inventory/MarginContainer4/HBoxContainer/LabelSilver
-@onready var bnickel: Label = $BigInventory/Inventory/MarginContainer5/HBoxContainer/LabelNickel
-=======
 #Big Inventory - ore
 @onready var irridium2: Label = $BigInventory/Inventory/MarginContainer/HBoxContainer/LabelIrridium
 @onready var copper2: Label = $BigInventory/Inventory/MarginContainer2/HBoxContainer/LabelCopper
@@ -26,7 +19,6 @@ extends CanvasLayer
 @onready var radar: Label = $BigInventory/Collectables/MarginContainer2/HBoxContainer/RadarAmt
 @onready var antenna: Label = $BigInventory/Collectables/MarginContainer3/HBoxContainer/AntennaAmt
 @onready var battery: Label = $BigInventory/Collectables/MarginContainer4/HBoxContainer/BatteryAmt
->>>>>>> reverted-HUD
 
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Inventory"):
@@ -40,13 +32,6 @@ func _process(_delta: float) -> void:
 	silver.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.SILVER_ORE))
 	nickel.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.NICKEL_ORE))
 	
-<<<<<<< HEAD
-	bcopper.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.COPPER_ORE))
-	btungsten.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.TUNGSTEN_ORE))
-	birridium.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.IRIDIUM_ORE))
-	bsilver.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.SILVER_ORE))
-	bnickel.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.NICKEL_ORE))
-=======
 	copper2.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.COPPER_ORE))
 	tungsten2.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.TUNGSTEN_ORE))
 	irridium2.text = "x " + str(ResourceManager.instance.get_amount(ResourceManager.ItemTypes.IRIDIUM_ORE))
@@ -58,5 +43,4 @@ func _process(_delta: float) -> void:
 	antenna.text = "x 99"
 	battery.text = "x 78"
 	
->>>>>>> reverted-HUD
 	# testing for commit 
