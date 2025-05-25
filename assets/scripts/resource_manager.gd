@@ -36,17 +36,17 @@ const itemStrings:Array = [
 	"Space Station Upgrade 1",
 	"Space Station Upgrade 2",
 	"Space Station Upgrade 3",
-	"Atom",
-	"Phase E",
-	"Explosion",
-	"Laser",
-	"Monocle",
-	"Paper",
-	"Radio",
-	"Rocket",
-	"Ruler",
-	"Sun",
-	"Tennis"
+	"Atom", #
+	"Phase E", #
+	"Explosion", #
+	"Laser", #
+	"Monocle", #
+	"Paper", #
+	"Radio", #
+	"Rocket", #
+	"Ruler", #
+	"Sun", #
+	"Tennis" #
 	#"The Psyche spacecraft thrusters work by expelling charged atoms, or ions, of xenon, emitting a brilliant blue glow that trails behind the spacecraft.",
 	#"The Psyche mission is currently in “Phase E.” This phase of the mission encompasses cruise (including a Mars gravity assist), arrival at the asteroid, and orbiting the asteroid.",
 	#"The Pysche asteroid is most likely a survivor of multiple violent hit-and-run collisions, which was common when the solar system was forming.",
@@ -79,6 +79,7 @@ const itemIcons:Array = [
 	"res://assets/fact_objects/paper.png",
 	"res://assets/fact_objects/radio.png",
 	"res://assets/fact_objects/Rocket Thruster.png",
+	"res://assets/fact_objects/pixil-frame-0 (25).png",
 	"res://assets/fact_objects/Sun.png",
 	"res://assets/fact_objects/tennis ball.png"
 ]

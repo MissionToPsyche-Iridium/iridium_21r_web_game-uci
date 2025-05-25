@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=4 uid="uid://dttnbh321vnju"]
+[gd_scene load_steps=12 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_syk6k"]
@@ -6,7 +6,8 @@
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="4_n2qub"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_tdn2e"]
-[ext_resource type="PackedScene" uid="uid://nxsnb2cehquk" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
+[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="8_drmj7"]
+[ext_resource type="PackedScene" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
 size = Vector2(7523, 5329)
@@ -115,3 +116,26 @@ shape = SubResource("RectangleShape2D_sxjsi")
 position = Vector2(0, -2293)
 offsetMultiplierX = 0.5
 offsetMultiplierY = 0.5
+
+[node name="atom_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(2638, -268)
+
+[node name="rocket_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(0, -93)
+item_id = 18
+
+[node name="sun_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(1140, -2853)
+item_id = 20
+
+[node name="laser_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(3760, -1373)
+item_id = 14
+
+[node name="explosion_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(-2480, 207)
+item_id = 13
+
+[node name="paper_fact" parent="." instance=ExtResource("8_drmj7")]
+position = Vector2(-2280, -1063)
+item_id = 16
