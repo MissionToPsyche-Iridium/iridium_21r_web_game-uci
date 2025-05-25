@@ -11,7 +11,18 @@ enum ItemTypes {
 	PICKAXE_UPGRADE_3,
 	STATION_UPGRADE_1,
 	STATION_UPGRADE_2,
-	STATION_UPGRADE_3
+	STATION_UPGRADE_3,
+	FACT_ATOM,
+	FACT_E,
+	FACT_EXPLOSION,
+	FACT_LASER,
+	FACT_MONOCLE,
+	FACT_PAPER,
+	FACT_RADIO,
+	FACT_ROCKET,
+	FACT_RULER,
+	FACT_SUN,
+	FACT_TENNIS,
 }
 const itemStrings:Array = [
 	"Copper Ore",
@@ -25,6 +36,7 @@ const itemStrings:Array = [
 	"Space Station Upgrade 1",
 	"Space Station Upgrade 2",
 	"Space Station Upgrade 3",
+	"Atom"
 ]
 const itemIcons:Array = [
 	"res://assets/HUD/ore_sprites/copper.tres",
