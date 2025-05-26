@@ -1,10 +1,11 @@
-[gd_scene load_steps=17 format=3 uid="uid://b2ld6lp2np5qn"]
+[gd_scene load_steps=18 format=3 uid="uid://bv5kw3go7h04m"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_rro7p"]
 [ext_resource type="Texture2D" uid="uid://b6j8t1f2e8qy" path="res://assets/sprites/Space station interior.png" id="2_qy6d8"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_m20uc"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_fjuvx"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_83koo"]
+[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi7y"]
 size = Vector2(8, 56.1)
@@ -155,5 +156,9 @@ position = Vector2(-557, -362)
 position = Vector2(567, 400)
 shape = SubResource("RectangleShape2D_ejscf")
 disabled = true
+
+[node name="e_fact" parent="." instance=ExtResource("6_ghqwj")]
+position = Vector2(380, 425)
+item_id = 12
 
 [editable path="shop_area/Shop"]

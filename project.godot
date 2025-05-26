@@ -51,6 +51,7 @@ directories/dtl_directory={
 }
 variables={
 "has_met_zimbo": false,
+"has_picked_up_a_fact": false,
 "player_name": ""
 }
 layout/style_list=["res://assets/dialgoue_box_style/dialogic_premade.tres", "res://assets/dialgoue_box_style/premade_style.tres"]

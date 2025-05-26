@@ -11,7 +11,18 @@ enum ItemTypes {
 	PICKAXE_UPGRADE_3,
 	STATION_UPGRADE_1,
 	STATION_UPGRADE_2,
-	STATION_UPGRADE_3
+	STATION_UPGRADE_3,
+	FACT_ATOM,
+	FACT_E,
+	FACT_EXPLOSION,
+	FACT_LASER,
+	FACT_MONOCLE,
+	FACT_PAPER,
+	FACT_RADIO,
+	FACT_ROCKET,
+	FACT_RULER,
+	FACT_SUN,
+	FACT_TENNIS,
 }
 const itemStrings:Array = [
 	"Copper Ore",
@@ -25,11 +36,33 @@ const itemStrings:Array = [
 	"Space Station Upgrade 1",
 	"Space Station Upgrade 2",
 	"Space Station Upgrade 3",
+	"Atom", #
+	"Phase E", #
+	"Explosion", #
+	"Laser", #
+	"Monocle", #
+	"Paper", #
+	"Radio", #
+	"Rocket", #
+	"Ruler", #
+	"Sun", #
+	"Tennis" #
+	#"The Psyche spacecraft thrusters work by expelling charged atoms, or ions, of xenon, emitting a brilliant blue glow that trails behind the spacecraft.",
+	#"The Psyche mission is currently in “Phase E.” This phase of the mission encompasses cruise (including a Mars gravity assist), arrival at the asteroid, and orbiting the asteroid.",
+	#"The Pysche asteroid is most likely a survivor of multiple violent hit-and-run collisions, which was common when the solar system was forming.",
+	#"The Psyche mission will test a sophisticated new laser communication technology that encodes data in photons at near-infrared wavelengths (rather than radio waves) to communicate between a probe in deep space and Earth. Using light instead of radio allows the spacecraft to communicate more data in a given amount of time.",
+	#"Psyche was found in 1852 by Italian astronomer Annibale de Gasparis, named it for the goddess of the soul in ancient Greek mythology.",
+	#"Psyche is only the 16th asteriod to be discovered!",
+	#"After interfacing with the Psyche’s radio frequency transmitter, the laser communications demo sent a copy of engineering data from over 140 million miles (226 million kilometers) away.",
+	#"The Psyche asteriod appears to be the exposed nickel-iron core of an early planet.",
+	#"The Psyche asteroid is estimated to have a surface area of about 64,000 square miles.",
+	#"The Psyche spacecraft has an incredibly efficient propulsion system, which is powered by sunlight.",
+	#"The Psyche spacecraft (including the solar panels) is about the size of a singles tennis court."
 ]
 const itemIcons:Array = [
 	"res://assets/HUD/ore_sprites/copper.tres",
 	"res://assets/HUD/ore_sprites/nickel.tres",
-	"res://assets/HUD/ore_sprites/silver.tres", #change this later
+	"res://assets/HUD/ore_sprites/silver.tres",
 	"res://assets/HUD/ore_sprites/tungsten.tres",
 	"res://assets/HUD/ore_sprites/iridium.tres",
 	"res://assets/ui assets/Shop/Pickaxe Icons/test_pickaxe1.png",
@@ -38,6 +71,17 @@ const itemIcons:Array = [
 	"res://assets/buildings/space_station.png",
 	"res://assets/buildings/space_station.png",
 	"res://assets/buildings/space_station.png",
+	"res://assets/fact_objects/Blue Atom.png",
+	"res://assets/fact_objects/the letter e.png",
+	"res://assets/fact_objects/explosion.png",
+	"res://assets/fact_objects/laser.png",
+	"res://assets/fact_objects/monocle.png",
+	"res://assets/fact_objects/paper.png",
+	"res://assets/fact_objects/radio.png",
+	"res://assets/fact_objects/Rocket Thruster.png",
+	"res://assets/fact_objects/pixil-frame-0 (25).png",
+	"res://assets/fact_objects/Sun.png",
+	"res://assets/fact_objects/tennis ball.png"
 ]
 
 signal onInventoryUpdate(item_type: ItemTypes, amount: int)
