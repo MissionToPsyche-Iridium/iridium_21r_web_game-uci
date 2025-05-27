@@ -1,17 +1,20 @@
 extends CanvasLayer
 
+# quick inventory items
 @onready var copper: Label = $Control/QuickInventory/MarginContainer3/HBoxContainer2/LabelCopper
 @onready var tungsten: Label = $Control/QuickInventory/MarginContainer2/HBoxContainer3/LabelTungsten
 @onready var irridium: Label = $Control/QuickInventory/MarginContainer/HBoxContainer/LabelIrridium
 @onready var silver: Label = $Control/QuickInventory/MarginContainer4/HBoxContainer4/LabelSilver
 @onready var nickel: Label = $Control/QuickInventory/MarginContainer5/HBoxContainer5/LabelNickel
 
+# big inventory items
 @onready var bcopper: Label = $BigInventory/Inventory/MarginContainer2/HBoxContainer/LabelCopper
 @onready var btungsten: Label = $BigInventory/Inventory/MarginContainer3/HBoxContainer/LabelTungsten
 @onready var birridium: Label = $BigInventory/Inventory/MarginContainer/HBoxContainer/LabelIrridium
 @onready var bsilver: Label = $BigInventory/Inventory/MarginContainer4/HBoxContainer/LabelSilver
 @onready var bnickel: Label = $BigInventory/Inventory/MarginContainer5/HBoxContainer/LabelNickel
 
+# makes inventory visible
 func _input(event: InputEvent) -> void:
 	if event.is_action_pressed("Inventory"):
 		$BigInventory.visible = !$BigInventory.visible
