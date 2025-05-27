@@ -96,6 +96,8 @@ func _ready() -> void:
 	instance = self
 	for i in ItemTypes.keys():
 		inventory.append(0)
+	add_to_inventory(ItemTypes.NICKEL_ORE, 10)
+	add_to_inventory(ItemTypes.COPPER_ORE, 10)
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
