@@ -544,19 +544,19 @@ libraries = {
 transactionType = 5
 transactionQuantity = 1
 transactionCostTypes = Array[int]([0])
-transactionCostQuantities = Array[int]([5])
+transactionCostQuantities = Array[int]([10])
 
 [node name="Transaction2" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 6
 transactionQuantity = 1
-transactionCostTypes = Array[int]([1])
-transactionCostQuantities = Array[int]([10])
+transactionCostTypes = Array[int]([2, 1])
+transactionCostQuantities = Array[int]([10, 15])
 
 [node name="Transaction3" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7
 transactionQuantity = 1
-transactionCostTypes = Array[int]([2])
-transactionCostQuantities = Array[int]([5])
+transactionCostTypes = Array[int]([3, 2])
+transactionCostQuantities = Array[int]([20, 10])
 
 [node name="Transaction4" parent="Transactions" instance=ExtResource("8_ikbkj")]
 transactionType = 7

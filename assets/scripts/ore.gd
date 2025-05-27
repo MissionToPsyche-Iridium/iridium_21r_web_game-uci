@@ -1,7 +1,7 @@
 class_name Ore extends Node2D
 
 enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
-const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 1, 2]
+const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 2, 3]
 const ORE_NAMES = ["Cu", "Ni", "Ag", "W", "Ir"]
 
 @export var ore_type: OreType = OreType.COPPER
