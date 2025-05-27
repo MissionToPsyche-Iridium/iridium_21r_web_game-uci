@@ -23,6 +23,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer/DisclaimerMenu"]
+layout_mode = 0
 offset_left = -1812.0
 offset_top = -1304.0
 offset_right = 1188.0
@@ -31,6 +32,7 @@ texture = ExtResource("2_tq1fc")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="CanvasLayer/DisclaimerMenu"]
 z_index = 4
+layout_mode = 0
 offset_left = 436.0
 offset_top = 472.0
 offset_right = 702.0
@@ -58,7 +60,7 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_fonts/font = ExtResource("4_mr78h")
 theme_override_font_sizes/font_size = 30
-text = "This work was created in partial fulfillment of UC Irvine's Capstone Course “IN4MATX 191″. The work is a result of the Psyche Student Collaborations component of NASA’s Psyche Mission (https://psyche.asu.edu). “Psyche: A Journey to a Metal World” [Contract number NNM16AA09C] is part of the NASA Discovery Program mission to solar system targets. Trade names and trademarks of ASU and NASA are used in this work for identification only. Their usage does not constitute an official endorsement, either expressed or implied, by Arizona State University or National Aeronautics and Space Administration. The content is solely the responsibility of the authors and does not necessarily represent the official views of ASU or NASA."
+text = "This work was created in partial fulfillment of UC Irvine's Capstone Course \"IN4MATX 191\". The work is a result of the Psyche Student Collaborations component of NASA’s Psyche Mission (https://psyche.asu.edu). “Psyche: A Journey to a Metal World” [Contract number NNM16AA09C] is part of the NASA Discovery Program mission to solar system targets. Trade names and trademarks of ASU and NASA are used in this work for identification only. Their usage does not constitute an official endorsement, either expressed or implied, by Arizona State University or National Aeronautics and Space Administration. The content is solely the responsibility of the authors and does not necessarily represent the official views of ASU or NASA."
 vertical_alignment = 1
 autowrap_mode = 2
 
