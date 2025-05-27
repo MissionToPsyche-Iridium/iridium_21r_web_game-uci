@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 	pass
 
 func on_start() -> void:
-	GameManager.instance.begin_transition("res://scenes/base.tscn", Vector2.ZERO, false)
+	GameManager.instance.begin_transition("res://scenes/base.tscn", Vector2(0, 300), false)
 	Dialogic.start("arrival_at_psyche")
 
 func start_intro() -> void:

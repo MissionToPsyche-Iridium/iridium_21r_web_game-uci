@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://n66856ur4td0"
-path="res://.godot/imported/Antenna.png-212db2878ea3e5faea26eee67b976fb7.ctex"
+uid="uid://drvw8l6tqc3pd"
+path="res://.godot/imported/Laser.png-495795aed126dabba062aa59a4ee55b5.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/HUD/Antenna.png"
-dest_files=["res://.godot/imported/Antenna.png-212db2878ea3e5faea26eee67b976fb7.ctex"]
+source_file="res://assets/menu/windows/Lab/Laser.png"
+dest_files=["res://.godot/imported/Laser.png-495795aed126dabba062aa59a4ee55b5.ctex"]
 
 [params]
 

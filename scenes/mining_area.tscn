@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=4 uid="uid://d2tf67nbyp5qe"]
+[gd_scene load_steps=10 format=4 uid="uid://ddua47gggypsi"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_dphfd"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="1_f0835"]
@@ -6,6 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_xy2xx"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_lw3m8"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_qjn8p"]
+[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="7_0bh13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msk75"]
 size = Vector2(7168, 4855)
@@ -79,3 +80,19 @@ shape = SubResource("RectangleShape2D_bst80")
 position = Vector2(0, -2293)
 offsetMultiplierX = 0.5
 offsetMultiplierY = 0.5
+
+[node name="ruler_fact" parent="." instance=ExtResource("7_0bh13")]
+position = Vector2(2040, -1133)
+item_id = 19
+
+[node name="radio_fact" parent="." instance=ExtResource("7_0bh13")]
+position = Vector2(890, -93)
+item_id = 17
+
+[node name="tennis_fact" parent="." instance=ExtResource("7_0bh13")]
+position = Vector2(-2430, -1853)
+item_id = 21
+
+[node name="monocle_fact" parent="." instance=ExtResource("7_0bh13")]
+position = Vector2(-1510, -1203)
+item_id = 15
