@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkykfp4avpq3e" path="res://assets/placeholders/PLACEHOLDER_hitbox.png" id="1_aefbb"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26eq0"]
+size = Vector2(10, 10)
 
 [node name="MineDown" type="Area2D"]
 
@@ -16,5 +17,4 @@ texture = ExtResource("1_aefbb")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 10)
-scale = Vector2(0.5, 1)
 shape = SubResource("RectangleShape2D_26eq0")

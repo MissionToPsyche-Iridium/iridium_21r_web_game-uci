@@ -30,6 +30,9 @@ enum QuestType {
 @export var shopId: Shop.ShopId = Shop.ShopId.NONE
 @export var purchaseId: int = -1
 
+# quests might be invisible for transitioning between two visible quests (e.g. exiting the building after purchasing a quest item)
+@export var isVisible: bool = true
+
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:

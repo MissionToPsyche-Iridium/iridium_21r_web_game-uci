@@ -120,6 +120,9 @@ func _on_dialogic_signal(args: Dictionary):
 			"playCutsceneAnimation":
 				if CutsceneManager.instance.cutscene != null:
 					CutsceneManager.instance.play_animation(args["animationName"])
+			"addItemToInventory":
+				print(args["itemType"])
+				ResourceManager.instance.add_to_inventory(args["itemType"], args["amount"])
 			_:
 				printerr("Unknown signal %s" % args["type"])
 

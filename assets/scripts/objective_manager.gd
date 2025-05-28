@@ -18,6 +18,8 @@ static var instance: ObjectiveManager
 @onready var progressBar: ProgressBar = $CanvasLayer/QuestUI/ProgressBar
 @onready var animationPlayer: AnimationPlayer = $AnimationPlayer
 
+var currentQuest: Quest = null
+
 var currentQuestId: int = 0
 var currentType: Quest.QuestType = Quest.QuestType.NONE
 var currentName: String = ""
@@ -87,34 +89,44 @@ func update_ui() -> void:
 		_:
 			progressText.text = ""
 			progressBar.visible = false
-			
 
 func set_quest(id: int) -> void:
-	if id == 1:
-		CutsceneManager.instance.add_scene_change_trigger("res://scenes/demo_indoor.tscn", "An_alien_greeting")
-	var quest = questList[id]
+	quest_start_events(id)
+
+	currentQuest = questList[id]
 	currentQuestId = id
-	currentType = quest.questType
-	currentName = quest.questName
-	currentDescription = quest.questDescription
+	currentType = currentQuest.questType
+	currentName = currentQuest.questName
+	currentDescription = currentQuest.questDescription
 	
-	oreType = quest.oreType
-	miningNeeded = quest.miningNeeded
+	oreType = currentQuest.oreType
+	miningNeeded = currentQuest.miningNeeded
 	miningProgress = 0
 	
-	sceneId = quest.sceneId
+	sceneId = currentQuest.sceneId
 	
-	areaId = quest.areaId
+	areaId = currentQuest.areaId
 	
-	interactionId = quest.interactionId
+	interactionId = currentQuest.interactionId
 	
-	shopId = quest.shopId
+	shopId = currentQuest.shopId
 	
-	purchaseId = quest.purchaseId
+	purchaseId = currentQuest.purchaseId
 	
 	update_ui()
-	animationPlayer.play("startQuest")
+	if currentQuest.isVisible:
+		animationPlayer.play("startQuest")
 	print("quest: %s" % currentName)
+
+# events to trigger when starting the quest at the specified id
+func quest_start_events(id: int) -> void:
+	match id:
+		4:
+			CutsceneManager.instance.add_scene_change_trigger("res://scenes/base.tscn", "An_alien_greeting")
+
+func quest_end_events(id: int) -> void:
+	match id:
+		0: CutsceneManager.instance.start_cutscene("successful_mining")
 
 func next_objective() -> void:
 	clear_objective()
@@ -124,7 +136,11 @@ func next_objective() -> void:
 
 func complete_objective() -> void:
 	print("quest complete")
-	animationPlayer.play("completeQuest")
+	quest_end_events(currentQuestId)
+	if currentQuest.isVisible:
+		animationPlayer.play("completeQuest")
+	else:
+		next_objective()
 
 func clear_objective() -> void:
 	match (currentType):

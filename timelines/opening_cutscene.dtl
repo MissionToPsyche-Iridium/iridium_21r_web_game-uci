@@ -1,4 +1,5 @@
 [style name="dialogic_premade"]
+[wait time="0.5"]
 Take-off preparations are now ready. Requesting authorization from user...[pause=1]
 - Astrid
 	set {player_name} = "Astrid"

@@ -1,16 +1,17 @@
-[gd_scene load_steps=33 format=3 uid="uid://b3s3mv0yoksjk"]
+[gd_scene load_steps=34 format=3 uid="uid://b3s3mv0yoksjk"]
 
 [ext_resource type="Script" path="res://assets/scripts/character_body_2d.gd" id="1_dse8y"]
 [ext_resource type="Script" path="res://assets/scripts/hitbox_controller.gd" id="2_faxfw"]
-[ext_resource type="PackedScene" uid="uid://wo8s4esei43m" path="res://scenes/menu_hud.tscn" id="2_yfre2"]
+[ext_resource type="PackedScene" uid="uid://bvtevwrox2iit" path="res://scenes/menu_hud.tscn" id="2_yfre2"]
 [ext_resource type="Texture2D" uid="uid://bk3xsk4igdc6y" path="res://assets/spritesheets/Player_Sprite.png" id="3_ccxhm"]
 [ext_resource type="PackedScene" uid="uid://bl63hk54yv5k0" path="res://hud.tscn" id="3_eltcr"]
 [ext_resource type="Script" path="res://assets/scripts/mining_qte_controller.gd" id="4_rgdai"]
 [ext_resource type="Texture2D" uid="uid://dqncnv6yc5axk" path="res://assets/sprites/image 8.png" id="5_imkcy"]
 [ext_resource type="Texture2D" uid="uid://cdfi5x31owxnm" path="res://assets/sprites/mining bar - moves.png" id="6_0c3j8"]
+[ext_resource type="PackedScene" uid="uid://cwn3ttr5d7ej8" path="res://interaction_components/interacting_component.tscn" id="6_6f630"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ttrdr"]
-size = Vector2(12.7, 5.2)
+size = Vector2(12.7, 8)
 
 [sub_resource type="Animation" id="Animation_gkj61"]
 length = 0.001
@@ -367,6 +368,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 4), Vector2i(1, 4), Vector2i(2, 4), Vector2i(3, 4), Vector2i(4, 4), Vector2i(5, 4), Vector2i(0, 4)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"footstep"
+}, {
+"args": [],
+"method": &"footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_wy0ik"]
 resource_name = "move_left"
@@ -383,6 +401,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 7), Vector2i(1, 7), Vector2i(2, 7), Vector2i(3, 7), Vector2i(4, 7), Vector2i(5, 7), Vector2i(0, 7)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"footstep"
+}, {
+"args": [],
+"method": &"footstep"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_1xn7k"]
@@ -401,6 +436,23 @@ tracks/0/keys = {
 "update": 1,
 "values": [Vector2i(0, 5), Vector2i(1, 5), Vector2i(2, 5), Vector2i(3, 5), Vector2i(4, 5), Vector2i(5, 5), Vector2i(0, 5)]
 }
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"footstep"
+}, {
+"args": [],
+"method": &"footstep"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_founn"]
 resource_name = "move_up"
@@ -417,6 +469,23 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2i(0, 6), Vector2i(1, 6), Vector2i(2, 6), Vector2i(3, 6), Vector2i(4, 6), Vector2i(5, 6), Vector2i(0, 6)]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 0.4),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"footstep"
+}, {
+"args": [],
+"method": &"footstep"
+}]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_q77i1"]
@@ -580,13 +649,15 @@ hframes = 6
 vframes = 12
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 6.7)
+position = Vector2(0, 5.3)
 shape = SubResource("RectangleShape2D_ttrdr")
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {
 "": SubResource("AnimationLibrary_q77i1")
 }
+
+[node name="InteractingComponent" parent="." instance=ExtResource("6_6f630")]
 
 [node name="MiningQTEController" type="Node2D" parent="."]
 script = ExtResource("4_rgdai")

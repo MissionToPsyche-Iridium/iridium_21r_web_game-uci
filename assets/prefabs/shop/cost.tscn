@@ -1,0 +1,53 @@
+[gd_scene load_steps=4 format=3 uid="uid://rv0prwjy4j33"]
+
+[ext_resource type="Texture2D" uid="uid://bkbr6xsj0hypl" path="res://assets/ui assets/Shop/Ore Icons/Tungsten.png" id="1_851a2"]
+[ext_resource type="Script" path="res://assets/prefabs/shop/cost.gd" id="1_el5uq"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="2_511ur"]
+
+[node name="Cost" type="Control"]
+layout_mode = 3
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1152.0
+offset_top = -648.0
+offset_right = -1112.0
+offset_bottom = -628.0
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_el5uq")
+
+[node name="CostIcon" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -23.5165
+offset_top = -20.0
+grow_horizontal = 0
+grow_vertical = 0
+texture = ExtResource("1_851a2")
+expand_mode = 3
+stretch_mode = 5
+
+[node name="CostQuantity" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -62.0
+offset_top = -19.0
+offset_right = -22.0
+offset_bottom = -1.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/normal_font = ExtResource("2_511ur")
+bbcode_enabled = true
+text = "[right]x2"
+text_direction = 1

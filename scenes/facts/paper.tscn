@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://iom5yk78ocvs"]
+
+[ext_resource type="Script" path="res://scenes/facts/paper.gd" id="1_vgfqj"]
+[ext_resource type="Texture2D" uid="uid://12a1ao8pxgjc" path="res://assets/fact_objects/paper.png" id="2_48b8x"]
+[ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_sdw4k"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wo66c"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_utj5g"]
+radius = 44.0114
+
+[node name="paper_fact" type="Area2D"]
+collision_layer = 3
+collision_mask = 3
+script = ExtResource("1_vgfqj")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_wo66c")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 3.8147e-06)
+scale = Vector2(4.45156, 4.40155)
+texture = ExtResource("2_48b8x")
+
+[node name="Interactable" parent="." instance=ExtResource("3_sdw4k")]
+interact_name = "X to Collect"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Interactable"]
+position = Vector2(2, 3)
+shape = SubResource("CircleShape2D_utj5g")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

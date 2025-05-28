@@ -3,6 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://dkykfp4avpq3e" path="res://assets/placeholders/PLACEHOLDER_hitbox.png" id="1_shkka"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_26eq0"]
+size = Vector2(10, 10)
 
 [node name="MineLeft" type="Area2D"]
 
@@ -15,6 +16,5 @@ scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_shkka")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-10, 0)
-scale = Vector2(1, 0.5)
+position = Vector2(-11, 5)
 shape = SubResource("RectangleShape2D_26eq0")
