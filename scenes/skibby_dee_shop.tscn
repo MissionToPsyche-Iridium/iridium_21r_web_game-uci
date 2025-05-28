@@ -1,537 +1,175 @@
-[gd_scene load_steps=16 format=3 uid="uid://dj4xer448yjqg"]
+[gd_scene load_steps=15 format=3 uid="uid://x5g6v2ukt3wn"]
 
-[ext_resource type="Script" path="res://scenes/shop.gd" id="1_sbmjs"]
-[ext_resource type="Texture2D" uid="uid://c0a3hvyymkoxe" path="res://assets/Backgrounds/Workshop_Cropped.png" id="2_qpqrp"]
-[ext_resource type="Texture2D" uid="uid://c0pvhnaovubrr" path="res://assets/characters/Zimbo/Zimbo Shop Sprite.png" id="3_bl80g"]
-[ext_resource type="Texture2D" uid="uid://ckvppp1bt3b3u" path="res://assets/ui assets/Shop/Dialogue Box.png" id="4_n28xu"]
-[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="5_rpmd5"]
-[ext_resource type="Texture2D" uid="uid://dmfow1ox8jlrd" path="res://assets/ui assets/Shop/Shop Panel.png" id="6_1co5j"]
-[ext_resource type="Texture2D" uid="uid://cwy47tqu6c62y" path="res://assets/ui assets/Shop/Iridium Button.png" id="7_06blr"]
+[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_heigf"]
+[ext_resource type="Texture2D" uid="uid://cg8c1lgyuuu64" path="res://assets/sprites/Skibby_Dee_Shop_Interior.png" id="2_sohrm"]
+[ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_rotf1"]
+[ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_wdpcg"]
+[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_xfjey"]
+[ext_resource type="Texture2D" uid="uid://n4wm8f6eb1p2" path="res://assets/Backgrounds/Dee_Shop.png" id="6_by8xo"]
+[ext_resource type="Texture2D" uid="uid://bcv4sg2gyisb" path="res://assets/sprites/tree.png" id="6_s8k0f"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_aiwan"]
-texture = ExtResource("4_n28xu")
-texture_margin_left = 20.0
-texture_margin_top = 20.0
-texture_margin_right = 20.0
-texture_margin_bottom = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xwi1u"]
+size = Vector2(100, 20)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_jqcwm"]
-texture = ExtResource("4_n28xu")
-expand_margin_left = 20.0
-expand_margin_top = 20.0
-expand_margin_right = 20.0
-expand_margin_bottom = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_wa128"]
+size = Vector2(20, 53)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oqml8"]
-texture = ExtResource("4_n28xu")
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f1fka"]
+size = Vector2(45.1, 20)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_lyhfl"]
-texture = ExtResource("6_1co5j")
-expand_margin_left = 20.0
-expand_margin_top = 20.0
-expand_margin_right = 20.0
-expand_margin_bottom = 20.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8w30g"]
 
-[sub_resource type="Animation" id="Animation_6iixv"]
-resource_name = "Enter"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-468, -0.25, 0, 0.25, 0, 32, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333334, 0.6)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Name Label:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-322, -0.25, 0, 0.25, 0, 178, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333, 0.6)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Name Label:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer2:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(-407, -0.25, 0, 0.25, 0, 93, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333, 0.6)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PanelContainer2:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PanelContainer:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1377, -0.25, 0, 0.25, 0, 577, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333, 0.6)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PanelContainer:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Button:position:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1762, -0.25, 0, 0.25, 0, 962, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333, 0.6)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Button:position:y")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Background:position:x")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Background:position:y")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(800, -0.25, 0, 0.25, 0, 0, -0.5, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_87mga"]
+size = Vector2(145, 138)
 
-[sub_resource type="Animation" id="Animation_pwv40"]
-resource_name = "Exit"
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(32, -0.25, 0, 0.25, 0, -468, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333, 0.6)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(-0.0333333)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Name Label:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(178, -0.25, 0, 0.25, 0, -322, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Name Label:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer2:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0, -407, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PanelContainer2:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PanelContainer:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(577, -0.25, 0, 0.25, 0, 1377, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PanelContainer:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Button:position:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(962, -0.25, 0, 0.25, 0, 1762, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Button:position:y")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Background:position:x")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Background:position:y")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 800, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0, 0.6)
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2yg76"]
+size = Vector2(145, 138)
 
-[sub_resource type="Animation" id="Animation_mfckb"]
-length = 0.001
-tracks/0/type = "bezier"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("TextureRect:position:x")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(32, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/1/type = "bezier"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("TextureRect:position:y")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(105, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/2/type = "bezier"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("Name Label:position:x")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(178, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/3/type = "bezier"
-tracks/3/imported = false
-tracks/3/enabled = true
-tracks/3/path = NodePath("Name Label:position:y")
-tracks/3/interp = 1
-tracks/3/loop_wrap = true
-tracks/3/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(410, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/4/type = "bezier"
-tracks/4/imported = false
-tracks/4/enabled = true
-tracks/4/path = NodePath("PanelContainer2:position:x")
-tracks/4/interp = 1
-tracks/4/loop_wrap = true
-tracks/4/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(93, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/5/type = "bezier"
-tracks/5/imported = false
-tracks/5/enabled = true
-tracks/5/path = NodePath("PanelContainer2:position:y")
-tracks/5/interp = 1
-tracks/5/loop_wrap = true
-tracks/5/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(459, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/6/type = "bezier"
-tracks/6/imported = false
-tracks/6/enabled = true
-tracks/6/path = NodePath("PanelContainer:position:x")
-tracks/6/interp = 1
-tracks/6/loop_wrap = true
-tracks/6/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(577, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/7/type = "bezier"
-tracks/7/imported = false
-tracks/7/enabled = true
-tracks/7/path = NodePath("PanelContainer:position:y")
-tracks/7/interp = 1
-tracks/7/loop_wrap = true
-tracks/7/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(85, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/8/type = "bezier"
-tracks/8/imported = false
-tracks/8/enabled = true
-tracks/8/path = NodePath("Button:position:x")
-tracks/8/interp = 1
-tracks/8/loop_wrap = true
-tracks/8/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(962, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/9/type = "bezier"
-tracks/9/imported = false
-tracks/9/enabled = true
-tracks/9/path = NodePath("Button:position:y")
-tracks/9/interp = 1
-tracks/9/loop_wrap = true
-tracks/9/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(481, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/10/type = "bezier"
-tracks/10/imported = false
-tracks/10/enabled = true
-tracks/10/path = NodePath("Background:position:x")
-tracks/10/interp = 1
-tracks/10/loop_wrap = true
-tracks/10/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(-7, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
-tracks/11/type = "bezier"
-tracks/11/imported = false
-tracks/11/enabled = true
-tracks/11/path = NodePath("Background:position:y")
-tracks/11/interp = 1
-tracks/11/loop_wrap = true
-tracks/11/keys = {
-"handle_modes": PackedInt32Array(0),
-"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
-"times": PackedFloat32Array(0)
-}
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ejscf"]
+size = Vector2(2560, 1440)
 
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_iepkf"]
-_data = {
-"Enter": SubResource("Animation_6iixv"),
-"Exit": SubResource("Animation_pwv40"),
-"RESET": SubResource("Animation_mfckb")
-}
+[node name="SkibbyDeeShop" type="Node2D" node_paths=PackedStringArray("camera_bounds", "transitions")]
+script = ExtResource("1_heigf")
+camera_bounds = NodePath("CameraBounds/CollisionShape2D")
+transitions = [NodePath("scene_transition")]
+scene_id = 5
 
-[node name="Shop" type="CanvasLayer"]
-script = ExtResource("1_sbmjs")
-exit_spawnPos = Vector2(588, 370)
+[node name="ColorRect" type="ColorRect" parent="."]
+custom_minimum_size = Vector2(4096, 3200)
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -2048.0
+offset_top = -1600.0
+offset_right = 2048.0
+offset_bottom = 1600.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(2048, 1600)
+color = Color(0, 0, 0, 1)
 
-[node name="Background" type="TextureRect" parent="."]
-offset_left = -7.0
-offset_right = 1170.0
-offset_bottom = 648.0
-texture = ExtResource("2_qpqrp")
-expand_mode = 2
-stretch_mode = 4
+[node name="Background" type="Sprite2D" parent="."]
+scale = Vector2(10, 10)
+texture = ExtResource("2_sohrm")
 
-[node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 32.0
-offset_top = 105.0
-offset_right = 602.0
-offset_bottom = 675.0
-scale = Vector2(0.753023, 0.753023)
-texture = ExtResource("3_bl80g")
+[node name="StaticBody2D" type="StaticBody2D" parent="Background"]
 
-[node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 577.0
-offset_top = 85.0
-offset_right = 997.0
-offset_bottom = 405.0
-scale = Vector2(1.2024, 1.2024)
-theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-3.8147e-06, 7)
+shape = SubResource("RectangleShape2D_xwi1u")
 
-[node name="VBoxContainer" type="VBoxContainer" parent="PanelContainer"]
-layout_mode = 2
-theme_override_constants/separation = 5
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(60, 23.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wa128")
 
-[node name="PanelContainer2" type="PanelContainer" parent="."]
-offset_left = 93.0
-offset_top = 459.0
-offset_right = 418.0
-offset_bottom = 622.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_jqcwm")
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-60, 23.6)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_wa128")
 
-[node name="RichTextLabel" type="RichTextLabel" parent="PanelContainer2"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("5_rpmd5")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "[center]I can upgrade your ore
-into super ore
- in order to build the 
-space station.[/center]"
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-29.75, 60)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f1fka")
 
-[node name="Name Label" type="PanelContainer" parent="."]
-offset_left = 178.0
-offset_top = 410.0
-offset_right = 321.0
-offset_bottom = 450.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_oqml8")
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(29.75, 60)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_f1fka")
 
-[node name="RichTextLabel2" type="RichTextLabel" parent="Name Label"]
-layout_mode = 2
-theme_override_fonts/normal_font = ExtResource("5_rpmd5")
-theme_override_font_sizes/normal_font_size = 36
-bbcode_enabled = true
-text = "[center] Zimbo [center]"
+[node name="CollisionShape2D6" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(45.7, 46.7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8w30g")
 
-[node name="Buttons v2" type="PanelContainer" parent="."]
+[node name="CollisionShape2D7" type="CollisionShape2D" parent="Background/StaticBody2D"]
+position = Vector2(-44.5, 45.7)
+scale = Vector2(1, 1)
+shape = SubResource("RectangleShape2D_8w30g")
+
+[node name="scene_transition" type="Area2D" parent="."]
+position = Vector2(0, 552)
+collision_mask = 6
+script = ExtResource("3_rotf1")
+scene = "res://scenes/base.tscn"
+spawn_position = Vector2(-1357, -708)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
+shape = SubResource("RectangleShape2D_87mga")
+
+[node name="shop_area" type="Area2D" parent="."]
+position = Vector2(0, 124)
+collision_mask = 6
+script = ExtResource("4_wdpcg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
+shape = SubResource("RectangleShape2D_2yg76")
+
+[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_xfjey")]
+shopId = 1
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3"), NodePath("Transactions/Transaction4")]
+default_text = "[center]Welcome! How can I help you?[/center]"
+successful_purchase_text = "[center]Thank you! Love doing business with you.[/center]"
+failed_purchase_text = "[center]Sorry hon, you're short on materials. I can't give it to you for free.[/center]"
+anything_else_text = "[center]Anything else I can help you with?[/center]"
+leave_text = "[center]Pleasure doing business with you. See you again soon.[/center]"
+
+[node name="Background" parent="shop_area/Shop" index="0"]
+texture = ExtResource("6_by8xo")
+
+[node name="TextureRect" parent="shop_area/Shop" index="1"]
 visible = false
-offset_left = 594.0
-offset_top = 106.0
-offset_right = 1045.0
-offset_bottom = 446.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_lyhfl")
+offset_left = 29.0046
+offset_right = 599.005
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Buttons v2"]
-layout_mode = 2
+[node name="PanelContainer" parent="shop_area/Shop" index="2"]
+offset_left = 544.0
+offset_right = 964.0
 
-[node name="TextureButton" type="TextureButton" parent="Buttons v2/VBoxContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-texture_normal = ExtResource("7_06blr")
-stretch_mode = 0
+[node name="RichTextLabel2" parent="shop_area/Shop/Name Label" index="0"]
+text = "[center] Claire [center]"
 
-[node name="Button" type="Button" parent="."]
-offset_left = 962.0
-offset_top = 481.0
-offset_right = 1081.0
-offset_bottom = 512.0
-text = "Exit"
+[node name="Transaction" parent="shop_area/Shop/Transactions" index="0"]
+transactionType = 1
+transactionQuantity = 5
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
-libraries = {
-"": SubResource("AnimationLibrary_iepkf")
-}
+[node name="Transaction2" parent="shop_area/Shop/Transactions" index="1"]
+transactionType = 2
+transactionQuantity = 5
+transactionCostTypes = Array[int]([1])
+transactionCostQuantities = Array[int]([10])
+
+[node name="Transaction3" parent="shop_area/Shop/Transactions" index="2"]
+transactionType = 3
+transactionQuantity = 5
+transactionCostTypes = Array[int]([2])
+transactionCostQuantities = Array[int]([10])
+
+[node name="Transaction4" parent="shop_area/Shop/Transactions" index="3"]
+transactionType = 4
+transactionQuantity = 5
+transactionCostTypes = Array[int]([3, 2])
+transactionCostQuantities = Array[int]([10, 10])
+
+[node name="CameraBounds" type="Area2D" parent="."]
+position = Vector2(-557, -362)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CameraBounds"]
+position = Vector2(567, 400)
+shape = SubResource("RectangleShape2D_ejscf")
+disabled = true
+
+[node name="Tree" type="Sprite2D" parent="."]
+z_index = 9
+position = Vector2(-405, 330)
+scale = Vector2(10, 10)
+texture = ExtResource("6_s8k0f")
+
+[node name="Tree2" type="Sprite2D" parent="."]
+z_index = 9
+position = Vector2(405, 340)
+scale = Vector2(10, 10)
+texture = ExtResource("6_s8k0f")
+
+[editable path="shop_area/Shop"]
