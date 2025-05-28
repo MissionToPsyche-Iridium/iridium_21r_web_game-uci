@@ -13,7 +13,7 @@ dest_files=["res://.godot/imported/zimbo_yuno_encounter.mp3-eae833a51aa45baccf05
 [params]
 
 loop=false
-loop_offset=0
-bpm=0
+loop_offset=0.0
+bpm=0.0
 beat_count=0
 bar_beats=4
