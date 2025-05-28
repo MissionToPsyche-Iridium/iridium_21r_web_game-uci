@@ -2,6 +2,7 @@
 extends "res://assets/scripts/base_window.gd"  # Update this path if needed
 
 @onready var characters_button = $Characters
+@onready var about_button = $About
 @onready var close_button = $TextureRect/CloseButton
 
 const undiscovered_texture: Texture = preload("res://assets/menu/windows/Lab/Undiscovered.png")
@@ -12,6 +13,7 @@ func _ready():
 	super._ready()
 	
 	characters_button.pressed.connect(_on_characters_button_pressed)
+	about_button.pressed.connect(_on_about_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
 	#$TextureRect/ScrollContainer.get_v_scroll_bar().rect_ = 50
 	var atom = $TextureRect/ScrollContainer/Icons/Col1/Atom
@@ -62,6 +64,10 @@ func _update_button_undiscovered(button: TextureButton, item_id: ResourceManager
 func _on_characters_button_pressed():
 	WindowManager.close_window()
 	WindowManager.open_window("res://assets/menu/windows/Characters/CharactersWindow.tscn")
+
+func _on_about_button_pressed():
+	WindowManager.close_window()
+	WindowManager.open_window("res://assets/menu/windows/AboutPsyche/AboutPsycheWindow.tscn")
 
 func _on_close_button_pressed():
 	WindowManager.close_window()

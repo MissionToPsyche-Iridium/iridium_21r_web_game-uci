@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"
+uid="uid://4y2jujeahnf1"
+path="res://.godot/imported/Range.png-16b96b7a9c1ede5d97e620e9f2a04cd7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"]
+source_file="res://assets/menu/windows/AboutPsyche/Range.png"
+dest_files=["res://.godot/imported/Range.png-16b96b7a9c1ede5d97e620e9f2a04cd7.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"
+uid="uid://cwsxrbvu7phox"
+path="res://.godot/imported/Prediction.png-5a71850c47dfe6d1c3e2398d123294b8.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"]
+source_file="res://assets/menu/windows/AboutPsyche/Prediction.png"
+dest_files=["res://.godot/imported/Prediction.png-5a71850c47dfe6d1c3e2398d123294b8.ctex"]
 
 [params]
 

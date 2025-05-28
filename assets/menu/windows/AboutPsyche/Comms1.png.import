@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"
+uid="uid://bmc4unfo4wghw"
+path="res://.godot/imported/Comms1.png-99a965113b5cbb341dc5ece769665468.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"]
+source_file="res://assets/menu/windows/AboutPsyche/Comms1.png"
+dest_files=["res://.godot/imported/Comms1.png-99a965113b5cbb341dc5ece769665468.ctex"]
 
 [params]
 

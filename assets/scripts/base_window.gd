@@ -10,15 +10,17 @@ func _ready():
 	# Find and connect buttons
 	var close_button = find_button("CloseButton")
 	if close_button:
-		close_button.pressed.connect(_on_close_button_pressed)
+		if not close_button.pressed.is_connected(_on_close_button_pressed):
+			close_button.pressed.connect(_on_close_button_pressed)
 		print("CloseButton connected")
 	else:
 		push_error("CloseButton not found in " + name)
 	
 	var back_button = find_button("BackButton")
 	if back_button:
-		back_button.pressed.connect(_on_back_button_pressed)
-		print("BackButton connected")
+		if not back_button.pressed.is_connected(_on_back_button_pressed):
+			back_button.pressed.connect(_on_back_button_pressed)
+			print("BackButton connected")
 	else:
 		push_error("BackButton not found in " + name)
 

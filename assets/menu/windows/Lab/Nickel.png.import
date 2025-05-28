@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"
+uid="uid://cimmexelrbinv"
+path="res://.godot/imported/Nickel.png-6e4cf5756dd0ae779f48d56199050c83.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-57c26b2a68dddbbb66fe94fb2cad1b39.ctex"]
+source_file="res://assets/menu/windows/Lab/Nickel.png"
+dest_files=["res://.godot/imported/Nickel.png-6e4cf5756dd0ae779f48d56199050c83.ctex"]
 
 [params]
 
