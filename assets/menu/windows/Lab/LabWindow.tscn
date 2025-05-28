@@ -5,14 +5,14 @@
 [ext_resource type="Texture2D" uid="uid://bkdecq87y10a6" path="res://assets/menu/windows/Lab/LabTab.png" id="3_sy0ey"]
 [ext_resource type="Texture2D" uid="uid://dhsymsuxcq630" path="res://assets/menu/windows/Lab/CloseButton.png" id="4_rr8gv"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_6if1o"]
-[ext_resource type="Texture2D" uid="uid://dk2blyji3k6vv" path="res://assets/menu/windows/Lab/Thrusters.png" id="6_ynvgl"]
 [ext_resource type="Script" path="res://assets/scripts/button_press.gd" id="7_ppq8t"]
 [ext_resource type="Texture2D" uid="uid://drvw8l6tqc3pd" path="res://assets/menu/windows/Lab/Laser.png" id="8_iw8ed"]
 [ext_resource type="Texture2D" uid="uid://dnvnt5s85aqw7" path="res://assets/menu/windows/Lab/Radio.png" id="10_8vd0o"]
 [ext_resource type="Texture2D" uid="uid://cbmulirh4i4fg" path="res://assets/menu/windows/Lab/Sun.png" id="11_hoy2b"]
 [ext_resource type="Texture2D" uid="uid://dsxlbvvvxybmr" path="res://assets/menu/windows/Lab/Phase E.png" id="12_6fjdn"]
 [ext_resource type="Texture2D" uid="uid://dmngont1rot7q" path="res://assets/menu/windows/Lab/Monocle.png" id="13_0h8ge"]
-[ext_resource type="Texture2D" uid="uid://bhjhsfv7cn772" path="res://assets/menu/windows/Lab/Rocket.png" id="14_326es"]
+[ext_resource type="Texture2D" uid="uid://bhjhsfv7cn772" path="res://assets/menu/windows/Lab/Rocket.png" id="13_vlbbb"]
+[ext_resource type="Texture2D" uid="uid://dk2blyji3k6vv" path="res://assets/menu/windows/Lab/Thrusters.png" id="14_326es"]
 [ext_resource type="Texture2D" uid="uid://cwurn42gc6rmq" path="res://assets/menu/windows/Lab/Tennis.png" id="15_742q1"]
 [ext_resource type="Texture2D" uid="uid://bo5dhynqvcsuq" path="res://assets/menu/windows/Lab/Explosion.png" id="16_51m5o"]
 [ext_resource type="Texture2D" uid="uid://c636ir5ni2lk6" path="res://assets/menu/windows/Lab/Paper.png" id="17_0hjlh"]
@@ -89,9 +89,9 @@ layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 3
 action_mode = 0
-texture_normal = ExtResource("6_ynvgl")
-texture_pressed = ExtResource("6_ynvgl")
-texture_hover = ExtResource("6_ynvgl")
+texture_normal = ExtResource("14_326es")
+texture_pressed = ExtResource("14_326es")
+texture_hover = ExtResource("14_326es")
 script = ExtResource("7_ppq8t")
 
 [node name="Laser" type="TextureButton" parent="TextureRect/ScrollContainer/Icons/Col1"]
@@ -147,9 +147,9 @@ script = ExtResource("7_ppq8t")
 layout_mode = 2
 size_flags_horizontal = 4
 action_mode = 0
-texture_normal = ExtResource("14_326es")
-texture_pressed = ExtResource("14_326es")
-texture_hover = ExtResource("14_326es")
+texture_normal = ExtResource("13_vlbbb")
+texture_pressed = ExtResource("13_vlbbb")
+texture_hover = ExtResource("13_vlbbb")
 script = ExtResource("7_ppq8t")
 
 [node name="Tennis" type="TextureButton" parent="TextureRect/ScrollContainer/Icons/Col2"]
