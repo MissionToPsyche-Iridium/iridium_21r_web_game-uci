@@ -1,11 +1,11 @@
-[gd_scene load_steps=37 format=4 uid="uid://blty7d6ubv8ku"]
+[gd_scene load_steps=37 format=4 uid="uid://ffcai60np4sg"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_gre75"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="3_ob5mg"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="4_xppsn"]
 [ext_resource type="Texture2D" uid="uid://65em83c4e22m" path="res://assets/spritesheets/Dee_spritesheet.png" id="5_c40l3"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_uvhrs"]
-[ext_resource type="Texture2D" uid="uid://e8miw2ph6j2v" path="res://assets/spritesheets/Zimbo.png" id="6_a81rq"]
+[ext_resource type="Texture2D" uid="uid://ds64sx6ffnc1v" path="res://assets/spritesheets/Skibby_Spritesheet.png" id="6_xyk68"]
 [ext_resource type="Texture2D" uid="uid://bk3xsk4igdc6y" path="res://assets/spritesheets/Player_Sprite.png" id="7_36xv3"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
@@ -1613,9 +1613,9 @@ libraries = {
 [node name="Sprite2D" type="Sprite2D" parent="Char1"]
 z_index = 4
 scale = Vector2(10, 10)
-texture = ExtResource("6_a81rq")
-hframes = 6
-vframes = 12
+texture = ExtResource("6_xyk68")
+hframes = 10
+vframes = 10
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="Char1"]
 libraries = {
