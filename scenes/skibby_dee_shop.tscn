@@ -60,32 +60,26 @@ shape = SubResource("RectangleShape2D_xwi1u")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(60, 23.6)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wa128")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-60, 23.6)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_wa128")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-29.75, 60)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f1fka")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(29.75, 60)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_f1fka")
 
 [node name="CollisionShape2D6" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(45.7, 46.7)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8w30g")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Background/StaticBody2D"]
 position = Vector2(-44.5, 45.7)
-scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_8w30g")
 
 [node name="scene_transition" type="Area2D" parent="."]
