@@ -1,0 +1,35 @@
+[gd_scene load_steps=5 format=4 uid="uid://5xs3t5481t6m"]
+
+[ext_resource type="Script" path="res://assets/prefabs/skibby_building.gd" id="1_atflf"]
+[ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="2_3giiw"]
+[ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_k4fwg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueujt"]
+size = Vector2(145, 138)
+
+[node name="SkibbyBuilding" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_atflf")
+
+[node name="SkibbyTransition" type="Area2D" parent="."]
+position = Vector2(-76, -61)
+collision_mask = 6
+script = ExtResource("2_3giiw")
+scene = "res://scenes/skibby_dee_shop.tscn"
+spawn_position = Vector2(0, 387)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="SkibbyTransition"]
+shape = SubResource("RectangleShape2D_ueujt")
+
+[node name="TileMaps" type="Node2D" parent="."]
+scale = Vector2(10, 10)
+
+[node name="TileMap" type="TileMapLayer" parent="TileMaps"]
+z_index = 3
+tile_map_data = PackedByteArray("AAD/////CQABAAIAAAD+//7/CQAAAAEAAAD+////CQAAAAIAAAD///7/CQABAAEAAAAAAP7/CQACAAEAAAAAAP//CQACAAIAAAA=")
+tile_set = ExtResource("3_k4fwg")
+
+[node name="TileMapTop" type="TileMapLayer" parent="TileMaps"]
+z_index = 9
+tile_map_data = PackedByteArray("AAD+//3/CQAAAAAAAAD///3/CQABAAAAAAAAAP3/CQACAAAAAAD+//7/CQAAAAEAAAD///7/CQABAAEAAAAAAP7/CQACAAEAAAA=")
+tile_set = ExtResource("3_k4fwg")
