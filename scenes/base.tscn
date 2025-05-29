@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_tdn2e"]
 [ext_resource type="PackedScene" uid="uid://5xs3t5481t6m" path="res://assets/prefabs/skibby_building.tscn" id="7_2wfjb"]
 [ext_resource type="PackedScene" uid="uid://b5dnfiqjb8gn" path="res://assets/prefabs/zimbo_building.tscn" id="7_6bp8e"]
-[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="8_drmj7"]
+[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="8_drmj7"]
 [ext_resource type="PackedScene" uid="uid://nxsnb2cehquk" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_g04t6"]
