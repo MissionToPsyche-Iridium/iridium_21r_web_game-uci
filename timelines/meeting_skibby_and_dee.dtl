@@ -17,6 +17,7 @@ Dee (Neutral): Indeed. I think there's so much potential here.
 [signal arg_type="dict" arg="{"animationName":"sequence6","type":"playCutsceneAnimation"}"]
 Skibby (Happy): I think so too. We want to stay here for a while and enjoy the views too! Anywho, we have to get going. If you want to trade anything feel free to stop by our shop! We would love to trade with you!
 Dee (Happy): See you!
+set {has_met_skibby} = true
 [signal arg_type="dict" arg="{"animationName":"sequence7","type":"playCutsceneAnimation"}"]
 [wait time="1.0"]
 [signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/base.tscn","type":"transition","xPos":-1343,"yPos":-391}"]
