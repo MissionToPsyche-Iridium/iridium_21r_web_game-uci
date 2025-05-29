@@ -6,7 +6,7 @@
 [ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_xy2xx"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_lw3m8"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_qjn8p"]
-[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="7_0bh13"]
+[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="7_0bh13"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_msk75"]
 size = Vector2(7168, 4855)

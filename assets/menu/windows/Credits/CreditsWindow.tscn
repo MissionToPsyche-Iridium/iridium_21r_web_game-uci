@@ -1,12 +1,12 @@
 [gd_scene load_steps=6 format=3 uid="uid://31et6c47t86y"]
 
-[ext_resource type="Script" path="res://assets/scripts/pause_window.gd" id="1_bupv2"]
-[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_3cvfj"]
-[ext_resource type="Texture2D" uid="uid://muddul53rqxi" path="res://assets/menu/windows/Pause/Pause Window.png" id="3_3sdad"]
-[ext_resource type="Texture2D" uid="uid://d2fj24cjrj7br" path="res://assets/menu/windows/Pause/Return Button.png" id="4_h7qa2"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/credits_window.gd" id="1_yt6x2"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://scenes/BaseWindow.tscn" id="2_3cvfj"]
+[ext_resource type="Texture2D" uid="uid://cdd1ql8as8il0" path="res://assets/menu/windows/Credits/CreditsScreen.png" id="3_2pibj"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_jit4t"]
+[ext_resource type="Texture2D" uid="uid://dqfs0iuge4mh4" path="res://assets/menu/windows/Characters/CloseButton.png" id="6_oi2h4"]
 
-[node name="PauseWindow" type="Control"]
+[node name="CreditsWindow" type="Control"]
 process_mode = 2
 layout_mode = 3
 anchors_preset = 15
@@ -14,7 +14,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bupv2")
+script = ExtResource("1_yt6x2")
 
 [node name="BaseWindow" parent="." instance=ExtResource("2_3cvfj")]
 layout_mode = 1
@@ -26,29 +26,135 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -396.0
+offset_top = -268.0
+offset_right = 415.0
+offset_bottom = 275.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_3sdad")
+texture = ExtResource("3_2pibj")
+expand_mode = 1
 
 [node name="TextureButton" type="TextureButton" parent="TextureRect"]
+z_index = 9
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -60.5
-offset_top = 45.0
-offset_right = 60.5
-offset_bottom = 113.0
+anchors_preset = -1
+anchor_left = 0.951
+anchor_top = 0.059
+anchor_right = 0.951
+anchor_bottom = 0.059
+offset_left = -19.261
+offset_top = -19.037
+offset_right = 18.739
+offset_bottom = 18.963
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("4_h7qa2")
-texture_pressed = ExtResource("4_h7qa2")
-texture_hover = ExtResource("4_h7qa2")
+texture_normal = ExtResource("6_oi2h4")
+texture_pressed = ExtResource("6_oi2h4")
+texture_hover = ExtResource("6_oi2h4")
 script = ExtResource("5_jit4t")
+
+[node name="space_background_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.405
+anchor_right = 0.191
+anchor_bottom = 0.405
+offset_left = -117.901
+offset_top = -12.915
+offset_right = 117.099
+offset_bottom = 12.085
+uri = "https://deep-fold.itch.io/space-background-generator"
+
+[node name="pixel_tileset_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.451
+anchor_right = 0.191
+anchor_bottom = 0.451
+offset_left = -117.901
+offset_top = -12.893
+offset_right = 117.099
+offset_bottom = 12.107
+uri = "https://free-game-assets.itch.io/free-undead-tileset-top-down-pixel-art"
+
+[node name="dialogic_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.5
+anchor_right = 0.191
+anchor_bottom = 0.5
+offset_left = -117.901
+offset_top = -13.5
+offset_right = 117.099
+offset_bottom = 11.5
+uri = "https://github.com/dialogic-godot/dialogic"
+
+[node name="copper_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.285
+anchor_top = 0.644
+anchor_right = 0.285
+anchor_bottom = 0.644
+offset_left = -35.135
+offset_top = -12.692
+offset_right = 34.865
+offset_bottom = 12.308
+uri = "https://internationalcopper.org/sustainable-copper/about-copper/"
+
+[node name="iridium_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.282
+anchor_top = 0.688
+anchor_right = 0.282
+anchor_bottom = 0.688
+offset_left = -30.702
+offset_top = -12.584
+offset_right = 31.298
+offset_bottom = 12.416
+uri = "https://www.livescience.com/39143-iridium.html"
+
+[node name="nickel_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.279
+anchor_top = 0.738
+anchor_right = 0.279
+anchor_bottom = 0.738
+offset_left = -31.269
+offset_top = -12.734
+offset_right = 30.731
+offset_bottom = 12.266
+uri = "https://nickelinstitute.org/en/nickel-applications/"
+
+[node name="silver_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.277
+anchor_top = 0.785
+anchor_right = 0.277
+anchor_bottom = 0.785
+offset_left = -30.647
+offset_top = -12.255
+offset_right = 31.353
+offset_bottom = 12.745
+uri = "httphttps://pubchem.ncbi.nlm.nih.gov/element/Silver#section=Usess://github.com/dialogic-godot/dialogic"
+
+[node name="tungsten_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.298
+anchor_top = 0.833
+anchor_right = 0.298
+anchor_bottom = 0.833
+offset_left = -43.678
+offset_top = -12.319
+offset_right = 44.322
+offset_bottom = 12.681
+uri = "https://www.livescience.com/38997-facts-about-tungsten.html"

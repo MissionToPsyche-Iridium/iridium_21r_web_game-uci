@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_m20uc"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_fjuvx"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_83koo"]
-[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
+[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi7y"]
 size = Vector2(8, 56.1)
