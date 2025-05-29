@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://dttnbh321vnju"]
+[gd_scene load_steps=14 format=4 uid="uid://dttnbh321vnju"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_syk6k"]
@@ -6,6 +6,7 @@
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="4_n2qub"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_tdn2e"]
+[ext_resource type="PackedScene" uid="uid://5xs3t5481t6m" path="res://assets/prefabs/skibby_building.tscn" id="7_2wfjb"]
 [ext_resource type="PackedScene" uid="uid://b5dnfiqjb8gn" path="res://assets/prefabs/zimbo_building.tscn" id="7_6bp8e"]
 [ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="8_drmj7"]
 [ext_resource type="PackedScene" uid="uid://nxsnb2cehquk" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
@@ -24,7 +25,7 @@ texture_filter = 3
 script = ExtResource("1_077qq")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 background = NodePath("Background")
-transitions = [NodePath("ZimboBuilding/ZimboTransition"), NodePath("StationTransition"), NodePath("MineTransition")]
+transitions = [NodePath("ZimboBuilding/ZimboTransition"), NodePath("StationTransition"), NodePath("MineTransition"), NodePath("SkibbyBuilding/SkibbyTransition")]
 scene_id = 1
 bgm = ExtResource("2_syk6k")
 
@@ -61,14 +62,14 @@ tile_set = ExtResource("3_m177h")
 z_index = 3
 position = Vector2(0, -183)
 scale = Vector2(10, 10)
-tile_map_data = PackedByteArray("AAAFAPD/AwAEABcAAAAIAPD/AwAFABcAAAAGAPD/AwAGABgAAAAHAPD/AwAHABgAAAAFAPH/AwAaAAwAAAAIAPH/AwAYAA0AAAAJAPL/AwAYAA0AAAAKAPP/AwAYAA0AAAALAPT/AwAYAAwAAAAKAPX/AwAEABcAAAAIAPb/AwAEABgAAAAHAPX/AwAEABgAAAAGAPT/AwAHABcAAAAFAPT/AwAEABgAAAAEAPL/AwAEABcAAAAFAPL/AwAaAA0AAAAHAPT/AwAaAAsAAAAJAPX/AwAZAAsAAAAIAPX/AwAZAAsAAAALAPP/AwAaAAsAAAAJAPH/AwAaAAsAAAAKAPL/AwAaAAsAAAD2//n/BAAAAAAAAAD2//r/BAAAAAEAAAD2//v/BAAAAAIAAAD3//n/BAABAAAAAAD3//r/BAABAAEAAAD3//v/BAABAAIAAAD4//n/BAACAAAAAAD4//r/BAACAAEAAAD4//v/BAACAAIAAADy/wIABwAAAAAAAQD0/wIABwAAAAAAAQDw/wQABwAAAAAAAQDz/wQABwAAAAAAAQDz/wUABwAAAAAAAQDx/wUABwAAAAAAAQDw/wUABwAAAAAAAQDy/wYABwAAAAAAAQDw/wcABwAAAAAAAQDw/wgABwAAAAAAAQDx/wkABwAAAAAAAQD1/wQABwAAAAAAAQAVAPv/BwAAAAAAAQAXAPv/BwAAAAAAAQASAPz/BwAAAAAAAQAYAPr/BwAAAAAAAQAWAPr/BwAAAAAAAQAXAPn/BwAAAAAAAQAaAPn/BwAAAAAAAQAZAPv/BwAAAAAAAQAcAPn/BwAAAAAAAQAcAPr/BwAAAAAAAQAbAPz/BwAAAAAAAQAaAPz/BwAAAAAAAQACAAcABwAAAAAAAQABAAgABwAAAAAAAQAAAAkABwAAAAAAAQD//wkABwAAAAAAAQACAAkABwAAAAAAAQABAAcABwAAAAAAAQACAAYABwAAAAAAAQD///7/BgAAAAAAAAD/////BgAAAAEAAAD//wAABgAAAAIAAAAAAP7/BgABAAAAAAAAAP//BgABAAEAAAAAAAAABgABAAIAAADu/wcAAwAaAAsAAAAZAPr/BwAAAAAAAQAUAPz/BwAAAAAAAQAVAPz/BwAAAAAAAQAXAPz/BwAAAAAAAQAQAPv/BwAAAAAAAQA=")
+tile_map_data = PackedByteArray("AAAFAPD/AwAEABcAAAAIAPD/AwAFABcAAAAGAPD/AwAGABgAAAAHAPD/AwAHABgAAAAFAPH/AwAaAAwAAAAIAPH/AwAYAA0AAAAJAPL/AwAYAA0AAAAKAPP/AwAYAA0AAAALAPT/AwAYAAwAAAAKAPX/AwAEABcAAAAIAPb/AwAEABgAAAAHAPX/AwAEABgAAAAGAPT/AwAHABcAAAAFAPT/AwAEABgAAAAEAPL/AwAEABcAAAAFAPL/AwAaAA0AAAAHAPT/AwAaAAsAAAAJAPX/AwAZAAsAAAAIAPX/AwAZAAsAAAALAPP/AwAaAAsAAAAJAPH/AwAaAAsAAAAKAPL/AwAaAAsAAADy/wIABwAAAAAAAQD0/wIABwAAAAAAAQDw/wQABwAAAAAAAQDz/wQABwAAAAAAAQDz/wUABwAAAAAAAQDx/wUABwAAAAAAAQDw/wUABwAAAAAAAQDy/wYABwAAAAAAAQDw/wcABwAAAAAAAQDw/wgABwAAAAAAAQDx/wkABwAAAAAAAQD1/wQABwAAAAAAAQAVAPv/BwAAAAAAAQAXAPv/BwAAAAAAAQASAPz/BwAAAAAAAQAYAPr/BwAAAAAAAQAWAPr/BwAAAAAAAQAXAPn/BwAAAAAAAQAaAPn/BwAAAAAAAQAZAPv/BwAAAAAAAQAcAPn/BwAAAAAAAQAcAPr/BwAAAAAAAQAbAPz/BwAAAAAAAQAaAPz/BwAAAAAAAQACAAcABwAAAAAAAQABAAgABwAAAAAAAQAAAAkABwAAAAAAAQD//wkABwAAAAAAAQACAAkABwAAAAAAAQABAAcABwAAAAAAAQACAAYABwAAAAAAAQD///7/BgAAAAAAAAD/////BgAAAAEAAAD//wAABgAAAAIAAAAAAP7/BgABAAAAAAAAAP//BgABAAEAAAAAAAAABgABAAIAAADu/wcAAwAaAAsAAAAZAPr/BwAAAAAAAQAUAPz/BwAAAAAAAQAVAPz/BwAAAAAAAQAXAPz/BwAAAAAAAQAQAPv/BwAAAAAAAQA=")
 tile_set = ExtResource("3_m177h")
 
 [node name="AbovePlayer" type="TileMapLayer" parent="TileMaps"]
 z_index = 9
 position = Vector2(0, -183)
 scale = Vector2(10, 10)
-tile_map_data = PackedByteArray("AAD2//n/BAAAAAAAAAD2//r/BAAAAAEAAAD3//n/BAABAAAAAAD3//r/BAABAAEAAAD4//n/BAACAAAAAAD4//r/BAACAAEAAAD/////BgAAAAEAAAAAAP7/BgABAAAAAAAAAP//BgABAAEAAAD///7/BgAAAAAAAAA=")
+tile_map_data = PackedByteArray("AAD/////BgAAAAEAAAAAAP7/BgABAAAAAAAAAP//BgABAAEAAAD///7/BgAAAAAAAAA=")
 tile_set = ExtResource("3_m177h")
 
 [node name="CameraBounds" type="Area2D" parent="."]
@@ -103,6 +104,9 @@ spawn_position = Vector2(-3656, 82)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MineTransition"]
 shape = SubResource("RectangleShape2D_sxjsi")
 
+[node name="SkibbyBuilding" parent="." instance=ExtResource("7_2wfjb")]
+position = Vector2(-1280, -823)
+
 [node name="ZimboBuilding" parent="." instance=ExtResource("7_6bp8e")]
 position = Vector2(-1280, 1257)
 
@@ -134,4 +138,5 @@ item_id = 13
 position = Vector2(-2280, -1063)
 item_id = 16
 
+[editable path="SkibbyBuilding"]
 [editable path="ZimboBuilding"]
