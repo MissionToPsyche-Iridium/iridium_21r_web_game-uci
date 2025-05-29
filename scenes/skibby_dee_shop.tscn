@@ -1,7 +1,8 @@
-[gd_scene load_steps=15 format=3 uid="uid://x5g6v2ukt3wn"]
+[gd_scene load_steps=16 format=3 uid="uid://x5g6v2ukt3wn"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_heigf"]
 [ext_resource type="Texture2D" uid="uid://cg8c1lgyuuu64" path="res://assets/sprites/Skibby_Dee_Shop_Interior.png" id="2_sohrm"]
+[ext_resource type="Texture2D" uid="uid://65em83c4e22m" path="res://assets/spritesheets/Dee_spritesheet.png" id="3_3m4od"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_rotf1"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_wdpcg"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_xfjey"]
@@ -82,6 +83,12 @@ shape = SubResource("RectangleShape2D_8w30g")
 position = Vector2(-44.5, 45.7)
 shape = SubResource("RectangleShape2D_8w30g")
 
+[node name="Sprite2D" type="Sprite2D" parent="Background"]
+position = Vector2(0, -15)
+texture = ExtResource("3_3m4od")
+hframes = 10
+vframes = 10
+
 [node name="scene_transition" type="Area2D" parent="."]
 position = Vector2(0, 552)
 collision_mask = 6
@@ -101,6 +108,7 @@ script = ExtResource("4_wdpcg")
 shape = SubResource("RectangleShape2D_2yg76")
 
 [node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_xfjey")]
+visible = false
 shopId = 1
 transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3"), NodePath("Transactions/Transaction4")]
 default_text = "[center]Welcome! How can I help you?[/center]"
@@ -114,12 +122,6 @@ texture = ExtResource("6_by8xo")
 
 [node name="TextureRect" parent="shop_area/Shop" index="1"]
 visible = false
-offset_left = 29.0046
-offset_right = 599.005
-
-[node name="PanelContainer" parent="shop_area/Shop" index="2"]
-offset_left = 544.0
-offset_right = 964.0
 
 [node name="RichTextLabel2" parent="shop_area/Shop/Name Label" index="0"]
 text = "[center] Claire [center]"
