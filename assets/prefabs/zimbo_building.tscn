@@ -1,0 +1,47 @@
+[gd_scene load_steps=6 format=4 uid="uid://b5dnfiqjb8gn"]
+
+[ext_resource type="Script" path="res://assets/prefabs/zimbo_building.gd" id="1_ynorr"]
+[ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="2_gx627"]
+[ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="2_pt3ec"]
+[ext_resource type="Texture2D" uid="uid://bebgxfs4lgtl4" path="res://assets/sprites/zimbo_yuno_spaceship.png" id="4_qnia1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueujt"]
+size = Vector2(145, 138)
+
+[node name="ZimboBuilding" type="Node2D"]
+position = Vector2(8, 8)
+script = ExtResource("1_ynorr")
+
+[node name="ZimboTransition" type="Area2D" parent="."]
+position = Vector2(-175, -61)
+collision_mask = 6
+script = ExtResource("2_gx627")
+scene = "res://scenes/demo_indoor.tscn"
+spawn_position = Vector2(0, 300)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="ZimboTransition"]
+shape = SubResource("RectangleShape2D_ueujt")
+
+[node name="TileMaps" type="Node2D" parent="."]
+scale = Vector2(10, 10)
+
+[node name="TileMap" type="TileMapLayer" parent="TileMaps"]
+z_index = 3
+tile_map_data = PackedByteArray("AAD/////BQABAAIAAAD+//7/BQAAAAEAAAD+////BQAAAAIAAAD///7/BQABAAEAAAAAAP7/BQACAAEAAAAAAP//BQACAAIAAAA=")
+tile_set = ExtResource("2_pt3ec")
+
+[node name="TileMapTop" type="TileMapLayer" parent="TileMaps"]
+z_index = 9
+tile_map_data = PackedByteArray("AAD+//3/BQAAAAAAAAD///3/BQABAAAAAAAAAP3/BQACAAAAAAD+//7/BQAAAAEAAAD///7/BQABAAEAAAAAAP7/BQACAAEAAAA=")
+tile_set = ExtResource("2_pt3ec")
+
+[node name="ZimboYunoSpaceship" type="Sprite2D" parent="."]
+position = Vector2(-678, -120)
+scale = Vector2(10, 10)
+texture = ExtResource("4_qnia1")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="ZimboYunoSpaceship"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="ZimboYunoSpaceship/StaticBody2D"]
+z_index = 3
+polygon = PackedVector2Array(-21, 0, -21, 3, -17, 7, -11, 10, -5, 11, 6, 11, 11, 10, 18, 7, 22, 3, 22, 0, 18, -4, 13, -6, 12, -10, 8, -14, 5, -15, -4, -15, -7, -14, -11, -10, -12, -6, -15, -5, -17, -4)
