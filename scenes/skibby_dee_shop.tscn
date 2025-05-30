@@ -1,6 +1,7 @@
-[gd_scene load_steps=16 format=3 uid="uid://x5g6v2ukt3wn"]
+[gd_scene load_steps=17 format=3 uid="uid://x5g6v2ukt3wn"]
 
 [ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_heigf"]
+[ext_resource type="AudioStream" uid="uid://csa78ullqkbnw" path="res://assets/audio/soundtrack/skibidi shop theme.mp3" id="2_3hcis"]
 [ext_resource type="Texture2D" uid="uid://cg8c1lgyuuu64" path="res://assets/sprites/Skibby_Dee_Shop_Interior.png" id="2_sohrm"]
 [ext_resource type="Texture2D" uid="uid://65em83c4e22m" path="res://assets/spritesheets/Dee_spritesheet.png" id="3_3m4od"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_rotf1"]
@@ -34,6 +35,7 @@ script = ExtResource("1_heigf")
 camera_bounds = NodePath("CameraBounds/CollisionShape2D")
 transitions = [NodePath("scene_transition")]
 scene_id = 5
+bgm = ExtResource("2_3hcis")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 custom_minimum_size = Vector2(4096, 3200)

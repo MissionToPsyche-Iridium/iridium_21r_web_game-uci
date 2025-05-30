@@ -1,20 +1,23 @@
-[gd_scene load_steps=6 format=3 uid="uid://31et6c47t86y"]
+[gd_scene load_steps=10 format=3 uid="uid://31et6c47t86y"]
 
-[ext_resource type="Script" path="res://assets/scripts/pause_window.gd" id="1_bupv2"]
-[ext_resource type="PackedScene" uid="uid://cm6voaqu2au8m" path="res://Scenes/BaseWindow.tscn" id="2_3cvfj"]
-[ext_resource type="Texture2D" uid="uid://muddul53rqxi" path="res://assets/menu/windows/Pause/Pause Window.png" id="3_3sdad"]
-[ext_resource type="Texture2D" uid="uid://d2fj24cjrj7br" path="res://assets/menu/windows/Pause/Return Button.png" id="4_h7qa2"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/credits_window.gd" id="1_db787"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://Scenes/BaseWindow.tscn" id="2_3cvfj"]
+[ext_resource type="Texture2D" uid="uid://c67vr6o2wtpsb" path="res://assets/menu/windows/Credits/CreatedBy.png" id="3_2yjwp"]
+[ext_resource type="Texture2D" uid="uid://dhsymsuxcq630" path="res://assets/menu/windows/Lab/CloseButton.png" id="4_oaead"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_jit4t"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/created_by.gd" id="6_0vsmq"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/learn_more.gd" id="7_w55ng"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/resources_used.gd" id="8_oqxpw"]
+[ext_resource type="Script" path="res://assets/menu/windows/Credits/lab_sources.gd" id="9_73w63"]
 
-[node name="PauseWindow" type="Control"]
-process_mode = 2
+[node name="CreditsWindow" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_bupv2")
+script = ExtResource("1_db787")
 
 [node name="BaseWindow" parent="." instance=ExtResource("2_3cvfj")]
 layout_mode = 1
@@ -26,29 +29,66 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -20.0
-offset_top = -20.0
-offset_right = 20.0
-offset_bottom = 20.0
+offset_left = -380.0
+offset_top = -255.0
+offset_right = 380.0
+offset_bottom = 255.0
 grow_horizontal = 2
 grow_vertical = 2
-texture = ExtResource("3_3sdad")
+texture = ExtResource("3_2yjwp")
 
-[node name="TextureButton" type="TextureButton" parent="TextureRect"]
+[node name="CloseButton" type="TextureButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -60.5
-offset_top = 45.0
-offset_right = 60.5
-offset_bottom = 113.0
+offset_left = 325.0
+offset_top = -240.0
+offset_right = 363.0
+offset_bottom = -202.0
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
-texture_normal = ExtResource("4_h7qa2")
-texture_pressed = ExtResource("4_h7qa2")
-texture_hover = ExtResource("4_h7qa2")
+texture_normal = ExtResource("4_oaead")
+texture_pressed = ExtResource("4_oaead")
+texture_hover = ExtResource("4_oaead")
 script = ExtResource("5_jit4t")
+
+[node name="CreatedBy" type="Button" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 15.0
+offset_top = 64.0
+offset_right = 120.0
+offset_bottom = 92.0
+action_mode = 0
+script = ExtResource("6_0vsmq")
+
+[node name="LearnMore" type="Button" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 15.0
+offset_top = 99.0
+offset_right = 134.0
+offset_bottom = 127.0
+action_mode = 0
+script = ExtResource("7_w55ng")
+
+[node name="ResourcesUsed" type="Button" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 17.0
+offset_top = 135.0
+offset_right = 161.0
+offset_bottom = 163.0
+action_mode = 0
+script = ExtResource("8_oqxpw")
+
+[node name="LabSources" type="Button" parent="TextureRect"]
+modulate = Color(1, 1, 1, 0)
+offset_left = 12.0
+offset_top = 168.0
+offset_right = 133.0
+offset_bottom = 201.0
+action_mode = 0
+script = ExtResource("9_73w63")
