@@ -167,5 +167,17 @@ func footstep() -> void:
 		SFXManager.instance.play_sfx("footstep", 0.5)
 
 func _calculate_mining_damage(score: float) -> int:
+	if ResourceManager.instance:
+		match ResourceManager.instance.pickaxeTier:
+			0:
+				return ceil(pow(score, 2) * 10) + 10
+			1:
+				return ceil(pow(score, 2) * 15) + 15
+			2:
+				return ceil(pow(score, 2) * 20) + 15
+			3:
+				return ceil(pow(score, 2) * 30) + 20
+			_:
+				return ceil(pow(score, 2) * 10) + 10
 	return ceil(pow(score, 2) * 10) + 10
 	

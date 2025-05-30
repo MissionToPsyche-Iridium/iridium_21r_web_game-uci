@@ -18,7 +18,7 @@ func generate_ore() -> void:
 	else:
 		var oreIndex = randi_range(0, len(orePool) - 1)
 		ore.ore_type = orePool[oreIndex]
-		ore.update_sprite()
+		ore.update_sprite_and_hp()
 		var amountIndex = randi_range(0, len(amountPool) - 1)
 		ore.ore_amount = amountPool[amountIndex]
 		

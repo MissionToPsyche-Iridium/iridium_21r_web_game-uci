@@ -204,7 +204,7 @@ mouse_filter = 1
 
 [node name="ObjectiveManager" type="Node2D" parent="." node_paths=PackedStringArray("questList")]
 script = ExtResource("7_wpr55")
-questList = [NodePath("0"), NodePath("0_1"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5")]
+questList = [NodePath("0"), NodePath("0_1"), NodePath("1"), NodePath("2"), NodePath("3"), NodePath("4"), NodePath("5"), NodePath("6")]
 
 [node name="CanvasLayer" type="CanvasLayer" parent="ObjectiveManager"]
 layer = 0
@@ -321,6 +321,13 @@ shopId = 1
 purchaseId = 1
 
 [node name="5" type="Node" parent="ObjectiveManager"]
+script = ExtResource("8_j37eh")
+questType = 1
+questDescription = "exit to base"
+sceneId = 1
+isVisible = false
+
+[node name="6" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 5
 questDescription = "Purchase a Silver Pickaxe from Zimbo."

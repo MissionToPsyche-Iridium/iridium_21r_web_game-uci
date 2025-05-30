@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-6a8339d1079c7bf31d18a05d16349ebe.ctex"
+uid="uid://n4wm8f6eb1p2"
+path="res://.godot/imported/Dee_Shop.png-c782ce9a3df6a7c7e8f990d297fd8281.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-6a8339d1079c7bf31d18a05d16349ebe.ctex"]
+source_file="res://assets/Backgrounds/Dee_Shop.png"
+dest_files=["res://.godot/imported/Dee_Shop.png-c782ce9a3df6a7c7e8f990d297fd8281.ctex"]
 
 [params]
 
