@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ccx6hp0u3flgq"
-path="res://.godot/imported/Settings.png-6a8339d1079c7bf31d18a05d16349ebe.ctex"
+uid="uid://65em83c4e22m"
+path="res://.godot/imported/Dee_spritesheet.png-20726de24c531f4c5e817724fbf18b4d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scenes/Settings.png"
-dest_files=["res://.godot/imported/Settings.png-6a8339d1079c7bf31d18a05d16349ebe.ctex"]
+source_file="res://assets/spritesheets/Dee_spritesheet.png"
+dest_files=["res://.godot/imported/Dee_spritesheet.png-20726de24c531f4c5e817724fbf18b4d.ctex"]
 
 [params]
 

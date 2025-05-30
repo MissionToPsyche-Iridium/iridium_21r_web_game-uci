@@ -1,7 +1,7 @@
 [gd_scene load_steps=19 format=3 uid="uid://7g176g6dj6mw"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/AboutPsyche/about_window.gd" id="1_6u6ue"]
-[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://Scenes/BaseWindow.tscn" id="2_57iu3"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://scenes/BaseWindow.tscn" id="2_57iu3"]
 [ext_resource type="Texture2D" uid="uid://5o3ohe5yudro" path="res://assets/menu/windows/AboutPsyche/AboutTab.png" id="3_0arsu"]
 [ext_resource type="Texture2D" uid="uid://dhsymsuxcq630" path="res://assets/menu/windows/Lab/CloseButton.png" id="4_jesxd"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_qowtf"]

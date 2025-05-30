@@ -3,6 +3,7 @@ class_name Ore extends Node2D
 enum OreType { COPPER, NICKEL, SILVER, TUNGSTEN, IRIDIUM }
 const REQUIRED_PICKAXE_TIERS = [0, 0, 1, 2, 3]
 const ORE_NAMES = ["Cu", "Ni", "Ag", "W", "Ir"]
+const ORE_HP = [50, 75, 100, 150, 200]
 
 @export var ore_type: OreType = OreType.COPPER
 @export var ore_amount: int = 1
@@ -16,10 +17,12 @@ var requiredPickaxeTier: int = 0
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	sprite.frame = ore_type as int
+	hp = ORE_HP[ore_type]
 	requiredPickaxeTier = REQUIRED_PICKAXE_TIERS[ore_type]
 
-func update_sprite() -> void:
+func update_sprite_and_hp() -> void:
 	sprite.frame = ore_type as int
+	hp = ORE_HP[ore_type]
 	requiredPickaxeTier = REQUIRED_PICKAXE_TIERS[ore_type]
 
 func on_hit(dmg: int) -> void:
