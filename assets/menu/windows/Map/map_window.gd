@@ -1,0 +1,12 @@
+# pause_window.gd
+extends "res://assets/scripts/base_window.gd"  # Update this path if needed
+
+func _ready():
+	# Call parent _ready() for positioning
+	super._ready()
+	$TextureRect/TextureButton.pressed.connect(_on_return_button_pressed)
+
+func _on_return_button_pressed():
+	await get_tree().create_timer(0.25).timeout
+	WindowManager.close_window()
+	
