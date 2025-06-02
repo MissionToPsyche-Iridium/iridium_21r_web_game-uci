@@ -19,8 +19,10 @@ func open_window(window_scene_path, params = null):
 	
 	# Add window to viewport and stack
 	# Temp disabling gamemanager
+
 	GameManager.instance.canvasLayer.add_child(window_instance)
 	#get_tree().current_scene.add_child(window_instance)
+
 	window_stack.push_back(window_instance)
 	
 	# Debug info
