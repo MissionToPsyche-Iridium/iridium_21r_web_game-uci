@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://d0hbcfu5c7uy2"]
 
-[ext_resource type="Script" path="res://scenes/facts/sun.gd" id="1_hjv1p"]
+[ext_resource type="Script" path="res://Scenes/facts/sun.gd" id="1_hjv1p"]
 [ext_resource type="Texture2D" uid="uid://dy7c3sv68hjjw" path="res://assets/fact_objects/Sun.png" id="2_7vakp"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_rogm8"]
 

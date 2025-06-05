@@ -3,8 +3,8 @@ class_name CutsceneManager extends Node
 static var instance: CutsceneManager = null
 
 const CUTSCENE_SCENES: Dictionary = {
-	"An_alien_greeting": "res://scenes/cutscene-An_alien_greeting.tscn",
-	"meeting_skibby_and_dee": "res://scenes/cutscene-meeting_skibby_and_dee.tscn"
+	"An_alien_greeting": "res://Scenes/cutscene-An_alien_greeting.tscn",
+	"meeting_skibby_and_dee": "res://Scenes/cutscene-meeting_skibby_and_dee.tscn"
 }
 
 var has_mined: bool = true

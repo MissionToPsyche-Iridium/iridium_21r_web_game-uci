@@ -18,4 +18,4 @@ set {has_met_zimbo} = true
 set {has_met_yuno} = true
 [signal arg_type="dict" arg="{"animationName":"sequence3","type":"playCutsceneAnimation"}"]
 [wait time="1.0"]
-[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/base.tscn","type":"transition","xPos":1279,"yPos":0}"]
+[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://Scenes/base.tscn","type":"transition","xPos":1279,"yPos":0}"]

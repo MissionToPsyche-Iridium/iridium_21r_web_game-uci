@@ -2,7 +2,7 @@ class_name SceneTransition extends Area2D
 
 signal transition_enter(scene: String, spawn_position: Vector2)
 
-@export var scene: String = "res://scenes/demo.tscn"
+@export var scene: String = "res://Scenes/demo.tscn"
 @export var spawn_position: Vector2 = Vector2.ZERO
 
 # Called when the node enters the scene tree for the first time.

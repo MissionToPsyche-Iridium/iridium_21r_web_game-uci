@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://byvxfm2j32lcf"]
 
-[ext_resource type="Script" path="res://scenes/facts/rocket.gd" id="1_aegu6"]
+[ext_resource type="Script" path="res://Scenes/facts/rocket.gd" id="1_aegu6"]
 [ext_resource type="Texture2D" uid="uid://ctt3e0plmovqe" path="res://assets/fact_objects/Rocket Thruster.png" id="2_bg8va"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_mke3g"]
 

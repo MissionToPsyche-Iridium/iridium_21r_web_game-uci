@@ -15,7 +15,7 @@ script = ExtResource("1_atflf")
 position = Vector2(-76, -61)
 collision_mask = 6
 script = ExtResource("2_3giiw")
-scene = "res://scenes/skibby_dee_shop.tscn"
+scene = "res://Scenes/skibby_dee_shop.tscn"
 spawn_position = Vector2(0, 387)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkibbyTransition"]

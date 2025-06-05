@@ -28,7 +28,7 @@ const costPrefab: Resource = preload("res://assets/prefabs/shop/cost.tscn")
 #Text box
 @onready var dialogue_box = $PanelContainer2/RichTextLabel
 
-@export var exit_scene: String = "res://scenes/demo_indoor.tscn"
+@export var exit_scene: String = "res://Scenes/demo_indoor.tscn"
 @export var exit_spawnPos: Vector2 = Vector2(588, 350)
 
 var purchase_delay: float = 3.0
@@ -173,7 +173,7 @@ func on_exit():
 #	Scene_transition_animation.play("fade_in")
 #	await get_tree().create_timer(.5).timeout
 #	var scene_tree = get_tree()
-#	scene_tree.change_scene_to_file("res://scenes/screen_1.tscn")
+#	scene_tree.change_scene_to_file("res://Scenes/screen_1.tscn")
 
 # Button event functions
 func on_iri_press():

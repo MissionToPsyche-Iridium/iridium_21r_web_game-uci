@@ -16,7 +16,7 @@ script = ExtResource("1_ynorr")
 position = Vector2(-175, -61)
 collision_mask = 6
 script = ExtResource("2_gx627")
-scene = "res://scenes/demo_indoor.tscn"
+scene = "res://Scenes/demo_indoor.tscn"
 spawn_position = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ZimboTransition"]

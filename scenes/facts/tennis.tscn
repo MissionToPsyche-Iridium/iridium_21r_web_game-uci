@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://b7m1rol5hnxhi"]
 
-[ext_resource type="Script" path="res://scenes/facts/tennis.gd" id="1_u1s6l"]
+[ext_resource type="Script" path="res://Scenes/facts/tennis.gd" id="1_u1s6l"]
 [ext_resource type="Texture2D" uid="uid://bkbysf278xi0x" path="res://assets/fact_objects/tennis ball.png" id="2_gn0kf"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_erv0r"]
 

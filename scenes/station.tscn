@@ -1,11 +1,11 @@
 [gd_scene load_steps=18 format=3 uid="uid://bv5kw3go7h04m"]
 
-[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_rro7p"]
+[ext_resource type="Script" path="res://Scenes/game_scene.gd" id="1_rro7p"]
 [ext_resource type="Texture2D" uid="uid://b6j8t1f2e8qy" path="res://assets/sprites/Space station interior.png" id="2_qy6d8"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_m20uc"]
-[ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_fjuvx"]
-[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_83koo"]
-[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
+[ext_resource type="Script" path="res://Scenes/shop_trigger.gd" id="4_fjuvx"]
+[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://Scenes/Shop.tscn" id="5_83koo"]
+[ext_resource type="PackedScene" path="res://Scenes/facts/factoid.tscn" id="6_ghqwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi7y"]
 size = Vector2(8, 56.1)
@@ -107,7 +107,7 @@ shape = SubResource("RectangleShape2D_meqh1")
 position = Vector2(-269, 634)
 collision_mask = 6
 script = ExtResource("3_m20uc")
-scene = "res://scenes/base.tscn"
+scene = "res://Scenes/base.tscn"
 spawn_position = Vector2(1075, -1963)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]
