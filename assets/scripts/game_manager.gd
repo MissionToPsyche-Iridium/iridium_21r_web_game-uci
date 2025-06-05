@@ -56,7 +56,8 @@ func change_scene(path: String, spawnPosition: Vector2 = Vector2(0, 0), playerAc
 
 
 func set_camera_bounds(bounds: CollisionShape2D) -> void:
-	camera.set_limit_target(bounds.get_path())
+	if bounds:
+		camera.set_limit_target(bounds.get_path())
 
 func remove_camera_bounds() -> void:
 	camera.set_limit_target("")
