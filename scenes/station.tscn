@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="3_m20uc"]
 [ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="4_fjuvx"]
 [ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="5_83koo"]
-[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
+[ext_resource type="PackedScene" uid="uid://bq6wnuyokb8le" path="res://scenes/facts/factoid.tscn" id="6_ghqwj"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_yfi7y"]
 size = Vector2(8, 56.1)
@@ -121,10 +121,9 @@ script = ExtResource("4_fjuvx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
 shape = SubResource("RectangleShape2D_2yg76")
 
-[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
+[node name="Shop" parent="shop_area" instance=ExtResource("5_83koo")]
 visible = false
 shopId = 1
-transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
 default_text = "[center]Initializing station renovation system...[/center]"
 successful_purchase_text = "[center]Upgrading station![/center]"
 failed_purchase_text = "[center]Error: Not enough materials.[/center]"
