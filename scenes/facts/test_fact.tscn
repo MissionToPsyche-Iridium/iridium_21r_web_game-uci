@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bmbhaij11ismy"]
 
-[ext_resource type="Script" path="res://Scenes/facts/test_fact.gd" id="1_dib22"]
+[ext_resource type="Script" path="res://scenes/facts/test_fact.gd" id="1_dib22"]
 [ext_resource type="Texture2D" uid="uid://cb63xpm80wfqd" path="res://test_metal.png" id="1_h30hc"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_q8jxb"]
 

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bbqngmr64wifa"]
 
-[ext_resource type="Script" path="res://Scenes/facts/monocle.gd" id="1_r7v1h"]
+[ext_resource type="Script" path="res://scenes/facts/monocle.gd" id="1_r7v1h"]
 [ext_resource type="Texture2D" uid="uid://des2av6by28rk" path="res://assets/fact_objects/monocle.png" id="2_4vt8x"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_w7xeg"]
 

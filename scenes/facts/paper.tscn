@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://iom5yk78ocvs"]
 
-[ext_resource type="Script" path="res://Scenes/facts/paper.gd" id="1_vgfqj"]
+[ext_resource type="Script" path="res://scenes/facts/paper.gd" id="1_vgfqj"]
 [ext_resource type="Texture2D" uid="uid://12a1ao8pxgjc" path="res://assets/fact_objects/paper.png" id="2_48b8x"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_sdw4k"]
 

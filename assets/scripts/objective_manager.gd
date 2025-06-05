@@ -122,9 +122,9 @@ func set_quest(id: int) -> void:
 func quest_start_events(id: int) -> void:
 	match id:
 		4:
-			CutsceneManager.instance.add_scene_change_trigger("res://Scenes/base.tscn", "An_alien_greeting")
+			CutsceneManager.instance.add_scene_change_trigger("res://scenes/base.tscn", "An_alien_greeting")
 		6:
-			CutsceneManager.instance.add_scene_change_trigger("res://Scenes/base.tscn", "meeting_skibby_and_dee")
+			CutsceneManager.instance.add_scene_change_trigger("res://scenes/base.tscn", "meeting_skibby_and_dee")
 
 func quest_end_events(id: int) -> void:
 	match id:

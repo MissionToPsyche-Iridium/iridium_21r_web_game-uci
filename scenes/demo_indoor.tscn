@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=3 uid="uid://clp10w4kw64v3"]
 
-[ext_resource type="Script" path="res://Scenes/game_scene.gd" id="1_0dlbh"]
+[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_0dlbh"]
 [ext_resource type="AudioStream" uid="uid://b8olb5gkeawcw" path="res://assets/audio/soundtrack/skibby shop.mp3" id="2_el166"]
 [ext_resource type="Texture2D" uid="uid://b1od1532rwnqc" path="res://assets/sprites/Zimbo_Shop_Interior.png" id="2_j4161"]
-[ext_resource type="Script" path="res://Scenes/shop_trigger.gd" id="5_d6bt6"]
+[ext_resource type="Script" path="res://scenes/shop_trigger.gd" id="5_d6bt6"]
 [ext_resource type="Script" path="res://assets/scripts/scene_transition.gd" id="6_lh087"]
-[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://Scenes/Shop.tscn" id="6_udfyy"]
-[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="6_ui1fg"]
+[ext_resource type="PackedScene" uid="uid://c2340nj07nmny" path="res://scenes/Shop.tscn" id="6_udfyy"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_ui1fg"]
 [ext_resource type="Texture2D" uid="uid://da21oa1k3ghnu" path="res://assets/sprites/Zimbo Sprite.png" id="7_7wdrd"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qjs1h"]
@@ -71,7 +71,7 @@ shape = SubResource("RectangleShape2D_jokta")
 position = Vector2(0, 570)
 collision_mask = 6
 script = ExtResource("6_lh087")
-scene = "res://Scenes/base.tscn"
+scene = "res://scenes/base.tscn"
 spawn_position = Vector2(-1358, 1470)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="scene_transition"]

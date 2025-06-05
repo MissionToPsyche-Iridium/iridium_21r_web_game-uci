@@ -1,6 +1,6 @@
 [gd_scene load_steps=37 format=4 uid="uid://ffcai60np4sg"]
 
-[ext_resource type="Script" path="res://Scenes/cutscene.gd" id="1_gre75"]
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_gre75"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="3_ob5mg"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="4_xppsn"]
 [ext_resource type="Texture2D" uid="uid://65em83c4e22m" path="res://assets/spritesheets/Dee_spritesheet.png" id="5_c40l3"]

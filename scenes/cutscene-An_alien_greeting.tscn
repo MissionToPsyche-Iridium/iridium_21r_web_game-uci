@@ -1,6 +1,6 @@
 [gd_scene load_steps=34 format=4 uid="uid://cmcrcekcwflgm"]
 
-[ext_resource type="Script" path="res://Scenes/cutscene.gd" id="1_jhs8n"]
+[ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_jhs8n"]
 [ext_resource type="AudioStream" uid="uid://bdpo4v2ji3gf" path="res://assets/audio/soundtrack/zimbo_yuno_encounter.mp3" id="2_31474"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_w3eoi"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_1wdx1"]

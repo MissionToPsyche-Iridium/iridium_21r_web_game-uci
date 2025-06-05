@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://bq6wnuyokb8le"]
 
-[ext_resource type="Script" path="res://Scenes/facts/factoid.gd" id="1_3cy4v"]
+[ext_resource type="Script" path="res://scenes/facts/factoid.gd" id="1_3cy4v"]
 [ext_resource type="Texture2D" uid="uid://c3deo5mps3lej" path="res://assets/fact_objects/explosion.png" id="2_qhd52"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_iwv4w"]
 

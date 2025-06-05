@@ -1,6 +1,6 @@
 [gd_scene load_steps=14 format=4 uid="uid://dttnbh321vnju"]
 
-[ext_resource type="Script" path="res://Scenes/game_scene.gd" id="1_077qq"]
+[ext_resource type="Script" path="res://scenes/game_scene.gd" id="1_077qq"]
 [ext_resource type="AudioStream" uid="uid://bhe2xfms1y00r" path="res://assets/audio/soundtrack/main base.mp3" id="2_syk6k"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_t8rhl"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_m177h"]
@@ -9,7 +9,7 @@
 
 [ext_resource type="PackedScene" uid="uid://5xs3t5481t6m" path="res://assets/prefabs/skibby_building.tscn" id="7_2wfjb"]
 [ext_resource type="PackedScene" uid="uid://b5dnfiqjb8gn" path="res://assets/prefabs/zimbo_building.tscn" id="7_6bp8e"]
-[ext_resource type="PackedScene" path="res://Scenes/facts/factoid.tscn" id="8_drmj7"]
+[ext_resource type="PackedScene" path="res://scenes/facts/factoid.tscn" id="8_drmj7"]
 [ext_resource type="PackedScene" uid="uid://nxsnb2cehquk" path="res://assets/prefabs/station_building.tscn" id="16_neh08"]
 
 
@@ -94,7 +94,7 @@ transition_trigger = NodePath("../StationTransition")
 position = Vector2(1075, -2113)
 collision_mask = 6
 script = ExtResource("4_n2qub")
-scene = "res://Scenes/station.tscn"
+scene = "res://scenes/station.tscn"
 spawn_position = Vector2(0, 300)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StationTransition"]
@@ -104,7 +104,7 @@ shape = SubResource("RectangleShape2D_2d261")
 position = Vector2(4604, 131)
 collision_mask = 6
 script = ExtResource("4_n2qub")
-scene = "res://Scenes/mining_area.tscn"
+scene = "res://scenes/mining_area.tscn"
 spawn_position = Vector2(-3656, 82)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="MineTransition"]

@@ -5,12 +5,12 @@
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera_host/phantom_camera_host.gd" id="3_dc3cd"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/phantom_camera/phantom_camera_2d.gd" id="4_xsmdl"]
 [ext_resource type="Script" path="res://addons/phantom_camera/scripts/resources/tween_resource.gd" id="5_ayvvt"]
-[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://Scenes/transition_animation.tscn" id="6_pdnoq"]
+[ext_resource type="PackedScene" uid="uid://drw6kjaxpj0gv" path="res://scenes/transition_animation.tscn" id="6_pdnoq"]
 [ext_resource type="Script" path="res://assets/scripts/objective_manager.gd" id="7_wpr55"]
 [ext_resource type="Texture2D" uid="uid://cvdg8f3v50x2a" path="res://assets/ui assets/Prompt.png" id="8_bp53k"]
 [ext_resource type="Script" path="res://assets/scripts/quest.gd" id="8_j37eh"]
 [ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="8_jwqlp"]
-[ext_resource type="Script" path="res://Scenes/cutscene_manager.gd" id="11_ecjy8"]
+[ext_resource type="Script" path="res://scenes/cutscene_manager.gd" id="11_ecjy8"]
 [ext_resource type="Script" path="res://assets/scripts/bgm_manager.gd" id="12_y6bpn"]
 [ext_resource type="Script" path="res://assets/scripts/sfx_manager.gd" id="13_25uty"]
 
@@ -170,7 +170,7 @@ _data = {
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_2ahh0")
-startScenePath = "res://Scenes/disclaimer.tscn"
+startScenePath = "res://scenes/disclaimer.tscn"
 
 [node name="ResourceManager" type="Node2D" parent="."]
 script = ExtResource("2_xbdv4")

@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://dpjbjwmavqa7a"]
 
-[ext_resource type="Script" path="res://Scenes/facts/ruler.gd" id="1_fgor3"]
+[ext_resource type="Script" path="res://scenes/facts/ruler.gd" id="1_fgor3"]
 [ext_resource type="Texture2D" uid="uid://u16w4hdu04gr" path="res://assets/fact_objects/pixil-frame-0 (25).png" id="2_ojo1v"]
 [ext_resource type="PackedScene" uid="uid://ceuw73fv7sx2y" path="res://interaction_components/interactable.tscn" id="3_bi8xv"]
 

@@ -21,4 +21,4 @@ set {has_met_skibby} = true
 set {has_met_dee} = true
 [signal arg_type="dict" arg="{"animationName":"sequence7","type":"playCutsceneAnimation"}"]
 [wait time="1.0"]
-[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://Scenes/base.tscn","type":"transition","xPos":-1343,"yPos":-391}"]
+[signal arg_type="dict" arg="{"playerActionable":true,"scene":"res://scenes/base.tscn","type":"transition","xPos":-1343,"yPos":-391}"]

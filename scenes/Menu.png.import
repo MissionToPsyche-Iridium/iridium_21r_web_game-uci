@@ -10,7 +10,7 @@ metadata={
 
 [deps]
 
-source_file="res://Scenes/Menu.png"
+source_file="res://scenes/Menu.png"
 dest_files=["res://.godot/imported/Menu.png-eeef4c6d84c6f375cb0b10c45bd15278.ctex"]
 
 [params]
