@@ -111,7 +111,7 @@ shape = SubResource("RectangleShape2D_2yg76")
 
 [node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_xfjey")]
 visible = false
-shopId = 1
+shopId = 3
 transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3"), NodePath("Transactions/Transaction4")]
 default_text = "[center]Welcome! How can I help you?[/center]"
 successful_purchase_text = "[center]Thank you! Love doing business with you.[/center]"
@@ -120,13 +120,33 @@ anything_else_text = "[center]Anything else I can help you with?[/center]"
 leave_text = "[center]Pleasure doing business with you. See you again soon.[/center]"
 
 [node name="Background" parent="shop_area/Shop" index="0"]
+offset_top = 0.0
+offset_bottom = 648.0
 texture = ExtResource("6_by8xo")
 
 [node name="TextureRect" parent="shop_area/Shop" index="1"]
 visible = false
+offset_left = 32.0
+offset_right = 602.0
+
+[node name="PanelContainer" parent="shop_area/Shop" index="2"]
+offset_left = 577.0
+offset_right = 997.0
+
+[node name="PanelContainer2" parent="shop_area/Shop" index="3"]
+offset_left = 93.0
+offset_right = 418.0
+
+[node name="Name Label" parent="shop_area/Shop" index="4"]
+offset_left = 178.0
+offset_right = 321.0
 
 [node name="RichTextLabel2" parent="shop_area/Shop/Name Label" index="0"]
-text = "[center] Claire [center]"
+text = "[center] Dee [center]"
+
+[node name="Button" parent="shop_area/Shop" index="6"]
+offset_left = 962.0
+offset_right = 1146.0
 
 [node name="Transaction" parent="shop_area/Shop/Transactions" index="0"]
 transactionType = 1

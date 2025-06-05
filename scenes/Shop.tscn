@@ -132,7 +132,7 @@ tracks/8/interp = 1
 tracks/8/loop_wrap = true
 tracks/8/keys = {
 "handle_modes": PackedInt32Array(0, 0),
-"points": PackedFloat32Array(1762, -0.25, 0, 0.25, 0, 962, -0.5, 0, 0.25, 0),
+"points": PackedFloat32Array(1600, -0.25, 0, 0.25, 0, 865, -0.5, 0, 0.25, 0),
 "times": PackedFloat32Array(-0.0333333, 0.6)
 }
 tracks/9/type = "bezier"
@@ -456,24 +456,25 @@ exit_spawnPos = Vector2(588, 370)
 
 [node name="Background" type="TextureRect" parent="."]
 offset_left = -7.0
+offset_top = 800.0
 offset_right = 1170.0
-offset_bottom = 648.0
+offset_bottom = 1448.0
 texture = ExtResource("1_yqrn8")
 expand_mode = 2
 stretch_mode = 4
 
 [node name="TextureRect" type="TextureRect" parent="."]
-offset_left = 32.0
+offset_left = -464.705
 offset_top = 105.0
-offset_right = 602.0
+offset_right = 105.295
 offset_bottom = 675.0
 scale = Vector2(0.753023, 0.753023)
 texture = ExtResource("3_b2ucw")
 
 [node name="PanelContainer" type="PanelContainer" parent="."]
-offset_left = 577.0
+offset_left = 1372.01
 offset_top = 85.0
-offset_right = 997.0
+offset_right = 1792.01
 offset_bottom = 405.0
 scale = Vector2(1.2024, 1.2024)
 theme_override_styles/panel = SubResource("StyleBoxTexture_aiwan")
@@ -483,9 +484,9 @@ layout_mode = 2
 theme_override_constants/separation = 5
 
 [node name="PanelContainer2" type="PanelContainer" parent="."]
-offset_left = 93.0
+offset_left = -403.705
 offset_top = 459.0
-offset_right = 418.0
+offset_right = -78.7049
 offset_bottom = 622.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_jqcwm")
 
@@ -497,9 +498,9 @@ bbcode_enabled = true
 text = "[center]I can upgrade your pickaxe to get help mine ores better![/center]"
 
 [node name="Name Label" type="PanelContainer" parent="."]
-offset_left = 178.0
+offset_left = -318.705
 offset_top = 410.0
-offset_right = 321.0
+offset_right = -175.705
 offset_bottom = 450.0
 theme_override_styles/panel = SubResource("StyleBoxTexture_oqml8")
 
@@ -531,9 +532,9 @@ stretch_mode = 0
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_left = 962.0
+offset_left = 1595.16
 offset_top = -167.0
-offset_right = 1146.0
+offset_right = 1779.16
 offset_bottom = -109.0
 grow_vertical = 0
 texture_normal = ExtResource("8_o440t")
