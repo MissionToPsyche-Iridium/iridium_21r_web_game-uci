@@ -1,0 +1,37 @@
+[gd_scene load_steps=3 format=3 uid="uid://cgrdgl18e2mml"]
+
+[ext_resource type="Script" path="res://collectibles_big_inventory.gd" id="1_w6vtu"]
+[ext_resource type="FontFile" uid="uid://ckxtj6hudqnln" path="res://assets/font/Jersey10-Regular.ttf" id="2_r2dgp"]
+
+[node name="MarginContainer" type="MarginContainer"]
+theme_override_constants/margin_top = 8
+script = ExtResource("1_w6vtu")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 2
+
+[node name="Img" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(70, 40)
+layout_mode = 2
+stretch_mode = 5
+
+[node name="Amt" type="Label" parent="HBoxContainer"]
+custom_minimum_size = Vector2(50, 0)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_r2dgp")
+theme_override_font_sizes/font_size = 25
+text = "x 1"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Name" type="Label" parent="HBoxContainer"]
+z_index = 1
+custom_minimum_size = Vector2(138, 0)
+layout_mode = 2
+size_flags_horizontal = 3
+theme_override_fonts/font = ExtResource("2_r2dgp")
+theme_override_font_sizes/font_size = 25
+text = "Name
+"
+horizontal_alignment = 1
+vertical_alignment = 1
