@@ -1,8 +1,8 @@
 [gd_scene load_steps=13 format=3 uid="uid://wo8s4esei43m"]
 
 [ext_resource type="Script" path="res://scenes/menu_hud.gd" id="1_c44dg"]
-[ext_resource type="Texture2D" uid="uid://c43qqdfkj5mpc" path="res://assets/menu/Menu.png" id="1_ui76t"]
 [ext_resource type="Texture2D" uid="uid://dk5mmsqh7438n" path="res://assets/menu/ComputerScreen.png" id="2_oywy1"]
+[ext_resource type="Texture2D" uid="uid://c3hxcn8ehgchd" path="res://assets/HUD/computer.png" id="2_yv5c7"]
 [ext_resource type="Texture2D" uid="uid://bq6ed1s2lu7ky" path="res://assets/menu/Characters.png" id="3_5oor7"]
 [ext_resource type="Texture2D" uid="uid://cj3o726k7xkei" path="res://assets/menu/Story.png" id="4_ws3i7"]
 [ext_resource type="Texture2D" uid="uid://daql8x8qn3git" path="res://assets/menu/AboutPsyche.png" id="5_3gxt0"]
@@ -36,14 +36,15 @@ offset_right = -20.0
 offset_bottom = 68.0
 grow_horizontal = 0
 tooltip_text = "Open the computer menu here."
-texture_normal = ExtResource("1_ui76t")
-texture_pressed = ExtResource("1_ui76t")
-texture_hover = ExtResource("1_ui76t")
+texture_normal = ExtResource("2_yv5c7")
+texture_pressed = ExtResource("2_yv5c7")
+texture_hover = ExtResource("2_yv5c7")
 stretch_mode = 5
 script = ExtResource("5_25ytc")
 metadata/_edit_use_anchors_ = true
 
 [node name="MenuPanel" type="Control" parent="Main"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
