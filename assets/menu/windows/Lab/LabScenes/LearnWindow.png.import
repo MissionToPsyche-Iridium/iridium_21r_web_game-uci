@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://l8nxadmj45gi"
-path="res://.godot/imported/LearnMore.png-9356b8b42dab84983c7e088ac546898f.ctex"
+uid="uid://cgxl0o86ubhpk"
+path="res://.godot/imported/LearnWindow.png-4b6d2d43719a218bf8ac8d3023366fd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/menu/windows/Credits/Redacted/LearnMore.png"
-dest_files=["res://.godot/imported/LearnMore.png-9356b8b42dab84983c7e088ac546898f.ctex"]
+source_file="res://assets/menu/windows/Lab/LabScenes/LearnWindow.png"
+dest_files=["res://.godot/imported/LearnWindow.png-4b6d2d43719a218bf8ac8d3023366fd0.ctex"]
 
 [params]
 

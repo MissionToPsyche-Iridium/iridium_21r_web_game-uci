@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsyyd8x34gm2s"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/Map/map_window.gd" id="1_mw54d"]
-[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://Scenes/BaseWindow.tscn" id="2_7k4tq"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://scenes/BaseWindow.tscn" id="2_7k4tq"]
 [ext_resource type="Texture2D" uid="uid://b5eysk0ete0ok" path="res://assets/menu/windows/Map/Map.png" id="3_a7he0"]
 [ext_resource type="Texture2D" uid="uid://d2fj24cjrj7br" path="res://assets/menu/windows/Pause/Return Button.png" id="4_pi5li"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_id4jd"]
@@ -25,10 +25,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -486.0
-offset_top = -404.0
-offset_right = 380.0
-offset_bottom = 467.0
+offset_left = -435.0
+offset_top = -464.0
+offset_right = 431.0
+offset_bottom = 407.0
 grow_horizontal = 2
 grow_vertical = 2
 texture = ExtResource("3_a7he0")
@@ -41,10 +41,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = 469.0
-offset_top = 168.5
-offset_right = 590.0
-offset_bottom = 236.5
+offset_left = -55.0
+offset_top = 267.5
+offset_right = 66.0
+offset_bottom = 335.5
 grow_horizontal = 2
 grow_vertical = 2
 action_mode = 0
