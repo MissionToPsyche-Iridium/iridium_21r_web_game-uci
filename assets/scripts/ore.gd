@@ -38,15 +38,16 @@ func on_hit(dmg: int) -> void:
 			perish()
 		elif SFXManager.instance:
 			SFXManager.instance.play_sfx("hit_ore", 0.1)
+		if !CutsceneManager.instance.has_mined and dmg < 12:
+			CutsceneManager.instance.start_cutscene("first_time_mining")
+			CutsceneManager.instance.has_mined = true
 	else:
 		damageText.text = "0"
 		animationPlayer.play("hit_no")
 		if !CutsceneManager.instance.tried_to_mine_a_harder_ore:
 			CutsceneManager.instance.start_cutscene("try_to_mine_harder_ore")
 			CutsceneManager.instance.tried_to_mine_a_harder_ore = true
-	if !CutsceneManager.instance.has_mined:
-		CutsceneManager.instance.start_cutscene("first_time_mining")
-		CutsceneManager.instance.has_mined = true
+
 	#dmgInstance.animation_finished.connect(dmgInstance.queue_free)
 		
 
