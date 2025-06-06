@@ -142,6 +142,7 @@ text = "[center] Claire [center]"
 
 [node name="Transaction" parent="shop_area/Shop/Transactions" index="0"]
 transactionType = 8
+transactionCostQuantities = Array[int]([5])
 
 [node name="Transaction2" parent="shop_area/Shop/Transactions" index="1"]
 transactionType = 9
