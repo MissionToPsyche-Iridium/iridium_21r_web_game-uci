@@ -1,13 +1,14 @@
-[gd_scene load_steps=12 format=3 uid="uid://cw7w2vnby8o1y"]
+[gd_scene load_steps=13 format=3 uid="uid://cw7w2vnby8o1y"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/Characters/characters_window.gd" id="1_avkno"]
-[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://Scenes/BaseWindow.tscn" id="2_xtmjv"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://scenes/BaseWindow.tscn" id="2_xtmjv"]
 [ext_resource type="Texture2D" uid="uid://d3g6v0slvwawf" path="res://assets/menu/windows/Characters/CharactersTab.png" id="3_tbge8"]
 [ext_resource type="Texture2D" uid="uid://dqfs0iuge4mh4" path="res://assets/menu/windows/Characters/CloseButton.png" id="4_i2ush"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_f2l8y"]
 [ext_resource type="Texture2D" uid="uid://bx76882acwwib" path="res://assets/menu/windows/Characters/Claire.png" id="6_sogs1"]
 [ext_resource type="Script" path="res://assets/scripts/button_press.gd" id="7_8tqag"]
 [ext_resource type="Texture2D" uid="uid://df3rljgvnmwig" path="res://assets/menu/windows/Characters/Yuno.png" id="8_hnk1c"]
+[ext_resource type="Texture2D" uid="uid://cbaxmeieiwetk" path="res://assets/menu/windows/Lab/Undiscovered.png" id="9_flois"]
 [ext_resource type="Texture2D" uid="uid://duhjdqa461clh" path="res://assets/menu/windows/Characters/Dee.png" id="9_y2xup"]
 [ext_resource type="Texture2D" uid="uid://mqtxssqwawdd" path="res://assets/menu/windows/Characters/Zimbo.png" id="10_7rb24"]
 [ext_resource type="Texture2D" uid="uid://od2yj8olbrvu" path="res://assets/menu/windows/Characters/Skibby.png" id="11_wpdj6"]
@@ -83,10 +84,12 @@ script = ExtResource("7_8tqag")
 
 [node name="Yuno" type="TextureButton" parent="TextureRect/Icons/Col1"]
 layout_mode = 2
+disabled = true
 action_mode = 0
 texture_normal = ExtResource("8_hnk1c")
 texture_pressed = ExtResource("8_hnk1c")
 texture_hover = ExtResource("8_hnk1c")
+texture_disabled = ExtResource("9_flois")
 script = ExtResource("7_8tqag")
 
 [node name="Col2" type="VBoxContainer" parent="TextureRect/Icons"]
@@ -96,18 +99,22 @@ size_flags_horizontal = 3
 [node name="Dee" type="TextureButton" parent="TextureRect/Icons/Col2"]
 layout_mode = 2
 size_flags_vertical = 3
+disabled = true
 action_mode = 0
 texture_normal = ExtResource("9_y2xup")
 texture_pressed = ExtResource("9_y2xup")
 texture_hover = ExtResource("9_y2xup")
+texture_disabled = ExtResource("9_flois")
 script = ExtResource("7_8tqag")
 
 [node name="Zimbo" type="TextureButton" parent="TextureRect/Icons/Col2"]
 layout_mode = 2
+disabled = true
 action_mode = 0
 texture_normal = ExtResource("10_7rb24")
 texture_pressed = ExtResource("10_7rb24")
 texture_hover = ExtResource("10_7rb24")
+texture_disabled = ExtResource("9_flois")
 script = ExtResource("7_8tqag")
 
 [node name="Col3" type="VBoxContainer" parent="TextureRect/Icons"]
@@ -116,10 +123,12 @@ size_flags_horizontal = 3
 
 [node name="Skibby" type="TextureButton" parent="TextureRect/Icons/Col3"]
 layout_mode = 2
+disabled = true
 action_mode = 0
 texture_normal = ExtResource("11_wpdj6")
 texture_pressed = ExtResource("11_wpdj6")
 texture_hover = ExtResource("11_wpdj6")
+texture_disabled = ExtResource("9_flois")
 script = ExtResource("7_8tqag")
 
 [node name="Lab" type="Button" parent="."]
@@ -128,11 +137,26 @@ self_modulate = Color(1, 1, 1, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.181
-anchor_top = 0.253
+anchor_top = 0.344
+anchor_right = 0.299
+anchor_bottom = 0.4
+offset_left = -0.511993
+offset_top = 0.0879974
+offset_right = 0.551971
+offset_bottom = -0.200012
+action_mode = 0
+
+[node name="About" type="Button" parent="."]
+modulate = Color(1, 1, 1, 0)
+self_modulate = Color(1, 1, 1, 0)
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.181
+anchor_top = 0.221
 anchor_right = 0.305
-anchor_bottom = 0.31
-offset_left = -0.512009
-offset_top = 0.0559845
-offset_right = -61.36
-offset_bottom = 0.119995
+anchor_bottom = 0.276
+offset_left = 5.48801
+offset_top = -0.208008
+offset_right = -0.360046
+offset_bottom = 0.151947
 action_mode = 0

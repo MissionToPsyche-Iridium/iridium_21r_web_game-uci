@@ -29,9 +29,8 @@ WindowManager="*res://assets/scripts/WindowManager.gd"
 [dialogic]
 
 directories/dch_directory={
-"Claire/Claire": "res://assets/characters/Claire/Claire.dch",
+"Claire": "res://assets/characters/Claire/Claire.dch",
 "Dee": "res://assets/characters/Dee/Dee.dch",
-"Player/player": "res://assets/characters/Player/player.dch",
 "Skibby": "res://assets/characters/Skibby/Skibby.dch",
 "Yuno": "res://assets/characters/Yuno/Yuno.dch",
 "Zimbo": "res://assets/characters/Zimbo/Zimbo.dch",
@@ -50,6 +49,9 @@ directories/dtl_directory={
 "try_to_mine_harder_ore": "res://timelines/chapter_1/try_to_mine_harder_ore.dtl"
 }
 variables={
+"has_met_dee": false,
+"has_met_skibby": false,
+"has_met_yuno": false,
 "has_met_zimbo": false,
 "has_picked_up_a_fact": false,
 "player_name": ""

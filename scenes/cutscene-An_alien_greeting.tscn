@@ -1,6 +1,7 @@
-[gd_scene load_steps=33 format=4 uid="uid://cmcrcekcwflgm"]
+[gd_scene load_steps=34 format=4 uid="uid://cmcrcekcwflgm"]
 
 [ext_resource type="Script" path="res://scenes/cutscene.gd" id="1_jhs8n"]
+[ext_resource type="AudioStream" uid="uid://bdpo4v2ji3gf" path="res://assets/audio/soundtrack/zimbo_yuno_encounter.mp3" id="2_31474"]
 [ext_resource type="TileSet" uid="uid://bmpjqp51ylack" path="res://assets/tilesets/terrain.tres" id="2_w3eoi"]
 [ext_resource type="TileSet" uid="uid://c7vnxkbk216og" path="res://assets/tilesets/buildings.tres" id="3_1wdx1"]
 [ext_resource type="PackedScene" uid="uid://cc4xxl761conm" path="res://assets/prefabs/background.tscn" id="5_7e4no"]
@@ -1010,6 +1011,7 @@ _data = {
 [node name="Node2D2" type="Node2D"]
 texture_filter = 3
 script = ExtResource("1_jhs8n")
+bgm = ExtResource("2_31474")
 
 [node name="TileMaps" type="Node2D" parent="."]
 
