@@ -192,6 +192,7 @@ snap_to_pixel = true
 tween_resource = SubResource("Resource_tymo8")
 dead_zone_width = 0.045
 dead_zone_height = 0.045
+draw_limits = true
 limit_target = NodePath("../CameraBounds/CollisionShape2D")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
