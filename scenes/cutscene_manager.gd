@@ -7,7 +7,7 @@ const CUTSCENE_SCENES: Dictionary = {
 	"meeting_skibby_and_dee": "res://scenes/cutscene-meeting_skibby_and_dee.tscn"
 }
 
-var has_mined: bool = true
+var has_mined: bool = false
 var tried_to_mine_a_harder_ore: bool = false
 var cutscene: Cutscene = null
 

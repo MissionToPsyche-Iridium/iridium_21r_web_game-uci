@@ -6,7 +6,8 @@ enum QuestType {
 	AREA,
 	MINING,
 	INTERACTION,
-	PURCHASE
+	PURCHASE,
+	COLLECT_FACTS
 }
 
 @export var questType: QuestType

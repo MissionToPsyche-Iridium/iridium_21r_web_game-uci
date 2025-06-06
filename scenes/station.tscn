@@ -121,9 +121,10 @@ script = ExtResource("4_fjuvx")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="shop_area"]
 shape = SubResource("RectangleShape2D_2yg76")
 
-[node name="Shop" parent="shop_area" instance=ExtResource("5_83koo")]
+[node name="Shop" parent="shop_area" node_paths=PackedStringArray("transactions") instance=ExtResource("5_83koo")]
 visible = false
 shopId = 1
+transactions = [NodePath("Transactions/Transaction"), NodePath("Transactions/Transaction2"), NodePath("Transactions/Transaction3")]
 default_text = "[center]Initializing station renovation system...[/center]"
 successful_purchase_text = "[center]Upgrading station![/center]"
 failed_purchase_text = "[center]Error: Not enough materials.[/center]"
@@ -141,6 +142,7 @@ text = "[center] Claire [center]"
 
 [node name="Transaction" parent="shop_area/Shop/Transactions" index="0"]
 transactionType = 8
+transactionCostQuantities = Array[int]([5])
 
 [node name="Transaction2" parent="shop_area/Shop/Transactions" index="1"]
 transactionType = 9
