@@ -7,8 +7,8 @@
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_6if1o"]
 [ext_resource type="Texture2D" uid="uid://dm5my5twl7ojh" path="res://assets/menu/windows/Lab/Copper.png" id="6_vfbu8"]
 [ext_resource type="Script" path="res://assets/scripts/button_press.gd" id="7_2m66a"]
+[ext_resource type="Texture2D" uid="uid://cbaxmeieiwetk" path="res://assets/menu/windows/Lab/Undiscovered.png" id="7_jpn2x"]
 [ext_resource type="Texture2D" uid="uid://db2rpo6nuum4d" path="res://assets/menu/windows/Lab/Silver.png" id="8_06igg"]
-[ext_resource type="Texture2D" uid="uid://bk2snh1sa8tgq" path="res://assets/menu/Unknown.png" id="9_nwb1e"]
 [ext_resource type="Texture2D" uid="uid://cfwvd3ygn0yey" path="res://assets/menu/windows/Lab/Iridium.png" id="10_1orro"]
 [ext_resource type="Texture2D" uid="uid://dfnf1tgkaf3uh" path="res://assets/menu/windows/Lab/Tungsten.png" id="11_tdxnv"]
 [ext_resource type="Texture2D" uid="uid://cimmexelrbinv" path="res://assets/menu/windows/Lab/Nickel.png" id="12_6plyp"]
@@ -83,7 +83,7 @@ action_mode = 0
 texture_normal = ExtResource("6_vfbu8")
 texture_pressed = ExtResource("6_vfbu8")
 texture_hover = ExtResource("6_vfbu8")
-texture_disabled = ExtResource("9_nwb1e")
+texture_disabled = ExtResource("7_jpn2x")
 script = ExtResource("7_2m66a")
 
 [node name="Silver" type="TextureButton" parent="TextureRect/Icons/Col1"]
@@ -92,7 +92,7 @@ action_mode = 0
 texture_normal = ExtResource("8_06igg")
 texture_pressed = ExtResource("8_06igg")
 texture_hover = ExtResource("8_06igg")
-texture_disabled = ExtResource("9_nwb1e")
+texture_disabled = ExtResource("7_jpn2x")
 script = ExtResource("7_2m66a")
 
 [node name="Col2" type="VBoxContainer" parent="TextureRect/Icons"]
@@ -106,7 +106,7 @@ action_mode = 0
 texture_normal = ExtResource("10_1orro")
 texture_pressed = ExtResource("10_1orro")
 texture_hover = ExtResource("10_1orro")
-texture_disabled = ExtResource("9_nwb1e")
+texture_disabled = ExtResource("7_jpn2x")
 script = ExtResource("7_2m66a")
 
 [node name="Tungsten" type="TextureButton" parent="TextureRect/Icons/Col2"]
@@ -115,7 +115,7 @@ action_mode = 0
 texture_normal = ExtResource("11_tdxnv")
 texture_pressed = ExtResource("11_tdxnv")
 texture_hover = ExtResource("11_tdxnv")
-texture_disabled = ExtResource("9_nwb1e")
+texture_disabled = ExtResource("7_jpn2x")
 script = ExtResource("7_2m66a")
 
 [node name="Col3" type="VBoxContainer" parent="TextureRect/Icons"]
@@ -128,7 +128,7 @@ action_mode = 0
 texture_normal = ExtResource("12_6plyp")
 texture_pressed = ExtResource("12_6plyp")
 texture_hover = ExtResource("12_6plyp")
-texture_disabled = ExtResource("9_nwb1e")
+texture_disabled = ExtResource("7_jpn2x")
 script = ExtResource("7_2m66a")
 
 [node name="Characters" type="Button" parent="."]
@@ -137,13 +137,13 @@ self_modulate = Color(0.212, 0.239, 0.29, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.179
-anchor_top = 0.245
-anchor_right = 0.306
-anchor_bottom = 0.309
-offset_left = 0.791992
-offset_top = 0.23999
-offset_right = -0.512024
-offset_bottom = -0.23201
+anchor_top = 0.279
+anchor_right = 0.31
+anchor_bottom = 0.343
+offset_left = 5.79199
+offset_top = 0.207993
+offset_right = -0.120026
+offset_bottom = -0.264038
 action_mode = 0
 
 [node name="About" type="Button" parent="."]
@@ -152,11 +152,11 @@ self_modulate = Color(0.212, 0.239, 0.29, 0)
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.179
-anchor_top = 0.194
-anchor_right = 0.301
-anchor_bottom = 0.255
-offset_left = 2.79199
-offset_top = 0.287994
-offset_right = 0.247955
-offset_bottom = -0.240021
+anchor_top = 0.219
+anchor_right = 0.306
+anchor_bottom = 0.279
+offset_left = 8.79199
+offset_top = 0.0879974
+offset_right = 0.487946
+offset_bottom = 0.207962
 action_mode = 0

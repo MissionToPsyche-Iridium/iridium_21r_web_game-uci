@@ -57,27 +57,27 @@ script = ExtResource("5_jit4t")
 [node name="space_background_link" type="LinkButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.191
-anchor_top = 0.405
-anchor_right = 0.191
-anchor_bottom = 0.405
-offset_left = -117.901
-offset_top = -12.915
-offset_right = 117.099
-offset_bottom = 12.085
+anchor_left = 0.512
+anchor_top = 0.227
+anchor_right = 0.862
+anchor_bottom = 0.273
+offset_left = -0.232025
+offset_top = -0.261009
+offset_right = -0.0820313
+offset_bottom = -0.238998
 uri = "https://deep-fold.itch.io/space-background-generator"
 
 [node name="pixel_tileset_link" type="LinkButton" parent="TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.191
-anchor_top = 0.451
-anchor_right = 0.191
-anchor_bottom = 0.451
-offset_left = -117.901
-offset_top = -12.893
-offset_right = 117.099
-offset_bottom = 12.107
+anchor_left = 0.51
+anchor_top = 0.289
+anchor_right = 0.787
+anchor_bottom = 0.335
+offset_left = 0.389954
+offset_top = 0.072998
+offset_right = -0.257019
+offset_bottom = 0.0950012
 uri = "https://free-game-assets.itch.io/free-undead-tileset-top-down-pixel-art"
 
 [node name="dialogic_link" type="LinkButton" parent="TextureRect"]
@@ -87,13 +87,50 @@ anchor_left = 0.191
 anchor_top = 0.5
 anchor_right = 0.191
 anchor_bottom = 0.5
-offset_left = -117.901
-offset_top = -13.5
-offset_right = 117.099
-offset_bottom = 11.5
+offset_left = 261.099
+offset_top = -79.5
+offset_right = 517.099
+offset_bottom = -54.5
 uri = "https://github.com/dialogic-godot/dialogic"
 
+[node name="pixl_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.5
+anchor_right = 0.191
+anchor_bottom = 0.5
+offset_left = 261.099
+offset_top = -79.5
+offset_right = 517.099
+offset_bottom = -54.5
+
+[node name="psyche_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.5
+anchor_right = 0.191
+anchor_bottom = 0.5
+offset_left = 261.099
+offset_top = -79.5
+offset_right = 517.099
+offset_bottom = -54.5
+
+[node name="nasa_link" type="LinkButton" parent="TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.191
+anchor_top = 0.5
+anchor_right = 0.191
+anchor_bottom = 0.5
+offset_left = 261.099
+offset_top = -79.5
+offset_right = 517.099
+offset_bottom = -54.5
+
 [node name="copper_link" type="LinkButton" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.285
@@ -107,6 +144,7 @@ offset_bottom = 12.308
 uri = "https://internationalcopper.org/sustainable-copper/about-copper/"
 
 [node name="iridium_link" type="LinkButton" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.282
@@ -120,6 +158,7 @@ offset_bottom = 12.416
 uri = "https://www.livescience.com/39143-iridium.html"
 
 [node name="nickel_link" type="LinkButton" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.279
@@ -133,6 +172,7 @@ offset_bottom = 12.266
 uri = "https://nickelinstitute.org/en/nickel-applications/"
 
 [node name="silver_link" type="LinkButton" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.277
@@ -146,6 +186,7 @@ offset_bottom = 12.745
 uri = "httphttps://pubchem.ncbi.nlm.nih.gov/element/Silver#section=Usess://github.com/dialogic-godot/dialogic"
 
 [node name="tungsten_link" type="LinkButton" parent="TextureRect"]
+visible = false
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.298
