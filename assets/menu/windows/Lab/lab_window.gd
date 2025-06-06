@@ -4,6 +4,7 @@ extends "res://assets/scripts/base_window.gd"  # Update this path if needed
 @onready var characters_button = $Characters
 @onready var about_button = $About
 @onready var close_button = $TextureRect/CloseButton
+@onready var learn_button = $TextureRect/Learn
 
 func _ready():
 	# Call parent _ready() for positioning
@@ -12,6 +13,7 @@ func _ready():
 	characters_button.pressed.connect(_on_characters_button_pressed)
 	about_button.pressed.connect(_on_about_button_pressed)
 	close_button.pressed.connect(_on_close_button_pressed)
+	learn_button.pressed.connect(_on_learn_button_pressed)
 
 	# Col1
 	var copper = $TextureRect/Icons/Col1/Copper
@@ -67,3 +69,6 @@ func _on_tungsten_button_pressed():
 
 func _on_nickel_button_pressed():
 	WindowManager.open_window("res://assets/menu/windows/Lab/LabScenes/Nickel.tscn")
+
+func _on_learn_button_pressed():
+	WindowManager.open_window("res://assets/menu/windows/Lab/LabScenes/Learn.tscn")
