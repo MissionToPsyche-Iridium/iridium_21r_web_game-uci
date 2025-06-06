@@ -330,10 +330,9 @@ isVisible = false
 [node name="6" type="Node" parent="ObjectiveManager"]
 script = ExtResource("8_j37eh")
 questType = 5
-questDescription = "Purchase a Silver Pickaxe from Zimbo."
-sceneId = 4
-shopId = 2
-purchaseId = 0
+questDescription = "Purchase the final station upgrade."
+shopId = 1
+purchaseId = 2
 
 [node name="CutsceneManager" type="Node" parent="."]
 script = ExtResource("11_ecjy8")

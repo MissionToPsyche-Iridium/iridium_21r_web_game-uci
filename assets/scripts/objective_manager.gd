@@ -129,6 +129,13 @@ func quest_start_events(id: int) -> void:
 func quest_end_events(id: int) -> void:
 	match id:
 		0: CutsceneManager.instance.start_cutscene("successful_mining")
+		7: 
+			var has_all_collectibles = true
+			for i in range(ResourceManager.ItemTypes.FACT_ATOM, ResourceManager.ItemTypes.FACT_TENNIS + 1):
+				print(i as ResourceManager.ItemTypes)
+				if !ResourceManager.instance.has_amount(i, 1):
+					has_all_collectibles = false
+					break
 
 func next_objective() -> void:
 	clear_objective()
@@ -182,3 +189,14 @@ func on_interact(interact_id: int) -> void:
 func on_shop_purchase(shop_id: int, purchase_id: int) -> void:
 	if currentType == Quest.QuestType.PURCHASE and shop_id == shopId and purchase_id == purchaseId:
 		complete_objective()
+
+func on_collectible_collected() -> void:
+	if currentType == Quest.QuestType.COLLECT_FACTS:
+		var has_all_collectibles = true
+		for i in range(ResourceManager.ItemTypes.FACT_ATOM, ResourceManager.ItemTypes.FACT_TENNIS + 1):
+			print(i as ResourceManager.ItemTypes)
+			if !ResourceManager.instance.has_amount(i, 1):
+				has_all_collectibles = false
+				break
+		if has_all_collectibles:
+			complete_objective()

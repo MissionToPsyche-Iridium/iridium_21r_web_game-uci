@@ -36,6 +36,7 @@ func fade_out() -> void:
 func on_finish_fade_out() -> void:
 	audioPlayer.stop()
 	if queuedTrack != null:
+		print("playing %s" % queuedTrack)
 		play_track(queuedTrack, queuedIntro, queuedIntroLength)
 		queuedTrack = null
 		queuedIntro = null
@@ -59,7 +60,8 @@ func play_track(track: AudioStream, intro: AudioStream = null, introLength: floa
 	
 
 func queue_track(track: AudioStream, intro: AudioStream = null, introLength: float = 0) -> void:
-	if track == audioPlayer.stream:
+	var checkedTrack = queuedTrack if queuedTrack != null else track
+	if checkedTrack == audioPlayer.stream:
 		print("same track")
 		return
 	if audioPlayer.playing:
