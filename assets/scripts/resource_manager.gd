@@ -33,9 +33,9 @@ const itemStrings:Array = [
 	"Silver Pickaxe",
 	"Tungsten Pickaxe",
 	"Iridium Pickaxe",
-	"Space Station Upgrade 1",
-	"Space Station Upgrade 2",
-	"Space Station Upgrade 3",
+	"Station Upgrade 1",
+	"Station Upgrade 2",
+	"Station Upgrade 3",
 	"Atom", #
 	"Phase E", #
 	"Explosion", #
