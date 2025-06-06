@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://dsyyd8x34gm2s"]
 
 [ext_resource type="Script" path="res://assets/menu/windows/Map/map_window.gd" id="1_mw54d"]
-[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://Scenes/BaseWindow.tscn" id="2_7k4tq"]
+[ext_resource type="PackedScene" uid="uid://bidoige8e0krb" path="res://scenes/BaseWindow.tscn" id="2_7k4tq"]
 [ext_resource type="Texture2D" uid="uid://b5eysk0ete0ok" path="res://assets/menu/windows/Map/Map.png" id="3_a7he0"]
 [ext_resource type="Texture2D" uid="uid://d2fj24cjrj7br" path="res://assets/menu/windows/Pause/Return Button.png" id="4_pi5li"]
 [ext_resource type="Script" path="res://assets/scripts/pause_button.gd" id="5_id4jd"]
