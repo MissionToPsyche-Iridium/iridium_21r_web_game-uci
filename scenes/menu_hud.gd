@@ -43,6 +43,7 @@ func _on_story_button_pressed():
 	WindowManager.open_window("res://assets/menu/windows/Story/StoryWindow.tscn")
 
 func _on_about_button_pressed():
+	print(get_node_or_null("res://assets/menu/windows/AboutPsyche/AboutPsycheWindow.tscn"))
 	WindowManager.open_window("res://assets/menu/windows/AboutPsyche/AboutPsycheWindow.tscn")
 
 func _on_pause_button_pressed():
